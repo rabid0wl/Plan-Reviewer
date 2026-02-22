@@ -4,30 +4,33 @@
 **Author:** Dylan (PE #98682), 4Creeks Engineering
 **Status:** Phase 1 complete, building extraction pipeline
 
-**Key docs:** `PROGRESS.md` (working journal) · `docs/findings/` (test results)
+**Key docs:** `README.md` (quickstart) · `PROGRESS_SUMMARY.md` (daily milestones) · `PROGRESS.md` (detailed journal)
 
 ---
 
 ## Repository Layout & Documentation Conventions
 
 ```
+├── README.md                # Human-readable project overview + quickstart
 ├── ARCHITECTURE.md          # This file — design blueprint
-├── PROGRESS.md              # Working journal (decisions, learnings, costs)
+├── PROGRESS_SUMMARY.md      # Daily milestone-level progress summary
+├── PROGRESS.md              # Detailed working journal (decisions, learnings, costs)
 ├── plan_reviewer.py         # Existing Streamlit prototype (pre-rebuild)
 ├── docs/findings/           # Polished investigation results
 ├── test-extractions/        # PNG tiles from vision testing
 ├── References/              # Source PDFs, CrossBeam reference impl
-├── skills/                  # (planned) Agency standards, extraction schemas
-└── src/                     # (planned) Agent SDK pipeline code
+└── src/                     # Active Python pipeline implementation
 ```
 
-**Documentation philosophy — three docs, clear purposes, no overlap:**
+**Documentation philosophy — four docs, clear purposes, no overlap:**
 
+- **`README.md`** — Human-readable project entry point. What the tool does, what is implemented, and common commands.
 - **`ARCHITECTURE.md`** (this file) — The design blueprint. What we're building, why, and how the pieces fit together. Update when the design changes.
+- **`PROGRESS_SUMMARY.md`** — Milestone summary by day. High-level status only.
 - **`PROGRESS.md`** — The working journal. Grouped by component (Vision, Tiling, Skills, etc.) with dated entries, not chronological. Contains a Decisions Log table at the top for quick reference, open questions, cost tracking, and session summaries. High verbosity during active work, pruned at session end. **If you're unsure where to put something, it goes here.**
 - **`docs/findings/`** — Polished reference docs for completed investigations (e.g., Phase 1 vision validation). Only created when a topic outgrows PROGRESS.md and will be referenced repeatedly. Linked from PROGRESS.md, not duplicated.
 
-Don't create new top-level markdown files. Everything goes in PROGRESS.md until it earns its own doc in `docs/findings/`.
+Prefer using these established docs before adding new top-level markdown files.
 
 ---
 

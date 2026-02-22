@@ -35,6 +35,7 @@ Use this structure for each day. Append newest days at the top.
 - Added quality-aware connectivity behavior so low-quality extraction runs are flagged without flooding warnings.
 - Completed Task 003 fixes: pipe deduplication, GB filtering in SD graph, directional invert matching, and fresh no-cache validation run.
 - Completed Task 004 fixes: same-station offset fallback, gravity edge reorientation (SD+SS), and proximity structure merge.
+- Added and standardized human-readable documentation entry points (`README.md` + doc conventions cleanup).
 
 ### Milestones
 - Added graph modules:
@@ -56,18 +57,18 @@ Use this structure for each day. Append newest days at the top.
   - `output/graphs/findings/calibration-opt-ss-findings.json`
   - `output/graphs/findings/calibration-opt-w-findings.json`
 - False-positive reduction pass:
-- SD findings reduced from `46` to `10`.
-- W findings reduced from `13` to `1` (`connectivity_unverifiable`).
+  - SD findings reduced from `46` to `10`.
+  - W findings reduced from `13` to `1` (`connectivity_unverifiable`).
 - Task 003 validation:
-- Unit tests now `16/16` passing.
-- Fresh extraction batch (`24/24` OK) on pages 14/19/34/36 with `--no-cache`.
-- Calibration score remains `9/10`.
-- SD flow-direction false positives from reversed duplicates reduced to `0`.
+  - Unit tests `16/16` passing.
+  - Fresh extraction batch (`24/24` OK) on pages 14/19/34/36 with `--no-cache`.
+  - Calibration score remained `9/10`.
+  - SD flow-direction false positives from reversed duplicates reduced to `0`.
 - Task 004 validation:
-- Unit tests now `21/21` passing.
-- SD findings reduced to `4` with `0` errors.
-- SS `flow_direction_error` reduced from `4` to `0`; SS findings reduced from `13` to `10`.
-- No uphill SD/SS edges remain after orientation pass.
+  - Unit tests `21/21` passing.
+  - SD findings reduced to `4` with `0` errors.
+  - SS `flow_direction_error` reduced from `4` to `0`; SS findings reduced from `13` to `10`.
+  - No uphill SD/SS edges remain after orientation pass.
 
 ### Cost and Performance
 - No new model-inference spend required for graph/check work (ran on existing extraction outputs).
@@ -78,6 +79,7 @@ Use this structure for each day. Append newest days at the top.
   - `output/graphs/calibration-opt-sd.json`
   - `output/graphs/calibration-opt-ss.json`
   - `output/graphs/calibration-opt-w.json`
+- `README.md` (project overview + quickstart)
 - Updated summary and milestone tracking format in this file.
 
 ### Risks / Follow-Ups

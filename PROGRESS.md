@@ -1058,3 +1058,30 @@ Additional validation:
 - Calibration scorer unchanged:
   - `python -m src.extraction.score_calibration --extractions-dir output/extractions/calibration-clean`
   - Result: **9/10 (90.0%)**
+
+### 2026-02-22 - Documentation sweep + README added
+
+Completed a documentation tidy pass and added a user-friendly entry point for GitHub readers.
+
+Changes:
+
+- Added `README.md` with:
+  - project purpose and current status
+  - prerequisites and setup
+  - command cookbook (intake, extraction, scoring, graph build, tests)
+  - documentation map and repository notes
+
+- Updated `ARCHITECTURE.md` doc conventions section:
+  - now includes `README.md` and `PROGRESS_SUMMARY.md`
+  - adjusted repository layout to reflect current active `src/` pipeline
+  - removed outdated wording that prohibited new top-level docs
+
+- Tidied `PROGRESS_SUMMARY.md` validation bullets for readability/scanability.
+
+Result:
+
+- Docs now follow a clear hierarchy:
+  - `README.md` = fast onboarding
+  - `ARCHITECTURE.md` = system design
+  - `PROGRESS_SUMMARY.md` = day-level milestones
+  - `PROGRESS.md` = detailed engineering log
