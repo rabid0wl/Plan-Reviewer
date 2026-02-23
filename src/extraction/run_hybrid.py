@@ -24,7 +24,21 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_MODEL = "google/gemini-3-flash-preview"
+DEFAULT_ESCALATION_MODEL = "google/gemini-3-flash-preview"
+DEFAULT_ESCALATION_COHERENCE_THRESHOLD = 0.70
 CACHE_SCHEMA_VERSION = "hybrid-cache-v2"
+_WATER_STRUCTURE_TYPES = {
+    "gate_valve",
+    "fire_hydrant",
+    "blow_off",
+    "air_valve",
+    "prv",
+    "meter",
+    "tee",
+    "reducer",
+    "bend",
+    "service_connection",
+}
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -96,6 +110,27 @@ def _non_empty_str(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
+def _normalize_structure_type(value: Any) -> str:
+    if not isinstance(value, str):
+        return ""
+    token = value.strip().lower().replace("-", "_").replace(" ", "_")
+    return re.sub(r"[^a-z0-9_]+", "", token)
+
+
+def _coerce_is_existing(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return bool(value)
+    if isinstance(value, str):
+        token = value.strip().lower()
+        if token in {"true", "1", "yes", "y"}:
+            return True
+        if token in {"false", "0", "no", "n"}:
+            return False
+    return False
+
+
 def _sanitize_source_text_ids(value: Any) -> list[int]:
     if not isinstance(value, list):
         return []
@@ -124,11 +159,16 @@ def _sanitize_extraction_payload(payload: dict[str, Any]) -> tuple[dict[str, Any
             if not isinstance(structure, dict):
                 dropped["structures"] += 1
                 continue
-            if not (
-                _non_empty_str(structure.get("structure_type"))
-                and _non_empty_str(structure.get("station"))
-                and _non_empty_str(structure.get("offset"))
-            ):
+            structure_type = structure.get("structure_type")
+            station = structure.get("station")
+            if not (_non_empty_str(structure_type) and _non_empty_str(station)):
+                dropped["structures"] += 1
+                continue
+
+            stype_norm = _normalize_structure_type(structure_type)
+            requires_offset = stype_norm not in _WATER_STRUCTURE_TYPES
+            offset = structure.get("offset")
+            if requires_offset and not _non_empty_str(offset):
                 dropped["structures"] += 1
                 continue
 
@@ -154,7 +194,10 @@ def _sanitize_extraction_payload(payload: dict[str, Any]) -> tuple[dict[str, Any
                     inverts_clean.append(invert_clean)
 
             structure_clean = dict(structure)
+            if not requires_offset and not _non_empty_str(offset):
+                structure_clean["offset"] = "0' CL"
             structure_clean["inverts"] = inverts_clean
+            structure_clean["is_existing"] = _coerce_is_existing(structure.get("is_existing", False))
             structure_clean["source_text_ids"] = _sanitize_source_text_ids(
                 structure.get("source_text_ids")
             )
@@ -296,12 +339,88 @@ def run_hybrid_extraction(
     dry_run: bool,
     no_cache: bool,
     prompt_output_path: Path | None,
+    escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
+    escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
+    escalation_enabled: bool = True,
+    attempted_models: list[str] | None = None,
+    escalation_reason: str | None = None,
+    _escalated: bool = False,
 ) -> int:
     """Execute one hybrid extraction call and persist outputs."""
     text_layer = _load_json(text_layer_path)
     coherence_score = float(text_layer.get("coherence_score", 0.0))
     is_hybrid_viable = bool(text_layer.get("is_hybrid_viable", True))
     tile_id = str(text_layer.get("tile_id", "unknown"))
+    attempt_chain = list(attempted_models or [])
+    attempt_chain.append(model)
+
+    def _can_escalate() -> bool:
+        return (
+            escalation_enabled
+            and not _escalated
+            and isinstance(escalation_model, str)
+            and bool(escalation_model.strip())
+            and escalation_model.strip() != model
+        )
+
+    def _meta_common() -> dict[str, Any]:
+        return {
+            "tile_id": tile_id,
+            "coherence_score": coherence_score,
+            "is_hybrid_viable": is_hybrid_viable,
+            "model": model,
+            "attempted_models": attempt_chain,
+            "escalated": _escalated,
+            "escalation_reason": escalation_reason,
+            "escalation_model": escalation_model,
+            "escalation_enabled": escalation_enabled,
+            "escalation_coherence_threshold": escalation_coherence_threshold,
+        }
+
+    def _run_escalation(reason: str, *, force_allow_low_coherence: bool = False) -> int | None:
+        if not _can_escalate():
+            return None
+        escalation_target = str(escalation_model).strip()
+        logger.warning(
+            "Escalating tile %s from %s to %s (%s).",
+            tile_id,
+            model,
+            escalation_target,
+            reason,
+        )
+        return run_hybrid_extraction(
+            tile_path=tile_path,
+            text_layer_path=text_layer_path,
+            output_path=output_path,
+            raw_output_path=raw_output_path,
+            meta_output_path=meta_output_path,
+            model=escalation_target,
+            api_key=api_key,
+            referer=referer,
+            title=title,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            timeout_sec=timeout_sec,
+            allow_low_coherence=allow_low_coherence or force_allow_low_coherence,
+            dry_run=dry_run,
+            no_cache=no_cache,
+            prompt_output_path=prompt_output_path,
+            escalation_model=escalation_model,
+            escalation_coherence_threshold=escalation_coherence_threshold,
+            escalation_enabled=escalation_enabled,
+            attempted_models=attempt_chain,
+            escalation_reason=reason,
+            _escalated=True,
+        )
+
+    low_confidence = coherence_score < float(escalation_coherence_threshold)
+    if low_confidence:
+        escalated_exit_code = _run_escalation(
+            "low_coherence",
+            force_allow_low_coherence=not is_hybrid_viable,
+        )
+        if escalated_exit_code is not None:
+            return escalated_exit_code
 
     if not is_hybrid_viable and not allow_low_coherence:
         logger.warning(
@@ -310,12 +429,7 @@ def run_hybrid_extraction(
             coherence_score,
         )
         meta_output_path.parent.mkdir(parents=True, exist_ok=True)
-        meta_payload = {
-            "status": "skipped_low_coherence",
-            "tile_id": tile_id,
-            "coherence_score": coherence_score,
-            "is_hybrid_viable": is_hybrid_viable,
-        }
+        meta_payload = {"status": "skipped_low_coherence", **_meta_common()}
         with meta_output_path.open("w", encoding="utf-8") as f:
             json.dump(meta_payload, f, indent=2, ensure_ascii=False)
         return 0
@@ -345,8 +459,13 @@ def run_hybrid_extraction(
             existing_meta = {}
         if (
             existing_meta.get("cache_key") == cache_key
+            and existing_meta.get("model") == model
             and existing_meta.get("status") in {"ok", "dry_run"}
         ):
+            if bool(existing_meta.get("sanitized", False)):
+                escalated_exit_code = _run_escalation("sanitized_recovery_cached")
+                if escalated_exit_code is not None:
+                    return escalated_exit_code
             logger.info("Cache hit for tile %s (cache_key=%s). Skipping API call.", tile_id, cache_key)
             return 0
 
@@ -357,10 +476,7 @@ def run_hybrid_extraction(
             json.dump(
                 {
                     "status": "dry_run",
-                    "tile_id": tile_id,
-                    "coherence_score": coherence_score,
-                    "is_hybrid_viable": is_hybrid_viable,
-                    "model": model,
+                    **_meta_common(),
                     "prompt_chars": len(prompt),
                     "text_items_count": len(text_layer.get("items", [])),
                     "cache_key": cache_key,
@@ -373,17 +489,23 @@ def run_hybrid_extraction(
         return 0
 
     image_data_url = _image_bytes_to_data_url(image_bytes)
-    raw_text, response_json = call_openrouter_vision(
-        api_key=api_key,
-        model=model,
-        prompt=prompt,
-        image_data_url=image_data_url,
-        referer=referer,
-        title=title,
-        temperature=temperature,
-        max_tokens=max_tokens,
-        timeout_sec=timeout_sec,
-    )
+    try:
+        raw_text, response_json = call_openrouter_vision(
+            api_key=api_key,
+            model=model,
+            prompt=prompt,
+            image_data_url=image_data_url,
+            referer=referer,
+            title=title,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            timeout_sec=timeout_sec,
+        )
+    except Exception:
+        escalated_exit_code = _run_escalation("api_call_error")
+        if escalated_exit_code is not None:
+            return escalated_exit_code
+        raise
 
     raw_output_path.parent.mkdir(parents=True, exist_ok=True)
     raw_output_path.write_text(raw_text, encoding="utf-8")
@@ -392,17 +514,17 @@ def run_hybrid_extraction(
     try:
         payload_obj = json.loads(json_candidate)
     except json.JSONDecodeError as exc:
+        escalated_exit_code = _run_escalation("json_parse_error")
+        if escalated_exit_code is not None:
+            return escalated_exit_code
         logger.error("Model JSON parse failed for %s", tile_id)
         meta_output_path.parent.mkdir(parents=True, exist_ok=True)
         with meta_output_path.open("w", encoding="utf-8") as f:
             json.dump(
                 {
                     "status": "validation_error",
-                    "tile_id": tile_id,
+                    **_meta_common(),
                     "error": f"JSON parse error: {exc}",
-                    "coherence_score": coherence_score,
-                    "is_hybrid_viable": is_hybrid_viable,
-                    "model": model,
                     "cache_key": cache_key,
                     "cache_hit": False,
                 },
@@ -413,17 +535,17 @@ def run_hybrid_extraction(
         return 2
 
     if not isinstance(payload_obj, dict):
+        escalated_exit_code = _run_escalation("non_object_json")
+        if escalated_exit_code is not None:
+            return escalated_exit_code
         logger.error("Model output for %s is not a JSON object.", tile_id)
         meta_output_path.parent.mkdir(parents=True, exist_ok=True)
         with meta_output_path.open("w", encoding="utf-8") as f:
             json.dump(
                 {
                     "status": "validation_error",
-                    "tile_id": tile_id,
+                    **_meta_common(),
                     "error": "Top-level JSON output is not an object.",
-                    "coherence_score": coherence_score,
-                    "is_hybrid_viable": is_hybrid_viable,
-                    "model": model,
                     "cache_key": cache_key,
                     "cache_hit": False,
                 },
@@ -446,19 +568,19 @@ def run_hybrid_extraction(
                 "Validation recovered for %s by dropping invalid items: %s",
                 tile_id,
                 dropped_invalid_counts,
-            )
+                )
         except ValidationError:
+            escalated_exit_code = _run_escalation("schema_validation_error")
+            if escalated_exit_code is not None:
+                return escalated_exit_code
             logger.error("Schema validation failed for %s", tile_id)
             meta_output_path.parent.mkdir(parents=True, exist_ok=True)
             with meta_output_path.open("w", encoding="utf-8") as f:
                 json.dump(
                     {
                         "status": "validation_error",
-                        "tile_id": tile_id,
+                        **_meta_common(),
                         "error": str(exc),
-                        "coherence_score": coherence_score,
-                        "is_hybrid_viable": is_hybrid_viable,
-                        "model": model,
                         "cache_key": cache_key,
                         "cache_hit": False,
                         "dropped_invalid_counts": dropped_invalid_counts,
@@ -468,6 +590,11 @@ def run_hybrid_extraction(
                     ensure_ascii=False,
                 )
             return 2
+
+    if sanitized:
+        escalated_exit_code = _run_escalation("sanitized_recovery")
+        if escalated_exit_code is not None:
+            return escalated_exit_code
 
     expected_tile_id = str(text_layer.get("tile_id", extraction.tile_id))
     expected_page_number = int(text_layer.get("page_number", extraction.page_number))
@@ -493,10 +620,7 @@ def run_hybrid_extraction(
         json.dump(
             {
                 "status": "ok",
-                "tile_id": tile_id,
-                "coherence_score": coherence_score,
-                "is_hybrid_viable": is_hybrid_viable,
-                "model": model,
+                **_meta_common(),
                 "prompt_chars": len(prompt),
                 "text_items_count": len(text_layer.get("items", [])),
                 "structures_count": len(extraction.structures),
@@ -550,6 +674,24 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Optional path to save the full generated prompt.",
     )
     parser.add_argument("--model", type=str, default=DEFAULT_MODEL, help="OpenRouter model id.")
+    parser.add_argument(
+        "--escalation-model",
+        type=str,
+        default=DEFAULT_ESCALATION_MODEL,
+        help="Fallback model id used when low confidence or extraction issues are detected.",
+    )
+    parser.add_argument(
+        "--escalation-coherence-threshold",
+        type=float,
+        default=DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
+        help="Escalate to fallback model when text-layer coherence is below this threshold.",
+    )
+    parser.add_argument(
+        "--escalation",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable/disable automatic model escalation.",
+    )
     parser.add_argument(
         "--api-key-env",
         type=str,
@@ -624,6 +766,9 @@ def main() -> None:
         dry_run=args.dry_run,
         no_cache=args.no_cache,
         prompt_output_path=args.prompt_out,
+        escalation_model=args.escalation_model,
+        escalation_coherence_threshold=args.escalation_coherence_threshold,
+        escalation_enabled=args.escalation,
     )
     raise SystemExit(exit_code)
 

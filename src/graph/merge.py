@@ -15,7 +15,23 @@ _NON_ALNUM = re.compile(r"[^A-Z0-9]+")
 _UTILITY_STRUCTURE_TYPES: dict[str, set[str]] = {
     "SD": {"SDMH", "SDCB", "CB", "INLET", "DI", "CATCHBASIN"},
     "SS": {"SSMH", "CO", "CLEANOUT"},
-    "W": {"WV", "GV", "FH", "HYDRANT", "BEND", "TEE", "WATERVALVE", "GATEVALVE"},
+    "W": {
+        "WV",
+        "GV",
+        "FH",
+        "HYDRANT",
+        "BEND",
+        "TEE",
+        "WATERVALVE",
+        "GATEVALVE",
+        "FIREHYDRANT",
+        "BLOWOFF",
+        "AIRVALVE",
+        "PRV",
+        "METER",
+        "REDUCER",
+        "SERVICECONNECTION",
+    },
 }
 
 
@@ -36,6 +52,7 @@ class MergedStructure:
     tc_elevation: float | None
     fl_elevation: float | None
     inverts: list[dict[str, Any]]
+    is_existing: bool
     notes: str | None
     source_tile_ids: list[str]
     source_page_numbers: list[int]
@@ -78,7 +95,10 @@ def structure_matches_utility(
 def _structure_key(page_number: int, structure: Structure) -> tuple[Any, ...]:
     stype = _norm_token(structure.structure_type)
     station_ft = parse_station(structure.station)
-    offset_ft = parse_signed_offset(structure.offset)
+    offset_value = structure.offset or "0' CL"
+    offset_ft = parse_signed_offset(offset_value)
+    if offset_ft is None and "CL" in offset_value.upper():
+        offset_ft = 0.0
 
     if station_ft is not None and offset_ft is not None:
         return (page_number, stype, round(station_ft, 2), round(offset_ft, 2))
@@ -87,7 +107,7 @@ def _structure_key(page_number: int, structure: Structure) -> tuple[Any, ...]:
         page_number,
         stype,
         _norm_token(structure.station),
-        _norm_token(structure.offset),
+        _norm_token(offset_value),
     )
 
 
@@ -210,6 +230,7 @@ def _collapse_merged_group(
             else _pick_first_non_none_merged(group, "fl_elevation")
         ),
         inverts=primary.inverts,
+        is_existing=any(item.is_existing for item in group),
         notes=max((item.notes for item in group), key=lambda note: len((note or "").strip()), default=None),
         source_tile_ids=all_tile_ids,
         source_page_numbers=all_page_numbers,
@@ -316,14 +337,17 @@ def merge_structures(
 
         best_structure = max(structures_for_group, key=_structure_rank)
         parsed_station = parse_station(best_structure.station)
-        signed_offset = parse_signed_offset(best_structure.offset)
+        offset_value = best_structure.offset or "0' CL"
+        signed_offset = parse_signed_offset(offset_value)
+        if signed_offset is None and "CL" in offset_value.upper():
+            signed_offset = 0.0
 
         node_id = _make_node_id(
             utility_type=utility_type,
             page_number=extractions_for_group[0].page_number,
             structure_type=best_structure.structure_type,
             station=best_structure.station,
-            offset=best_structure.offset,
+            offset=offset_value,
             parsed_station=parsed_station,
             signed_offset=signed_offset,
         )
@@ -343,7 +367,7 @@ def merge_structures(
                 page_number=extractions_for_group[0].page_number,
                 structure_type=best_structure.structure_type,
                 station=best_structure.station,
-                offset=best_structure.offset,
+                offset=offset_value,
                 parsed_station=parsed_station,
                 signed_offset=signed_offset,
                 id=_pick_first_non_none(structures_for_group, "id"),
@@ -352,6 +376,7 @@ def merge_structures(
                 tc_elevation=_pick_first_non_none(structures_for_group, "tc_elevation"),
                 fl_elevation=_pick_first_non_none(structures_for_group, "fl_elevation"),
                 inverts=_choose_best_inverts(structures_for_group),
+                is_existing=any(structure.is_existing for structure in structures_for_group),
                 notes=max(
                     (structure.notes for structure in structures_for_group),
                     key=lambda note: len((note or "").strip()),

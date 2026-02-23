@@ -1085,3 +1085,186 @@ Result:
   - `ARCHITECTURE.md` = system design
   - `PROGRESS_SUMMARY.md` = day-level milestones
   - `PROGRESS.md` = detailed engineering log
+
+### 2026-02-22 - Task 005 implemented (HTML report generator)
+
+Implemented report UI planning output from `docs/CODEX-TASK-005-HTML-REPORT.md` as a standalone CLI module.
+
+What was delivered:
+
+- Added report package:
+  - `src/report/__init__.py`
+  - `src/report/html_report.py`
+- Added report smoke tests:
+  - `tests/test_html_report.py`
+- Updated command docs:
+  - `README.md` (new HTML report command)
+
+Implementation details:
+
+- Built dependency-free single-file HTML renderer with inline CSS and no server/framework requirements.
+- Added schema-tolerant loading for utility artifacts:
+  - gracefully handles missing `SD`/`SS`/`W` graph or findings files
+  - emits a `Data Warnings` section in the report instead of failing
+- Added quality risk banner:
+  - banner appears when `(sanitized_tiles + skipped_tiles) / total_tiles > 0.30`
+- Added page detection fallback:
+  - primary source: `batch_summary.json` tile IDs
+  - fallback: union of `source_page_numbers` / `source_sheets` from graph/findings payloads
+- Preserved station string display while sorting numerically under the hood.
+- Added provenance columns to structure and pipe schedules:
+  - `pg <pages>, <tile_count> tile(s)`
+- Included gravity-orientation visibility in pipe confidence text:
+  - adds `gravity-oriented` when `oriented_by_gravity=true`
+- Added optional `--title` CLI override for report headers.
+
+Validation:
+
+- New smoke tests:
+  - `python -m unittest tests.test_html_report -v`
+  - Result: **2/2 passing**
+- Full suite:
+  - `python -m unittest discover -s tests -v`
+  - Result: **23/23 passing**
+- Real artifact generation:
+  - `python -m src.report.html_report --graphs-dir output/graphs --findings-dir output/graphs/findings --prefix calibration-clean --batch-summary output/extractions/calibration-clean/batch_summary.json --out output/reports/calibration-clean-report.html`
+  - Result: report written successfully to `output/reports/calibration-clean-report.html`
+
+### 2026-02-22 - Model routing update (lite default with automatic escalation)
+
+Updated extraction model routing so `google/gemini-2.5-flash-lite` remains the default, with automatic escalation to `google/gemini-3-flash-preview` when quality risk is detected.
+
+Code changes:
+
+- `src/extraction/run_hybrid.py`
+  - Added escalation constants:
+    - `DEFAULT_ESCALATION_MODEL = "google/gemini-3-flash-preview"`
+    - `DEFAULT_ESCALATION_COHERENCE_THRESHOLD = 0.70`
+  - Added automatic escalation triggers:
+    - low text-layer coherence (`coherence_score < threshold`)
+    - API call failure
+    - JSON parse / shape failure
+    - unrecoverable schema validation failure
+    - sanitizer recovery usage (`sanitized=True`)
+  - Added escalation metadata fields in `.meta.json`:
+    - `attempted_models`
+    - `escalated`
+    - `escalation_reason`
+    - `escalation_model`
+    - `escalation_enabled`
+    - `escalation_coherence_threshold`
+  - Added CLI flags:
+    - `--escalation-model`
+    - `--escalation-coherence-threshold`
+    - `--escalation / --no-escalation`
+
+- `src/extraction/run_hybrid_batch.py`
+  - Propagates escalation settings to each tile extraction call.
+  - Added matching batch CLI flags.
+  - Stores escalation settings in `batch_summary.json`.
+
+- `README.md`
+  - Documented automatic escalation behavior and `--no-escalation`.
+
+Tests added:
+
+- `tests/test_run_hybrid_escalation.py`
+  - `test_low_coherence_escalates_to_fallback_model`
+  - `test_sanitized_primary_output_escalates_to_fallback`
+
+Validation:
+
+- `python -m unittest tests.test_run_hybrid_escalation -v`
+  - Result: **2/2 passing**
+- `python -m unittest discover -s tests -v`
+  - Result: **25/25 passing**
+- CLI sanity:
+  - `python -m src.extraction.run_hybrid --help` (new escalation flags present)
+  - `python -m src.extraction.run_hybrid_batch --help` (new escalation flags present)
+
+### 2026-02-22 - Model default reverted to preview
+
+After comparative cost/quality checks, reverted extraction default model back to `google/gemini-3-flash-preview`.
+
+Changes:
+
+- `src/extraction/run_hybrid.py`
+  - `DEFAULT_MODEL` reset to `google/gemini-3-flash-preview`
+- `README.md`
+  - batch example and default-model note updated to preview default
+- `tests/test_run_hybrid_escalation.py`
+  - tests now use an explicit lite primary (`google/gemini-2.5-flash-lite`) to keep fallback behavior covered regardless of runtime default
+
+Validation:
+
+- `python -m unittest tests.test_run_hybrid_escalation -v` -> **2/2 passing**
+- `python -m unittest discover -s tests -v` -> **25/25 passing**
+
+### 2026-02-22 - Task 006 implemented (crown/invert heuristic)
+
+Implemented `docs/CODEX-TASK-006-CROWN-INVERT-HEURISTIC.md` with edge-aware crown contamination handling at graph/check stage.
+
+Code changes:
+
+- `src/graph/assembly.py`
+  - Added `_parse_pipe_diameter_ft(...)`
+  - Added `_filter_suspect_crowns(graph)` with two passes:
+    - Pass 1: multi-invert spread filtering into `crown_suspects`
+    - Pass 2: cross-edge anomaly flagging via `crown_contamination_candidate` and `suspect_crown`
+  - Integrated crown filter before edge dedup/orientation in `build_utility_graph(...)`
+  - Preserved edge-level crown flag in `_merge_edge_provenance(...)`
+  - Crown filtering scoped to gravity systems only (`SD`, `SS`), skipped for `W`
+
+- `src/graph/checks.py`
+  - Updated `check_slope_consistency(...)` to reclassify likely crown-driven mismatches to:
+    - `finding_type="crown_contamination"`
+    - `severity="info"`
+  - Uses absolute labeled slope (`abs(labeled_slope)`) for robust ratio checks
+
+- `tests/test_graph_checks.py`
+  - Added crown heuristic tests:
+    - multi-invert crown removal to `crown_suspects`
+    - single-invert edge contamination candidate
+    - `slope_mismatch` -> `crown_contamination` reclassification
+    - non-crown mismatch remains warning
+    - water utility skip behavior
+
+Validation:
+
+- Targeted tests:
+  - `python -m unittest tests.test_graph_checks -v` -> **11/11 passing**
+- Full suite:
+  - `python -m unittest discover -s tests -v` -> **30/30 passing**
+
+Corridor validation (using existing extractions in `output/extractions/corridor-u1u2-postfix`):
+
+- Generated:
+  - `output/graphs/corridor-u1u2-crownfix-sd.json`
+  - `output/graphs/corridor-u1u2-crownfix-ss.json`
+  - `output/graphs/corridor-u1u2-crownfix-w.json`
+  - `output/graphs/findings/corridor-u1u2-crownfix-sd-findings.json`
+  - `output/graphs/findings/corridor-u1u2-crownfix-ss-findings.json`
+  - `output/graphs/findings/corridor-u1u2-crownfix-w-findings.json`
+  - `output/reports/corridor-u1u2-crownfix-report.html`
+
+Key result:
+
+- Corridor SD `slope_mismatch`: **4 -> 0**
+- Corridor SD `crown_contamination`: **4**
+- Corridor overall severity: `warning=9, info=17, error=0`
+
+FNC regression validation (using available extraction dir `output/extractions/calibration-clean-regression`):
+
+- Generated:
+  - `output/graphs/calibration-crownfix-sd.json`
+  - `output/graphs/calibration-crownfix-ss.json`
+  - `output/graphs/calibration-crownfix-w.json`
+  - `output/graphs/findings/calibration-crownfix-sd-findings.json`
+  - `output/graphs/findings/calibration-crownfix-ss-findings.json`
+  - `output/graphs/findings/calibration-crownfix-w-findings.json`
+  - `output/reports/calibration-crownfix-report.html`
+
+Key result:
+
+- FNC severity totals remained at `warning=16, info=12, error=0` (no regression vs current post-fix baseline)
+- Verified no crown flags on water graph nodes in corridor crownfix output (`0/19`)

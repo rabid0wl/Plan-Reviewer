@@ -62,6 +62,8 @@ python -m src.extraction.run_hybrid_batch \
   --timeout-sec 180
 ```
 
+Default extraction routing now uses `google/gemini-3-flash-preview`.
+
 Score calibration:
 
 ```bash
@@ -74,6 +76,17 @@ Build utility graphs:
 python -m src.graph.assembly --extractions-dir output/extractions/calibration-clean --utility-type SD --out output/graphs/calibration-clean-sd.json
 python -m src.graph.assembly --extractions-dir output/extractions/calibration-clean --utility-type SS --out output/graphs/calibration-clean-ss.json
 python -m src.graph.assembly --extractions-dir output/extractions/calibration-clean --utility-type W  --out output/graphs/calibration-clean-w.json
+```
+
+Generate HTML review report:
+
+```bash
+python -m src.report.html_report \
+  --graphs-dir output/graphs \
+  --findings-dir output/graphs/findings \
+  --prefix calibration-clean \
+  --batch-summary output/extractions/calibration-clean/batch_summary.json \
+  --out output/reports/calibration-clean-report.html
 ```
 
 Run unit tests:
@@ -111,4 +124,3 @@ Large source references and generated outputs are intentionally gitignored:
 - `.env`
 
 This keeps the repository lightweight and safe to share while preserving local working assets.
-

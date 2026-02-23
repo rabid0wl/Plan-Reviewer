@@ -2,7 +2,30 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Field
+import re
+
+from pydantic import BaseModel, Field, model_validator
+
+_WATER_STRUCTURE_TYPES = {
+    "gate_valve",
+    "fire_hydrant",
+    "blow_off",
+    "air_valve",
+    "prv",
+    "meter",
+    "tee",
+    "reducer",
+    "bend",
+    "service_connection",
+}
+
+
+def _normalize_structure_type(value: str | None) -> str:
+    if not value:
+        return ""
+    token = value.strip().lower().replace("-", "_").replace(" ", "_")
+    token = re.sub(r"[^a-z0-9_]+", "", token)
+    return token
 
 
 class InvertElevation(BaseModel):
@@ -21,18 +44,42 @@ class Structure(BaseModel):
     """A utility structure."""
 
     id: str | None = Field(default=None, description="Structure ID, e.g., MH-1, CB-3")
-    structure_type: str = Field(description="SDMH, SSMH, CB, GB, inlet, cleanout, junction, etc.")
+    structure_type: str = Field(
+        description=(
+            "SDMH|SSMH|CB|GB|inlet|cleanout|junction|gate_valve|fire_hydrant|"
+            "blow_off|air_valve|PRV|meter|tee|reducer|bend|service_connection|other"
+        )
+    )
     size: str | None = Field(default=None, description='Structure size, e.g., \'48"\'')
     station: str = Field(description="Station, e.g., 16+82.45")
-    offset: str = Field(description="Offset with direction, e.g., 28.00' RT")
+    offset: str | None = Field(
+        default=None,
+        description="Offset with direction, e.g., 28.00' RT. May be null for water fittings.",
+    )
     rim_elevation: float | None = Field(default=None, description="Rim elevation")
     tc_elevation: float | None = Field(default=None, description="Top of curb elevation if applicable")
     fl_elevation: float | None = Field(default=None, description="Flowline elevation if applicable")
     inverts: list[InvertElevation] = Field(default_factory=list)
+    is_existing: bool = Field(
+        default=False,
+        description="True if this is an existing structure shown for reference, False if proposed/new.",
+    )
     notes: str | None = Field(default=None, description="Additional annotation text")
     source_text_ids: list[int] = Field(
         description="text_id(s) from text layer for station/offset/rim"
     )
+
+    @model_validator(mode="after")
+    def _validate_offset_by_structure_type(self) -> "Structure":
+        stype = _normalize_structure_type(self.structure_type)
+        if stype in _WATER_STRUCTURE_TYPES:
+            if isinstance(self.offset, str) and not self.offset.strip():
+                self.offset = None
+            return self
+
+        if not isinstance(self.offset, str) or not self.offset.strip():
+            raise ValueError("offset is required for non-water structure types")
+        return self
 
 
 class Pipe(BaseModel):
@@ -93,4 +140,3 @@ class TileExtraction(BaseModel):
     extraction_notes: str | None = Field(
         default=None, description="Ambiguities or extraction issues."
     )
-

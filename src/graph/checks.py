@@ -130,6 +130,36 @@ def check_slope_consistency(graph: nx.DiGraph, tolerance: float = 0.0002) -> lis
             + list(graph.nodes[u].get("source_page_numbers", []))
             + list(graph.nodes[v].get("source_page_numbers", []))
         )
+
+        labeled_abs = abs(float(labeled_slope))
+        slope_ratio = calculated / labeled_abs if labeled_abs > 0 else float("inf")
+        edge_flagged = bool(data.get("crown_contamination_candidate", False))
+        from_crowns = graph.nodes[u].get("crown_suspects", [])
+        to_crowns = graph.nodes[v].get("crown_suspects", [])
+        if slope_ratio > 5.0 and (
+            edge_flagged
+            or (isinstance(from_crowns, list) and len(from_crowns) > 0)
+            or (isinstance(to_crowns, list) and len(to_crowns) > 0)
+        ):
+            findings.append(
+                Finding(
+                    finding_type="crown_contamination",
+                    severity="info",
+                    description=(
+                        f"Likely crown/invert confusion on edge {_edge_id(u, v, data)}: "
+                        f"labeled slope {float(labeled_slope):.4f}, calculated {calculated:.4f} "
+                        f"(ratio {slope_ratio:.1f}x). Endpoint inverts may contain crown readings."
+                    ),
+                    source_sheets=source_sheets,
+                    source_text_ids=source_text_ids,
+                    node_ids=[u, v],
+                    edge_ids=[_edge_id(u, v, data)],
+                    expected_value=f"{float(labeled_slope):.4f}",
+                    actual_value=f"{calculated:.4f}",
+                )
+            )
+            continue
+
         findings.append(
             Finding(
                 finding_type="slope_mismatch",

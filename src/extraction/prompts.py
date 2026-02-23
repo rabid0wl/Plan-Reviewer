@@ -12,10 +12,10 @@ COMPACT_SCHEMA = """{
   "utility_types_present":["SD","SS","W"],
   "structures":[{
     "id":"string|null",
-    "structure_type":"SDMH|SSMH|CB|GB|inlet|cleanout|junction|other",
+    "structure_type":"SDMH|SSMH|CB|GB|inlet|cleanout|junction|gate_valve|fire_hydrant|blow_off|air_valve|PRV|meter|tee|reducer|bend|service_connection|other",
     "size":"string|null e.g. 48\\"",
     "station":"string e.g. 16+82.45",
-    "offset":"string e.g. 28.00' RT",
+    "offset":"string|null e.g. 28.00' RT",
     "rim_elevation":"float|null",
     "tc_elevation":"float|null",
     "fl_elevation":"float|null",
@@ -26,6 +26,7 @@ COMPACT_SCHEMA = """{
       "elevation":"float",
       "source_text_ids":[0]
     }],
+    "is_existing":"bool, true if EXIST./EXISTING",
     "notes":"string|null",
     "source_text_ids":[0]
   }],
@@ -86,10 +87,42 @@ Common structure types on civil plans:
 - CB = Catch Basin
 - GB = Grade Break (curb structure)
 - Type I, Type II, etc. = Standard structure types (include the type designation)
+- If a structure annotation says EXIST., EXISTING, or (E), set is_existing=true.
+- If it says INSTALL, PROPOSED, or has no qualifier, set is_existing=false.
+
+## WATER STRUCTURE IDENTIFICATION
+Water systems use fittings as node points (not manholes):
+- gate_valve = Gate Valve (isolation valve on water main)
+- fire_hydrant = Fire Hydrant
+- tee = Tee fitting (branch connection)
+- reducer = Size transition fitting
+- bend = Elbow/bend (45deg, 90deg, etc.)
+- blow_off = Blow-off valve (dead-end flushing)
+- air_valve = Air release valve
+- PRV = Pressure Reducing Valve
+- meter = Water meter
+- service_connection = Individual service lateral connection (typically 1" or 2")
+
+Water fittings may not have a traditional offset from centerline. If no offset
+is shown, use the pipe's offset or "0' CL" as default.
 
 ## INVERT DIRECTIONS
 Inverts are labeled with compass directions (N, S, E, W) indicating which direction the pipe
 goes FROM the structure. Extract exactly as labeled.
+
+## CROWN vs INVERT DISTINCTION
+Profile views may show multiple elevation types at a structure:
+- IE or INV = Invert Elevation (bottom of pipe interior) -> goes in inverts[]
+- CR = Crown Elevation (top of pipe interior) -> do NOT put in inverts[].
+  Record as a callout or in extraction_notes.
+- FL = Flowline Elevation -> goes in the structure's fl_elevation field
+- RIM = Rim Elevation (top of structure) -> goes in rim_elevation field
+- TC = Top of Curb -> goes in tc_elevation field
+- PROPOSED GRADE or EG = ground surface elevation -> record as callout
+
+CRITICAL: Only IE/INV values go in the inverts[] array. Crown readings are
+typically ~(pipe diameter) higher than the invert. If you see "CR 329.28" next
+to a structure, that is NOT an invert.
 
 ## OUTPUT FORMAT
 Return valid JSON matching this exact schema:

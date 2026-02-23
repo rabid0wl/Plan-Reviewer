@@ -6,6 +6,7 @@ import unittest
 
 import networkx as nx
 
+from src.graph.assembly import _filter_suspect_crowns
 from src.graph.checks import check_connectivity, check_flow_direction, check_slope_consistency
 
 
@@ -162,6 +163,123 @@ class GraphChecksTests(unittest.TestCase):
         findings = check_slope_consistency(graph)
         slope_findings = [finding for finding in findings if finding.finding_type == "slope_mismatch"]
         self.assertEqual(len(slope_findings), 0)
+
+    def test_filter_multi_invert_crown_to_crown_suspects(self) -> None:
+        graph = nx.DiGraph(utility_type="SD")
+        graph.add_node(
+            "n1",
+            kind="structure",
+            inverts=[
+                {"direction": "W", "pipe_size": '18"', "elevation": 320.48},
+                {"direction": "N", "pipe_size": '18"', "elevation": 325.14},
+            ],
+            representative_invert=320.48,
+        )
+
+        _filter_suspect_crowns(graph)
+        node = graph.nodes["n1"]
+        self.assertEqual(len(node.get("crown_suspects", [])), 1)
+        self.assertAlmostEqual(float(node["crown_suspects"][0]["elevation"]), 325.14, places=2)
+        self.assertEqual(len(node.get("inverts", [])), 1)
+        self.assertAlmostEqual(float(node["inverts"][0]["elevation"]), 320.48, places=2)
+        self.assertAlmostEqual(float(node.get("representative_invert")), 320.48, places=2)
+
+    def test_single_invert_high_drop_sets_crown_candidate(self) -> None:
+        graph = nx.DiGraph(utility_type="SD")
+        graph.add_node("up", kind="structure", representative_invert=325.30, inverts=[])
+        graph.add_node("dn", kind="structure", representative_invert=320.25, inverts=[])
+        graph.add_edge("up", "dn", edge_id="e_crown", slope=0.0011, length_lf=51.0)
+
+        _filter_suspect_crowns(graph)
+        edge = graph["up"]["dn"]
+        self.assertTrue(edge.get("crown_contamination_candidate"))
+        self.assertTrue(graph.nodes["up"].get("suspect_crown"))
+
+    def test_slope_reclassified_to_crown_contamination_when_flagged(self) -> None:
+        graph = nx.DiGraph(utility_type="SD")
+        graph.add_node(
+            "up",
+            kind="structure",
+            representative_invert=325.30,
+            inverts=[],
+            source_page_numbers=[24],
+            source_text_ids=[1],
+        )
+        graph.add_node(
+            "dn",
+            kind="structure",
+            representative_invert=320.55,
+            inverts=[],
+            source_page_numbers=[24],
+            source_text_ids=[2],
+        )
+        graph.add_edge(
+            "up",
+            "dn",
+            edge_id="e_crown_flagged",
+            slope=0.0011,
+            length_lf=51.0,
+            crown_contamination_candidate=True,
+            source_page_numbers=[24],
+            source_text_ids=[3],
+        )
+
+        findings = check_slope_consistency(graph)
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].finding_type, "crown_contamination")
+        self.assertEqual(findings[0].severity, "info")
+
+    def test_non_crown_slope_mismatch_stays_warning(self) -> None:
+        graph = nx.DiGraph(utility_type="SD")
+        graph.add_node(
+            "up",
+            kind="structure",
+            representative_invert=100.0,
+            inverts=[],
+            source_page_numbers=[14],
+            source_text_ids=[1],
+        )
+        graph.add_node(
+            "dn",
+            kind="structure",
+            representative_invert=99.0,
+            inverts=[],
+            source_page_numbers=[14],
+            source_text_ids=[2],
+        )
+        graph.add_edge(
+            "up",
+            "dn",
+            edge_id="e_non_crown",
+            slope=0.0050,
+            length_lf=100.0,
+            source_page_numbers=[14],
+            source_text_ids=[3],
+        )
+
+        findings = check_slope_consistency(graph)
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].finding_type, "slope_mismatch")
+        self.assertEqual(findings[0].severity, "warning")
+
+    def test_crown_filter_skips_water_utility(self) -> None:
+        graph = nx.DiGraph(utility_type="W")
+        original_inverts = [
+            {"direction": "E", "pipe_size": '8"', "elevation": 100.0},
+            {"direction": "W", "pipe_size": '8"', "elevation": 104.0},
+        ]
+        graph.add_node(
+            "w1",
+            kind="structure",
+            inverts=[dict(row) for row in original_inverts],
+            representative_invert=100.0,
+        )
+
+        _filter_suspect_crowns(graph)
+        node = graph.nodes["w1"]
+        self.assertNotIn("crown_suspects", node)
+        self.assertEqual(node.get("inverts"), original_inverts)
+        self.assertAlmostEqual(float(node.get("representative_invert")), 100.0, places=2)
 
 
 if __name__ == "__main__":

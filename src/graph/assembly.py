@@ -115,6 +115,117 @@ def _node_representative_invert(inverts: list[dict[str, Any]]) -> float | None:
     return min(elevations)
 
 
+def _parse_pipe_diameter_ft(size_str: str | None) -> float | None:
+    """Parse pipe size string like '18"' or '36"' to diameter in feet."""
+    if not size_str:
+        return None
+    match = re.search(r"(\d+(?:\.\d+)?)", str(size_str))
+    if not match:
+        return None
+    inches = float(match.group(1))
+    return inches / 12.0
+
+
+def _filter_suspect_crowns(graph: nx.DiGraph) -> None:
+    """Filter likely crown elevations from gravity-system node inverts."""
+    utility = str(graph.graph.get("utility_type", "")).upper()
+    if utility not in {"SD", "SS"}:
+        return
+
+    # Pass 1: multi-invert spread check on each structure node.
+    for node_id, node_data in graph.nodes(data=True):
+        if node_data.get("kind") != "structure":
+            continue
+        inverts = node_data.get("inverts")
+        if not isinstance(inverts, list) or len(inverts) < 2:
+            continue
+
+        elevations: list[float] = []
+        diameters: list[float] = []
+        for invert in inverts:
+            if not isinstance(invert, dict):
+                continue
+            elevation = invert.get("elevation")
+            if isinstance(elevation, (int, float)):
+                elevations.append(float(elevation))
+            diameter_ft = _parse_pipe_diameter_ft(str(invert.get("pipe_size") or ""))
+            if diameter_ft is not None:
+                diameters.append(diameter_ft)
+
+        if len(elevations) < 2 or not diameters:
+            continue
+
+        min_elev = min(elevations)
+        max_elev = max(elevations)
+        max_pipe_diameter_ft = max(diameters)
+        spread_threshold = max_pipe_diameter_ft + 0.5
+        if (max_elev - min_elev) <= spread_threshold:
+            continue
+
+        suspect_cutoff = min_elev + spread_threshold
+        crown_suspects: list[dict[str, Any]] = []
+        keep_inverts: list[dict[str, Any]] = []
+        for invert in inverts:
+            if not isinstance(invert, dict):
+                continue
+            elevation = invert.get("elevation")
+            if isinstance(elevation, (int, float)) and float(elevation) > suspect_cutoff:
+                crown_suspects.append(dict(invert))
+            else:
+                keep_inverts.append(dict(invert))
+
+        if not crown_suspects:
+            continue
+
+        existing = node_data.get("crown_suspects")
+        merged_suspects: list[dict[str, Any]] = []
+        if isinstance(existing, list):
+            for row in existing:
+                if isinstance(row, dict):
+                    merged_suspects.append(dict(row))
+        merged_suspects.extend(crown_suspects)
+
+        node_data["crown_suspects"] = merged_suspects
+        node_data["inverts"] = keep_inverts
+        node_data["representative_invert"] = _node_representative_invert(keep_inverts)
+        logger.debug(
+            "Filtered crown suspects at node %s: removed=%s kept=%s",
+            node_id,
+            len(crown_suspects),
+            len(keep_inverts),
+        )
+
+    # Pass 2: cross-edge drop comparison to flag likely crown contamination.
+    for u, v, edge_data in graph.edges(data=True):
+        labeled_slope = edge_data.get("slope")
+        length_lf = edge_data.get("length_lf")
+        if not isinstance(labeled_slope, (int, float)):
+            continue
+        if not isinstance(length_lf, (int, float)) or float(length_lf) <= 0:
+            continue
+        if graph.nodes[u].get("kind") != "structure" or graph.nodes[v].get("kind") != "structure":
+            continue
+
+        expected_drop = abs(float(labeled_slope)) * float(length_lf)
+        from_inv = graph.nodes[u].get("representative_invert")
+        to_inv = graph.nodes[v].get("representative_invert")
+        if not isinstance(from_inv, (int, float)) or not isinstance(to_inv, (int, float)):
+            continue
+
+        actual_drop = abs(float(from_inv) - float(to_inv))
+        if actual_drop > (expected_drop * 10.0) and actual_drop > 2.0:
+            edge_data["crown_contamination_candidate"] = True
+            suspect_node_id = u if float(from_inv) >= float(to_inv) else v
+            graph.nodes[suspect_node_id]["suspect_crown"] = True
+            logger.debug(
+                "Flagged crown contamination candidate on edge %s->%s (expected_drop=%.4f actual_drop=%.4f)",
+                u,
+                v,
+                expected_drop,
+                actual_drop,
+            )
+
+
 def _pipe_matches_utility(pipe: Pipe, utility_type: str) -> bool:
     return pipe.pipe_type.upper().strip() == utility_type.upper().strip()
 
@@ -318,6 +429,10 @@ def _merge_edge_provenance(kept: dict[str, Any], dropped: dict[str, Any]) -> Non
         {int(v) for v in list(kept.get("source_text_ids", [])) + list(dropped.get("source_text_ids", []))}
     )
     kept["sanitized"] = bool(kept.get("sanitized", False) or dropped.get("sanitized", False))
+    kept["crown_contamination_candidate"] = bool(
+        kept.get("crown_contamination_candidate", False)
+        or dropped.get("crown_contamination_candidate", False)
+    )
     for field in ("from_station", "to_station", "from_structure_hint", "to_structure_hint", "notes"):
         if not kept.get(field) and dropped.get(field):
             kept[field] = dropped[field]
@@ -438,6 +553,7 @@ def build_utility_graph(
             tc_elevation=item.tc_elevation,
             fl_elevation=item.fl_elevation,
             inverts=item.inverts,
+            is_existing=item.is_existing,
             representative_invert=_node_representative_invert(item.inverts),
             notes=item.notes,
             source_tile_ids=item.source_tile_ids,
@@ -561,6 +677,7 @@ def build_utility_graph(
                 sanitized=tile_sanitized,
             )
 
+    _filter_suspect_crowns(graph)
     _deduplicate_pipe_edges(graph)
     _orient_gravity_edges(graph)
 

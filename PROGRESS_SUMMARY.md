@@ -35,6 +35,10 @@ Use this structure for each day. Append newest days at the top.
 - Added quality-aware connectivity behavior so low-quality extraction runs are flagged without flooding warnings.
 - Completed Task 003 fixes: pipe deduplication, GB filtering in SD graph, directional invert matching, and fresh no-cache validation run.
 - Completed Task 004 fixes: same-station offset fallback, gravity edge reorientation (SD+SS), and proximity structure merge.
+- Completed Task 005 report UI pass: standalone HTML report generator with quality banner, fallback page detection, and provenance columns.
+- Updated extraction model routing: default `google/gemini-2.5-flash-lite` with automatic escalation to `google/gemini-3-flash-preview` on low confidence/issues.
+- Reverted extraction default model back to `google/gemini-3-flash-preview` after quality/cost comparison.
+- Completed Task 006 crown/invert heuristic in graph/check layers and validated on corridor + FNC outputs.
 - Added and standardized human-readable documentation entry points (`README.md` + doc conventions cleanup).
 
 ### Milestones
@@ -48,6 +52,14 @@ Use this structure for each day. Append newest days at the top.
   - `tests/test_graph_merge.py`
   - `tests/test_graph_assembly.py`
   - `tests/test_graph_checks.py`
+- Added report module:
+  - `src/report/html_report.py`
+- Added report smoke tests:
+  - `tests/test_html_report.py`
+- Added extraction escalation tests:
+  - `tests/test_run_hybrid_escalation.py`
+- Added crown heuristic tests:
+  - `tests/test_graph_checks.py` (5 new cases)
 
 ### Validation
 - Unit tests passed after implementation and tuning (`11/11`).
@@ -69,6 +81,23 @@ Use this structure for each day. Append newest days at the top.
   - SD findings reduced to `4` with `0` errors.
   - SS `flow_direction_error` reduced from `4` to `0`; SS findings reduced from `13` to `10`.
   - No uphill SD/SS edges remain after orientation pass.
+- Task 005 validation:
+  - Report smoke tests `2/2` passing.
+  - Full suite now `23/23` passing.
+  - Real report generated from `calibration-clean` artifacts:
+    - `output/reports/calibration-clean-report.html`
+- Model routing validation:
+  - Escalation tests `2/2` passing.
+  - Full suite updated to `25/25` passing.
+  - `run_hybrid` and `run_hybrid_batch` CLIs expose escalation flags.
+- Model default reversion validation:
+  - Default model confirmed as `google/gemini-3-flash-preview` in single and batch runners.
+  - Escalation tests remain passing with explicit lite-primary fixtures.
+- Task 006 validation:
+  - Graph checks tests `11/11` passing.
+  - Full suite `30/30` passing.
+  - Corridor SD slope mismatches reduced `4 -> 0` and reclassified to `crown_contamination` infos.
+  - FNC warning/info counts unchanged vs current post-fix baseline (`16` warnings, `12` info).
 
 ### Cost and Performance
 - No new model-inference spend required for graph/check work (ran on existing extraction outputs).
@@ -80,6 +109,9 @@ Use this structure for each day. Append newest days at the top.
   - `output/graphs/calibration-opt-ss.json`
   - `output/graphs/calibration-opt-w.json`
 - `README.md` (project overview + quickstart)
+- `src/report/html_report.py` (single-file HTML report CLI)
+- `src/extraction/run_hybrid.py` (automatic model escalation routing)
+- `docs/CODEX-TASK-006-CROWN-INVERT-HEURISTIC.md` (implemented task spec)
 - Updated summary and milestone tracking format in this file.
 
 ### Risks / Follow-Ups

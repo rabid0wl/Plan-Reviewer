@@ -12,7 +12,12 @@ from typing import Any
 
 from dotenv import load_dotenv
 
-from .run_hybrid import DEFAULT_MODEL, run_hybrid_extraction
+from .run_hybrid import (
+    DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
+    DEFAULT_ESCALATION_MODEL,
+    DEFAULT_MODEL,
+    run_hybrid_extraction,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +81,9 @@ def run_batch(
     prompt_dir: Path | None,
     fail_fast: bool,
     summary_out: Path,
+    escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
+    escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
+    escalation_enabled: bool = True,
 ) -> int:
     pairs, missing_items = _find_pairs(
         tiles_dir=tiles_dir,
@@ -126,6 +134,9 @@ def run_batch(
                 dry_run=dry_run,
                 no_cache=no_cache,
                 prompt_output_path=prompt_out_path,
+                escalation_model=escalation_model,
+                escalation_coherence_threshold=escalation_coherence_threshold,
+                escalation_enabled=escalation_enabled,
             )
 
             meta_payload: dict[str, Any] = {}
@@ -191,6 +202,9 @@ def run_batch(
         "tile_globs": tile_globs,
         "max_tiles": max_tiles,
         "model": model,
+        "escalation_model": escalation_model,
+        "escalation_coherence_threshold": escalation_coherence_threshold,
+        "escalation_enabled": escalation_enabled,
         "dry_run": dry_run,
         "no_cache": no_cache,
         "allow_low_coherence": allow_low_coherence,
@@ -251,6 +265,24 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Optional max number of tiles to process (sorted by filename).",
     )
     parser.add_argument("--model", type=str, default=DEFAULT_MODEL, help="OpenRouter model id.")
+    parser.add_argument(
+        "--escalation-model",
+        type=str,
+        default=DEFAULT_ESCALATION_MODEL,
+        help="Fallback model id used when low confidence or extraction issues are detected.",
+    )
+    parser.add_argument(
+        "--escalation-coherence-threshold",
+        type=float,
+        default=DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
+        help="Escalate to fallback model when text-layer coherence is below this threshold.",
+    )
+    parser.add_argument(
+        "--escalation",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable/disable automatic model escalation.",
+    )
     parser.add_argument(
         "--api-key-env",
         type=str,
@@ -342,6 +374,9 @@ def main() -> None:
         prompt_dir=args.prompt_dir,
         fail_fast=args.fail_fast,
         summary_out=summary_out,
+        escalation_model=args.escalation_model,
+        escalation_coherence_threshold=args.escalation_coherence_threshold,
+        escalation_enabled=args.escalation,
     )
     raise SystemExit(exit_code)
 
