@@ -10,6 +10,10 @@ import networkx as nx
 from ..extraction.schemas import TileExtraction
 from ..utils.parsing import parse_station
 
+_QUALITY_DEGRADATION_THRESHOLD = 0.30
+_STATION_DELTA_THRESHOLD_FT = 0.5
+_CROWN_CONTAMINATION_RATIO_THRESHOLD = 5.0
+
 
 @dataclass(frozen=True)
 class Finding:
@@ -30,14 +34,17 @@ class Finding:
 
 
 def _edge_id(u: str, v: str, data: dict[str, Any]) -> str:
+    """Return stable edge identifier from payload or a u->v fallback."""
     return str(data.get("edge_id") or f"{u}->{v}")
 
 
 def _unique_ints(values: list[int]) -> list[int]:
+    """Return sorted unique integers from a list-like input."""
     return sorted({int(v) for v in values})
 
 
 def _normalize_pipe_size(value: str | None) -> str:
+    """Normalize pipe size strings for matching across notational variants."""
     return str(value or "").upper().replace(" ", "")
 
 
@@ -46,7 +53,7 @@ def _get_directional_invert(
     other_node_data: dict[str, Any],
     pipe_size: str | None = None,
 ) -> float | None:
-    """Find invert facing the other node, optionally matching pipe size first."""
+    """Resolve the most directional invert value for a node-to-node connection."""
     representative = node_data.get("representative_invert")
     representative_val = float(representative) if isinstance(representative, (int, float)) else None
 
@@ -59,9 +66,9 @@ def _get_directional_invert(
     preferred_dirs: set[str] | None = None
     if isinstance(my_station, (int, float)) and isinstance(other_station, (int, float)):
         station_delta = float(other_station) - float(my_station)
-        if station_delta > 0.5:
+        if station_delta > _STATION_DELTA_THRESHOLD_FT:
             preferred_dirs = {"E", "NE", "SE"}
-        elif station_delta < -0.5:
+        elif station_delta < -_STATION_DELTA_THRESHOLD_FT:
             preferred_dirs = {"W", "NW", "SW"}
 
     if preferred_dirs is None:
@@ -136,7 +143,7 @@ def check_slope_consistency(graph: nx.DiGraph, tolerance: float = 0.0002) -> lis
         edge_flagged = bool(data.get("crown_contamination_candidate", False))
         from_crowns = graph.nodes[u].get("crown_suspects", [])
         to_crowns = graph.nodes[v].get("crown_suspects", [])
-        if slope_ratio > 5.0 and (
+        if slope_ratio > _CROWN_CONTAMINATION_RATIO_THRESHOLD and (
             edge_flagged
             or (isinstance(from_crowns, list) and len(from_crowns) > 0)
             or (isinstance(to_crowns, list) and len(to_crowns) > 0)
@@ -269,7 +276,9 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
     quality = graph.graph.get("quality_summary", {}) or {}
     total_tiles = int(quality.get("total_tiles") or 0)
     bad_tiles = int(quality.get("sanitized_tiles") or 0) + int(quality.get("skipped_tiles") or 0)
-    degraded_quality = total_tiles > 0 and (bad_tiles / total_tiles) > 0.30
+    degraded_quality = (
+        total_tiles > 0 and (bad_tiles / total_tiles) > _QUALITY_DEGRADATION_THRESHOLD
+    )
 
     structure_nodes = [
         (node_id, data)

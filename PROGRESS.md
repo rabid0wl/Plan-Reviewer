@@ -1368,3 +1368,36 @@ Downstream refresh:
   - SD findings: `3`
   - SS findings: `11`
   - W findings: `14` (type split now `dead_end_pipe=7`, `unanchored_pipe=6`)
+
+### 2026-02-23 - Task 009 structured output implemented
+
+Implemented `docs/CODEX-TASK-009-STRUCTURED-OUTPUT.md` in extraction runtime.
+
+Code changes:
+
+- `src/extraction/run_hybrid.py`
+  - Added `use_structured_output: bool = True` to `call_openrouter_vision(...)`.
+  - Added API payload `response_format={"type": "json_object"}` when structured output is enabled.
+  - Added provider-compatibility fallback: if first API response is HTTP 400 with structured output enabled, retry once without `response_format` and log a warning.
+  - Updated JSON parse flow in `run_hybrid_extraction(...)`:
+    - primary path: `json.loads(raw_text)`
+    - fallback path: `_extract_json_candidate(raw_text)` + `json.loads(...)`
+    - `non_object_json` guard preserved.
+  - Added `use_structured_output` to `_compute_cache_key(...)` and included `response_format_type` in cache payload.
+  - `CACHE_SCHEMA_VERSION` unchanged (`hybrid-cache-v2`) per task guidance.
+
+- `tests/test_run_hybrid_escalation.py`
+  - Added `test_bare_json_parsed_directly_without_regex`
+  - Added `test_fenced_json_falls_back_to_regex_extractor`
+  - Added `test_call_openrouter_retries_without_response_format_on_400`
+
+Validation:
+
+- `python -m unittest tests.test_run_hybrid_escalation -v` -> **7/7 passing**
+- `python -m unittest discover -s tests -v` -> **40/40 passing**
+
+Live smoke test:
+
+- `python -m src.extraction.run_hybrid --tile output/intake-corridor-expanded/tiles/p24_r0_c0.png --text-layer output/intake-corridor-expanded/text_layers/p24_r0_c0.json --out output/extractions/structured-smoke/p24_r0_c0.json --model google/gemini-3-flash-preview --no-cache`
+- Result: `status: ok`
+- Raw output file: `output/extractions/structured-smoke/p24_r0_c0.json.raw.txt` contains a bare JSON object (no markdown fences/preamble).

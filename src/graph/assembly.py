@@ -22,6 +22,18 @@ _TILE_META_RE = re.compile(r"^p\d+_r\d+_c\d+\.json\.meta\.json$")
 
 _CONFIDENCE_ORDER = {"none": 0, "low": 1, "medium": 2, "high": 3}
 _REFERENCE_SHEET_TYPES: frozenset[str] = frozenset({"signing_striping"})
+_CROWN_SPREAD_BUFFER_FT = 0.5
+_CROWN_RATIO_THRESHOLD = 10.0
+_HINT_CLOSE_FT = 5.0
+_HINT_MEDIUM_FT = 10.0
+_HINT_FAR_FT = 25.0
+_INFER_ENDPOINT_HIGH_FT = 2.0
+_INFER_ENDPOINT_MEDIUM_FT = 10.0
+_INFER_ENDPOINT_LOW_FT = 30.0
+_QUALITY_GRADE_A_MAX_BAD_RATIO = 0.10
+_QUALITY_GRADE_B_MAX_BAD_RATIO = 0.30
+_QUALITY_GRADE_C_MAX_BAD_RATIO = 0.50
+_QUALITY_WARNING_BAD_RATIO = 0.30
 
 
 def load_extractions_with_meta(
@@ -46,11 +58,12 @@ def load_extractions_with_meta(
 
 
 def _quality_grade(bad_ratio: float) -> str:
-    if bad_ratio <= 0.10:
+    """Map extraction bad-ratio to quality grade."""
+    if bad_ratio <= _QUALITY_GRADE_A_MAX_BAD_RATIO:
         return "A"
-    if bad_ratio <= 0.30:
+    if bad_ratio <= _QUALITY_GRADE_B_MAX_BAD_RATIO:
         return "B"
-    if bad_ratio <= 0.50:
+    if bad_ratio <= _QUALITY_GRADE_C_MAX_BAD_RATIO:
         return "C"
     return "D"
 
@@ -108,7 +121,7 @@ def build_quality_summary(
         warnings.append(f"{sanitized_tiles} tiles had sanitizer recovery")
     if skipped_tiles:
         warnings.append(f"{skipped_tiles} tiles skipped (low coherence)")
-    if bad_ratio > 0.30:
+    if bad_ratio > _QUALITY_WARNING_BAD_RATIO:
         warnings.append("Extraction quality below threshold — findings may be incomplete")
 
     return {
@@ -122,6 +135,7 @@ def build_quality_summary(
 
 
 def _node_representative_invert(inverts: list[dict[str, Any]]) -> float | None:
+    """Return the minimum invert elevation used as representative node invert."""
     elevations: list[float] = []
     for invert in inverts:
         value = invert.get("elevation")
@@ -175,7 +189,7 @@ def _filter_suspect_crowns(graph: nx.DiGraph) -> None:
         min_elev = min(elevations)
         max_elev = max(elevations)
         max_pipe_diameter_ft = max(diameters)
-        spread_threshold = max_pipe_diameter_ft + 0.5
+        spread_threshold = max_pipe_diameter_ft + _CROWN_SPREAD_BUFFER_FT
         if (max_elev - min_elev) <= spread_threshold:
             continue
 
@@ -230,7 +244,7 @@ def _filter_suspect_crowns(graph: nx.DiGraph) -> None:
             continue
 
         actual_drop = abs(float(from_inv) - float(to_inv))
-        if actual_drop > (expected_drop * 10.0) and actual_drop > 2.0:
+        if actual_drop > (expected_drop * _CROWN_RATIO_THRESHOLD) and actual_drop > 2.0:
             edge_data["crown_contamination_candidate"] = True
             suspect_node_id = u if float(from_inv) >= float(to_inv) else v
             graph.nodes[suspect_node_id]["suspect_crown"] = True
@@ -244,10 +258,12 @@ def _filter_suspect_crowns(graph: nx.DiGraph) -> None:
 
 
 def _pipe_matches_utility(pipe: Pipe, utility_type: str) -> bool:
+    """Return whether a pipe belongs to the utility being assembled."""
     return pipe.pipe_type.upper().strip() == utility_type.upper().strip()
 
 
 def _hint_score(node_data: dict[str, Any], hint: str | None) -> int:
+    """Return hint-text affinity score between a candidate node and endpoint hint."""
     if not hint:
         return 0
     hint_norm = re.sub(r"\s+", " ", hint.upper()).strip()
@@ -272,15 +288,16 @@ def _hint_score(node_data: dict[str, Any], hint: str | None) -> int:
 
 
 def _pick_match_confidence(*, distance: float | None, hint_score: int) -> str:
+    """Convert hint quality and station distance into a match confidence label."""
     if distance is None:
         return "medium" if hint_score >= 1 else "none"
-    if hint_score >= 2 and distance <= 5.0:
+    if hint_score >= 2 and distance <= _HINT_CLOSE_FT:
         return "high"
-    if hint_score >= 1 and distance <= 10.0:
+    if hint_score >= 1 and distance <= _HINT_MEDIUM_FT:
         return "medium"
-    if distance <= 5.0:
+    if distance <= _HINT_CLOSE_FT:
         return "medium"
-    if distance <= 25.0:
+    if distance <= _HINT_FAR_FT:
         return "low"
     return "none"
 
@@ -292,6 +309,7 @@ def _best_node_match(
     hint: str | None,
     exclude_node_id: str | None = None,
 ) -> tuple[str | None, str]:
+    """Pick the best structure candidate for one endpoint and confidence grade."""
     ranked: list[tuple[int, float, str]] = []
     for node_id, node_data in candidates:
         if exclude_node_id and node_id == exclude_node_id:
@@ -318,15 +336,17 @@ def _best_node_match(
 
 
 def _worse_confidence(a: str, b: str) -> str:
+    """Return the lower of two confidence labels."""
     return a if _CONFIDENCE_ORDER[a] <= _CONFIDENCE_ORDER[b] else b
 
 
 def _confidence_from_station_delta(delta: float) -> str:
-    if delta <= 2.0:
+    """Map station-distance residual to endpoint inference confidence."""
+    if delta <= _INFER_ENDPOINT_HIGH_FT:
         return "high"
-    if delta <= 10.0:
+    if delta <= _INFER_ENDPOINT_MEDIUM_FT:
         return "medium"
-    if delta <= 30.0:
+    if delta <= _INFER_ENDPOINT_LOW_FT:
         return "low"
     return "none"
 
@@ -337,6 +357,7 @@ def _infer_other_endpoint_from_length(
     anchor_node_id: str,
     length_lf: float | None,
 ) -> tuple[str | None, str]:
+    """Infer missing opposite endpoint by projecting pipe length from anchor station."""
     if not isinstance(length_lf, (int, float)) or length_lf <= 0:
         return None, "none"
     candidate_map = dict(candidates)

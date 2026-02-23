@@ -21,6 +21,7 @@ _WATER_STRUCTURE_TYPES = {
 
 
 def _normalize_structure_type(value: str | None) -> str:
+    """Normalize structure type labels to lowercase snake_case tokens."""
     if not value:
         return ""
     token = value.strip().lower().replace("-", "_").replace(" ", "_")

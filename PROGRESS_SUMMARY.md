@@ -182,3 +182,12 @@ Use this structure for each day. Append newest days at the top.
   - Corridor-expanded extraction improved from `29/30 OK, 1 validation_error` to `30/30 OK, 0 validation_error`.
   - Previously failed tile `p26_r1_c0` now writes valid output (`page_number=26`) and is included downstream.
 - Refreshed `corridor-expanded` graphs/findings/report after recovery.
+- Task 009 (structured output) implemented in extraction runtime:
+  - OpenRouter calls now request `response_format: {"type": "json_object"}`.
+  - Added safe fallback for provider/model 400s: retry once without `response_format`.
+  - Parsing now tries `json.loads(raw_text)` first, with `_extract_json_candidate(...)` retained as fallback.
+  - Cache key now includes `response_format_type` (no `CACHE_SCHEMA_VERSION` bump).
+- Validation:
+  - `test_run_hybrid_escalation`: `7/7` passing.
+  - Full suite: `40/40` passing.
+  - Live smoke extraction run succeeded with `status: ok`, and raw model output was bare JSON.

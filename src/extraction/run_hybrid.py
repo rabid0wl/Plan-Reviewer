@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 from pydantic import ValidationError
 
 from .prompts import build_hybrid_prompt
-from .schemas import TileExtraction
+from .schemas import TileExtraction, _WATER_STRUCTURE_TYPES, _normalize_structure_type
 
 logger = logging.getLogger(__name__)
 
@@ -27,18 +27,6 @@ DEFAULT_MODEL = "google/gemini-3-flash-preview"
 DEFAULT_ESCALATION_MODEL = "google/gemini-3-flash-preview"
 DEFAULT_ESCALATION_COHERENCE_THRESHOLD = 0.70
 CACHE_SCHEMA_VERSION = "hybrid-cache-v2"
-_WATER_STRUCTURE_TYPES = {
-    "gate_valve",
-    "fire_hydrant",
-    "blow_off",
-    "air_valve",
-    "prv",
-    "meter",
-    "tee",
-    "reducer",
-    "bend",
-    "service_connection",
-}
 _TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_r\d+_c\d+$", re.IGNORECASE)
 
 
@@ -59,8 +47,10 @@ def _compute_cache_key(
     model: str,
     temperature: float,
     max_tokens: int,
+    use_structured_output: bool = True,
     cache_schema_version: str = CACHE_SCHEMA_VERSION,
 ) -> str:
+    """Build a stable cache key for one prompt-image-model extraction request."""
     image_hash = hashlib.sha256(image_bytes).hexdigest()
     payload = {
         "cache_schema_version": cache_schema_version,
@@ -69,12 +59,14 @@ def _compute_cache_key(
         "max_tokens": max_tokens,
         "prompt": prompt,
         "image_sha256": image_hash,
+        "response_format_type": "json_object" if use_structured_output else "none",
     }
     raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
 
 
 def _extract_json_candidate(text: str) -> str:
+    """Extract the best-effort JSON object substring from mixed model text."""
     stripped = text.strip()
     if stripped.startswith("{") and stripped.endswith("}"):
         return stripped
@@ -111,13 +103,6 @@ def _non_empty_str(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
-def _normalize_structure_type(value: Any) -> str:
-    if not isinstance(value, str):
-        return ""
-    token = value.strip().lower().replace("-", "_").replace(" ", "_")
-    return re.sub(r"[^a-z0-9_]+", "", token)
-
-
 def _coerce_is_existing(value: Any) -> bool:
     if isinstance(value, bool):
         return value
@@ -133,6 +118,7 @@ def _coerce_is_existing(value: Any) -> bool:
 
 
 def _sanitize_source_text_ids(value: Any) -> list[int]:
+    """Coerce a mixed list of ids into a clean list of integers."""
     if not isinstance(value, list):
         return []
     cleaned: list[int] = []
@@ -145,6 +131,7 @@ def _sanitize_source_text_ids(value: Any) -> list[int]:
 
 
 def _coerce_int(value: Any) -> int | None:
+    """Return an integer when coercion succeeds, else None."""
     try:
         return int(value)
     except (TypeError, ValueError):
@@ -152,6 +139,7 @@ def _coerce_int(value: Any) -> int | None:
 
 
 def _page_number_from_tile_id(tile_id: Any) -> int | None:
+    """Extract page number from tile ids shaped like pNN_rX_cY."""
     if not isinstance(tile_id, str):
         return None
     match = _TILE_ID_PAGE_RE.match(tile_id.strip())
@@ -202,7 +190,9 @@ def _sanitize_extraction_payload(payload: dict[str, Any]) -> tuple[dict[str, Any
                 dropped["structures"] += 1
                 continue
 
-            stype_norm = _normalize_structure_type(structure_type)
+            stype_norm = _normalize_structure_type(
+                structure_type if isinstance(structure_type, str) else None
+            )
             requires_offset = stype_norm not in _WATER_STRUCTURE_TYPES
             offset = structure.get("offset")
             if requires_offset and not _non_empty_str(offset):
@@ -288,6 +278,7 @@ def call_openrouter_vision(
     max_tokens: int,
     timeout_sec: int,
     endpoint: str = DEFAULT_OPENROUTER_URL,
+    use_structured_output: bool = True,
 ) -> tuple[str, dict[str, Any]]:
     """Call OpenRouter vision model and return raw text + response JSON."""
     headers = {
@@ -310,6 +301,8 @@ def call_openrouter_vision(
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
+    if use_structured_output:
+        payload["response_format"] = {"type": "json_object"}
 
     retryable_statuses = {429, 500, 502, 503, 504}
     max_retries = 3
@@ -318,6 +311,14 @@ def call_openrouter_vision(
     for attempt in range(max_retries):
         try:
             response = requests.post(endpoint, headers=headers, json=payload, timeout=timeout_sec)
+            if response.status_code == 400 and use_structured_output:
+                logger.warning(
+                    "response_format rejected by provider for %s; retrying without structured output.",
+                    model,
+                )
+                payload.pop("response_format", None)
+                use_structured_output = False
+                response = requests.post(endpoint, headers=headers, json=payload, timeout=timeout_sec)
             if response.status_code in retryable_statuses and attempt < max_retries - 1:
                 wait = 3**attempt
                 logger.warning(
@@ -379,6 +380,7 @@ def run_hybrid_extraction(
     escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
     escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
     escalation_enabled: bool = True,
+    use_structured_output: bool = True,
     attempted_models: list[str] | None = None,
     escalation_reason: str | None = None,
     _escalated: bool = False,
@@ -445,6 +447,7 @@ def run_hybrid_extraction(
             escalation_model=escalation_model,
             escalation_coherence_threshold=escalation_coherence_threshold,
             escalation_enabled=escalation_enabled,
+            use_structured_output=use_structured_output,
             attempted_models=attempt_chain,
             escalation_reason=reason,
             _escalated=True,
@@ -483,6 +486,7 @@ def run_hybrid_extraction(
         model=model,
         temperature=temperature,
         max_tokens=max_tokens,
+        use_structured_output=use_structured_output,
     )
 
     if (
@@ -537,6 +541,7 @@ def run_hybrid_extraction(
             temperature=temperature,
             max_tokens=max_tokens,
             timeout_sec=timeout_sec,
+            use_structured_output=use_structured_output,
         )
     except Exception:
         escalated_exit_code = _run_escalation("api_call_error")
@@ -547,29 +552,32 @@ def run_hybrid_extraction(
     raw_output_path.parent.mkdir(parents=True, exist_ok=True)
     raw_output_path.write_text(raw_text, encoding="utf-8")
 
-    json_candidate = _extract_json_candidate(raw_text)
     try:
-        payload_obj = json.loads(json_candidate)
-    except json.JSONDecodeError as exc:
-        escalated_exit_code = _run_escalation("json_parse_error")
-        if escalated_exit_code is not None:
-            return escalated_exit_code
-        logger.error("Model JSON parse failed for %s", tile_id)
-        meta_output_path.parent.mkdir(parents=True, exist_ok=True)
-        with meta_output_path.open("w", encoding="utf-8") as f:
-            json.dump(
-                {
-                    "status": "validation_error",
-                    **_meta_common(),
-                    "error": f"JSON parse error: {exc}",
-                    "cache_key": cache_key,
-                    "cache_hit": False,
-                },
-                f,
-                indent=2,
-                ensure_ascii=False,
-            )
-        return 2
+        payload_obj = json.loads(raw_text)
+    except json.JSONDecodeError:
+        try:
+            json_candidate = _extract_json_candidate(raw_text)
+            payload_obj = json.loads(json_candidate)
+        except (ValueError, json.JSONDecodeError) as exc:
+            escalated_exit_code = _run_escalation("json_parse_error")
+            if escalated_exit_code is not None:
+                return escalated_exit_code
+            logger.error("Model JSON parse failed for %s", tile_id)
+            meta_output_path.parent.mkdir(parents=True, exist_ok=True)
+            with meta_output_path.open("w", encoding="utf-8") as f:
+                json.dump(
+                    {
+                        "status": "validation_error",
+                        **_meta_common(),
+                        "error": f"JSON parse error: {exc}",
+                        "cache_key": cache_key,
+                        "cache_hit": False,
+                    },
+                    f,
+                    indent=2,
+                    ensure_ascii=False,
+                )
+            return 2
 
     if not isinstance(payload_obj, dict):
         escalated_exit_code = _run_escalation("non_object_json")
