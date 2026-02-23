@@ -178,6 +178,141 @@ class HybridEscalationTests(unittest.TestCase):
             self.assertEqual(meta.get("escalation_reason"), "sanitized_recovery")
             self.assertFalse(meta.get("sanitized"))
 
+    def test_null_page_number_recovered_from_text_layer(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            tile_path = root / "p26_r1_c0.png"
+            text_layer_path = root / "p26_r1_c0.json"
+            out_path = root / "p26_r1_c0.out.json"
+            raw_out_path = root / "p26_r1_c0.raw.txt"
+            meta_out_path = root / "p26_r1_c0.meta.json"
+
+            tile_path.write_bytes(b"not-a-real-image")
+            _write_json(
+                text_layer_path,
+                {
+                    "tile_id": "p26_r1_c0",
+                    "page_number": 26,
+                    "coherence_score": 0.95,
+                    "is_hybrid_viable": True,
+                    "items": [],
+                },
+            )
+
+            payload = {
+                "tile_id": "p26_r1_c0",
+                "page_number": None,
+                "sheet_type": "profile_view",
+                "utility_types_present": ["W"],
+                "structures": [
+                    {
+                        "id": "W-TEE-1",
+                        "structure_type": "tee",
+                        "station": "20+00.00",
+                        "offset": None,
+                        "source_text_ids": [10],
+                    }
+                ],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+
+            with patch(
+                "src.extraction.run_hybrid.call_openrouter_vision",
+                return_value=(json.dumps(payload), {"usage": {"cost": 0.001}}),
+            ):
+                exit_code = run_hybrid_extraction(
+                    tile_path=tile_path,
+                    text_layer_path=text_layer_path,
+                    output_path=out_path,
+                    raw_output_path=raw_out_path,
+                    meta_output_path=meta_out_path,
+                    model=DEFAULT_ESCALATION_MODEL,
+                    api_key="dummy",
+                    referer="https://planreviewer.local",
+                    title="test",
+                    temperature=0.0,
+                    max_tokens=1024,
+                    timeout_sec=30,
+                    allow_low_coherence=False,
+                    dry_run=False,
+                    no_cache=True,
+                    prompt_output_path=None,
+                    escalation_model=DEFAULT_ESCALATION_MODEL,
+                    escalation_enabled=False,
+                )
+
+            self.assertEqual(exit_code, 0)
+            extraction = json.loads(out_path.read_text(encoding="utf-8"))
+            self.assertEqual(extraction.get("tile_id"), "p26_r1_c0")
+            self.assertEqual(extraction.get("page_number"), 26)
+            meta = json.loads(meta_out_path.read_text(encoding="utf-8"))
+            self.assertEqual(meta.get("status"), "ok")
+
+    def test_null_metadata_recovered_from_tile_id_when_text_layer_page_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            tile_path = root / "p26_r1_c0.png"
+            text_layer_path = root / "p26_r1_c0.json"
+            out_path = root / "p26_r1_c0.out.json"
+            raw_out_path = root / "p26_r1_c0.raw.txt"
+            meta_out_path = root / "p26_r1_c0.meta.json"
+
+            tile_path.write_bytes(b"not-a-real-image")
+            _write_json(
+                text_layer_path,
+                {
+                    "tile_id": "p26_r1_c0",
+                    "coherence_score": 0.95,
+                    "is_hybrid_viable": True,
+                    "items": [],
+                },
+            )
+
+            payload = {
+                "tile_id": None,
+                "page_number": None,
+                "sheet_type": "profile_view",
+                "utility_types_present": ["W"],
+                "structures": [],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+
+            with patch(
+                "src.extraction.run_hybrid.call_openrouter_vision",
+                return_value=(json.dumps(payload), {"usage": {"cost": 0.001}}),
+            ):
+                exit_code = run_hybrid_extraction(
+                    tile_path=tile_path,
+                    text_layer_path=text_layer_path,
+                    output_path=out_path,
+                    raw_output_path=raw_out_path,
+                    meta_output_path=meta_out_path,
+                    model=DEFAULT_ESCALATION_MODEL,
+                    api_key="dummy",
+                    referer="https://planreviewer.local",
+                    title="test",
+                    temperature=0.0,
+                    max_tokens=1024,
+                    timeout_sec=30,
+                    allow_low_coherence=False,
+                    dry_run=False,
+                    no_cache=True,
+                    prompt_output_path=None,
+                    escalation_model=DEFAULT_ESCALATION_MODEL,
+                    escalation_enabled=False,
+                )
+
+            self.assertEqual(exit_code, 0)
+            extraction = json.loads(out_path.read_text(encoding="utf-8"))
+            self.assertEqual(extraction.get("tile_id"), "p26_r1_c0")
+            self.assertEqual(extraction.get("page_number"), 26)
+
 
 if __name__ == "__main__":
     unittest.main()

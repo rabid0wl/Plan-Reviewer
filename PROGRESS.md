@@ -15,6 +15,8 @@ Quick-reference for every architectural choice. Newest first.
 
 | # | Date | Decision | Reasoning | Status |
 |---|------|----------|-----------|--------|
+| D14 | 2026-02-22 | Pre-validate null tile metadata before Pydantic schema check | Model occasionally returns `page_number: null`. This fails Pydantic before post-validation corrector can run, losing the tile permanently. Fix: `_pre_correct_tile_metadata()` injects correct values from text_layer before first `model_validate()`. Also added `_page_number_from_tile_id()` as a second fallback when text_layer is also missing the field. | Validated |
+| D13 | 2026-02-22 | Tag signing_striping pipe edges as `is_reference_only`; suppress connectivity findings | SSM sheets show existing utilities for reference only — no station/slope/length. Pipes survive sanitization but generate false unanchored/dead_end findings and cross-corridor false matches. Tag edges at assembly, skip in `check_connectivity()`. Added page-level fallback via `_reference_only_pages()` for tiles misclassified as plan_view on an SSM page. | Validated |
 | D12 | 2026-02-21 | Auto-correct tile metadata from text layer payload | LLM frequently hallucinates tile_id and page_number. Codex implemented auto-correction from source payload — fired 12/20 times in calibration. | Validated |
 | D11 | 2026-02-21 | Gemini Flash for calibration, Claude/Opus for production | $0.02/tile with Flash is ideal for iteration (~$0.40 for 20 tiles). Switch to higher-accuracy model once pipeline is stable. | Active |
 | D10 | 2026-02-21 | Flat LLM output schema → Python assembles graph | LLMs lose track in deeply nested JSON. Extract flat lists (structures[], pipes[], callouts[]), Python stitches graph in Phase 3.5. | Adopted |
@@ -40,7 +42,7 @@ Tracked here until resolved, then moved to Decisions Log.
 | Q2 | 2026-02-21 | Can adaptive cropping (two-pass) reliably identify annotation regions? | Full-page triage pass at low res can see layout but may miss sparse annotations. Need to test. |
 | ~~Q3~~ | ~~2026-02-21~~ | ~~Best data structure for cross-reference inventory?~~ | **RESOLVED → D7.** Graph: nodes=structures, edges=pipes. |
 | ~~Q4~~ | ~~2026-02-21~~ | ~~Profile extraction: how to handle SS/W label confusion?~~ | **RESOLVED → D6.** Text layer provides exact labels; vision no longer sole source. |
-| Q5 | 2026-02-21 | Can we skip ~30% of sheets (cover, gen notes, signing/striping) in extraction? | Would cut cost from ~$35-50 to ~$15-25 per plan set. Need to confirm which sheets can be safely skipped. |
+| ~~Q5~~ | ~~2026-02-21~~ | ~~Can we skip ~30% of sheets (cover, gen notes, signing/striping) in extraction?~~ | **RESOLVED → D13.** Signing/striping sheets: still extract (structures correctly dropped by sanitizer, pipes kept), but tag edges `is_reference_only=True` and suppress connectivity findings. Net effect: SSM sheets cost ~$0.05/page but produce zero false findings. Cover/gen-notes sheets are already low-cost (few text items). Skip optimization is low-priority. |
 
 ---
 
@@ -1268,3 +1270,101 @@ Key result:
 
 - FNC severity totals remained at `warning=16, info=12, error=0` (no regression vs current post-fix baseline)
 - Verified no crown flags on water graph nodes in corridor crownfix output (`0/19`)
+
+### 2026-02-23 - Task 007 reference-sheet suppression (+ page fallback)
+
+Implemented and validated `docs/CODEX-TASK-007-REFERENCE-SHEET-SUPPRESSION.md` with an additional fallback for mixed tile classification on reference sheets.
+
+Code changes:
+
+- `src/graph/assembly.py`
+  - Added `_reference_only_pages(extractions)` to infer reference pages when:
+    - at least one tile is `signing_striping`
+    - no tile is `profile_view`
+  - Added page-level fallback in `build_utility_graph(...)`:
+    - `is_reference_only=True` for edges on inferred reference pages, even when a tile is misclassified as `plan_view`
+  - Preserved `is_reference_only` during edge dedup merge (`_merge_edge_provenance(...)`)
+
+- `src/graph/checks.py`
+  - `check_connectivity(...)` now skips edges with `is_reference_only=True`
+
+- `tests/test_graph_checks.py`
+  - Added:
+    - `test_reference_only_edge_suppresses_unanchored`
+    - `test_non_reference_edge_still_flags_unanchored`
+
+- `tests/test_graph_assembly.py`
+  - Added:
+    - `test_reference_only_page_fallback_flags_misclassified_tile`
+
+Validation:
+
+- `python -m unittest discover -s tests -v` -> **33/33 passing**
+
+Corridor-expanded refresh (`output/extractions/corridor-expanded` reused):
+
+- Regenerated findings:
+  - `output/graphs/findings/corridor-expanded-sd-findings.json`
+  - `output/graphs/findings/corridor-expanded-ss-findings.json`
+  - `output/graphs/findings/corridor-expanded-w-findings.json`
+- Regenerated report:
+  - `output/reports/corridor-expanded-report.html`
+
+Observed impact:
+
+- SD findings: **6 -> 3**
+  - `dead_end_pipe`: **1 -> 0**
+  - `unanchored_pipe`: **2 -> 0**
+- SS findings: **18 -> 11** (from prior post-Task007 state)
+  - All connectivity findings from pages **93/103** suppressed (`0` remaining on those pages)
+- W findings: **24 -> 14** (reference connectivity noise reduced)
+
+FNC regression check (`output/extractions/calibration-clean`):
+
+- `is_reference_only=True` edges: **0** for SD/SS/W
+- Severity totals unchanged at **warning=8, info=7, error=0** (no regression)
+
+### 2026-02-23 - Task 008 null page-number recovery (pre-validation)
+
+Reviewed `docs/CODEX-TASK-008-NULL-PAGE-NUMBER-RECOVERY.md` and implemented the core idea, plus one hardening improvement.
+
+Code changes:
+
+- `src/extraction/run_hybrid.py`
+  - Added `_pre_correct_tile_metadata(payload, text_layer)` and invoked it before first `TileExtraction.model_validate(...)`.
+  - Added `_coerce_int(...)` and `_page_number_from_tile_id(...)` helpers.
+  - Added `_TILE_ID_PAGE_RE` for deriving page number from `tile_id` pattern (`p26_r1_c0 -> 26`).
+  - Hardened post-validation correction logic:
+    - `expected_page_number` now safely resolves from text layer or tile_id fallback instead of direct `int(...)` cast.
+
+Notes:
+- This preserves strict schema requirements (`page_number` still required in `TileExtraction`).
+- It only patches null/missing top-level metadata before validation; wrong-but-valid integers are still corrected in existing post-validation logic.
+
+Tests:
+
+- `tests/test_run_hybrid_escalation.py`
+  - Added `test_null_page_number_recovered_from_text_layer`
+  - Added `test_null_metadata_recovered_from_tile_id_when_text_layer_page_missing`
+
+Validation:
+
+- `python -m unittest tests.test_run_hybrid_escalation -v` -> **4/4 passing**
+- `python -m unittest discover -s tests -v` -> **35/35 passing**
+
+Corridor-expanded re-run (cache-aware):
+
+- Re-ran batch extraction:
+  - `python -m src.extraction.run_hybrid_batch --tiles-dir output/intake-corridor-expanded/tiles --text-layers-dir output/intake-corridor-expanded/text_layers --out-dir output/extractions/corridor-expanded --model google/gemini-3-flash-preview --timeout-sec 180`
+- Result: **30/30 OK** (`validation_error: 0`)
+- Recovered tile:
+  - `output/extractions/corridor-expanded/p26_r1_c0.json.meta.json` status now `ok`
+  - `output/extractions/corridor-expanded/p26_r1_c0.json` exists with `tile_id: p26_r1_c0`, `page_number: 26`
+
+Downstream refresh:
+
+- Regenerated graphs/findings/report for `corridor-expanded`.
+- Findings remained stable for SD/SS after prior Task 007 suppression; W shifted slightly with recovered tile data:
+  - SD findings: `3`
+  - SS findings: `11`
+  - W findings: `14` (type split now `dead_end_pipe=7`, `unanchored_pipe=6`)

@@ -70,6 +70,43 @@ class GraphChecksTests(unittest.TestCase):
         self.assertEqual(len(findings), 1)
         self.assertEqual(findings[0].finding_type, "connectivity_unverifiable")
 
+    def test_reference_only_edge_suppresses_unanchored(self) -> None:
+        graph = nx.DiGraph(utility_type="SS")
+        graph.add_node("a1", kind="orphan_anchor")
+        graph.add_node("a2", kind="orphan_anchor")
+        graph.add_edge(
+            "a1",
+            "a2",
+            edge_id="ref_edge",
+            matched_confidence="none",
+            is_reference_only=True,
+            source_page_numbers=[103],
+            source_text_ids=[],
+        )
+
+        findings = check_connectivity(graph)
+        finding_types = {f.finding_type for f in findings}
+        self.assertNotIn("unanchored_pipe", finding_types)
+        self.assertNotIn("dead_end_pipe", finding_types)
+
+    def test_non_reference_edge_still_flags_unanchored(self) -> None:
+        graph = nx.DiGraph(utility_type="SS")
+        graph.add_node("s1", kind="structure", source_page_numbers=[24], source_text_ids=[1])
+        graph.add_node("a1", kind="orphan_anchor")
+        graph.add_edge(
+            "s1",
+            "a1",
+            edge_id="real_edge",
+            matched_confidence="none",
+            is_reference_only=False,
+            source_page_numbers=[24],
+            source_text_ids=[2],
+        )
+
+        findings = check_connectivity(graph)
+        finding_types = {f.finding_type for f in findings}
+        self.assertIn("unanchored_pipe", finding_types)
+
     def test_flow_direction_backfall(self) -> None:
         graph = nx.DiGraph(utility_type="SS")
         graph.add_node("n_up", kind="structure", representative_invert=100.0, source_text_ids=[1])

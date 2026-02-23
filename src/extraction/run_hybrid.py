@@ -39,6 +39,7 @@ _WATER_STRUCTURE_TYPES = {
     "bend",
     "service_connection",
 }
+_TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_r\d+_c\d+$", re.IGNORECASE)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -141,6 +142,42 @@ def _sanitize_source_text_ids(value: Any) -> list[int]:
         except Exception:
             continue
     return cleaned
+
+
+def _coerce_int(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _page_number_from_tile_id(tile_id: Any) -> int | None:
+    if not isinstance(tile_id, str):
+        return None
+    match = _TILE_ID_PAGE_RE.match(tile_id.strip())
+    if not match:
+        return None
+    return _coerce_int(match.group("page"))
+
+
+def _pre_correct_tile_metadata(payload: dict[str, Any], text_layer: dict[str, Any]) -> None:
+    """Patch null/missing tile metadata from authoritative text-layer values."""
+    authoritative_tile_id = str(text_layer.get("tile_id", "")).strip()
+    if not _non_empty_str(payload.get("tile_id")) and authoritative_tile_id:
+        payload["tile_id"] = authoritative_tile_id
+
+    authoritative_page_number = _coerce_int(text_layer.get("page_number"))
+    if authoritative_page_number is None:
+        authoritative_page_number = _page_number_from_tile_id(authoritative_tile_id)
+    if authoritative_page_number is None:
+        authoritative_page_number = _page_number_from_tile_id(payload.get("tile_id"))
+
+    raw_page_number = payload.get("page_number")
+    if (
+        (raw_page_number is None or (isinstance(raw_page_number, str) and not raw_page_number.strip()))
+        and authoritative_page_number is not None
+    ):
+        payload["page_number"] = authoritative_page_number
 
 
 def _sanitize_extraction_payload(payload: dict[str, Any]) -> tuple[dict[str, Any], dict[str, int]]:
@@ -557,6 +594,7 @@ def run_hybrid_extraction(
 
     sanitized = False
     dropped_invalid_counts = {"structures": 0, "inverts": 0, "pipes": 0, "callouts": 0}
+    _pre_correct_tile_metadata(payload_obj, text_layer)
     try:
         extraction = TileExtraction.model_validate(payload_obj)
     except ValidationError as exc:
@@ -597,7 +635,11 @@ def run_hybrid_extraction(
             return escalated_exit_code
 
     expected_tile_id = str(text_layer.get("tile_id", extraction.tile_id))
-    expected_page_number = int(text_layer.get("page_number", extraction.page_number))
+    expected_page_number = _coerce_int(text_layer.get("page_number"))
+    if expected_page_number is None:
+        expected_page_number = _page_number_from_tile_id(expected_tile_id)
+    if expected_page_number is None:
+        expected_page_number = extraction.page_number
     corrected_fields: dict[str, Any] = {}
     if extraction.tile_id != expected_tile_id:
         corrected_fields["tile_id"] = expected_tile_id

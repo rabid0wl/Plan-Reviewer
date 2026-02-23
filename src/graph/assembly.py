@@ -21,6 +21,7 @@ _TILE_JSON_RE = re.compile(r"^p\d+_r\d+_c\d+\.json$")
 _TILE_META_RE = re.compile(r"^p\d+_r\d+_c\d+\.json\.meta\.json$")
 
 _CONFIDENCE_ORDER = {"none": 0, "low": 1, "medium": 2, "high": 3}
+_REFERENCE_SHEET_TYPES: frozenset[str] = frozenset({"signing_striping"})
 
 
 def load_extractions_with_meta(
@@ -52,6 +53,22 @@ def _quality_grade(bad_ratio: float) -> str:
     if bad_ratio <= 0.50:
         return "C"
     return "D"
+
+
+def _reference_only_pages(extractions: list[TileExtraction]) -> set[int]:
+    """Infer pages that should be treated as reference-only utility context."""
+    page_sheet_types: dict[int, set[str]] = {}
+    for extraction in extractions:
+        sheet_type = str(extraction.sheet_type or "").strip().lower()
+        if not sheet_type:
+            continue
+        page_sheet_types.setdefault(extraction.page_number, set()).add(sheet_type)
+
+    reference_pages: set[int] = set()
+    for page_number, types in page_sheet_types.items():
+        if "signing_striping" in types and "profile_view" not in types:
+            reference_pages.add(page_number)
+    return reference_pages
 
 
 def build_quality_summary(
@@ -433,6 +450,10 @@ def _merge_edge_provenance(kept: dict[str, Any], dropped: dict[str, Any]) -> Non
         kept.get("crown_contamination_candidate", False)
         or dropped.get("crown_contamination_candidate", False)
     )
+    kept["is_reference_only"] = bool(
+        kept.get("is_reference_only", False)
+        or dropped.get("is_reference_only", False)
+    )
     for field in ("from_station", "to_station", "from_structure_hint", "to_structure_hint", "notes"):
         if not kept.get(field) and dropped.get(field):
             kept[field] = dropped[field]
@@ -531,6 +552,7 @@ def build_utility_graph(
     """
     utility = utility_type.upper().strip()
     graph = nx.DiGraph(utility_type=utility)
+    reference_pages = _reference_only_pages(extractions)
 
     merged_nodes = merge_structures(
         extractions=extractions,
@@ -575,8 +597,13 @@ def build_utility_graph(
 
     edge_counter = 0
     for extraction in extractions:
+        extraction_sheet_type = str(extraction.sheet_type or "").strip().lower()
         tile_meta = (tile_meta_by_id or {}).get(extraction.tile_id, {})
         tile_sanitized = bool(tile_meta.get("sanitized", False))
+        is_reference_tile = (
+            extraction_sheet_type in _REFERENCE_SHEET_TYPES
+            or extraction.page_number in reference_pages
+        )
         for pipe in extraction.pipes:
             if not _pipe_matches_utility(pipe, utility):
                 continue
@@ -675,6 +702,7 @@ def build_utility_graph(
                 source_page_numbers=[extraction.page_number],
                 source_text_ids=sorted({int(v) for v in pipe.source_text_ids}),
                 sanitized=tile_sanitized,
+                is_reference_only=is_reference_tile,
             )
 
     _filter_suspect_crowns(graph)

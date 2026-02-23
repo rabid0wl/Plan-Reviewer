@@ -225,6 +225,172 @@ class GraphAssemblyTests(unittest.TestCase):
         self.assertEqual(sorted(edge.get("source_tile_ids", [])), ["p14_r0_c2", "p14_r1_c2"])
         self.assertEqual(sorted(edge.get("source_text_ids", [])), [30, 31])
 
+    def test_reference_only_page_fallback_flags_misclassified_tile(self) -> None:
+        signing_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c0",
+                "page_number": 103,
+                "sheet_type": "signing_striping",
+                "utility_types_present": ["SS"],
+                "structures": [],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+        misclassified_plan_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c1",
+                "page_number": 103,
+                "sheet_type": "plan_view",
+                "utility_types_present": ["SS"],
+                "structures": [
+                    {
+                        "id": "SSMH-A",
+                        "structure_type": "SSMH",
+                        "station": "10+00.00",
+                        "offset": "6.00' RT",
+                        "source_text_ids": [1],
+                    }
+                ],
+                "pipes": [
+                    {
+                        "pipe_type": "SS",
+                        "size": '8"',
+                        "from_station": "10+00.00",
+                        "source_text_ids": [2],
+                    }
+                ],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+
+        graph = build_utility_graph(
+            extractions=[signing_tile, misclassified_plan_tile],
+            utility_type="SS",
+            tile_meta_by_id={},
+        )
+        edge = list(graph.edges(data=True))[0][2]
+        self.assertTrue(edge.get("is_reference_only"))
+
+    def test_reference_only_fallback_not_applied_when_profile_view_present(self) -> None:
+        signing_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c0",
+                "page_number": 103,
+                "sheet_type": "signing_striping",
+                "utility_types_present": ["SS"],
+                "structures": [],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+        profile_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c1",
+                "page_number": 103,
+                "sheet_type": "profile_view",
+                "utility_types_present": ["SS"],
+                "structures": [],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+        plan_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c2",
+                "page_number": 103,
+                "sheet_type": "plan_view",
+                "utility_types_present": ["SS"],
+                "structures": [
+                    {
+                        "id": "SSMH-A",
+                        "structure_type": "SSMH",
+                        "station": "10+00.00",
+                        "offset": "6.00' RT",
+                        "source_text_ids": [1],
+                    }
+                ],
+                "pipes": [
+                    {
+                        "pipe_type": "SS",
+                        "size": '8"',
+                        "from_station": "10+00.00",
+                        "source_text_ids": [2],
+                    }
+                ],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+
+        graph = build_utility_graph(
+            extractions=[signing_tile, profile_tile, plan_tile],
+            utility_type="SS",
+            tile_meta_by_id={},
+        )
+        edge = list(graph.edges(data=True))[0][2]
+        self.assertFalse(edge.get("is_reference_only"))
+
+    def test_signing_striping_tile_is_always_reference_only(self) -> None:
+        signing_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c0",
+                "page_number": 103,
+                "sheet_type": "signing_striping",
+                "utility_types_present": ["SS"],
+                "structures": [
+                    {
+                        "id": "SSMH-A",
+                        "structure_type": "SSMH",
+                        "station": "10+00.00",
+                        "offset": "6.00' RT",
+                        "source_text_ids": [1],
+                    }
+                ],
+                "pipes": [
+                    {
+                        "pipe_type": "SS",
+                        "size": '8"',
+                        "from_station": "10+00.00",
+                        "source_text_ids": [2],
+                    }
+                ],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+        profile_tile = _extraction(
+            {
+                "tile_id": "p103_r0_c1",
+                "page_number": 103,
+                "sheet_type": "profile_view",
+                "utility_types_present": ["SS"],
+                "structures": [],
+                "pipes": [],
+                "callouts": [],
+                "street_names": [],
+                "lot_numbers": [],
+            }
+        )
+
+        graph = build_utility_graph(
+            extractions=[signing_tile, profile_tile],
+            utility_type="SS",
+            tile_meta_by_id={},
+        )
+        edge = list(graph.edges(data=True))[0][2]
+        self.assertTrue(edge.get("is_reference_only"))
+
     def test_gravity_orientation_flips_uphill_edge(self) -> None:
         extraction = _extraction(
             {

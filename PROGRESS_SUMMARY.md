@@ -161,3 +161,24 @@ Use this structure for each day. Append newest days at the top.
 
 ### Risks / Follow-Ups
 - Detailed command history, reasoning, and edge-case notes remain in `PROGRESS.md`.
+- Task 007 (reference-sheet suppression) implemented with page-level fallback for mixed tile classification:
+  - `is_reference_only` now set for edges from inferred signing/striping pages even when some tiles are labeled `plan_view`.
+  - Connectivity checks skip `is_reference_only` edges.
+- Validation:
+  - Full suite `33/33` passing via unittest.
+  - Corridor-expanded findings reduced after regeneration:
+    - SD `6 -> 3` (removed SD `dead_end_pipe` and `unanchored_pipe` noise from reference sheets)
+    - SS `18 -> 11`
+    - W `24 -> 14`
+  - Connectivity findings from pages `93/103` are now suppressed (`0` remaining).
+- FNC regression (calibration-clean):
+  - No `is_reference_only=True` edges in SD/SS/W.
+  - Severity totals remain `warning=8, info=7, error=0` (no regression).
+- Task 008 (null top-level metadata recovery) implemented:
+  - Added pre-validation patch in `run_hybrid` to recover null/missing `tile_id` and `page_number` from text-layer metadata.
+  - Added fallback page derivation from `tile_id` pattern (`pNN_rX_cY`) when text-layer page is absent.
+- Validation:
+  - Full suite now `35/35` passing.
+  - Corridor-expanded extraction improved from `29/30 OK, 1 validation_error` to `30/30 OK, 0 validation_error`.
+  - Previously failed tile `p26_r1_c0` now writes valid output (`page_number=26`) and is included downstream.
+- Refreshed `corridor-expanded` graphs/findings/report after recovery.

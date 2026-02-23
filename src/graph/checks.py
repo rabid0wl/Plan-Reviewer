@@ -328,6 +328,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
         )
 
     for u, v, data in graph.edges(data=True):
+        if data.get("is_reference_only"):
+            continue
         unresolved = (
             data.get("matched_confidence") == "none"
             or graph.nodes[u].get("kind") == "orphan_anchor"
