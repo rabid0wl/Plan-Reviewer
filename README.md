@@ -16,6 +16,10 @@ Implemented and validated:
 - Graph pipeline (merge, assembly, consistency checks)
 - Cost optimization + graph false-positive reduction passes
 
+There is one active entrypoint:
+- **CLI pipeline (recommended)**: the modular `python -m src...` commands below, used for intake -> extraction -> graphs -> HTML report.
+- **Archived first iteration**: the old Streamlit prototype is now in `legacy/iteration-1-streamlit/` and is not part of current development.
+
 Latest calibration status:
 - `9/10` calibration score on `calibration-clean`
 - Graph checks operational for `SD`, `SS`, `W`
@@ -40,7 +44,11 @@ Create `.env` in repo root:
 OPENROUTER_API_KEY=your_key_here
 ```
 
+The CLI tools read this repo-root `.env` via `python-dotenv`.
+
 ## 2) Core Commands
+
+Run the pipeline via modular `python -m src...` commands (no packaging step required).
 
 Intake commands (independent building blocks):
 
@@ -64,10 +72,21 @@ python -m src.extraction.run_hybrid_batch \
 
 Default extraction routing now uses `google/gemini-3-flash-preview`.
 
+Each batch run now emits:
+- `batch_summary.json` (backward-compatible, now includes `contract_version`, `run_id`, `analysis_package_path`)
+- `analysis_package.json` (pre-analysis manifest contract with hashes)
+
 Score calibration:
 
 ```bash
 python -m src.extraction.score_calibration --extractions-dir output/extractions/calibration-clean
+```
+
+Validate pre-analysis package contract (native manifest or legacy migration mode):
+
+```bash
+python -m src.extraction.validate_package \
+  --extractions-dir output/extractions/calibration-clean
 ```
 
 Build utility graphs:
@@ -77,6 +96,8 @@ python -m src.graph.assembly --extractions-dir output/extractions/calibration-cl
 python -m src.graph.assembly --extractions-dir output/extractions/calibration-clean --utility-type SS --out output/graphs/calibration-clean-ss.json
 python -m src.graph.assembly --extractions-dir output/extractions/calibration-clean --utility-type W  --out output/graphs/calibration-clean-w.json
 ```
+
+`src.graph.assembly` now runs package validation by default and writes `analysis_validation.json` in the extraction directory. Use `--no-validate-package` to bypass.
 
 Generate HTML review report:
 
@@ -109,7 +130,7 @@ python -m unittest discover -s tests -v
 - `docs/CODING-SPEC-INTAKE-PIPELINE.md`  
   Implementation spec for intake/extraction phases.
 
-- `docs/CODEX-TASK-00x-*.md`  
+- `legacy/docs/CODEX-TASK-00x-*.md`  
   Focused task briefs used for iterative development passes.
 
 - `docs/findings/PHASE1-VISION-FINDINGS.md`  
@@ -124,3 +145,6 @@ Large source references and generated outputs are intentionally gitignored:
 - `.env`
 
 This keeps the repository lightweight and safe to share while preserving local working assets.
+
+
+

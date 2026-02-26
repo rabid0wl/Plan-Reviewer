@@ -28,6 +28,9 @@ DEFAULT_ESCALATION_MODEL = "google/gemini-3-flash-preview"
 DEFAULT_ESCALATION_COHERENCE_THRESHOLD = 0.70
 CACHE_SCHEMA_VERSION = "hybrid-cache-v2"
 _TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_r\d+_c\d+$", re.IGNORECASE)
+_STRUCTURED_NONE = "none"
+_STRUCTURED_JSON_OBJECT = "json_object"
+_STRUCTURED_JSON_SCHEMA = "json_schema"
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -47,7 +50,7 @@ def _compute_cache_key(
     model: str,
     temperature: float,
     max_tokens: int,
-    use_structured_output: bool = True,
+    structured_output_mode: str = _STRUCTURED_JSON_OBJECT,
     cache_schema_version: str = CACHE_SCHEMA_VERSION,
 ) -> str:
     """Build a stable cache key for one prompt-image-model extraction request."""
@@ -59,7 +62,7 @@ def _compute_cache_key(
         "max_tokens": max_tokens,
         "prompt": prompt,
         "image_sha256": image_hash,
-        "response_format_type": "json_object" if use_structured_output else "none",
+        "response_format_type": str(structured_output_mode),
     }
     raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
@@ -266,6 +269,25 @@ def _sanitize_extraction_payload(payload: dict[str, Any]) -> tuple[dict[str, Any
     return sanitized, dropped
 
 
+def _response_format_payload(mode: str) -> dict[str, Any]:
+    """Build response-format and provider hints for one structured-output mode."""
+    if mode == _STRUCTURED_JSON_SCHEMA:
+        return {
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "tile_extraction",
+                    "strict": True,
+                    "schema": TileExtraction.model_json_schema(),
+                },
+            },
+            "provider": {"require_parameters": True},
+        }
+    if mode == _STRUCTURED_JSON_OBJECT:
+        return {"response_format": {"type": "json_object"}}
+    return {}
+
+
 def call_openrouter_vision(
     *,
     api_key: str,
@@ -279,6 +301,7 @@ def call_openrouter_vision(
     timeout_sec: int,
     endpoint: str = DEFAULT_OPENROUTER_URL,
     use_structured_output: bool = True,
+    use_json_schema: bool = True,
 ) -> tuple[str, dict[str, Any]]:
     """Call OpenRouter vision model and return raw text + response JSON."""
     headers = {
@@ -287,7 +310,7 @@ def call_openrouter_vision(
         "HTTP-Referer": referer,
         "X-Title": title,
     }
-    payload = {
+    base_payload = {
         "model": model,
         "messages": [
             {
@@ -301,61 +324,96 @@ def call_openrouter_vision(
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
+
+    structured_modes: list[str]
     if use_structured_output:
-        payload["response_format"] = {"type": "json_object"}
+        if use_json_schema:
+            structured_modes = [_STRUCTURED_JSON_SCHEMA, _STRUCTURED_JSON_OBJECT, _STRUCTURED_NONE]
+        else:
+            structured_modes = [_STRUCTURED_JSON_OBJECT, _STRUCTURED_NONE]
+    else:
+        structured_modes = [_STRUCTURED_NONE]
 
     retryable_statuses = {429, 500, 502, 503, 504}
     max_retries = 3
-    response: requests.Response | None = None
+    last_response: requests.Response | None = None
 
-    for attempt in range(max_retries):
-        try:
-            response = requests.post(endpoint, headers=headers, json=payload, timeout=timeout_sec)
-            if response.status_code == 400 and use_structured_output:
-                logger.warning(
-                    "response_format rejected by provider for %s; retrying without structured output.",
-                    model,
-                )
-                payload.pop("response_format", None)
-                use_structured_output = False
-                response = requests.post(endpoint, headers=headers, json=payload, timeout=timeout_sec)
-            if response.status_code in retryable_statuses and attempt < max_retries - 1:
-                wait = 3**attempt
-                logger.warning(
-                    "Retryable status %s on attempt %s/%s. Waiting %ss.",
-                    response.status_code,
-                    attempt + 1,
-                    max_retries,
-                    wait,
-                )
-                time.sleep(wait)
-                continue
-            response.raise_for_status()
-            break
-        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
-            if attempt < max_retries - 1:
-                wait = 3**attempt
-                logger.warning(
-                    "%s on attempt %s/%s. Waiting %ss.",
-                    exc.__class__.__name__,
-                    attempt + 1,
-                    max_retries,
-                    wait,
-                )
-                time.sleep(wait)
-                continue
-            raise
+    for mode_idx, structured_mode in enumerate(structured_modes):
+        payload = dict(base_payload)
+        payload.update(_response_format_payload(structured_mode))
 
-    if response is None:
+        for attempt in range(max_retries):
+            try:
+                last_response = requests.post(endpoint, headers=headers, json=payload, timeout=timeout_sec)
+                if (
+                    last_response.status_code == 400
+                    and structured_mode != _STRUCTURED_NONE
+                    and mode_idx < len(structured_modes) - 1
+                ):
+                    next_mode = structured_modes[mode_idx + 1]
+                    logger.warning(
+                        "Structured output mode '%s' rejected for %s; retrying with '%s'.",
+                        structured_mode,
+                        model,
+                        next_mode,
+                    )
+                    break
+
+                if last_response.status_code in retryable_statuses and attempt < max_retries - 1:
+                    wait = 3**attempt
+                    logger.warning(
+                        "Retryable status %s on attempt %s/%s. Waiting %ss.",
+                        last_response.status_code,
+                        attempt + 1,
+                        max_retries,
+                        wait,
+                    )
+                    time.sleep(wait)
+                    continue
+
+                last_response.raise_for_status()
+                response_json = last_response.json()
+                response_json["_response_format_type"] = structured_mode
+                try:
+                    content = response_json["choices"][0]["message"]["content"]
+                except (KeyError, IndexError, TypeError) as exc:
+                    raise ValueError("Unexpected OpenRouter response structure.") from exc
+                return _flatten_message_content(content), response_json
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
+                if attempt < max_retries - 1:
+                    wait = 3**attempt
+                    logger.warning(
+                        "%s on attempt %s/%s. Waiting %ss.",
+                        exc.__class__.__name__,
+                        attempt + 1,
+                        max_retries,
+                        wait,
+                    )
+                    time.sleep(wait)
+                    continue
+                raise
+
+        if (
+            last_response is not None
+            and last_response.status_code == 400
+            and structured_mode != _STRUCTURED_NONE
+            and mode_idx < len(structured_modes) - 1
+        ):
+            continue
+
+    if last_response is None:
         raise RuntimeError("OpenRouter request did not produce a response.")
 
-    response_json = response.json()
-
+    try:
+        last_response.raise_for_status()
+    except Exception:
+        raise
+    response_json = last_response.json()
+    response_json.setdefault("_response_format_type", _STRUCTURED_NONE)
     try:
         content = response_json["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError) as exc:
         raise ValueError("Unexpected OpenRouter response structure.") from exc
-
     return _flatten_message_content(content), response_json
 
 
@@ -381,6 +439,7 @@ def run_hybrid_extraction(
     escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
     escalation_enabled: bool = True,
     use_structured_output: bool = True,
+    use_json_schema: bool = True,
     attempted_models: list[str] | None = None,
     escalation_reason: str | None = None,
     _escalated: bool = False,
@@ -414,6 +473,11 @@ def run_hybrid_extraction(
             "escalation_model": escalation_model,
             "escalation_enabled": escalation_enabled,
             "escalation_coherence_threshold": escalation_coherence_threshold,
+            "structured_output_preference": (
+                _STRUCTURED_JSON_SCHEMA
+                if (use_structured_output and use_json_schema)
+                else (_STRUCTURED_JSON_OBJECT if use_structured_output else _STRUCTURED_NONE)
+            ),
         }
 
     def _run_escalation(reason: str, *, force_allow_low_coherence: bool = False) -> int | None:
@@ -448,6 +512,7 @@ def run_hybrid_extraction(
             escalation_coherence_threshold=escalation_coherence_threshold,
             escalation_enabled=escalation_enabled,
             use_structured_output=use_structured_output,
+            use_json_schema=use_json_schema,
             attempted_models=attempt_chain,
             escalation_reason=reason,
             _escalated=True,
@@ -486,7 +551,11 @@ def run_hybrid_extraction(
         model=model,
         temperature=temperature,
         max_tokens=max_tokens,
-        use_structured_output=use_structured_output,
+        structured_output_mode=(
+            _STRUCTURED_JSON_SCHEMA
+            if (use_structured_output and use_json_schema)
+            else (_STRUCTURED_JSON_OBJECT if use_structured_output else _STRUCTURED_NONE)
+        ),
     )
 
     if (
@@ -542,6 +611,7 @@ def run_hybrid_extraction(
             max_tokens=max_tokens,
             timeout_sec=timeout_sec,
             use_structured_output=use_structured_output,
+            use_json_schema=use_json_schema,
         )
     except Exception:
         escalated_exit_code = _run_escalation("api_call_error")
@@ -677,6 +747,7 @@ def run_hybrid_extraction(
                 "pipes_count": len(extraction.pipes),
                 "callouts_count": len(extraction.callouts),
                 "usage": usage,
+                "response_format_type": response_json.get("_response_format_type", _STRUCTURED_NONE),
                 "corrected_fields": sorted(corrected_fields.keys()),
                 "sanitized": sanitized,
                 "dropped_invalid_counts": dropped_invalid_counts,
@@ -768,6 +839,12 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Disable hash-based cache and force API calls.",
     )
     parser.add_argument(
+        "--use-json-schema",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use response_format=json_schema with strict mode before json_object fallback.",
+    )
+    parser.add_argument(
         "--referer",
         type=str,
         default="https://planreviewer.local",
@@ -819,6 +896,7 @@ def main() -> None:
         escalation_model=args.escalation_model,
         escalation_coherence_threshold=args.escalation_coherence_threshold,
         escalation_enabled=args.escalation,
+        use_json_schema=args.use_json_schema,
     )
     raise SystemExit(exit_code)
 

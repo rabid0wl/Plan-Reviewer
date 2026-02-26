@@ -1,0 +1,16 @@
+---
+description: Keep PROGRESS.md and PROGRESS_SUMMARY.md updated for every meaningful implementation session.
+alwaysApply: true
+---
+
+# Progress Logging Requirement
+
+For meaningful implementation changes, update both files in the same session:
+
+- `PROGRESS.md` with detailed engineering context
+- `PROGRESS_SUMMARY.md` with concise summary
+- Use Pacific time for dates/timestamps: `America/Los_Angeles` (PST/PDT seasonally). For date-only entries, use the Pacific calendar date.
+
+Follow `docs/PROGRESS_LOGGING_PROTOCOL.md`.
+
+Do not mark work complete without both updates.

@@ -1,0 +1,14 @@
+{
+  "tile_id": "p14_r0_c1",
+  "page_number": 14,
+  "status": "ok",
+  "sanitized": false,
+  "coherence_score": 0.95,
+  "structures_count": 1,
+  "pipes_count": 1,
+  "callouts_count": 0,
+  "usage": {
+    "cost": 0.001
+  }
+}
+

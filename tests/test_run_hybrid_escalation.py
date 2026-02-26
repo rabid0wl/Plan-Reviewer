@@ -74,7 +74,10 @@ class HybridEscalationTests(unittest.TestCase):
         self.assertIn("choices", response_json)
         self.assertEqual(len(captured_json_payloads), 2)
         self.assertIn("response_format", captured_json_payloads[0])
-        self.assertNotIn("response_format", captured_json_payloads[1])
+        self.assertEqual(captured_json_payloads[0]["response_format"]["type"], "json_schema")
+        self.assertIn("provider", captured_json_payloads[0])
+        self.assertIn("response_format", captured_json_payloads[1])
+        self.assertEqual(captured_json_payloads[1]["response_format"]["type"], "json_object")
 
     def test_low_coherence_escalates_to_fallback_model(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

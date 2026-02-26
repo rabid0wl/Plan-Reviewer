@@ -1,6 +1,6 @@
 # Civil Engineering Plan Review Tool — Architecture & Project Summary
 
-**Last updated:** 2026-02-21
+**Last updated:** 2026-02-26
 **Author:** Dylan (PE #98682), 4Creeks Engineering
 **Status:** Phase 1 complete, building extraction pipeline
 
@@ -15,7 +15,7 @@
 ├── ARCHITECTURE.md          # This file — design blueprint
 ├── PROGRESS_SUMMARY.md      # Daily milestone-level progress summary
 ├── PROGRESS.md              # Detailed working journal (decisions, learnings, costs)
-├── plan_reviewer.py         # Existing Streamlit prototype (pre-rebuild)
+|-- legacy/iteration-1-streamlit/  # Archived first-iteration Streamlit prototype
 ├── docs/findings/           # Polished investigation results
 ├── test-extractions/        # PNG tiles from vision testing
 ├── References/              # Source PDFs, CrossBeam reference impl
@@ -79,7 +79,7 @@ CrossBeam is an ADU permit review tool built during the Anthropic Claude Code Ha
 
 **Agent SDK config pattern:** `config.ts`, `session.ts`, `progress.ts`, `verify.ts` scaffolding. Winning config with `settingSources: ['project']` for skill discovery, `bypassPermissions`, specific `allowedTools` list, `maxBudgetUsd` caps.
 
-**File-based handoffs:** Subagents write JSON outputs, next phase reads them cold with no conversation history. Enables independent testing of each phase.
+**File-based handoffs:** Subagents write JSON outputs, next phase reads them cold with no conversation history. Enables independent testing of each phase. Current pre-analysis handoff is explicitly versioned via `analysis_package.json` + `analysis_validation.json` with hash checks and quality gate thresholds.
 
 **Deployment stack:** Next.js on Vercel (frontend), Cloud Run on GCP (orchestrator, needed because agent runs take 10-20 min and serverless times out), Vercel Sandbox (Agent SDK execution), Supabase (state, realtime updates, storage).
 
@@ -183,7 +183,7 @@ Phase 3: DEEP EXTRACTION (one tile per subagent, rolling window of 3)
 │   ├── All text annotations / notes
 │   └── Sheet cross-references
 ├── Merge tiles → per-sheet extraction (deduplicate overlap zone)
-└── Output: per-sheet extraction JSONs
+└── Output: per-sheet extraction JSONs + batch_summary.json + analysis_package.json
 
 Phase 3.5: GRAPH ASSEMBLY
 ├── Build utility network graph from per-sheet extractions:
@@ -407,12 +407,13 @@ This tool verifies **explicitly labeled data only** — callouts, annotations, d
 
 ## Existing Prototype
 
-`plan_reviewer.py` — Streamlit app using OpenRouter (Gemini Flash) for basic plan review. Has sheet categorization via `SHEET_CATEGORIES` dict. Good starting point for understanding the problem but needs to be rebuilt on the Agent SDK architecture for production use.
+`legacy/iteration-1-streamlit/plan_reviewer.py` - archived Streamlit app from the first iteration. Kept for historical reference only; active development is CLI pipeline modules under `src/`.
 
 ## Related Past Work
 
 - AutoCAD Civil 3D MCP interface exploration (Oct 2025)
 - AionUi multi-agent GUI evaluation (Jan 2026)
-- Civil PE Reviewer skill (installed at `/mnt/skills/user/civil-pe-reviewer/`)
+- Civil PE Reviewer skill (installed at /mnt/skills/user/civil-pe-reviewer/)
 - Prompts.chat MCP server setup for skill discovery
 - CrossBeam deep dive and analysis (Feb 2026)
+

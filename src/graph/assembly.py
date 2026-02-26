@@ -11,7 +11,13 @@ from typing import Any
 
 import networkx as nx
 
+from .. import config as _config
 from ..extraction.schemas import Pipe, TileExtraction
+from ..extraction.validate_package import (
+    DEFAULT_FAIL_THRESHOLD,
+    DEFAULT_WARN_THRESHOLD,
+    validate_extraction_package,
+)
 from ..utils.parsing import parse_signed_offset, parse_station
 from .merge import MergedStructure, merge_structures
 
@@ -22,8 +28,8 @@ _TILE_META_RE = re.compile(r"^p\d+_r\d+_c\d+\.json\.meta\.json$")
 
 _CONFIDENCE_ORDER = {"none": 0, "low": 1, "medium": 2, "high": 3}
 _REFERENCE_SHEET_TYPES: frozenset[str] = frozenset({"signing_striping"})
-_CROWN_SPREAD_BUFFER_FT = 0.5
-_CROWN_RATIO_THRESHOLD = 10.0
+_CROWN_SPREAD_BUFFER_FT = _config.CROWN_SPREAD_BUFFER_FT
+_CROWN_RATIO_THRESHOLD = _config.CROWN_RATIO_THRESHOLD
 _HINT_CLOSE_FT = 5.0
 _HINT_MEDIUM_FT = 10.0
 _HINT_FAR_FT = 25.0
@@ -33,13 +39,19 @@ _INFER_ENDPOINT_LOW_FT = 30.0
 _QUALITY_GRADE_A_MAX_BAD_RATIO = 0.10
 _QUALITY_GRADE_B_MAX_BAD_RATIO = 0.30
 _QUALITY_GRADE_C_MAX_BAD_RATIO = 0.50
-_QUALITY_WARNING_BAD_RATIO = 0.30
+_QUALITY_WARNING_BAD_RATIO = _config.QUALITY_WARNING_BAD_RATIO
 
 
 def load_extractions_with_meta(
     extractions_dir: Path,
 ) -> tuple[list[TileExtraction], dict[str, dict[str, Any]]]:
-    """Load tile extraction JSON files and matching meta payloads from a directory."""
+    """
+    Load tile extraction JSON files and matching meta payloads from a directory.
+
+    Extraction records and their meta are kept separate to allow downstream
+    phases to operate on either the logical graph inputs or quality summary
+    information independently.
+    """
     extractions: list[TileExtraction] = []
     tile_meta_by_id: dict[str, dict[str, Any]] = {}
 
@@ -559,27 +571,21 @@ def _orient_gravity_edges(graph: nx.DiGraph, invert_tolerance: float = 0.01) -> 
         graph.add_edge(v, u, **data)
 
 
-def build_utility_graph(
+def _add_structure_nodes(
+    graph: nx.DiGraph,
     *,
-    extractions: list[TileExtraction],
-    utility_type: str,
-    tile_meta_by_id: dict[str, dict[str, Any]] | None = None,
-) -> nx.DiGraph:
+    merged_nodes: list[MergedStructure],
+) -> tuple[dict[int, list[tuple[str, dict[str, Any]]]], list[tuple[str, dict[str, Any]]]]:
     """
-    Build a directed graph for one utility type from tile extraction records.
+    Populate structure nodes from merged structures and pre-compute candidate lookups.
 
-    Nodes are merged structures. Edges are pipes, including orphan pipes when no
-    structure endpoint can be matched.
+    Returns a tuple of:
+    - node_candidates_by_page: per-page candidate structures for endpoint matching
+    - all_candidates: global fallback candidate list
     """
-    utility = utility_type.upper().strip()
-    graph = nx.DiGraph(utility_type=utility)
-    reference_pages = _reference_only_pages(extractions)
+    node_candidates_by_page: dict[int, list[tuple[str, dict[str, Any]]]] = {}
+    all_candidates: list[tuple[str, dict[str, Any]]] = []
 
-    merged_nodes = merge_structures(
-        extractions=extractions,
-        utility_type=utility,
-        tile_meta_by_id=tile_meta_by_id or {},
-    )
     for item in merged_nodes:
         graph.add_node(
             item.node_id,
@@ -607,14 +613,25 @@ def build_utility_graph(
             rim_elevation_values=item.rim_elevation_values,
         )
 
-    node_candidates_by_page: dict[int, list[tuple[str, dict[str, Any]]]] = {}
-    all_candidates: list[tuple[str, dict[str, Any]]] = []
-    for node_id, data in graph.nodes(data=True):
-        if data.get("kind") != "structure":
-            continue
+        data = dict(graph.nodes[item.node_id])
         page = int(data.get("page_number", 0))
-        node_candidates_by_page.setdefault(page, []).append((node_id, dict(data)))
-        all_candidates.append((node_id, dict(data)))
+        node_candidates_by_page.setdefault(page, []).append((item.node_id, data))
+        all_candidates.append((item.node_id, data))
+
+    return node_candidates_by_page, all_candidates
+
+
+def _add_pipe_edges(
+    graph: nx.DiGraph,
+    *,
+    extractions: list[TileExtraction],
+    utility: str,
+    tile_meta_by_id: dict[str, dict[str, Any]] | None,
+    node_candidates_by_page: dict[int, list[tuple[str, dict[str, Any]]]],
+    all_candidates: list[tuple[str, dict[str, Any]]],
+) -> None:
+    """Add pipe edges to the graph, creating orphan anchors where endpoints cannot be resolved."""
+    reference_pages = _reference_only_pages(extractions)
 
     edge_counter = 0
     for extraction in extractions:
@@ -726,6 +743,44 @@ def build_utility_graph(
                 is_reference_only=is_reference_tile,
             )
 
+
+def build_utility_graph(
+    *,
+    extractions: list[TileExtraction],
+    utility_type: str,
+    tile_meta_by_id: dict[str, dict[str, Any]] | None = None,
+) -> nx.DiGraph:
+    """
+    Build a directed graph for one utility type from tile extraction records.
+
+    High-level phases:
+    1. Merge tile-level structures into per-utility structure nodes.
+    2. Attach pipe edges, inferring endpoints and creating orphan anchors as needed.
+    3. Apply crown filtering, edge deduplication, and gravity-based orientation.
+    4. Attach an extraction-quality summary for downstream checks and reporting.
+    """
+    utility = utility_type.upper().strip()
+    graph = nx.DiGraph(utility_type=utility)
+
+    merged_nodes = merge_structures(
+        extractions=extractions,
+        utility_type=utility,
+        tile_meta_by_id=tile_meta_by_id or {},
+    )
+    node_candidates_by_page, all_candidates = _add_structure_nodes(
+        graph,
+        merged_nodes=merged_nodes,
+    )
+
+    _add_pipe_edges(
+        graph,
+        extractions=extractions,
+        utility=utility,
+        tile_meta_by_id=tile_meta_by_id or {},
+        node_candidates_by_page=node_candidates_by_page,
+        all_candidates=all_candidates,
+    )
+
     _filter_suspect_crowns(graph)
     _deduplicate_pipe_edges(graph)
     _orient_gravity_edges(graph)
@@ -770,18 +825,90 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Utility graph to build.",
     )
     parser.add_argument("--out", type=Path, required=True, help="Output path for graph JSON.")
+    parser.add_argument(
+        "--validate-package",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Validate analysis package contract before loading extraction JSON files.",
+    )
+    parser.add_argument(
+        "--package-manifest",
+        type=Path,
+        default=None,
+        help="Optional path to analysis_package.json for pre-analysis validation.",
+    )
+    parser.add_argument(
+        "--validation-report",
+        type=Path,
+        default=None,
+        help="Output path for analysis_validation.json. Defaults to <extractions-dir>/analysis_validation.json",
+    )
+    parser.add_argument(
+        "--quality-warn-threshold",
+        type=float,
+        default=DEFAULT_WARN_THRESHOLD,
+        help="Warn threshold for pre-analysis quality gate.",
+    )
+    parser.add_argument(
+        "--quality-fail-threshold",
+        type=float,
+        default=DEFAULT_FAIL_THRESHOLD,
+        help="Fail threshold for pre-analysis quality gate.",
+    )
+    parser.add_argument(
+        "--verify-package-hashes",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Verify SHA-256 hashes declared in package contract during gate validation.",
+    )
     return parser
 
 
 def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     args = _build_arg_parser().parse_args()
+    package_warnings: list[str] = []
+
+    if args.validate_package:
+        report = validate_extraction_package(
+            extractions_dir=args.extractions_dir,
+            package_manifest_path=args.package_manifest,
+            validation_report_path=args.validation_report,
+            quality_warn_threshold=args.quality_warn_threshold,
+            quality_fail_threshold=args.quality_fail_threshold,
+            verify_hashes=args.verify_package_hashes,
+        )
+        if report.result.value == "fail":
+            logger.error(
+                "Pre-analysis package validation failed (%s critical errors).",
+                len(report.critical_errors),
+            )
+            for message in report.critical_errors:
+                logger.error("  - %s", message)
+            raise SystemExit(2)
+        package_warnings.extend(report.warnings)
+        if report.compat_mode.value == "legacy":
+            package_warnings.append(
+                "Package validated in legacy compatibility mode (migrated from batch_summary.json)."
+            )
+
     extractions, tile_meta = load_extractions_with_meta(args.extractions_dir)
     graph = build_utility_graph(
         extractions=extractions,
         utility_type=args.utility_type.upper(),
         tile_meta_by_id=tile_meta,
     )
+    quality_summary = graph.graph.get("quality_summary", {})
+    existing_warnings = quality_summary.get("warnings")
+    if not isinstance(existing_warnings, list):
+        existing_warnings = []
+    for warning in package_warnings:
+        prefixed = f"Package validation: {warning}"
+        if prefixed not in existing_warnings:
+            existing_warnings.append(prefixed)
+    quality_summary["warnings"] = existing_warnings
+    graph.graph["quality_summary"] = quality_summary
+
     payload = graph_to_dict(graph)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")

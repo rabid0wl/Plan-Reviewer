@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+python scripts/check_progress_docs.py --staged
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo "[pre-commit] Progress logging check failed."
+fi
+
+exit "$status"
+

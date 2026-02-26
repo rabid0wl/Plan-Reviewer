@@ -1,0 +1,34 @@
+name: progress-docs-check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  check-progress-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run progress docs gate
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth=1
+            python scripts/check_progress_docs.py --against "origin/${{ github.base_ref }}"
+          else
+            if git rev-parse HEAD~1 >/dev/null 2>&1; then
+              python scripts/check_progress_docs.py --against HEAD~1
+            else
+              echo "No previous commit available; skipping."
+            fi
+          fi
+

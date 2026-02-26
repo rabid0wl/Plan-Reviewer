@@ -6,12 +6,16 @@ import argparse
 import json
 import logging
 import os
+import uuid
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, UTC
 from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
 
+from ..utils.io_json import write_json_atomic
+from .package_contract import CONTRACT_VERSION, build_analysis_package_from_summary
 from .run_hybrid import (
     DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
     DEFAULT_ESCALATION_MODEL,
@@ -78,12 +82,14 @@ def run_batch(
     allow_low_coherence: bool,
     dry_run: bool,
     no_cache: bool,
+    use_json_schema: bool,
     prompt_dir: Path | None,
     fail_fast: bool,
     summary_out: Path,
     escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
     escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
     escalation_enabled: bool = True,
+    max_concurrency: int = 1,
 ) -> int:
     pairs, missing_items = _find_pairs(
         tiles_dir=tiles_dir,
@@ -99,6 +105,7 @@ def run_batch(
         logger.warning("No tile/text-layer pairs found.")
 
     started_at = datetime.now(UTC).isoformat()
+    run_id = str(uuid.uuid4())
     results: list[dict[str, Any]] = []
     results.extend(missing_items)
 
@@ -108,14 +115,36 @@ def run_batch(
     validation_error_count = 0
     runtime_error_count = 0
 
-    for idx, (tile_path, text_layer_path) in enumerate(pairs, start=1):
+    total_pairs = len(pairs)
+    if total_pairs:
+        logger.info(
+            "Starting batch: %s tile/text-layer pairs (max_concurrency=%s, fail_fast=%s)",
+            total_pairs,
+            max(1, int(max_concurrency or 1)),
+            fail_fast,
+        )
+
+    def _process_one(
+        idx: int,
+        tile_path: Path,
+        text_layer_path: Path,
+    ) -> tuple[dict[str, Any], dict[str, int]]:
         stem = tile_path.stem
         out_path = out_dir / f"{stem}.json"
         raw_out_path = out_dir / f"{stem}.json.raw.txt"
         meta_out_path = out_dir / f"{stem}.json.meta.json"
         prompt_out_path = (prompt_dir / f"{stem}.prompt.txt") if prompt_dir else None
 
-        logger.info("(%s/%s) Processing %s", idx, len(pairs), stem)
+        logger.info("(%s/%s) Processing %s", idx, total_pairs, stem)
+
+        local_counts = {
+            "ok": 0,
+            "dry_run": 0,
+            "skipped_low_coherence": 0,
+            "validation_error": 0,
+            "runtime_error": 0,
+        }
+
         try:
             exit_code = run_hybrid_extraction(
                 tile_path=tile_path,
@@ -133,6 +162,7 @@ def run_batch(
                 allow_low_coherence=allow_low_coherence,
                 dry_run=dry_run,
                 no_cache=no_cache,
+                use_json_schema=use_json_schema,
                 prompt_output_path=prompt_out_path,
                 escalation_model=escalation_model,
                 escalation_coherence_threshold=escalation_coherence_threshold,
@@ -149,18 +179,18 @@ def run_batch(
 
             status = str(meta_payload.get("status", "unknown"))
             if status == "ok":
-                ok_count += 1
+                local_counts["ok"] += 1
             elif status == "dry_run":
-                dry_run_count += 1
+                local_counts["dry_run"] += 1
             elif status == "skipped_low_coherence":
-                skipped_count += 1
+                local_counts["skipped_low_coherence"] += 1
             elif status == "validation_error" or exit_code == 2:
-                validation_error_count += 1
+                local_counts["validation_error"] += 1
             else:
                 if exit_code != 0:
-                    runtime_error_count += 1
+                    local_counts["runtime_error"] += 1
 
-            result_row = {
+            result_row: dict[str, Any] = {
                 "tile_stem": stem,
                 "tile_path": str(tile_path),
                 "text_layer_path": str(text_layer_path),
@@ -172,28 +202,78 @@ def run_batch(
             }
             if meta_payload:
                 result_row["meta"] = meta_payload
+            return result_row, local_counts
+        except Exception as exc:
+            logger.exception("Runtime error while processing %s", stem)
+            result_row = {
+                "tile_stem": stem,
+                "tile_path": str(tile_path),
+                "text_layer_path": str(text_layer_path),
+                "status": "runtime_error",
+                "error": str(exc),
+            }
+            local_counts["runtime_error"] += 1
+            return result_row, local_counts
+
+    if max_concurrency and max_concurrency > 1 and not dry_run:
+        # Concurrency is best-effort; fail_fast is honored once a failing
+        # result is observed, but in-flight tasks may still complete.
+        workers = max(1, int(max_concurrency))
+        logger.info("Running batch with ThreadPoolExecutor (workers=%s)", workers)
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            future_to_idx = {
+                executor.submit(_process_one, idx, tile_path, text_layer_path): (idx, tile_path.stem)
+                for idx, (tile_path, text_layer_path) in enumerate(pairs, start=1)
+            }
+            for future in as_completed(future_to_idx):
+                idx, tile_stem = future_to_idx[future]
+                try:
+                    result_row, local_counts = future.result()
+                except Exception as exc:
+                    logger.exception("Unhandled error in worker for index %s: %s", idx, exc)
+                    runtime_error_count += 1
+                    results.append(
+                        {
+                            "tile_stem": tile_stem,
+                            "status": "runtime_error",
+                            "error": str(exc),
+                        }
+                    )
+                    if fail_fast:
+                        logger.error("Stopping early due to fail-fast after worker exception.")
+                        break
+                    continue
+
+                ok_count += local_counts["ok"]
+                dry_run_count += local_counts["dry_run"]
+                skipped_count += local_counts["skipped_low_coherence"]
+                validation_error_count += local_counts["validation_error"]
+                runtime_error_count += local_counts["runtime_error"]
+                results.append(result_row)
+
+                if fail_fast and (
+                    local_counts["validation_error"] > 0 or local_counts["runtime_error"] > 0
+                ):
+                    logger.error("Stopping early due to fail-fast after tile %s.", result_row.get("tile_stem"))
+                    break
+    else:
+        for idx, (tile_path, text_layer_path) in enumerate(pairs, start=1):
+            result_row, local_counts = _process_one(idx, tile_path, text_layer_path)
+            ok_count += local_counts["ok"]
+            dry_run_count += local_counts["dry_run"]
+            skipped_count += local_counts["skipped_low_coherence"]
+            validation_error_count += local_counts["validation_error"]
+            runtime_error_count += local_counts["runtime_error"]
             results.append(result_row)
 
-            if exit_code != 0 and fail_fast:
-                logger.error("Stopping early due to fail-fast on %s.", stem)
-                break
-        except Exception as exc:
-            runtime_error_count += 1
-            results.append(
-                {
-                    "tile_stem": stem,
-                    "tile_path": str(tile_path),
-                    "text_layer_path": str(text_layer_path),
-                    "status": "runtime_error",
-                    "error": str(exc),
-                }
-            )
-            logger.exception("Runtime error while processing %s", stem)
-            if fail_fast:
+            if fail_fast and (local_counts["validation_error"] > 0 or local_counts["runtime_error"] > 0):
+                logger.error("Stopping early due to fail-fast on %s.", result_row.get("tile_stem"))
                 break
 
     completed_at = datetime.now(UTC).isoformat()
     summary = {
+        "contract_version": CONTRACT_VERSION,
+        "run_id": run_id,
         "started_at": started_at,
         "completed_at": completed_at,
         "tiles_dir": str(tiles_dir),
@@ -205,8 +285,10 @@ def run_batch(
         "escalation_model": escalation_model,
         "escalation_coherence_threshold": escalation_coherence_threshold,
         "escalation_enabled": escalation_enabled,
+        "max_concurrency": max(1, int(max_concurrency or 1)),
         "dry_run": dry_run,
         "no_cache": no_cache,
+        "use_json_schema": use_json_schema,
         "allow_low_coherence": allow_low_coherence,
         "counts": {
             "total_candidates": len(pairs) + len(missing_items),
@@ -220,11 +302,17 @@ def run_batch(
         },
         "results": results,
     }
+    summary["analysis_package_path"] = str(out_dir / "analysis_package.json")
 
     with summary_out.open("w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
+    package_model = build_analysis_package_from_summary(summary, run_id=run_id, created_at=completed_at)
+    package_path = out_dir / "analysis_package.json"
+    write_json_atomic(package_path, package_model.model_dump(mode="json"), indent=2, sort_keys=True)
+
     logger.info("Batch summary written: %s", summary_out)
+    logger.info("Analysis package written: %s", package_path)
     logger.info(
         "Counts: ok=%s dry_run=%s skipped=%s validation_error=%s runtime_error=%s missing_text_layers=%s",
         ok_count,
@@ -309,6 +397,12 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Disable hash-based cache and force API calls for every tile.",
     )
     parser.add_argument(
+        "--use-json-schema",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use response_format=json_schema with strict mode before json_object fallback.",
+    )
+    parser.add_argument(
         "--referer",
         type=str,
         default="https://planreviewer.local",
@@ -336,6 +430,12 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         type=Path,
         default=None,
         help="Path to batch summary JSON. Defaults to <out-dir>/batch_summary.json",
+    )
+    parser.add_argument(
+        "--max-concurrency",
+        type=int,
+        default=1,
+        help="Optional max number of tiles to process in parallel (>=1). Defaults to serial execution.",
     )
     return parser
 
@@ -371,12 +471,14 @@ def main() -> None:
         allow_low_coherence=args.allow_low_coherence,
         dry_run=args.dry_run,
         no_cache=args.no_cache,
+        use_json_schema=args.use_json_schema,
         prompt_dir=args.prompt_dir,
         fail_fast=args.fail_fast,
         summary_out=summary_out,
         escalation_model=args.escalation_model,
         escalation_coherence_threshold=args.escalation_coherence_threshold,
         escalation_enabled=args.escalation,
+        max_concurrency=args.max_concurrency,
     )
     raise SystemExit(exit_code)
 

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(findstr:*)",
+      "Bash(dir:*)"
     ]
   }
 }

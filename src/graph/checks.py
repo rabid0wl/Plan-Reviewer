@@ -7,12 +7,13 @@ from typing import Any
 
 import networkx as nx
 
+from .. import config as _config
 from ..extraction.schemas import TileExtraction
 from ..utils.parsing import parse_station
 
-_QUALITY_DEGRADATION_THRESHOLD = 0.30
-_STATION_DELTA_THRESHOLD_FT = 0.5
-_CROWN_CONTAMINATION_RATIO_THRESHOLD = 5.0
+_QUALITY_DEGRADATION_THRESHOLD = _config.QUALITY_DEGRADATION_THRESHOLD
+_STATION_DELTA_THRESHOLD_FT = _config.STATION_DELTA_THRESHOLD_FT
+_CROWN_CONTAMINATION_RATIO_THRESHOLD = _config.CROWN_CONTAMINATION_RATIO_THRESHOLD
 
 
 @dataclass(frozen=True)

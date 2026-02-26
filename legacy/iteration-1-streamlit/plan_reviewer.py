@@ -10,7 +10,8 @@ from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).parent / ".env")
+# Use the repo-root .env by default so keys are shared with the CLI pipeline.
+load_dotenv()
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 DEFAULT_MODEL = "google/gemini-3-flash-preview"
@@ -354,7 +355,7 @@ with st.sidebar:
         help="Model used for sheet index extraction. Flash = faster/cheaper, Pro = more accurate."
     )
     if not OPENROUTER_API_KEY:
-        st.error("No OPENROUTER_API_KEY found in .env file.")
+        st.error("No OPENROUTER_API_KEY found in .env file at the repository root.")
 
 uploaded = st.file_uploader(
     "Upload a PDF plan set",

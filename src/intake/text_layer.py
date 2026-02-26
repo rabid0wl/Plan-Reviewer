@@ -12,10 +12,11 @@ from typing import Any
 import fitz
 
 from .models import TextItem, TextLayer
+from .. import config as _config
 from ..utils.cli import parse_pages_argument
 from ..utils.unicode import clean_unicode
 
-COHERENCE_THRESHOLD = 0.40
+COHERENCE_THRESHOLD = _config.COHERENCE_THRESHOLD
 
 logger = logging.getLogger(__name__)
 
