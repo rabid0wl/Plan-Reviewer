@@ -1,0 +1,52 @@
+# Extraction Decision Flow
+
+Source: `docs/diagrams/extraction-decision-flow.mmd`
+
+```mermaid
+flowchart TD
+    A[Start tile extraction<br/>tile.png plus text_layer.json] --> B[Load text-layer metadata]
+    B --> C{Coherence below escalation threshold?}
+    C -->|yes and escalation allowed| C1[Escalate once to fallback model]
+    C1 --> Z1[Re-enter flow with escalated model]
+    C -->|no| D{Hybrid viable OR allow_low_coherence?}
+    C1 --> D
+    D -->|no| D1[Write meta status skipped_low_coherence]
+    D1 --> END0[Return success code]
+    D -->|yes| E[Build hybrid prompt and cache key]
+    E --> F{Cache hit with same key and model?}
+    F -->|yes| F1{Cached result sanitized?}
+    F1 -->|yes and escalation allowed| F2[Escalate reason sanitized_recovery_cached]
+    F2 --> Z1
+    F1 -->|no| END1[Use cached artifacts and return success]
+    F -->|no| G{dry_run enabled?}
+    G -->|yes| G1[Write dry_run meta and return success]
+    G -->|no| H[Call OpenRouter]
+    H --> H1[Try structured mode order:<br/>json_schema then json_object then none]
+    H1 --> H2[Retry transient failures with backoff]
+    H2 --> I{Model call failed?}
+    I -->|yes and escalation allowed| I1[Escalate reason api_call_error]
+    I1 --> Z1
+    I -->|yes and no escalation| ERR0[Return runtime failure]
+    I -->|no| J[Save raw model text]
+    J --> K{Parse top-level JSON object?}
+    K -->|no and escalation allowed| K1[Escalate reason json_parse_error]
+    K1 --> Z1
+    K -->|no and no escalation| ERR1[Write validation_error meta and return code 2]
+    K -->|yes| L[Pre-correct tile_id and page_number from text layer]
+    L --> M{Schema validation passes?}
+    M -->|yes| N[Continue]
+    M -->|no| M1[Sanitize payload by dropping invalid rows]
+    M1 --> M2{Validation passes after sanitize?}
+    M2 -->|no and escalation allowed| M3[Escalate reason schema_validation_error]
+    M3 --> Z1
+    M2 -->|no and no escalation| ERR2[Write validation_error meta and return code 2]
+    M2 -->|yes| N1[Mark sanitized true]
+    N1 --> N
+    N --> O{Sanitized true and escalation allowed?}
+    O -->|yes| O1[Escalate reason sanitized_recovery]
+    O1 --> Z1
+    O -->|no| P[Correct any metadata mismatch]
+    P --> Q[Write validated extraction JSON]
+    Q --> R[Write ok meta with usage counts]
+    R --> END2[Return success code]
+```

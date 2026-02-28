@@ -1708,3 +1708,38 @@ Validation:
 - `Get-ChildItem output -Recurse -File | Measure-Object -Property Length -Sum` -> `Files=923 SizeBytes=138528447`.
 - `Get-ChildItem output -Recurse -File | Where-Object { $_.Length -ge 95MB }` -> no results.
 - `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-27 - Committed pending diagrams, LFS hook scripts, and local settings updates
+
+What changed:
+
+- Added architecture diagram assets under `docs/diagrams/`:
+  - `app-architecture.mmd`
+  - `app-architecture.md`
+  - `extraction-decision-flow.mmd`
+  - `extraction-decision-flow.md`
+  - `ARCHITECTURE_FLOWS.md`
+- Added Git LFS hook scripts under `.githooks/`:
+  - `post-checkout`
+  - `post-commit`
+  - `post-merge`
+  - `pre-push`
+- Updated `.claude/settings.local.json` command/domain allowlist entries.
+
+Why:
+
+- User requested committing and pushing all latest pending local changes to `main`.
+
+Failures encountered:
+
+- None.
+
+Fix applied:
+
+- N/A.
+
+Validation:
+
+- `python scripts/check_progress_docs.py --staged` -> **PASS: progress docs updated**.
+- `git status --short --branch` (before commit) -> only expected pending files were present.
+- `git push origin main` -> push completed successfully.

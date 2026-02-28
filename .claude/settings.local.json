@@ -4,7 +4,17 @@
       "Bash(python:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(findstr:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(xargs:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:www.rustworkx.org)",
+      "WebFetch(domain:www.hawsedc.com)",
+      "WebFetch(domain:www.chandleraz.gov)",
+      "WebFetch(domain:pymupdf.readthedocs.io)",
+      "WebFetch(domain:www.inventive.ai)",
+      "WebFetch(domain:codelibrary.amlegal.com)",
+      "WebFetch(domain:news.ycombinator.com)",
+      "WebFetch(domain:www.businesswaretech.com)"
     ]
   }
 }

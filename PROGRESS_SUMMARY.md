@@ -3,6 +3,30 @@
 ## 2026-02-27
 
 ### Summary
+- Committed and pushed all pending local repo changes to `main`.
+- Included architecture diagram docs, Git LFS hook scripts, and `.claude/settings.local.json` allowlist updates.
+
+### Milestones
+- Added `docs/diagrams/` files:
+  - `app-architecture.mmd`
+  - `app-architecture.md`
+  - `extraction-decision-flow.mmd`
+  - `extraction-decision-flow.md`
+  - `ARCHITECTURE_FLOWS.md`
+- Added `.githooks/` LFS scripts:
+  - `post-checkout`
+  - `post-commit`
+  - `post-merge`
+  - `pre-push`
+- Updated `.claude/settings.local.json` with additional allowlisted commands/domains.
+
+### Validation
+- `python scripts/check_progress_docs.py --staged` -> `PASS`.
+- `git push origin main` -> success.
+
+## 2026-02-27
+
+### Summary
 - Unignored the top-level `output/` folder so generated artifacts can be versioned and pushed to `main`.
 
 ### Milestones

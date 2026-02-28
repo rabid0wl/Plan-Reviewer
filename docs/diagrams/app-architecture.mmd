@@ -1,0 +1,53 @@
+flowchart TD
+    A[Input PDF plan set]
+    A --> B1
+    A --> B2
+    A --> B3
+
+    subgraph Intake
+      B1[tiler.py<br/>Render 3x2 overlapping tile images]
+      B2[text_layer.py<br/>Extract exact text spans and coherence scores]
+      B3[manifest.py<br/>Classify sheets and utility hints]
+    end
+
+    B1 --> C1[tiles/*.png]
+    B2 --> C2[text_layers/*.json]
+    B1 --> C3[tiles_index.json]
+    B3 --> C4[manifest.json]
+
+    C1 --> D
+    C2 --> D
+
+    subgraph Hybrid_Extraction
+      D[run_hybrid_batch.py]
+      D --> D1[Pair each tile and text-layer JSON]
+      D1 --> D2[run_hybrid.py<br/>prompt plus model call]
+      D2 --> D3[Schema validation and sanitizer recovery]
+      D3 --> D4[Per tile outputs<br/>.json, .meta.json, .raw.txt]
+      D4 --> D5[batch_summary.json]
+      D4 --> D6[analysis_package.json<br/>hashes and contract metadata]
+    end
+
+    D6 --> E
+    subgraph Pre_Analysis_Gate
+      E[validate_package.py]
+      E -->|fail| X[Stop and fix extraction package]
+      E -->|pass or warn| F[Continue to graph assembly]
+    end
+
+    F --> G
+    subgraph Graph_Assembly
+      G[assembly.py]
+      G --> G1[merge.py deduplicate structure nodes]
+      G1 --> G2[Build SD, SS, W utility digraphs]
+      G2 --> G3[Endpoint matching and orphan anchors]
+      G3 --> G4[Crown filtering, edge dedup, gravity orientation]
+      G4 --> G5[utility graph JSON output]
+    end
+
+    G5 --> H["graph.checks.run_all_checks()"]
+    H --> I[prefix-utility-findings.json]
+    G5 --> J[html_report.py]
+    I --> J
+    D5 --> J
+    J --> K[Final HTML review report]
