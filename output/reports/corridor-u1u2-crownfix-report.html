@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Review Report</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --error-bg: #fee2e2;
+      --warning-bg: #fef3c7;
+      --info-bg: #dbeafe;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Tahoma", "Geneva", sans-serif;
+      line-height: 1.4;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 20px auto 28px auto;
+      padding: 0 12px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .title-block h1 { margin: 0 0 8px 0; font-size: 1.7rem; }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .risk-banner {
+      background: #fff5cc;
+      color: #7a4e00;
+      border: 1px solid #f5d98f;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .badge-error { background: var(--error-bg); }
+    .badge-warning { background: var(--warning-bg); }
+    .badge-info { background: var(--info-bg); }
+    h2 { margin: 0 0 10px 0; font-size: 1.15rem; }
+    h3 { margin: 16px 0 8px 0; font-size: 1.0rem; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+    .data-table th,
+    .data-table td {
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      padding: 6px 8px;
+    }
+    .data-table thead th {
+      background: #eef2f7;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .data-table tbody tr:nth-child(even) { background: #fafafa; }
+    .findings-table .sev-error td { background: var(--error-bg); }
+    .findings-table .sev-warning td { background: var(--warning-bg); }
+    .findings-table .sev-info td { background: var(--info-bg); }
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0 0 12px 0;
+    }
+    .warning-panel {
+      border-color: #f5d98f;
+      background: #fffbeb;
+    }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .page { max-width: none; margin: 0; padding: 0; }
+      .panel { border-radius: 0; }
+      .data-table thead th { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="risk-banner">Warning: extraction quality below threshold (66.7% degraded tiles). Findings may be incomplete.</div>
+    <section class="panel title-block">
+      <h1>Plan Review Report</h1>
+      <div class="meta-grid">
+        <div><strong>Generated:</strong> 2026-02-23T01:12:02.936908+00:00</div>
+        <div><strong>Pages analyzed:</strong> 24, 25</div>
+        <div><strong>Extraction model:</strong> google/gemini-3-flash-preview</div>
+        <div><strong>Total extraction cost:</strong> $0.15</div>
+      </div>
+    </section>
+
+    
+
+    <section class="panel">
+      <h2>Findings Summary</h2>
+      <div class="badge-row"><span class="badge badge-error">0 errors</span><span class="badge badge-warning">9 warnings</span><span class="badge badge-info">17 info</span></div>
+      <table class="data-table findings-table"><thead><tr><th>Severity</th><th>Utility</th><th>Type</th><th>Description</th><th>Sheet(s)</th></tr></thead><tbody><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e1:p24_r0_c2 has unresolved endpoint matching.</td><td>24</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e4:p24_r1_c2 has unresolved endpoint matching.</td><td>24</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e5:p24_r1_c2 has unresolved endpoint matching.</td><td>24</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e9:p25_r1_c0 has unresolved endpoint matching.</td><td>25</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>slope_mismatch</td><td>Slope mismatch on edge SS:e2:p24_r0_c2: labeled 0.0034, calculated 0.0425.</td><td>24</td></tr><tr class="sev-warning"><td>WARNING</td><td>W</td><td>dead_end_pipe</td><td>Pipe W:e1:p24_r0_c2 has unresolved endpoint matching.</td><td>24</td></tr><tr class="sev-warning"><td>WARNING</td><td>W</td><td>dead_end_pipe</td><td>Pipe W:e4:p25_r0_c0 has unresolved endpoint matching.</td><td>25</td></tr><tr class="sev-warning"><td>WARNING</td><td>W</td><td>dead_end_pipe</td><td>Pipe W:e5:p25_r0_c0 has unresolved endpoint matching.</td><td>25</td></tr><tr class="sev-warning"><td>WARNING</td><td>W</td><td>dead_end_pipe</td><td>Pipe W:e7:p25_r0_c2 has unresolved endpoint matching.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>crown_contamination</td><td>Likely crown/invert confusion on edge SD:e1:p24_r0_c0: labeled slope 0.0011, calculated 0.0088 (ratio 8.0x). Endpoint inverts may contain crown readings.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>crown_contamination</td><td>Likely crown/invert confusion on edge SD:e2:p24_r0_c0: labeled slope 0.0011, calculated 0.0931 (ratio 84.7x). Endpoint inverts may contain crown readings.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>crown_contamination</td><td>Likely crown/invert confusion on edge SD:e3:p24_r0_c0: labeled slope 0.0011, calculated 0.1284 (ratio 116.7x). Endpoint inverts may contain crown readings.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>crown_contamination</td><td>Likely crown/invert confusion on edge SD:e5:p24_r1_c0: labeled slope 0.0011, calculated 0.1279 (ratio 116.3x). Endpoint inverts may contain crown readings.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>orphan_node_check_suppressed</td><td>Suppressed 2 orphan-node warnings due to low extraction quality.</td><td>-</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e0:p24_r0_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e11:p25_r1_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e3:p24_r1_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e8:p25_r0_c2 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>orphan_node_check_suppressed</td><td>Suppressed 12 orphan-node warnings due to low extraction quality.</td><td>-</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e0:p24_r0_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e10:p25_r1_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e11:p25_r1_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e2:p24_r1_c0 has no station/hint endpoint metadata; connection could not be verified.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e3:p24_r1_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>24</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e8:p25_r0_c2 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>unanchored_pipe</td><td>Pipe W:e9:p25_r1_c0 has no station/hint endpoint metadata; connection could not be verified.</td><td>25</td></tr></tbody></table>
+    </section>
+
+    <section class="panel">
+      <h2>Structure Schedule</h2>
+      <h3>Storm Drain (SD) - 6 structures</h3><table class="data-table"><thead><tr><th>Station</th><th>Offset</th><th>Type</th><th>Size</th><th>RIM</th><th>Inverts</th><th>Notes</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>10+83.34</td><td>19.95&#x27; RT</td><td>inlet</td><td>-</td><td>-</td><td>W:320.48</td><td>INSTALL DI</td><td>24</td><td>pg 24, 2 tile(s)</td></tr><tr><td>10+84.59</td><td>5.54&#x27; LT</td><td>SDMH</td><td>-</td><td>329.30</td><td>W:320.25, E:320.45</td><td>EXIST. SDMH</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>10+85.94</td><td>53.08&#x27; LT</td><td>SDMH</td><td>-</td><td>328.78</td><td>N:320.40, E/W:320.40</td><td>INSTALL SDMH</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>11+34.29</td><td>58.62&#x27; RT</td><td>inlet</td><td>-</td><td>-</td><td>W:325.34</td><td>INSTALL DI</td><td>24</td><td>pg 24, 4 tile(s)</td></tr><tr><td>11+34.51</td><td>20.13&#x27; RT</td><td>inlet</td><td>-</td><td>-</td><td>E:325.30, S:325.20</td><td>EXIST. DI; CONNECT INTO EXISTING STORM DRAIN DRAINAGE INLET</td><td>24</td><td>pg 24, 4 tile(s)</td></tr><tr><td>11+42.73</td><td>51.48&#x27; LT</td><td>inlet</td><td>-</td><td>-</td><td>S:320.46</td><td>INSTALL DI</td><td>24</td><td>pg 24, 2 tile(s)</td></tr></tbody></table><h3>Sanitary Sewer (SS) - 7 structures</h3><table class="data-table"><thead><tr><th>Station</th><th>Offset</th><th>Type</th><th>Size</th><th>RIM</th><th>Inverts</th><th>Notes</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>11+21.16</td><td>13.30&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>328.90</td><td>N:325.74, N:325.74</td><td>INSTALL 48&quot; SSMH</td><td>24</td><td>pg 24, 3 tile(s)</td></tr><tr><td>11+21.32</td><td>8.41&#x27; RT</td><td>SSMH</td><td>-</td><td>329.07</td><td>-</td><td>EXIST. SSMH</td><td>24</td><td>pg 24, 2 tile(s)</td></tr><tr><td>14+44.40</td><td>13.30&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>329.28</td><td>S:325.59, N:325.59, W:325.57, E:325.56</td><td>INSTALL 48&quot; SSMH</td><td>24</td><td>pg 24, 2 tile(s)</td></tr><tr><td>14+44.52</td><td>9.27&#x27; RT</td><td>SSMH</td><td>-</td><td>329.56</td><td>-</td><td>EXIST. SSMH</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>15+90.21</td><td>13.30&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>329.55</td><td>S:325.76, NW:325.76</td><td>INSTALL 48&quot; SSMH</td><td>25</td><td>pg 25, 2 tile(s)</td></tr><tr><td>15+94.72</td><td>8.80&#x27; RT</td><td>SSMH</td><td>-</td><td>329.86</td><td>N:325.86, E:325.86, SE:325.78</td><td>EXIST. SSMH</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>16+00</td><td>RT</td><td>SSMH</td><td>-</td><td>-</td><td>-</td><td>CONNECT INTO EXISTING SANITARY SEWER MANHOLE</td><td>25</td><td>pg 25, 1 tile(s)</td></tr></tbody></table><h3>Water (W) - 19 structures</h3><table class="data-table"><thead><tr><th>Station</th><th>Offset</th><th>Type</th><th>Size</th><th>RIM</th><th>Inverts</th><th>Notes</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>11+00</td><td>0&#x27; CL</td><td>gate_valve</td><td>6&quot;</td><td>-</td><td>-</td><td>INSTALL 6&quot; WATER VALVE PER CITY STD. W-8, SHEET CD4.</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>11+34</td><td>20&#x27; RT</td><td>gate_valve</td><td>6&quot;</td><td>-</td><td>-</td><td>INSTALL 6&quot; WATER VALVE PER CITY STD. W-8, SHEET CD4.</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>16+00</td><td>0&#x27; CL</td><td>tee</td><td>8&quot;X8&quot;X6&quot;</td><td>329.86</td><td>N:325.86, S:325.78, E:325.86, SE:325.74</td><td>INSTALL 8&quot;X8&quot;X6&quot; TEE</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>16+00</td><td>RT</td><td>gate_valve</td><td>6&quot;</td><td>-</td><td>-</td><td>INSTALL 6&quot; WATER VALVE PER CITY STD. W-8, SHEET CD4.</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>16+65</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>16+65</td><td>RT</td><td>meter</td><td>-</td><td>-</td><td>-</td><td>INSTALL NEW WATER METER BOX AND LID</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>16+85</td><td>0&#x27; CL</td><td>gate_valve</td><td>8&quot;</td><td>-</td><td>-</td><td>INSTALL 8&quot; WATER VALVE PER CITY STD. W-8</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>17+35</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>17+35</td><td>RT</td><td>meter</td><td>-</td><td>-</td><td>-</td><td>INSTALL NEW WATER METER BOX AND LID</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>17+95</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>17+95</td><td>RT</td><td>meter</td><td>-</td><td>-</td><td>-</td><td>INSTALL NEW WATER METER BOX AND LID</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>18+65</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>18+65</td><td>RT</td><td>meter</td><td>-</td><td>-</td><td>-</td><td>INSTALL NEW WATER METER BOX AND LID</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+00</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+10</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+25</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+45</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+45</td><td>RT</td><td>meter</td><td>-</td><td>-</td><td>-</td><td>INSTALL NEW WATER METER BOX AND LID</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>19+85</td><td>0&#x27; CL</td><td>service_connection</td><td>1&quot;</td><td>-</td><td>-</td><td>INSTALL 1&quot; WATER SERVICE PER CITY STD. W-9</td><td>25</td><td>pg 25, 1 tile(s)</td></tr></tbody></table>
+    </section>
+
+    <section class="panel">
+      <h2>Pipe Schedule</h2>
+      <h3>Storm Drain (SD) - 5 pipes</h3><table class="data-table"><thead><tr><th>From</th><th>To</th><th>Size</th><th>Length (LF)</th><th>Slope</th><th>Material</th><th>Notes</th><th>Confidence</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>INLET 10+83.34</td><td>SDMH 10+84.59</td><td>18&quot;</td><td>26.00</td><td>0.0011</td><td>-</td><td>INSTALL 26 LF OF 18&quot; DIA SD PIPE @ S=0.0011</td><td>medium; gravity-oriented</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>INLET 11+34.29</td><td>INLET 10+83.34</td><td>18&quot;</td><td>38.00</td><td>0.0011</td><td>-</td><td>INSTALL 38 LF OF 18&quot; SD PIPE @ S=0.0011</td><td>medium; gravity-oriented</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>INLET 11+34.29</td><td>INLET 11+42.73</td><td>18&quot;</td><td>38.00</td><td>0.0011</td><td>-</td><td>INSTALL 38 LF OF 18&quot; DIA SD PIPE @ S=0.0011</td><td>low; gravity-oriented</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>INLET 11+34.51</td><td>SDMH 10+84.59</td><td>18&quot;</td><td>51.00</td><td>0.0011</td><td>-</td><td>INSTALL 51 LF OF 18&quot; DIA SD PIPE @ S=0.0011</td><td>medium; gravity-oriented</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>INLET 11+42.73</td><td>SDMH 10+85.94</td><td>18&quot;</td><td>57.00</td><td>0.0011</td><td>-</td><td>INSTALL 57 LF OF 18&quot; DIA SD PIPE @ S=0.0011</td><td>low; gravity-oriented</td><td>24</td><td>pg 24, 1 tile(s)</td></tr></tbody></table><h3>Sanitary Sewer (SS) - 6 pipes</h3><table class="data-table"><thead><tr><th>From</th><th>To</th><th>Size</th><th>Length (LF)</th><th>Slope</th><th>Material</th><th>Notes</th><th>Confidence</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>SSMH 11+21.16</td><td>SSMH 14+44.40</td><td>8&quot;</td><td>4.00</td><td>0.0034</td><td>-</td><td>INSTALL 4 LF OF 8&quot; DIA SS PIPE @ S=0.0034</td><td>medium</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>SSMH 14+44.40</td><td>SSMH 14+44.52</td><td>8&quot;</td><td>54.00</td><td>0.0012</td><td>-</td><td>INSTALL 54 LF OF 8&quot; DIA SS PIPE @ S=0.0012</td><td>none</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>SSMH 14+44.40</td><td>ORPHAN</td><td>8&quot;</td><td>54.00</td><td>0.0012</td><td>-</td><td>INSTALL 54 LF OF 8&quot; DIA SS PIPE</td><td>none</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>SSMH 14+44.40</td><td>ORPHAN</td><td>8&quot;</td><td>55.00</td><td>0.0012</td><td>-</td><td>INSTALL 55 LF OF 8&quot; DIA SS PIPE</td><td>none</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>SSMH 15+94.72</td><td>SSMH 15+90.21</td><td>8&quot;</td><td>6.00</td><td>0.0034</td><td>-</td><td>INSTALL 6 LF OF 8&quot; DIA PIPE @ S=0.0034</td><td>high; gravity-oriented</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>ORPHAN</td><td>SSMH 15+90.21</td><td>8&quot;</td><td>91.00</td><td>0.0012</td><td>-</td><td>INSTALL 91 LF OF 8&quot; DIA SS PIPE @ S=0.0012</td><td>none</td><td>25</td><td>pg 25, 1 tile(s)</td></tr></tbody></table><h3>Water (W) - 5 pipes</h3><table class="data-table"><thead><tr><th>From</th><th>To</th><th>Size</th><th>Length (LF)</th><th>Slope</th><th>Material</th><th>Notes</th><th>Confidence</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>GATE_VALVE 11+00</td><td>GATE_VALVE 11+34</td><td>8&quot;</td><td>360.00</td><td>-</td><td>PVC C-900</td><td>INSTALL +/-1,102 L.F. OF 8&quot; PVC C-900 WATER MAIN</td><td>none</td><td>24</td><td>pg 24, 1 tile(s)</td></tr><tr><td>GATE_VALVE 16+00</td><td>SERVICE_CONNECTION 19+85</td><td>8&quot;</td><td>1102.00</td><td>-</td><td>PVC C-900</td><td>INSTALL 8&quot; PVC C-900 WATER MAIN</td><td>none</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>GATE_VALVE 16+00</td><td>TEE 16+00</td><td>8&quot;</td><td>186.00</td><td>-</td><td>-</td><td>INSTALL 186 LF OF 8&quot; DIA WATER PIPE</td><td>none</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>TEE 16+00</td><td>GATE_VALVE 16+85</td><td>6&quot;</td><td>8.00</td><td>-</td><td>-</td><td>INSTALL 8 LF OF 6&quot; DIA WATER PIPE</td><td>none</td><td>25</td><td>pg 25, 1 tile(s)</td></tr><tr><td>GATE_VALVE 16+00</td><td>SERVICE_CONNECTION 19+10</td><td>8&quot;</td><td>314.00</td><td>-</td><td>PVC C-900</td><td>INSTALL 314 LF OF 8&quot; DIA WATER PIPE</td><td>medium</td><td>25</td><td>pg 25, 1 tile(s)</td></tr></tbody></table>
+    </section>
+
+    <section class="panel">
+      <h2>Extraction Quality</h2>
+      <p>
+        <strong>Grade D</strong><br>
+        12 tiles processed, 12 ok, 8 sanitized, 0 skipped
+      </p>
+      <ul><li>8 tiles had sanitizer recovery</li><li>Extraction quality below threshold — findings may be incomplete</li></ul>
+      <table class="data-table"><thead><tr><th>Tile</th><th>Coherence</th><th>Structures</th><th>Pipes</th><th>Callouts</th><th>Cost</th><th>Sanitized</th></tr></thead><tbody><tr><td>p24_r0_c0</td><td>0.906</td><td>8</td><td>4</td><td>2</td><td>$0.0184</td><td>no</td></tr><tr><td>p24_r0_c1</td><td>0.885</td><td>4</td><td>3</td><td>1</td><td>$0.0161</td><td>no</td></tr><tr><td>p24_r0_c2</td><td>0.935</td><td>1</td><td>3</td><td>2</td><td>$0.0117</td><td>yes (structures=1)</td></tr><tr><td>p24_r1_c0</td><td>0.905</td><td>5</td><td>2</td><td>5</td><td>$0.0153</td><td>yes (structures=11)</td></tr><tr><td>p24_r1_c1</td><td>0.859</td><td>4</td><td>2</td><td>6</td><td>$0.0121</td><td>yes (structures=6)</td></tr><tr><td>p24_r1_c2</td><td>0.930</td><td>2</td><td>2</td><td>6</td><td>$0.0095</td><td>yes (structures=1, pipes=1)</td></tr><tr><td>p25_r0_c0</td><td>0.931</td><td>4</td><td>4</td><td>2</td><td>$0.0141</td><td>no</td></tr><tr><td>p25_r0_c1</td><td>0.912</td><td>11</td><td>1</td><td>2</td><td>$0.0177</td><td>no</td></tr><tr><td>p25_r0_c2</td><td>0.917</td><td>4</td><td>3</td><td>3</td><td>$0.0120</td><td>yes (structures=2)</td></tr><tr><td>p25_r1_c0</td><td>0.905</td><td>2</td><td>3</td><td>4</td><td>$0.0093</td><td>yes (structures=2)</td></tr><tr><td>p25_r1_c1</td><td>0.887</td><td>0</td><td>3</td><td>7</td><td>$0.0085</td><td>yes (structures=2)</td></tr><tr><td>p25_r1_c2</td><td>0.919</td><td>0</td><td>0</td><td>1</td><td>$0.0046</td><td>yes (pipes=1)</td></tr></tbody></table>
+    </section>
+  </div>
+</body>
+</html>

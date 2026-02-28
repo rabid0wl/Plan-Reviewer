@@ -1,0 +1,39 @@
+{
+  "utility_type": "W",
+  "graph": {
+    "nodes": 44,
+    "edges": 22,
+    "quality_summary": {
+      "total_tiles": 24,
+      "ok_tiles": 24,
+      "sanitized_tiles": 5,
+      "skipped_tiles": 0,
+      "quality_grade": "B",
+      "warnings": [
+        "5 tiles had sanitizer recovery"
+      ]
+    }
+  },
+  "counts": {
+    "total_findings": 1,
+    "by_severity": {
+      "info": 1
+    },
+    "by_type": {
+      "connectivity_unverifiable": 1
+    }
+  },
+  "findings": [
+    {
+      "finding_type": "connectivity_unverifiable",
+      "severity": "info",
+      "description": "Connectivity checks are limited: graph has pipe edges but no resolved structure nodes.",
+      "source_sheets": [],
+      "source_text_ids": [],
+      "node_ids": [],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    }
+  ]
+}

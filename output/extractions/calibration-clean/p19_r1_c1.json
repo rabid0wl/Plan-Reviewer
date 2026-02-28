@@ -1,0 +1,51 @@
+{
+  "tile_id": "p19_r1_c1",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        8,
+        9
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        15
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing curb elevations (TC) and slopes. Stations 10+00 through 14+00 are visible. FL 300.48 and TC 300.98 at top of tile appear to be reference values or from an adjacent profile."
+}

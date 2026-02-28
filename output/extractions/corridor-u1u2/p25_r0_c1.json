@@ -1,0 +1,94 @@
+{
+  "tile_id": "p25_r0_c1",
+  "page_number": 25,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 314.0,
+      "slope": null,
+      "from_station": "16+86",
+      "to_station": "20+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 314 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        531,
+        532,
+        533,
+        534,
+        535,
+        536
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "source_text_ids": [
+        537
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD3",
+      "reference_detail": "W-9",
+      "source_text_ids": [
+        38,
+        69
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" WATER VALVE PER CITY STD. W-8",
+      "station": "17+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4",
+      "reference_detail": "W-8",
+      "source_text_ids": [
+        91,
+        48
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "CONNECT INTO EXISTING SANITARY SEWER MANHOLE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        555,
+        556
+      ]
+    }
+  ],
+  "street_names": [
+    "PRINCETON AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted water main and service connections along Princeton Ave. Keynotes 11 and 15 are repeated for multiple service locations. Stationing increases from left to right."
+}

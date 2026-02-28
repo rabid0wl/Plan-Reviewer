@@ -1,0 +1,213 @@
+{
+  "utility_type": "SD",
+  "graph": {
+    "nodes": 6,
+    "edges": 5,
+    "quality_summary": {
+      "total_tiles": 12,
+      "ok_tiles": 12,
+      "sanitized_tiles": 8,
+      "skipped_tiles": 0,
+      "quality_grade": "D",
+      "warnings": [
+        "8 tiles had sanitizer recovery",
+        "Extraction quality below threshold — findings may be incomplete"
+      ]
+    }
+  },
+  "counts": {
+    "total_findings": 4,
+    "by_severity": {
+      "warning": 4
+    },
+    "by_type": {
+      "slope_mismatch": 4
+    }
+  },
+  "findings": [
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SD:e1:p24_r0_c0: labeled 0.0011, calculated 0.0088.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        108,
+        118,
+        119,
+        120,
+        121,
+        122,
+        381,
+        382,
+        383,
+        391,
+        392,
+        393,
+        394,
+        395,
+        425,
+        426,
+        427,
+        428,
+        429
+      ],
+      "node_ids": [
+        "SD:24:INLET:1083.34:+19.95",
+        "SD:24:SDMH:1084.59:-5.54"
+      ],
+      "edge_ids": [
+        "SD:e1:p24_r0_c0"
+      ],
+      "expected_value": "0.0011",
+      "actual_value": "0.0088"
+    },
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SD:e5:p24_r1_c0: labeled 0.0011, calculated 0.1279.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        374,
+        375,
+        376,
+        377,
+        425,
+        426,
+        427,
+        428,
+        429,
+        530,
+        531,
+        532,
+        533
+      ],
+      "node_ids": [
+        "SD:24:INLET:1134.29:+58.62",
+        "SD:24:INLET:1083.34:+19.95"
+      ],
+      "edge_ids": [
+        "SD:e5:p24_r1_c0"
+      ],
+      "expected_value": "0.0011",
+      "actual_value": "0.1279"
+    },
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SD:e3:p24_r0_c0: labeled 0.0011, calculated 0.1284.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        101,
+        102,
+        103,
+        104,
+        120,
+        121,
+        122,
+        123,
+        124,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        413,
+        414,
+        415,
+        416,
+        530,
+        531,
+        532,
+        533,
+        570,
+        571,
+        572,
+        573
+      ],
+      "node_ids": [
+        "SD:24:INLET:1134.29:+58.62",
+        "SD:24:INLET:1142.73:-51.48"
+      ],
+      "edge_ids": [
+        "SD:e3:p24_r0_c0"
+      ],
+      "expected_value": "0.0011",
+      "actual_value": "0.1284"
+    },
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SD:e2:p24_r0_c0: labeled 0.0011, calculated 0.0931.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        115,
+        116,
+        117,
+        125,
+        126,
+        127,
+        128,
+        129,
+        139,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        430,
+        431,
+        432,
+        433,
+        548,
+        549,
+        550,
+        551,
+        552
+      ],
+      "node_ids": [
+        "SD:24:INLET:1134.51:+20.13",
+        "SD:24:SDMH:1084.59:-5.54"
+      ],
+      "edge_ids": [
+        "SD:e2:p24_r0_c0"
+      ],
+      "expected_value": "0.0011",
+      "actual_value": "0.0931"
+    }
+  ]
+}

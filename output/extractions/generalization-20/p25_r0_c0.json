@@ -1,0 +1,292 @@
+{
+  "tile_id": "p25_r0_c0",
+  "page_number": 25,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "SDMH_9+87.36",
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "9+87.36",
+      "offset": "11.00' RT",
+      "rim_elevation": 300.94,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.22,
+          "source_text_ids": [
+            80
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.22,
+          "source_text_ids": [
+            81
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.32,
+          "source_text_ids": [
+            82
+          ]
+        }
+      ],
+      "notes": "INSTALL SDMH",
+      "source_text_ids": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "id": "SDMH_10+40.39",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "10+40.39",
+      "offset": "11.00' RT",
+      "rim_elevation": 300.7,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.42,
+          "source_text_ids": [
+            71
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 293.92,
+          "source_text_ids": [
+            72
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.02,
+          "source_text_ids": [
+            73
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.02,
+          "source_text_ids": [
+            74
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "id": "DI_10+39.06",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "10+39.06",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.0,
+      "fl_elevation": 300.5,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.64,
+          "source_text_ids": [
+            27
+          ]
+        }
+      ],
+      "notes": "BCR, DI",
+      "source_text_ids": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "DI_10+35.39",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "10+35.39",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 300.99,
+      "fl_elevation": 300.49,
+      "inverts": [
+        {
+          "direction": "NW",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.12,
+          "source_text_ids": [
+            22
+          ]
+        }
+      ],
+      "notes": "ECR, DI",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "GB_10+15.47",
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+15.47",
+      "offset": "36.15' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.19,
+      "fl_elevation": 300.69,
+      "inverts": [],
+      "notes": "BCR, GB",
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 53.0,
+      "slope": 0.002,
+      "from_station": "9+87.36",
+      "to_station": "10+40.39",
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 53 LF OF 18\" DIA SD PIPE @ S=0.0020",
+      "source_text_ids": [
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 30.0,
+      "slope": 0.005,
+      "from_station": "10+39.06",
+      "to_station": "10+40.39",
+      "from_structure_hint": "DI",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 30 LF OF 12\" DIA SD PIPE @ S=0.0050",
+      "source_text_ids": [
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 106.0,
+      "slope": 0.0073,
+      "from_station": "10+40.39",
+      "to_station": "11+28.18",
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": "LT",
+      "notes": "INSTALL 106 LF OF 12\" DIA SD PIPE @ S=0.0073",
+      "source_text_ids": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 9.0,
+      "slope": 0.0114,
+      "from_station": "10+35.39",
+      "to_station": "10+40.39",
+      "from_structure_hint": "DI",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 9 LF OF 12\" DIA SD PIPE @ S=0.0114",
+      "source_text_ids": [
+        64,
+        65,
+        66
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cross_reference",
+      "text": "EUREKA ST. SEE SHEET 23",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "23",
+      "reference_detail": null,
+      "source_text_ids": [
+        127
+      ]
+    }
+  ],
+  "street_names": [
+    "EUREKA ST.",
+    "RED TAIL CT.",
+    "ECHO HILL AVENUE"
+  ],
+  "lot_numbers": [
+    22,
+    23,
+    24,
+    27,
+    28,
+    29,
+    30
+  ],
+  "extraction_notes": "Extracted storm drain structures and pipes at the intersection of Eureka St and Red Tail Ct. Typical Local Street A section details pavement and curb standards."
+}

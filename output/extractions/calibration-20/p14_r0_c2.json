@@ -1,0 +1,278 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "20+24.17",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.59,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.65,
+          "source_text_ids": [
+            9
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.75,
+          "source_text_ids": [
+            10
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "TALL 342 LF OF 12\" DIA PIPE @ S=0.0030",
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        118,
+        0
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 17+69.93, 18.22' LT EP (305.92) MATCH EXIST.",
+      "station": "17+69.93",
+      "offset": "18.22' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        168,
+        169,
+        170
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 19+87.07, 18.67' LT P (305.97) MATCH EXIST.",
+      "station": "19+87.07",
+      "offset": "18.67' LT",
+      "elevation": 305.97,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 20+84.18, 18.64' LT P (306.01) MATCH EXIST.",
+      "station": "20+84.18",
+      "offset": "18.64' LT",
+      "elevation": 306.01,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        149,
+        150,
+        151
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 19+87.20, 0.68' LT BC EP 305.61",
+      "station": "19+87.20",
+      "offset": "0.68' LT",
+      "elevation": 305.61,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        140,
+        141,
+        171
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 20+76.08, 15.34' LT EC EP 305.90",
+      "station": "20+76.08",
+      "offset": "15.34' LT",
+      "elevation": 305.9,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        160,
+        161,
+        165
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 20+84.18, 15.37' LT EP 305.91",
+      "station": "20+84.18",
+      "offset": "15.37' LT",
+      "elevation": 305.91,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        147,
+        148
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 19+87.17, 45.00' RT BCR TC 305.42 FL 304.92",
+      "station": "19+87.17",
+      "offset": "45.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 20+17.17, 75.00' RT ECR TC 305.07 FL 304.57",
+      "station": "20+17.17",
+      "offset": "75.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        131,
+        132,
+        133,
+        134
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 20+84.17, 45.00' RT ECR TC 305.67 FL 305.17",
+      "station": "20+84.17",
+      "offset": "45.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        135,
+        136,
+        137,
+        138,
+        139
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 20+53.17, 7.66' RT BC EP 305.67",
+      "station": "20+53.17",
+      "offset": "7.66' RT",
+      "elevation": 305.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        142,
+        143,
+        164
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 20+53.17, 75.00' RT BCR TC 305.07 FL 304.57",
+      "station": "20+53.17",
+      "offset": "75.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        128,
+        129,
+        130
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "STA: 20+15.23, 27.35' RT EC EP 305.29",
+      "station": "20+15.23",
+      "offset": "27.35' RT",
+      "elevation": 305.29,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        158,
+        159,
+        163
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 22",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "22",
+      "reference_detail": null,
+      "source_text_ids": [
+        208
+      ]
+    }
+  ],
+  "street_names": [
+    "EL CAMINO ST."
+  ],
+  "lot_numbers": [
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "extraction_notes": "Extracted SDMH at station 20+24.17. Multiple grading and match existing callouts extracted along the curb lines and pavement edges. Lot numbers 38-42 are visible."
+}

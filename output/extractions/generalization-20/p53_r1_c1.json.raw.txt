@@ -1,0 +1,75 @@
+```json
+{
+  "tile_id": "detail_sheet_tile",
+  "page_number": 1,
+  "sheet_type": "detail_sheet",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "LANDSCAPE CURB CLASS 2 CONCRETE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4010",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "20' RADIUS CURB RETURN WITH ACCESSIBLE RAMP",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4110",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "20' RADIUS CURB RETURN WITH DIRECTIONAL RAMP",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4110",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "RAISED TRUNCATED DOME DETECTABLE WARNING SURFACE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4170",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "STREET CROSS GUTTER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4220",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "MEDIAN ISLAND",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1 OF 1",
+      "reference_detail": "4010",
+      "source_text_ids": []
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains standard details for the City of Tulare Public Improvement Standards, including curb types, ramps, cross gutters, and median islands. No specific utility pipes or structures with stations/offsets are present as these are typical details."
+}
+```

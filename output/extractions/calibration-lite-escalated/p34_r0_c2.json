@@ -1,0 +1,145 @@
+{
+  "tile_id": "p34_r0_c2",
+  "page_number": 34,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "16+30.65",
+      "offset": "6.00' LT",
+      "rim_elevation": 300.32,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.72,
+          "source_text_ids": [
+            24
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.62,
+          "source_text_ids": [
+            25
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        27,
+        28,
+        26,
+        24,
+        25
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "junction",
+      "size": "8\"",
+      "station": "16+18.65",
+      "offset": "6.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": "16+18.65",
+      "from_structure_hint": null,
+      "to_structure_hint": "8\" TEE",
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE; Material per General Note 10",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23,
+        66
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": "PVC SDR-26",
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": "16+30.65",
+      "to_station": "18+00",
+      "from_structure_hint": "SSMH",
+      "to_structure_hint": "MATCHLINE",
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033; Material per General Note 10",
+      "source_text_ids": [
+        29,
+        30,
+        31,
+        67
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "30\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 18+00 SEE SHEET 35",
+      "station": "18+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "35",
+      "reference_detail": null,
+      "source_text_ids": [
+        74,
+        75,
+        76
+      ]
+    }
+  ],
+  "street_names": [
+    "EUREKA STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted water and sewer pipe details from callouts and general notes. Matchline indicates continuation on sheet 35. General notes specify standard city details and pipe materials (AWWA C-900 for water, PVC SDR-26 for sewer)."
+}

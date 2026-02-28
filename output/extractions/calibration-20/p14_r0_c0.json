@@ -1,0 +1,321 @@
+{
+  "tile_id": "p14_r0_c0",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "GB",
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+57.64",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 306.08,
+      "fl_elevation": 305.58,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        196,
+        197,
+        198,
+        199
+      ]
+    },
+    {
+      "id": "DI",
+      "structure_type": "DI",
+      "size": null,
+      "station": "13+40.73",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.52,
+      "fl_elevation": 305.02,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 301.0,
+          "source_text_ids": [
+            205
+          ]
+        }
+      ],
+      "notes": null,
+      "source_text_ids": [
+        203,
+        204,
+        206,
+        207
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 17.0,
+      "slope": 0.0059,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "DI at STA: 13+40.73",
+      "notes": null,
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 10+97.88, 40.63' LT EP (305.71) MATCH EXIST.",
+      "station": "10+97.88",
+      "offset": "40.63' LT",
+      "elevation": 305.71,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        193,
+        194,
+        195
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 11+03.88, 40.89' LT EP (305.67) MATCH EXIST.",
+      "station": "11+03.88",
+      "offset": "40.89' LT",
+      "elevation": 305.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        229,
+        230,
+        231
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 12+94.47, 40.19' LT EP (305.92) MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": "40.19' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        237,
+        238,
+        239
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 12+88.47, 40.22' LT EP (305.92) MATCH EXIST.",
+      "station": "12+88.47",
+      "offset": "40.22' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        200,
+        201,
+        202
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 10+31.18, 10.35' LT EP (305.31) MATCH EXIST.",
+      "station": "10+31.18",
+      "offset": "10.35' LT",
+      "elevation": 305.31,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        215,
+        216,
+        217
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 12+88.47, 15.45' LT EP (305.74) MATCH EXIST.",
+      "station": "12+88.47",
+      "offset": "15.45' LT",
+      "elevation": 305.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        208,
+        209,
+        210
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 12+94.47, STA: 12+94.47, EP (305.74) MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": null,
+      "elevation": 305.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        240,
+        241,
+        242
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 10+13.04, 11.00' RT P (305.01) MATCH EXIST.",
+      "station": "10+13.04",
+      "offset": "11.00' RT",
+      "elevation": 305.01,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        234,
+        235,
+        236
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 9+69.52, 15.00' LT P (305.70) MATCH EXIST.",
+      "station": "9+69.52",
+      "offset": "15.00' LT",
+      "elevation": 305.7,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "STA: 9+93.55, 11.00' RT P (305.03) MATCH EXIST.",
+      "station": "9+93.55",
+      "offset": "11.00' RT",
+      "elevation": 305.03,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        218,
+        219,
+        220
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 10+22.64, 79.40' RT BCR TC 305.33 FL 304.83",
+      "station": "10+22.64",
+      "offset": "79.40' RT",
+      "elevation": 305.33,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        188,
+        189,
+        190
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 10+30.56, 25.91' RT EP 304.75",
+      "station": "10+30.56",
+      "offset": "25.91' RT",
+      "elevation": 304.75,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        232,
+        233
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 9+87.65, 78.80' RT EP 305.17",
+      "station": "9+87.65",
+      "offset": "78.80' RT",
+      "elevation": 305.17,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        191,
+        192
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 9+68.58, 0.00' LT BC EP 305.40",
+      "station": "9+68.58",
+      "offset": "0.00' LT",
+      "elevation": 305.4,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        224,
+        225,
+        245
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 9+88.65, 20.34' RT EC EP 304.83",
+      "station": "9+88.65",
+      "offset": "20.34' RT",
+      "elevation": 304.83,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        226,
+        227,
+        246
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 16",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "SHEET 16",
+      "reference_detail": null,
+      "source_text_ids": [
+        276
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE GRADING PLAN SHEET 5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "SHEET 5",
+      "reference_detail": null,
+      "source_text_ids": [
+        282,
+        283
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVE",
+    "MORRISON ST."
+  ],
+  "lot_numbers": [
+    54,
+    53,
+    52,
+    51
+  ],
+  "extraction_notes": "Extracted DI and GB structures with associated station/offset and elevations. Extracted SD pipe run with length and slope. Match existing callouts and edge of pavement callouts were identified across the plan view."
+}

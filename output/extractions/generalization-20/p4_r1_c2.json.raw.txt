@@ -1,0 +1,75 @@
+```json
+{
+  "tile_id": "tile_0",
+  "page_number": 4,
+  "sheet_type": "plan_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "ALL STRUCTURES, CONCRETE, TREES, TO BE REMOVED WITHIN THE LIMITS OF DEMOLITION UNLESS OTHERWISE NOTED ON THESE PLANS.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [175, 176, 177]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "AND UTILITIES, TO BE PROTECTED IN PLACE UNLESS OTHERWISE NOTED ON THESE PLANS.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [173, 174]
+    },
+    {
+      "callout_type": "other",
+      "text": "PHASE 1",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [142]
+    },
+    {
+      "callout_type": "other",
+      "text": "PHASE 2A",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [141]
+    },
+    {
+      "callout_type": "other",
+      "text": "TREE 2\"",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [125, 126, 127]
+    },
+    {
+      "callout_type": "other",
+      "text": "BOL",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [124]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains a topographic survey and demolition plan. Numerous spot elevations for Original Ground (OG) and Road (RD) are present but are not associated with specific utility structures or pipes in this view. The sheet is part of the FNC Farms Subdivision Phase 1 project."
+}
+```

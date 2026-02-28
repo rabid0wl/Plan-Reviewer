@@ -1,0 +1,52 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 25,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": null,
+      "material": null,
+      "length_lf": null,
+      "slope": 0.0042,
+      "from_station": "19+00",
+      "to_station": "20+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        1,
+        109,
+        110
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [
+    14,
+    15
+  ],
+  "extraction_notes": "This tile shows a profile view of a sanitary sewer line with a slope of 0.0042 between stations 19+00 and 20+00. The plan view portion at the top shows existing utilities (W, SS, E-OH) and lot numbers. No specific new structures are detailed with stations/offsets in this crop."
+}
+```

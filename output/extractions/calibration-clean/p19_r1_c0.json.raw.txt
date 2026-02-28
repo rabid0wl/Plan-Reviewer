@@ -1,0 +1,137 @@
+{
+  "tile_id": "tile_r0_c0",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.53,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "EC",
+      "source_text_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.56,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        7
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.03,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        8
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.65,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "ECR, GB",
+      "source_text_ids": [
+        11,
+        12
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": null,
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        6
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        3
+      ]
+    }
+  ],
+  "street_names": [
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view of Bishop Street showing proposed Top of Curb (TC) elevations and existing centerline grade. Utility type SD identified from file path string."
+}

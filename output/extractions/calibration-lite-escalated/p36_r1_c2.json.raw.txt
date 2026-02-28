@@ -1,0 +1,167 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "ssmh_1",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.62,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "ssmh_2",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+14.94",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.27,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "tee_1",
+      "structure_type": "other",
+      "size": "8\"",
+      "station": "14+02.73",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "W/ (3) 8\" Ø GATE VALVE(S)",
+      "source_text_ids": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "fire_hydrant_1",
+      "structure_type": "other",
+      "size": null,
+      "station": "12+60.32",
+      "offset": "20.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "W/ (1) 6\" Ø GATE VALVE(S)",
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.0152,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 205.0,
+      "slope": 0.005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        19
+      ]
+    }
+  ],
+  "street_names": [
+    "M ROYALE STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": null
+}
+```

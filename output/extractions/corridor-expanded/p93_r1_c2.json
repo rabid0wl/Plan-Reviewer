@@ -1,0 +1,130 @@
+{
+  "tile_id": "p93_r1_c2",
+  "page_number": 93,
+  "sheet_type": "plan_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.06",
+      "station": null,
+      "offset": null,
+      "elevation": 335.06,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        40,
+        41
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 333.78",
+      "station": null,
+      "offset": null,
+      "elevation": 333.78,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        42,
+        43
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 331.91",
+      "station": null,
+      "offset": null,
+      "elevation": 331.91,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        44,
+        45
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 332.96",
+      "station": null,
+      "offset": null,
+      "elevation": 332.96,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        46,
+        47
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 334.25",
+      "station": null,
+      "offset": null,
+      "elevation": 334.25,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        48,
+        49
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.24",
+      "station": null,
+      "offset": null,
+      "elevation": 335.24,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        50,
+        51
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.22",
+      "station": null,
+      "offset": null,
+      "elevation": 335.22,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        52,
+        53
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "WALL 335.67",
+      "station": null,
+      "offset": null,
+      "elevation": 335.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        102,
+        103
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "FNC 335.68",
+      "station": null,
+      "offset": null,
+      "elevation": 335.68,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        17,
+        18
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains grading information for a parking lot project in Dinuba. Numerous spot elevations (TC, FL, LIP, OG, P, BSW) are present. No utility pipes are explicitly labeled in this view."
+}

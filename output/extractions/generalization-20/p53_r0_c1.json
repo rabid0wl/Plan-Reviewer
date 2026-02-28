@@ -1,0 +1,61 @@
+{
+  "tile_id": "p53_r0_c1",
+  "page_number": 53,
+  "sheet_type": "detail_sheet",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "RESIDENTIAL DRIVE APPROACH (TYPE I)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "2111",
+      "reference_detail": "RESIDENTIAL DRIVE APPROACH (TYPE I)",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "STORM WATER DI SHEET 1",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "STORM WATER DI SHEET 1",
+      "source_text_ids": []
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "GENERAL CONCRETE NOTES SHEET 1",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1020",
+      "reference_detail": "GENERAL CONCRETE NOTES SHEET 1",
+      "source_text_ids": [
+        0,
+        2
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "GENERAL CONCRETE NOTES SHEET 2",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "1020",
+      "reference_detail": "GENERAL CONCRETE NOTES SHEET 2",
+      "source_text_ids": [
+        1,
+        3
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains multiple standard detail drawings for the City of Tulare, including residential drive approaches, storm water drop inlets, and general concrete notes. No specific project-level stationing or pipe runs are present as these are standard details."
+}

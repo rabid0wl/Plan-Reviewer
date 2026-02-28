@@ -1,0 +1,1215 @@
+{
+  "utility_type": "W",
+  "quality_summary": {
+    "total_tiles": 24,
+    "ok_tiles": 24,
+    "sanitized_tiles": 5,
+    "skipped_tiles": 0,
+    "quality_grade": "B",
+    "warnings": [
+      "5 tiles had sanitizer recovery"
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "orphan:W:W:e0:p34_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e0:p34_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e1:p34_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e1:p34_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e2:p34_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e2:p34_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e3:p34_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e3:p34_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e4:p34_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e4:p34_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e5:p34_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e5:p34_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e6:p34_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e6:p34_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e7:p34_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e7:p34_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e8:p34_r1_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e8:p34_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 34,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e9:p36_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e9:p36_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e10:p36_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e10:p36_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e11:p36_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e11:p36_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e12:p36_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e12:p36_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e13:p36_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e13:p36_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e14:p36_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e14:p36_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e15:p36_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e15:p36_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e16:p36_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e16:p36_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e17:p36_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e17:p36_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e18:p36_r1_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e18:p36_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 36,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "orphan:W:W:e0:p34_r0_c0:from",
+      "to_node": "orphan:W:W:e0:p34_r0_c0:to",
+      "edge_id": "W:e0:p34_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c0"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        79,
+        80
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e1:p34_r0_c0:from",
+      "to_node": "orphan:W:W:e1:p34_r0_c0:to",
+      "edge_id": "W:e1:p34_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c0"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        71,
+        72,
+        73
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e2:p34_r0_c0:from",
+      "to_node": "orphan:W:W:e2:p34_r0_c0:to",
+      "edge_id": "W:e2:p34_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c0"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        48
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e3:p34_r0_c1:from",
+      "to_node": "orphan:W:W:e3:p34_r0_c1:to",
+      "edge_id": "W:e3:p34_r0_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 623.0,
+      "slope": null,
+      "from_station": "12+00",
+      "to_station": "16+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 623 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c1"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e4:p34_r0_c1:from",
+      "to_node": "orphan:W:W:e4:p34_r0_c1:to",
+      "edge_id": "W:e4:p34_r0_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": "17+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c1"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e5:p34_r0_c2:from",
+      "to_node": "orphan:W:W:e5:p34_r0_c2:to",
+      "edge_id": "W:e5:p34_r0_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r0_c2"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e6:p34_r1_c0:from",
+      "to_node": "orphan:W:W:e6:p34_r1_c0:to",
+      "edge_id": "W:e6:p34_r1_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 623.0,
+      "slope": 0.002,
+      "from_station": "9+94.00",
+      "to_station": null,
+      "from_structure_hint": "12\"x12\"x8\"x8\" CROSS",
+      "to_structure_hint": null,
+      "notes": "INSTALL 623 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r1_c0"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e7:p34_r1_c1:from",
+      "to_node": "orphan:W:W:e7:p34_r1_c1:to",
+      "edge_id": "W:e7:p34_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": "16+18.65",
+      "to_station": null,
+      "from_structure_hint": "8\" TEE",
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\"",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r1_c1"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        10
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e8:p34_r1_c2:from",
+      "to_node": "orphan:W:W:e8:p34_r1_c2:to",
+      "edge_id": "W:e8:p34_r1_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p34_r1_c2"
+      ],
+      "source_page_numbers": [
+        34
+      ],
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e9:p36_r0_c0:from",
+      "to_node": "orphan:W:W:e9:p36_r0_c0:to",
+      "edge_id": "W:e9:p36_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 20.0,
+      "slope": null,
+      "from_station": "9+94.00",
+      "to_station": "10+08.02",
+      "from_structure_hint": "45deg BEND",
+      "to_structure_hint": "45deg BEND",
+      "notes": "INSTALL 20 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r0_c0"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        70,
+        71
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e10:p36_r0_c0:from",
+      "to_node": "orphan:W:W:e10:p36_r0_c0:to",
+      "edge_id": "W:e10:p36_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 385.0,
+      "slope": null,
+      "from_station": "10+08.02",
+      "to_station": "13+92.74",
+      "from_structure_hint": "45deg BEND",
+      "to_structure_hint": "45deg BEND",
+      "notes": "INSTALL 385 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r0_c0"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        72,
+        73
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e11:p36_r0_c0:from",
+      "to_node": "orphan:W:W:e11:p36_r0_c0:to",
+      "edge_id": "W:e11:p36_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": null,
+      "from_station": "13+92.74",
+      "to_station": "13+97.05",
+      "from_structure_hint": "45deg BEND",
+      "to_structure_hint": "45deg BEND",
+      "notes": "INSTALL 6 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r0_c0"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        74,
+        75
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e12:p36_r0_c1:from",
+      "to_node": "orphan:W:W:e12:p36_r0_c1:to",
+      "edge_id": "W:e12:p36_r0_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 408 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r0_c1"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        78,
+        79
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e13:p36_r0_c2:from",
+      "to_node": "orphan:W:W:e13:p36_r0_c2:to",
+      "edge_id": "W:e13:p36_r0_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r0_c2"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        33,
+        34
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e14:p36_r1_c0:from",
+      "to_node": "orphan:W:W:e14:p36_r1_c0:to",
+      "edge_id": "W:e14:p36_r1_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 20.0,
+      "slope": null,
+      "from_station": "9+94.00",
+      "to_station": "10+08.02",
+      "from_structure_hint": "45deg BEND @ 9+94.00",
+      "to_structure_hint": "45deg BEND @ 10+08.02",
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r1_c0"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        27,
+        28
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e15:p36_r1_c0:from",
+      "to_node": "orphan:W:W:e15:p36_r1_c0:to",
+      "edge_id": "W:e15:p36_r1_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 385.0,
+      "slope": null,
+      "from_station": "10+08.02",
+      "to_station": "13+92.74",
+      "from_structure_hint": "45deg BEND @ 10+08.02",
+      "to_structure_hint": "45deg BEND @ 13+92.74",
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r1_c0"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        2,
+        3,
+        4
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e16:p36_r1_c1:from",
+      "to_node": "orphan:W:W:e16:p36_r1_c1:to",
+      "edge_id": "W:e16:p36_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": null,
+      "from_station": "13+92.74",
+      "to_station": "13+97.05",
+      "from_structure_hint": "45deg BEND",
+      "to_structure_hint": "45deg BEND",
+      "notes": "INSTALL 6 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r1_c1"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        12,
+        13
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e17:p36_r1_c1:from",
+      "to_node": "orphan:W:W:e17:p36_r1_c1:to",
+      "edge_id": "W:e17:p36_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": "9+94.29",
+      "to_station": null,
+      "from_structure_hint": "8\" TEE",
+      "to_structure_hint": null,
+      "notes": "INSTALL 408 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r1_c1"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        33,
+        34,
+        35
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e18:p36_r1_c2:from",
+      "to_node": "orphan:W:W:e18:p36_r1_c2:to",
+      "edge_id": "W:e18:p36_r1_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": 0.0023,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p36_r1_c2"
+      ],
+      "source_page_numbers": [
+        36
+      ],
+      "source_text_ids": [
+        12,
+        13,
+        14,
+        19
+      ],
+      "sanitized": false
+    }
+  ]
+}

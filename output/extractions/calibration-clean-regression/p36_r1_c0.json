@@ -1,0 +1,235 @@
+{
+  "tile_id": "p36_r1_c0",
+  "page_number": 36,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_10+06.00",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+06.00",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.76,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.56,
+          "source_text_ids": [
+            34
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.46,
+          "source_text_ids": [
+            35
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "id": "SSMH_12+07.59",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+07.59",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.19,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 295.23,
+          "source_text_ids": [
+            32
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 295.23,
+          "source_text_ids": [
+            33
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": "W_BEND_10+08.02",
+      "structure_type": "bend",
+      "size": null,
+      "station": "10+08.02",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "source_text_ids": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "W_BEND_9+94.00",
+      "structure_type": "bend",
+      "size": null,
+      "station": "9+94.00",
+      "offset": "8.02' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        29,
+        30
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.0033,
+      "from_station": "10+06.00",
+      "to_station": "12+07.59",
+      "from_structure_hint": "SSMH @ 10+06.00",
+      "to_structure_hint": "SSMH @ 12+07.59",
+      "notes": "INSTALL 202 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.005,
+      "from_station": "12+07.59",
+      "to_station": null,
+      "from_structure_hint": "SSMH @ 12+07.59",
+      "to_structure_hint": null,
+      "notes": "INSTALL 202 LF OF 8\" DIA SS PIPE @ S=0.0050",
+      "source_text_ids": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 20.0,
+      "slope": null,
+      "from_station": "9+94.00",
+      "to_station": "10+08.02",
+      "from_structure_hint": "W BEND @ 9+94.00",
+      "to_structure_hint": "W BEND @ 10+08.02",
+      "notes": "INSTALL 20 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        27,
+        28
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 385.0,
+      "slope": null,
+      "from_station": "10+08.02",
+      "to_station": null,
+      "from_structure_hint": "W BEND @ 10+08.02",
+      "to_structure_hint": null,
+      "notes": "INSTALL 385 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        25,
+        26
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    }
+  ],
+  "street_names": [
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view shows sanitary sewer (SS) and water (W) utilities. Slopes and lengths for SS pipes are explicitly labeled. Water line cover depth is noted as 4.0' minimum."
+}

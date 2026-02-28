@@ -1,0 +1,157 @@
+{
+  "tile_id": "tile_extraction",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": "BCR",
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+90.18",
+      "offset": "38.34' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.53,
+      "fl_elevation": 302.03,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BCR",
+      "source_text_ids": [18, 19, 16, 17]
+    },
+    {
+      "id": "ECR",
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+70.18",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.16,
+      "fl_elevation": 301.66,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "ECR",
+      "source_text_ids": [22, 23, 20, 21]
+    },
+    {
+      "id": "GB_14+26.17",
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+26.17",
+      "offset": "38.96' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.53,
+      "fl_elevation": 302.03,
+      "inverts": [],
+      "is_existing": false,
+      "notes": null,
+      "source_text_ids": [15, 13, 14]
+    },
+    {
+      "id": "BCR_RT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+71.48",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.16,
+      "fl_elevation": 301.66,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BCR",
+      "source_text_ids": [8, 9, 6, 7]
+    },
+    {
+      "id": "ECR_RT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+91.48",
+      "offset": "37.66' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.36,
+      "fl_elevation": 301.86,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "ECR",
+      "source_text_ids": [4, 5, 2, 3]
+    },
+    {
+      "id": "GB_14+26.89",
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+26.89",
+      "offset": "3.16' RTGC",
+      "rim_elevation": null,
+      "tc_elevation": 302.45,
+      "fl_elevation": 301.95,
+      "inverts": [],
+      "is_existing": false,
+      "notes": null,
+      "source_text_ids": [26, 24, 25]
+    },
+    {
+      "id": "GB_14+27.47",
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+27.47",
+      "offset": "37.04' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.37,
+      "fl_elevation": 301.87,
+      "inverts": [],
+      "is_existing": false,
+      "notes": null,
+      "source_text_ids": [12, 10, 11]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 24",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "24",
+      "reference_detail": null,
+      "source_text_ids": [82]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [41]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [42]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "M ROYALE STREET"
+  ],
+  "lot_numbers": [
+    7,
+    8,
+    9,
+    10,
+    15,
+    16,
+    17,
+    18,
+    48,
+    49,
+    50
+  ],
+  "extraction_notes": "Extracted curb return and grade break points along Harbour Town Ave. Slopes for the street flowlines are noted as 0.0023."
+}

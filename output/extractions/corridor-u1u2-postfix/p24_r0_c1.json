@@ -1,0 +1,204 @@
+{
+  "tile_id": "p24_r0_c1",
+  "page_number": 24,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SD_INLET_11+42.73",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+42.73",
+      "offset": "51.48' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.38,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.46,
+          "source_text_ids": [
+            570
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        570,
+        571,
+        572,
+        573
+      ]
+    },
+    {
+      "id": "SD_INLET_11+34.51",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.51",
+      "offset": "20.13' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.69,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.3,
+          "source_text_ids": [
+            548
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.2,
+          "source_text_ids": [
+            549
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "EXIST. DI",
+      "source_text_ids": [
+        548,
+        549,
+        550,
+        551,
+        552
+      ]
+    },
+    {
+      "id": "SD_INLET_11+34.29",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.29",
+      "offset": "58.62' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.95,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.34,
+          "source_text_ids": [
+            530
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        530,
+        531,
+        532,
+        533
+      ]
+    },
+    {
+      "id": "W_VALVE_11+34",
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "11+34",
+      "offset": "20' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_text_ids": [
+        578,
+        579,
+        580,
+        553
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 57.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": "11+42.73",
+      "from_structure_hint": null,
+      "to_structure_hint": "SD_INLET_11+42.73",
+      "notes": "INSTALL 57 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "source_text_ids": [
+        574,
+        575,
+        576
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 323.0,
+      "slope": 0.0005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 323 LF OF 8\" DIA SS PIPE @ S=0.0005",
+      "source_text_ids": [
+        534,
+        535,
+        536
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 360.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 360 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        537,
+        538,
+        539,
+        540,
+        541,
+        542,
+        543
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "CONNECT INTO EXISTING STORM DRAIN DRAINAGE INLET",
+      "station": "11+34.51",
+      "offset": "20.13' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        565,
+        566,
+        567
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted proposed and existing storm drain inlets with stations and elevations. Extracted water main and sanitary sewer pipe segments with lengths and slopes as labeled. Keynote 11 refers to water main installation. Keynote 10 refers to sanitary sewer manhole/service work."
+}

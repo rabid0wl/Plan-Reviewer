@@ -1,0 +1,290 @@
+```json
+{
+  "tile_id": "tile_echo_hill_ave_profile",
+  "page_number": 25,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SDMH 9+87.36",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "9+87.36",
+      "offset": "11.00' RT",
+      "rim_elevation": 300.94,
+      "tc_elevation": 301.19,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.22,
+          "source_text_ids": [
+            51
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.22,
+          "source_text_ids": [
+            52
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.32,
+          "source_text_ids": [
+            53
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        28,
+        29,
+        30,
+        10
+      ]
+    },
+    {
+      "id": "SDMH 10+40.39",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "10+40.39",
+      "offset": "11.00' RT",
+      "rim_elevation": 300.70,
+      "tc_elevation": 300.99,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 293.42,
+          "source_text_ids": [
+            54
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 293.92,
+          "source_text_ids": [
+            55
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.02,
+          "source_text_ids": [
+            56
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.02,
+          "source_text_ids": [
+            57
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        31,
+        32,
+        33,
+        12
+      ]
+    },
+    {
+      "id": "SDMH 11+46.36",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "11+46.36",
+      "offset": "11.00' RT",
+      "rim_elevation": 301.49,
+      "tc_elevation": 301.82,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.70,
+          "source_text_ids": [
+            58
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.80,
+          "source_text_ids": [
+            59
+          ]
+        },
+        {
+          "direction": "NW",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 295.06,
+          "source_text_ids": [
+            40
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        34,
+        35,
+        36,
+        18
+      ]
+    },
+    {
+      "id": "GB 10+15.47",
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+15.47",
+      "offset": "36.15' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.19,
+      "fl_elevation": 300.69,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 53.0,
+      "slope": 0.002,
+      "from_station": "9+87.36",
+      "to_station": "10+40.39",
+      "from_structure_hint": "SDMH 9+87.36",
+      "to_structure_hint": "SDMH 10+40.39",
+      "notes": "INSTALL 53 LF OF 18\" DIA SD PIPE @ S=0.0020",
+      "source_text_ids": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 106.0,
+      "slope": 0.0073,
+      "from_station": "10+40.39",
+      "to_station": "11+46.36",
+      "from_structure_hint": "SDMH 10+40.39",
+      "to_structure_hint": "SDMH 11+46.36",
+      "notes": "INSTALL 106 LF OF 12\" DIA SD PIPE @ S=0.0073",
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 53.0,
+      "slope": 0.005,
+      "from_station": "11+46.36",
+      "to_station": null,
+      "from_structure_hint": "SDMH 11+46.36",
+      "to_structure_hint": null,
+      "notes": "INSTALL 53 LF OF 12\" DIA SD PIPE @ S=0.0050",
+      "source_text_ids": [
+        37,
+        38,
+        39
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cross_reference",
+      "text": "8\" WATER X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        41
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "8\" SS X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        44
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        42,
+        43
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        5,
+        6
+      ]
+    }
+  ],
+  "street_names": [
+    "ECHO HILL AVENUE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing storm drain system along Echo Hill Avenue. Multiple utility crossings (Water and Sanitary Sewer) are noted with minimum clearance requirements."
+}
+```

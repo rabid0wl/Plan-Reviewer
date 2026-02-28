@@ -1,0 +1,115 @@
+{
+  "tile_id": "p34_r0_c1",
+  "page_number": 34,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 623.0,
+      "slope": null,
+      "from_station": "12+00",
+      "to_station": "16+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 623 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": "17+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        68,
+        69,
+        70
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL FIRE HYDRANT W/ (1) 6\" DIA GATE VALVE(S)",
+      "station": "13+74.91",
+      "offset": "20.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        85,
+        86,
+        87
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 40",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "40",
+      "reference_detail": null,
+      "source_text_ids": [
+        146
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVENUE",
+    "EUREKA STREET"
+  ],
+  "lot_numbers": [
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    135,
+    132,
+    131,
+    130,
+    129
+  ],
+  "extraction_notes": "Extracted water and sewer pipe segments with associated installation notes. Identified fire hydrant installation at station 13+74.91. Noted benchmark and city disclaimer sections."
+}

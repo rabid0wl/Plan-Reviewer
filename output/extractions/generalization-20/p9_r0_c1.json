@@ -1,0 +1,121 @@
+{
+  "tile_id": "p9_r0_c1",
+  "page_number": 9,
+  "sheet_type": "grading",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "36''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        4
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "36''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        5
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "36''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "42''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "B",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        7
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "20' CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        15,
+        16
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "20' CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        18,
+        19
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "A",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        21
+      ]
+    }
+  ],
+  "street_names": [
+    "BANDON TRAILS AVENUE"
+  ],
+  "lot_numbers": [
+    80,
+    81,
+    82,
+    83
+  ],
+  "extraction_notes": "Tile contains a portion of a grading plan showing a storm drain alignment along Bandon Trails Avenue and a pond area. Elevations provided are spot elevations for grading."
+}

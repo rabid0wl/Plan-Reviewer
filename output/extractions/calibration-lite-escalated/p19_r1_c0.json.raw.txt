@@ -1,0 +1,96 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "9+75",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.53,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "EC",
+      "source_text_ids": [4, 5]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+40",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.56,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [7]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+55",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.03,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [8]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+25",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.65,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "BCR, ECR, GB",
+      "source_text_ids": [9, 10, 11, 12]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [1, 2]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [3]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0020",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [6]
+    }
+  ],
+  "street_names": ["BISHOP STREET"],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing Top of Curb (TC) elevations and existing centerline grade. Stations estimated from grid lines. FL 301.06 (ID 0) is partially cut off at the top edge."
+}

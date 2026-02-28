@@ -1,0 +1,153 @@
+{
+  "tile_id": "p24_r0_c2",
+  "page_number": 24,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+44.40",
+      "offset": "13.30' RT",
+      "rim_elevation": 329.28,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.59,
+          "source_text_ids": [
+            266
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.59,
+          "source_text_ids": [
+            267
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.57,
+          "source_text_ids": [
+            268
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        270,
+        271,
+        272,
+        269,
+        266,
+        267,
+        268
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 360.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL +/-1,102 L.F. OF 8\" PVC C-900 WATER MAIN",
+      "source_text_ids": [
+        20,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 54.0,
+      "slope": 0.0012,
+      "from_station": "14+44.40",
+      "to_station": "15+00",
+      "from_structure_hint": "SSMH at 14+44.40",
+      "to_structure_hint": "Matchline",
+      "notes": "INSTALL 54 LF OF 8\" DIA SS PIPE @ S=0.0012",
+      "source_text_ids": [
+        273,
+        274,
+        275,
+        276
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 4.0,
+      "slope": 0.0034,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "Existing SSMH",
+      "to_structure_hint": "SSMH at 14+44.40",
+      "notes": "INSTALL 4 LF OF 8\" DIA SS PIPE @ S=0.0034",
+      "source_text_ids": [
+        287,
+        288,
+        289
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 15+00 SEE SHEET U2",
+      "station": "15+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U2",
+      "reference_detail": null,
+      "source_text_ids": [
+        321,
+        322
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" GATE VALVE EVERY 500' (MAX) O.C. PER CITY STDS. W-8 AND W-17",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4 & CD5",
+      "reference_detail": "W-8, W-17",
+      "source_text_ids": [
+        21,
+        22
+      ]
+    }
+  ],
+  "street_names": [
+    "HARVARD AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted proposed SSMH at station 14+44.40 and existing SSMH. Identified water main installation and sewer pipe segments connecting structures. Matchline noted at station 15+00."
+}

@@ -1,0 +1,1326 @@
+{
+  "utility_type": "W",
+  "quality_summary": {
+    "total_tiles": 12,
+    "ok_tiles": 12,
+    "sanitized_tiles": 8,
+    "skipped_tiles": 0,
+    "quality_grade": "D",
+    "warnings": [
+      "8 tiles had sanitizer recovery",
+      "Extraction quality below threshold — findings may be incomplete"
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "W:24:GATEVALVE:1100.00:+0.00",
+      "kind": "structure",
+      "id": "gate_valve_11+00",
+      "page_number": 24,
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "11+00",
+      "offset": "0' CL",
+      "station_ft": 1100.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_tile_ids": [
+        "p24_r0_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        439,
+        440,
+        441
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:24:GATEVALVE:1134.00:+20.00",
+      "kind": "structure",
+      "id": "W_VALVE_11+34",
+      "page_number": 24,
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "11+34",
+      "offset": "20' RT",
+      "station_ft": 1134.0,
+      "signed_offset_ft": 20.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_tile_ids": [
+        "p24_r0_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        553,
+        578,
+        579,
+        580
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:TEE:1600.00:+0.00",
+      "kind": "structure",
+      "id": "13",
+      "page_number": 25,
+      "structure_type": "tee",
+      "size": "8\"X8\"X6\"",
+      "station": "16+00",
+      "offset": "0' CL",
+      "station_ft": 1600.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": 329.86,
+      "tc_elevation": 329.34,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.86,
+          "source_text_ids": [
+            300
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.777,
+          "source_text_ids": [
+            301
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.86,
+          "source_text_ids": [
+            302
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "8\"",
+          "pipe_type": "W",
+          "elevation": 325.74,
+          "source_text_ids": [
+            367
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 325.74,
+      "notes": "INSTALL 8\"X8\"X6\" TEE",
+      "source_tile_ids": [
+        "p25_r0_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        233,
+        234,
+        245,
+        300,
+        301,
+        302,
+        350,
+        367,
+        371,
+        372
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        329.86
+      ]
+    },
+    {
+      "node_id": "W:25:GATEVALVE:84b586874a",
+      "kind": "structure",
+      "id": "gate_valve",
+      "page_number": 25,
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "16+00",
+      "offset": "RT",
+      "station_ft": 1600.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_tile_ids": [
+        "p25_r0_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        368,
+        369,
+        370
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1665.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "16+65",
+      "offset": "0' CL",
+      "station_ft": 1665.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 329.59,
+      "fl_elevation": 329.13,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        38,
+        69,
+        293,
+        444,
+        538
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:METER:08cc355e77",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "meter",
+      "size": null,
+      "station": "16+65",
+      "offset": "RT",
+      "station_ft": 1665.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": 329.95,
+      "fl_elevation": 329.53,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        89,
+        103,
+        309,
+        458,
+        551
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:GATEVALVE:1685.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "gate_valve",
+      "size": "8\"",
+      "station": "16+85",
+      "offset": "0' CL",
+      "station_ft": 1685.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 8\" WATER VALVE PER CITY STD. W-8",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        48,
+        91,
+        546
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1735.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "17+35",
+      "offset": "0' CL",
+      "station_ft": 1735.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 329.73,
+      "fl_elevation": 329.25,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        38,
+        69,
+        285,
+        436,
+        539
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:METER:9daaf85c3d",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "meter",
+      "size": null,
+      "station": "17+35",
+      "offset": "RT",
+      "station_ft": 1735.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.12,
+      "fl_elevation": 329.6,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        89,
+        103,
+        307,
+        456,
+        550
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1795.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "17+95",
+      "offset": "0' CL",
+      "station_ft": 1795.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 329.89,
+      "fl_elevation": 329.47,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        38,
+        69,
+        283,
+        434,
+        540
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:METER:197a002331",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "meter",
+      "size": null,
+      "station": "17+95",
+      "offset": "RT",
+      "station_ft": 1795.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.16,
+      "fl_elevation": 329.65,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        89,
+        103,
+        305,
+        454,
+        549
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1865.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "18+65",
+      "offset": "0' CL",
+      "station_ft": 1865.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 330.22,
+      "fl_elevation": 329.77,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        38,
+        69,
+        277,
+        428,
+        541
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:METER:9fee5c44ea",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "meter",
+      "size": null,
+      "station": "18+65",
+      "offset": "RT",
+      "station_ft": 1865.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.34,
+      "fl_elevation": 329.89,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        89,
+        103,
+        299,
+        450,
+        548
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1900.00:+0.00",
+      "kind": "structure",
+      "id": "STA 19+00",
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+00",
+      "offset": "0' CL",
+      "station_ft": 1900.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 330.58,
+      "fl_elevation": 330.12,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        124,
+        188,
+        241
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1910.00:+0.00",
+      "kind": "structure",
+      "id": "STA 19+10",
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+10",
+      "offset": "0' CL",
+      "station_ft": 1910.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        243
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1925.00:+0.00",
+      "kind": "structure",
+      "id": "STA 19+25",
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+25",
+      "offset": "0' CL",
+      "station_ft": 1925.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        240
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1945.00:+0.00",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+45",
+      "offset": "0' CL",
+      "station_ft": 1945.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": 330.35,
+      "fl_elevation": 329.89,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        38,
+        69,
+        273,
+        425,
+        542
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:METER:e5e0a62d61",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "meter",
+      "size": null,
+      "station": "19+45",
+      "offset": "RT",
+      "station_ft": 1945.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.56,
+      "fl_elevation": 330.11,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        89,
+        103,
+        297,
+        448,
+        547
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "W:25:SERVICECONNECTION:1985.00:+0.00",
+      "kind": "structure",
+      "id": "STA 19+85",
+      "page_number": 25,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+85",
+      "offset": "0' CL",
+      "station_ft": 1985.0,
+      "signed_offset_ft": 0.0,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        242
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "orphan:W:W:e0:p24_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e0:p24_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e2:p24_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e2:p24_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e3:p24_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e3:p24_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e8:p25_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e8:p25_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e9:p25_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e9:p25_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e10:p25_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e10:p25_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e11:p25_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:W:W:e11:p25_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "W",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "W:24:GATEVALVE:1100.00:+0.00",
+      "to_node": "W:24:GATEVALVE:1134.00:+20.00",
+      "edge_id": "W:e1:p24_r0_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 360.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL +/-1,102 L.F. OF 8\" PVC C-900 WATER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r0_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        20,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "W:25:TEE:1600.00:+0.00",
+      "to_node": "W:25:GATEVALVE:1685.00:+0.00",
+      "edge_id": "W:e5:p25_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": null,
+      "from_structure_hint": "TEE",
+      "to_structure_hint": "FIRE HYDRANT",
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "high",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r0_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        351,
+        352
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "W:25:GATEVALVE:84b586874a",
+      "to_node": "W:25:TEE:1600.00:+0.00",
+      "edge_id": "W:e4:p25_r0_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 186.0,
+      "slope": null,
+      "from_station": "15+00",
+      "to_station": "16+86",
+      "from_structure_hint": "MATCHLINE",
+      "to_structure_hint": "TEE",
+      "notes": "INSTALL 186 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r0_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "W:25:GATEVALVE:84b586874a",
+      "to_node": "W:25:SERVICECONNECTION:1910.00:+0.00",
+      "edge_id": "W:e6:p25_r0_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 314.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": "19+14",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 314 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "medium",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p25_r0_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        531,
+        532,
+        533,
+        534,
+        535,
+        536
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "W:25:GATEVALVE:84b586874a",
+      "to_node": "W:25:SERVICECONNECTION:1985.00:+0.00",
+      "edge_id": "W:e7:p25_r0_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 1102.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8\" PVC C-900 WATER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        20,
+        231,
+        232,
+        233,
+        234,
+        235
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e0:p24_r0_c1:from",
+      "to_node": "orphan:W:W:e0:p24_r0_c1:to",
+      "edge_id": "W:e0:p24_r0_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 360.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 360 LF OF 8\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r0_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        537,
+        538,
+        539,
+        540,
+        541,
+        542,
+        543
+      ],
+      "sanitized": false
+    },
+    {
+      "from_node": "orphan:W:W:e2:p24_r1_c0:from",
+      "to_node": "orphan:W:W:e2:p24_r1_c0:to",
+      "edge_id": "W:e2:p24_r1_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "10\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 10\" WATER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        150
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e3:p24_r1_c1:from",
+      "to_node": "orphan:W:W:e3:p24_r1_c1:to",
+      "edge_id": "W:e3:p24_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "PROPOSED 8\" WATER MAIN PER UTILITY PLANS, SEE SHEET U1",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        146,
+        147
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e8:p25_r0_c2:from",
+      "to_node": "orphan:W:W:e8:p25_r0_c2:to",
+      "edge_id": "W:e8:p25_r0_c2",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" WATER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e9:p25_r1_c0:from",
+      "to_node": "orphan:W:W:e9:p25_r1_c0:to",
+      "edge_id": "W:e9:p25_r1_c0",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r1_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        129
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e10:p25_r1_c1:from",
+      "to_node": "orphan:W:W:e10:p25_r1_c1:to",
+      "edge_id": "W:e10:p25_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "PROPOSED 8\" WATER MAIN PER UTILITY PLANS, SHEET U1",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r1_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        9,
+        10
+      ],
+      "sanitized": true
+    },
+    {
+      "from_node": "orphan:W:W:e11:p25_r1_c1:from",
+      "to_node": "orphan:W:W:e11:p25_r1_c1:to",
+      "edge_id": "W:e11:p25_r1_c1",
+      "utility_type": "W",
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" WATER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r1_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        8
+      ],
+      "sanitized": true
+    }
+  ]
+}

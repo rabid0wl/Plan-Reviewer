@@ -1,0 +1,52 @@
+{
+  "tile_id": "p19_r1_c0",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        3
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0020",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        6
+      ]
+    }
+  ],
+  "street_names": [
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing Top of Curb (TC) elevations and existing centerline grade. Stations estimated from grid lines. FL 301.06 (ID 0) is partially cut off at the top edge."
+}

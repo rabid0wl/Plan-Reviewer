@@ -1,0 +1,84 @@
+{
+  "tile_id": "tile_profile_view",
+  "page_number": 34,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "W",
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "12\"x12\"x8\"x8\"",
+      "station": "9+94.00",
+      "offset": "6.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "REMOVE EXIST. 12\"x12\"x8\" TEE & INSTALL 12\"x12\"x8\"x8\" CROSS W/ (1) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 623.0,
+      "slope": 0.002,
+      "from_station": "9+94.00",
+      "to_station": null,
+      "from_structure_hint": "12\"x12\"x8\"x8\" CROSS",
+      "to_structure_hint": null,
+      "notes": "INSTALL 623 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cross_reference",
+      "text": "12\" SD X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        12
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        13
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The profile view shows a new 8\" water pipe crossing over an existing 12\" storm drain (SD) pipe. The stationing for the connection point is 9+94.00."
+}

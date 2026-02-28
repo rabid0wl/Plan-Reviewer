@@ -1,0 +1,55 @@
+{
+  "status": "ok",
+  "tile_id": "p14_r1_c2",
+  "coherence_score": 1.0,
+  "is_hybrid_viable": true,
+  "model": "google/gemini-3-flash-preview",
+  "attempted_models": [
+    "google/gemini-2.5-flash-lite",
+    "google/gemini-3-flash-preview"
+  ],
+  "escalated": true,
+  "escalation_reason": "sanitized_recovery",
+  "escalation_model": "google/gemini-3-flash-preview",
+  "escalation_enabled": true,
+  "escalation_coherence_threshold": 0.7,
+  "prompt_chars": 7616,
+  "text_items_count": 79,
+  "structures_count": 2,
+  "pipes_count": 1,
+  "callouts_count": 3,
+  "usage": {
+    "prompt_tokens": 4861,
+    "completion_tokens": 1065,
+    "total_tokens": 5926,
+    "cost": 0.0056255,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0056255,
+      "upstream_inference_prompt_cost": 0.0024305,
+      "upstream_inference_completions_cost": 0.003195
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  },
+  "corrected_fields": [
+    "tile_id"
+  ],
+  "sanitized": false,
+  "dropped_invalid_counts": {
+    "structures": 0,
+    "inverts": 0,
+    "pipes": 0,
+    "callouts": 0
+  },
+  "cache_key": "4972fa176cfe6e18",
+  "cache_hit": false
+}

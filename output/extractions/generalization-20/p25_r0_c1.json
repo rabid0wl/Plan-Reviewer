@@ -1,0 +1,354 @@
+{
+  "tile_id": "p25_r0_c1",
+  "page_number": 25,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "SDMH_11+46.36",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "11+46.36",
+      "offset": "11.00' RT",
+      "rim_elevation": 301.49,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.7,
+          "source_text_ids": [
+            28
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 294.8,
+          "source_text_ids": [
+            29
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "DI_11+84.20",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+84.20",
+      "offset": "37.75' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.82,
+      "fl_elevation": 301.32,
+      "inverts": [
+        {
+          "direction": "NW",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 295.06,
+          "source_text_ids": [
+            11
+          ]
+        }
+      ],
+      "notes": "DI BCR",
+      "source_text_ids": [
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "EXIST_SDMH_14+60.18",
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "14+60.18",
+      "offset": "12.00' RT",
+      "rim_elevation": 299.1,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.72,
+          "source_text_ids": [
+            72
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.82,
+          "source_text_ids": [
+            73
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 292.72,
+          "source_text_ids": [
+            74
+          ]
+        }
+      ],
+      "notes": "EXIST. SDMH",
+      "source_text_ids": [
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "id": "GB_11+28.18",
+      "structure_type": "GB",
+      "size": null,
+      "station": "11+28.18",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.55,
+      "fl_elevation": 301.05,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "GB_12+04.18",
+      "structure_type": "GB",
+      "size": null,
+      "station": "12+04.18",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.1,
+      "fl_elevation": 301.6,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "GB_12+04.20",
+      "structure_type": "GB",
+      "size": null,
+      "station": "12+04.20",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.09,
+      "fl_elevation": 301.59,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "GB_12+95.31_LT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "12+95.31",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.75,
+      "fl_elevation": 302.25,
+      "inverts": [],
+      "notes": "END C&G",
+      "source_text_ids": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "GB_12+95.31_RT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "12+95.31",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.75,
+      "fl_elevation": 302.25,
+      "inverts": [],
+      "notes": "END C&G",
+      "source_text_ids": [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "GB_15+38.18_LT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "15+38.18",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 299.12,
+      "fl_elevation": 298.62,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "id": "GB_15+08.18_LT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "15+08.18",
+      "offset": "48.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 299.48,
+      "fl_elevation": 298.98,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "id": "GB_15+08.18_RT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "15+08.18",
+      "offset": "48.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 299.58,
+      "fl_elevation": 299.08,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "id": "GB_15+38.18_RT",
+      "structure_type": "GB",
+      "size": null,
+      "station": "15+38.18",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 299.12,
+      "fl_elevation": 298.62,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        68,
+        69,
+        70,
+        71
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 106.0,
+      "slope": 0.0073,
+      "from_station": "11+28.18",
+      "to_station": "11+46.36",
+      "from_structure_hint": "GB",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 106 LF OF 12\" DIA SD PIPE @ S=0.0073",
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 53.0,
+      "slope": 0.005,
+      "from_station": "11+46.36",
+      "to_station": null,
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": null,
+      "notes": "INSTALL 53 LF OF 12\" DIA SD PIPE @ S=0.0050",
+      "source_text_ids": [
+        35,
+        36,
+        37
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "P [299.27] MATCH EXIST.",
+      "station": "14+98.18",
+      "offset": "48.00' LT",
+      "elevation": 299.27,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 15",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "15",
+      "reference_detail": null,
+      "source_text_ids": [
+        144
+      ]
+    }
+  ],
+  "street_names": [
+    "MORRISON STREET",
+    "CASTLEROCK",
+    "TAIL CT."
+  ],
+  "lot_numbers": [
+    26,
+    27,
+    28
+  ],
+  "extraction_notes": "Extracted storm drain structures and curb grade breaks. Note that some structures are existing (EXIST. SDMH). Street names and lot numbers identified from plan view labels."
+}

@@ -1,0 +1,211 @@
+{
+  "tile_id": "tile_r0_c0",
+  "page_number": 1,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS"
+  ],
+  "structures": [
+    {
+      "id": "SDMH @ 11+46.36",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "11+46.36",
+      "offset": "11.00' RT",
+      "rim_elevation": 301.49,
+      "tc_elevation": 301.82,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "NW",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 295.06,
+          "source_text_ids": [
+            16
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH; DI",
+      "source_text_ids": [
+        5,
+        6,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "EXIST. SDMH @ 14+60.18",
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "14+60.18",
+      "offset": "12.00' RT",
+      "rim_elevation": 299.1,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.72,
+          "source_text_ids": [
+            29
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.82,
+          "source_text_ids": [
+            30
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 292.72,
+          "source_text_ids": [
+            31
+          ]
+        }
+      ],
+      "notes": "EXIST. SDMH",
+      "source_text_ids": [
+        26,
+        27,
+        28
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 53.0,
+      "slope": 0.005,
+      "from_station": "11+46.36",
+      "to_station": null,
+      "from_structure_hint": "SDMH @ 11+46.36",
+      "to_structure_hint": null,
+      "notes": "INSTALL 53 LF OF 12\" DIA SD PIPE",
+      "source_text_ids": [
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "TC 302.09 ECR",
+      "station": null,
+      "offset": null,
+      "elevation": 302.09,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        7
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ SOUTH SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 302.75 END C&G",
+      "station": null,
+      "offset": null,
+      "elevation": 302.75,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        11,
+        12
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "8\" SS X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        21
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        17,
+        18
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        19,
+        20
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 299.58 BCR",
+      "station": null,
+      "offset": null,
+      "elevation": 299.58,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 299.12 ECR",
+      "station": null,
+      "offset": null,
+      "elevation": 299.12,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        24,
+        25
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing storm drain improvements and existing utilities. Stationing increases from left to right (12+00 to 15+00)."
+}

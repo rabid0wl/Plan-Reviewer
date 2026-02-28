@@ -1,0 +1,709 @@
+{
+  "utility_type": "SD",
+  "quality_summary": {
+    "total_tiles": 30,
+    "ok_tiles": 30,
+    "sanitized_tiles": 23,
+    "skipped_tiles": 0,
+    "quality_grade": "D",
+    "warnings": [
+      "23 tiles had sanitizer recovery",
+      "Extraction quality below threshold — findings may be incomplete"
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "SD:24:INLET:1083.34:+19.95",
+      "kind": "structure",
+      "id": "1",
+      "page_number": 24,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "10+83.34",
+      "offset": "19.95' RT",
+      "station_ft": 1083.34,
+      "signed_offset_ft": 19.95,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.88,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.48,
+          "source_text_ids": [
+            425
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 320.48,
+      "notes": "INSTALL DI",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r1_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        108,
+        118,
+        119,
+        120,
+        121,
+        122,
+        390,
+        425,
+        426,
+        427,
+        428,
+        429
+      ],
+      "sanitized": true,
+      "variants_count": 2,
+      "rim_elevation_values": [],
+      "crown_suspects": [
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.14,
+          "source_text_ids": [
+            426
+          ]
+        }
+      ]
+    },
+    {
+      "node_id": "SD:24:SDMH:1084.59:-5.54",
+      "kind": "structure",
+      "id": "4",
+      "page_number": 24,
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "10+84.59",
+      "offset": "5.54' LT",
+      "station_ft": 1084.59,
+      "signed_offset_ft": -5.54,
+      "rim_elevation": 329.3,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "36\"",
+          "pipe_type": "SD",
+          "elevation": 320.25,
+          "source_text_ids": [
+            393
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.45,
+          "source_text_ids": [
+            391
+          ]
+        }
+      ],
+      "is_existing": true,
+      "representative_invert": 320.25,
+      "notes": "EXIST. SDMH",
+      "source_tile_ids": [
+        "p24_r0_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        386,
+        391,
+        392,
+        393,
+        394,
+        395
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        329.3
+      ]
+    },
+    {
+      "node_id": "SD:24:SDMH:1085.94:-53.08",
+      "kind": "structure",
+      "id": null,
+      "page_number": 24,
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "10+85.94",
+      "offset": "53.08' LT",
+      "station_ft": 1085.94,
+      "signed_offset_ft": -53.08,
+      "rim_elevation": 328.78,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.4,
+          "source_text_ids": [
+            417
+          ]
+        },
+        {
+          "direction": "E/W",
+          "pipe_size": "36\"",
+          "pipe_type": "SD",
+          "elevation": 320.4,
+          "source_text_ids": [
+            418
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 320.4,
+      "notes": "INSTALL SDMH",
+      "source_tile_ids": [
+        "p24_r0_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        417,
+        418,
+        419,
+        420,
+        421
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        328.78
+      ]
+    },
+    {
+      "node_id": "SD:24:INLET:1134.29:+58.62",
+      "kind": "structure",
+      "id": "INSTALL DI",
+      "page_number": 24,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.29",
+      "offset": "58.62' RT",
+      "station_ft": 1134.29,
+      "signed_offset_ft": 58.62,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.95,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.34,
+          "source_text_ids": [
+            530
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 325.34,
+      "notes": "INSTALL SD DI PER CITY STD. SD-11, SHEET CD3.",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r0_c1",
+        "p24_r1_c0",
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        46,
+        47,
+        101,
+        102,
+        103,
+        104,
+        120,
+        121,
+        122,
+        123,
+        124,
+        374,
+        375,
+        376,
+        377,
+        530,
+        531,
+        532,
+        533
+      ],
+      "sanitized": true,
+      "variants_count": 4,
+      "rim_elevation_values": [],
+      "suspect_crown": true
+    },
+    {
+      "node_id": "SD:24:INLET:1134.51:+20.13",
+      "kind": "structure",
+      "id": "EXIST. DI",
+      "page_number": 24,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.51",
+      "offset": "20.13' RT",
+      "station_ft": 1134.51,
+      "signed_offset_ft": 20.13,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.69,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.3,
+          "source_text_ids": [
+            548
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.2,
+          "source_text_ids": [
+            549
+          ]
+        }
+      ],
+      "is_existing": true,
+      "representative_invert": 325.2,
+      "notes": "CONNECT INTO EXISTING STORM DRAIN DRAINAGE INLET",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r0_c1",
+        "p24_r1_c0",
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        125,
+        126,
+        127,
+        128,
+        129,
+        139,
+        396,
+        397,
+        398,
+        399,
+        400,
+        438,
+        548,
+        549,
+        550,
+        551,
+        552,
+        565,
+        566,
+        567
+      ],
+      "sanitized": true,
+      "variants_count": 4,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "SD:24:INLET:1142.73:-51.48",
+      "kind": "structure",
+      "id": "INSTALL DI",
+      "page_number": 24,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+42.73",
+      "offset": "51.48' LT",
+      "station_ft": 1142.73,
+      "signed_offset_ft": -51.48,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.38,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.46,
+          "source_text_ids": [
+            570
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 320.46,
+      "notes": "INSTALL DI PER CITY STD. SD-11, SHEET CD3.",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r0_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        46,
+        47,
+        413,
+        414,
+        415,
+        416,
+        570,
+        571,
+        572,
+        573
+      ],
+      "sanitized": true,
+      "variants_count": 2,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "orphan:SD:SD:e0:p103_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SD",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SD:SD:e1:p103_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SD",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SD:SD:e1:p103_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SD",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SD:SD:e2:p103_r1_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SD",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SD:SD:e2:p103_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SD",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "SD:24:INLET:1083.34:+19.95",
+      "to_node": "SD:24:SDMH:1084.59:-5.54",
+      "edge_id": "SD:e4:p24_r0_c0",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 26.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL DI (STA 10+83.34)",
+      "to_structure_hint": "EXIST. SDMH (STA 10+84.59)",
+      "notes": "INSTALL 26 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "matched_confidence": "medium",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p24_r0_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        381,
+        382,
+        383
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SD:24:INLET:1134.29:+58.62",
+      "to_node": "SD:24:INLET:1134.51:+20.13",
+      "edge_id": "SD:e8:p24_r1_c0",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 38.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL DI (STA 11+34.29)",
+      "to_structure_hint": "EXIST. DI (STA 11+34.51)",
+      "notes": "INSTALL 38 LF OF 18\" SD PIPE @ S=0.0011",
+      "matched_confidence": "medium",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p24_r1_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        105,
+        106,
+        107
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SD:24:INLET:1134.29:+58.62",
+      "to_node": "SD:24:SDMH:1084.59:-5.54",
+      "edge_id": "SD:e5:p24_r0_c0",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 51.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL 48\" SSMH (STA 11+21.16)",
+      "to_structure_hint": "EXIST. SDMH (STA 10+84.59)",
+      "notes": "INSTALL 51 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "matched_confidence": "low",
+      "from_match_confidence": "low",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p24_r0_c0"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        430,
+        431,
+        432,
+        433
+      ],
+      "sanitized": true,
+      "is_reference_only": false,
+      "crown_contamination_candidate": true,
+      "original_from_node": "SD:24:SDMH:1084.59:-5.54",
+      "original_to_node": "SD:24:INLET:1134.29:+58.62",
+      "oriented_by_gravity": true
+    },
+    {
+      "from_node": "SD:24:INLET:1142.73:-51.48",
+      "to_node": "SD:24:SDMH:1085.94:-53.08",
+      "edge_id": "SD:e3:p24_r0_c0",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 57.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": "11+42.73",
+      "from_structure_hint": "INSTALL DI (STA 11+42.73)",
+      "to_structure_hint": "INSTALL SDMH (STA 10+85.94)",
+      "notes": "INSTALL 57 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "matched_confidence": "medium",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r0_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        422,
+        423,
+        424,
+        574,
+        575,
+        576
+      ],
+      "sanitized": true,
+      "is_reference_only": false,
+      "crown_contamination_candidate": false,
+      "original_from_node": "SD:24:SDMH:1085.94:-53.08",
+      "original_to_node": "SD:24:INLET:1142.73:-51.48",
+      "oriented_by_gravity": true
+    },
+    {
+      "from_node": "orphan:SD:SD:e0:p103_r1_c1:from",
+      "to_node": "SD:24:SDMH:1084.59:-5.54",
+      "edge_id": "SD:e0:p103_r1_c1",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "15''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "SDMH",
+      "notes": "(E) 15'' SD",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "medium",
+      "source_tile_ids": [
+        "p103_r1_c1"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SD:SD:e1:p103_r1_c1:from",
+      "to_node": "orphan:SD:SD:e1:p103_r1_c1:to",
+      "edge_id": "SD:e1:p103_r1_c1",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "8''",
+      "material": "PVC",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXIST. 8\" PVC OVERFLOW PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r1_c1"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        33,
+        34,
+        99,
+        100,
+        101
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SD:SD:e2:p103_r1_c2:from",
+      "to_node": "orphan:SD:SD:e2:p103_r1_c2:to",
+      "edge_id": "SD:e2:p103_r1_c2",
+      "utility_type": "SD",
+      "pipe_type": "SD",
+      "size": "15''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r1_c2"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    }
+  ]
+}

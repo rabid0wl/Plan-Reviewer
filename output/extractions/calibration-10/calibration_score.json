@@ -1,0 +1,160 @@
+{
+  "extractions_dir": "output\\extractions\\calibration-10",
+  "extraction_file_count": 11,
+  "page_distribution": {
+    "-1": 1,
+    "14": 6,
+    "36": 4
+  },
+  "overall": {
+    "passed": 9,
+    "total": 10,
+    "pass_rate": 0.9
+  },
+  "reports": [
+    {
+      "name": "page14_ground_truth",
+      "passed": 5,
+      "total": 5,
+      "checks": [
+        {
+          "id": "p14_sdmh_1682",
+          "description": "SDMH at STA 16+82.45, ~28.00' RT with rim ~305.95",
+          "passed": true,
+          "found_station": "16+82.45",
+          "found_offset": "28.00' RT",
+          "found_rim": 305.95
+        },
+        {
+          "id": "p14_sdmh_1682_inv_e",
+          "description": "SDMH STA 16+82.45 has INV 12\" E ~299.77",
+          "passed": true,
+          "found": {
+            "direction": "E",
+            "pipe_size": "12\"",
+            "pipe_type": "SD",
+            "elevation": 299.77,
+            "source_text_ids": [
+              18
+            ]
+          }
+        },
+        {
+          "id": "p14_sdmh_1682_inv_w",
+          "description": "SDMH STA 16+82.45 has INV 12\" W ~299.77",
+          "passed": true,
+          "found": {
+            "direction": "W",
+            "pipe_size": "12\"",
+            "pipe_type": "SD",
+            "elevation": 299.77,
+            "source_text_ids": [
+              19
+            ]
+          }
+        },
+        {
+          "id": "p14_pipe_342_003",
+          "description": "SD pipe 12\" ~342 LF @ S=0.0030",
+          "passed": true,
+          "found": {
+            "pipe_type": "SD",
+            "size": "12\"",
+            "material": null,
+            "length_lf": 342.0,
+            "slope": 0.003,
+            "from_station": null,
+            "to_station": null,
+            "from_structure_hint": "SDMH at 13+40.73",
+            "to_structure_hint": "SDMH at 16+82.45",
+            "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+            "source_text_ids": [
+              15,
+              16,
+              17
+            ]
+          }
+        },
+        {
+          "id": "p14_pipe_002",
+          "description": "SD pipe 12\" @ S=0.0020 (length may be omitted)",
+          "passed": true,
+          "found": {
+            "pipe_type": "SD",
+            "size": "12\"",
+            "material": null,
+            "length_lf": null,
+            "slope": 0.002,
+            "from_station": null,
+            "to_station": null,
+            "from_structure_hint": null,
+            "to_structure_hint": null,
+            "notes": null,
+            "source_text_ids": [
+              256
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "page36_ground_truth",
+      "passed": 4,
+      "total": 5,
+      "checks": [
+        {
+          "id": "p36_ssmh_10_08.08",
+          "description": "SSMH near STA 10+08.08, 6.00' RT, rim near 301.79",
+          "passed": true,
+          "found_station": "10+06.00",
+          "found_offset": "6.00' RT",
+          "found_rim": 301.76
+        },
+        {
+          "id": "p36_ssmh_12_07.18",
+          "description": "SSMH near STA 12+07.18, 6.00' RT, rim near 302.78",
+          "passed": true,
+          "found_station": "12+07.59",
+          "found_offset": "6.00' RT",
+          "found_rim": 302.19
+        },
+        {
+          "id": "p36_ssmh_14_08.18",
+          "description": "SSMH near STA 14+08.18, 6.00' RT, rim near 302.90",
+          "passed": true,
+          "found_station": "14+09.19",
+          "found_offset": "6.00' RT",
+          "found_rim": 302.9
+        },
+        {
+          "id": "p36_ss_pipe_201_005",
+          "description": "SS pipe 8\" ~201 LF @ S=0.005",
+          "passed": true,
+          "found": {
+            "pipe_type": "SS",
+            "size": "8\"",
+            "material": null,
+            "length_lf": 202.0,
+            "slope": 0.005,
+            "from_station": null,
+            "to_station": null,
+            "from_structure_hint": "SSMH at STA 12+07.59",
+            "to_structure_hint": "SSMH at STA 14+09.19",
+            "notes": "INSTALL 202 LF OF 8\" DIA SS PIPE @ S=0.0050",
+            "source_text_ids": [
+              79,
+              80,
+              81
+            ]
+          }
+        },
+        {
+          "id": "p36_ss_pipe_300_005",
+          "description": "SS pipe 8\" ~300 LF @ S=0.005",
+          "passed": false,
+          "found": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.9,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            38
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            39
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        41,
+        42,
+        40,
+        38,
+        39
+      ]
+    },
+    {
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+05.68",
+      "offset": "6.00' RT",
+      "rim_elevation": 300.89,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.28,
+          "source_text_ids": [
+            68
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            69
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            70
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        72,
+        73,
+        71,
+        68,
+        69,
+        70
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "length_lf": 205.0,
+      "slope": 0.0152,
+      "notes": "INSTALL 205 LF OF 8\" SS PIPE @ S=0.0152",
+      "source_text_ids": [
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "length_lf": 6.0,
+      "notes": "INSTALL 6 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        25,
+        26
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "length_lf": 408.0,
+      "notes": "INSTALL 408 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        77,
+        78
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "STA: 13+92.74, 6.00' LT INSTALL 45deg BEND",
+      "station": "13+92.74",
+      "offset": "6.00' LT",
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "STA: 13+97.05, 1.84' LT INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "station": "13+97.05",
+      "offset": "1.84' LT",
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "STA: 9+94.29, 6.00' LT INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "station": "9+94.29",
+      "offset": "6.00' LT",
+      "source_text_ids": [
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "HARBOUR TOWN AVE. SEE SHEET 41",
+      "reference_sheet": "41",
+      "source_text_ids": [
+        145
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SUN HILLS AVE. SEE SHEET 43",
+      "reference_sheet": "43",
+      "source_text_ids": [
+        146
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "SUN HILLS AVE."
+  ],
+  "lot_numbers": [
+    5,
+    6,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    53,
+    54,
+    55,
+    56,
+    57,
+    68,
+    69,
+    70
+  ],
+  "extraction_notes": "Extracted two SSMH structures and associated pipe runs. Water system components (bends, tees, valves) were extracted as callouts per standard practice for plan view extraction when they are not full structures."
+}
+```

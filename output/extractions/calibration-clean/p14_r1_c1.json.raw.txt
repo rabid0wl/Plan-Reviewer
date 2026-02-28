@@ -1,0 +1,154 @@
+{
+  "tile_id": "tile_r0_c0",
+  "page_number": 1,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "SDMH_13+40.73",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "13+40.73",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.44,
+      "tc_elevation": 305.52,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 300.80,
+          "source_text_ids": [
+            33
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 300.90,
+          "source_text_ids": [
+            34
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH, DI",
+      "source_text_ids": [
+        14,
+        15,
+        16,
+        17,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "GB_16+00",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 306.12,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "GB",
+      "source_text_ids": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "SDMH_16+82.45",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "16+82.45",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.95,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 299.77,
+          "source_text_ids": [
+            35
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 299.77,
+          "source_text_ids": [
+            36
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        22,
+        23,
+        24,
+        25
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": "13+40.73",
+      "to_station": "16+82.45",
+      "from_structure_hint": "SDMH at 13+40.73",
+      "to_structure_hint": "SDMH at 16+82.45",
+      "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+      "source_text_ids": [
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ SOUTH SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        11,
+        12
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        13
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVENUE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing storm drain infrastructure along Prosperity Avenue. Stations 13+00 through 18+00 are visible. Two SDMH structures and a grade break (GB) are identified with their respective elevations and inverts."
+}

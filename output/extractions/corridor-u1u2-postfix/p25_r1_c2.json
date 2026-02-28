@@ -1,0 +1,33 @@
+{
+  "tile_id": "p25_r1_c2",
+  "page_number": 25,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [
+    14,
+    15
+  ],
+  "extraction_notes": "This tile shows a profile view of College Ave from STA 19+00 to 20+00. The profile includes an existing sanitary sewer line with a slope of 0.0042. Various existing utility markers (W, SS, E-OH) and ground elevations (OG, C, FNC) are shown in the plan portion at the top, but no specific new structures are identified with stations/offsets in this crop. The sheet is part of the 2025 Corridor Improvements Project for the City of Dinuba."
+}

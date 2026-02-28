@@ -1,0 +1,195 @@
+{
+  "tile_id": "p9_r0_c0",
+  "page_number": 9,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "36\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "36\" SD",
+      "source_text_ids": []
+    },
+    {
+      "pipe_type": "SD",
+      "size": "42\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "42\" SD",
+      "source_text_ids": []
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "HP 297.74",
+      "station": null,
+      "offset": null,
+      "elevation": 297.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "HWL 296.74",
+      "station": null,
+      "offset": null,
+      "elevation": 296.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        21
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TOE 286.24-287.74",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "HP 297.74",
+      "station": null,
+      "offset": null,
+      "elevation": 297.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        37
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "HWL 296.74",
+      "station": null,
+      "offset": null,
+      "elevation": 296.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        38
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TOE 287.74",
+      "station": null,
+      "offset": null,
+      "elevation": 287.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        39
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "HP 297.74",
+      "station": null,
+      "offset": null,
+      "elevation": 297.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        52
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "HWL 296.74",
+      "station": null,
+      "offset": null,
+      "elevation": 296.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        53
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TOE 292.24-294.74",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        54
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "FUTURE CURB & GUTTER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        27,
+        28
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "FUTURE SIDEWALK",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        29,
+        30
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "MAINTENANCE ROAD",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        33,
+        34
+      ]
+    }
+  ],
+  "street_names": [
+    "BANDON TRAILS AV"
+  ],
+  "lot_numbers": [
+    81,
+    82,
+    83
+  ],
+  "extraction_notes": "Tile contains a portion of a basin plan with grading elevations and future infrastructure callouts. Storm drain pipes (36\" and 42\") are visible along the roadway."
+}

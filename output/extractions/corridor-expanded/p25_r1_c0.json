@@ -1,0 +1,209 @@
+{
+  "tile_id": "p25_r1_c0",
+  "page_number": 25,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "9",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "15+90.21",
+      "offset": "13.30' RT",
+      "rim_elevation": 329.55,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            12,
+            131
+          ]
+        },
+        {
+          "direction": "NW",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            11,
+            132
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        8,
+        9,
+        10,
+        13,
+        133,
+        134,
+        135
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "15+94.72",
+      "offset": "8.80' RT",
+      "rim_elevation": 329.86,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.86,
+          "source_text_ids": [
+            19
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.86,
+          "source_text_ids": [
+            18
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.78,
+          "source_text_ids": [
+            17
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "EXIST. SSMH",
+      "source_text_ids": [
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 91.0,
+      "slope": 0.0012,
+      "from_station": null,
+      "to_station": "15+90.21",
+      "from_structure_hint": null,
+      "to_structure_hint": "9",
+      "notes": "INSTALL 91 LF OF 8\" DIA SS PIPE @ S=0.0012",
+      "source_text_ids": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": 0.0034,
+      "from_station": "15+90.21",
+      "to_station": "15+94.72",
+      "from_structure_hint": "9",
+      "to_structure_hint": "EXIST. SSMH",
+      "notes": "INSTALL 6 LF OF 8\" DIA PIPE @ S=0.0034",
+      "source_text_ids": [
+        26,
+        27
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "source_text_ids": [
+        129
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.20) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 329.2,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.50) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 329.5,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "PROPOSED EAST FLOWLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        24,
+        25
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "S=0.0022",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        30
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE LN."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view shows proposed sanitary sewer manhole (9) connecting to an existing sanitary sewer manhole. Water main and existing sanitary sewer lines are also shown in profile. Crown elevation CR 329.79 noted for Grade Break (GB)."
+}

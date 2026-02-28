@@ -1,0 +1,67 @@
+{
+  "tile_id": "detail_sheet_tile",
+  "page_number": 1,
+  "sheet_type": "detail_sheet",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "STORM WATER DI SHEET 3",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "SHEET 3",
+      "reference_detail": "3110",
+      "source_text_ids": [
+        7,
+        8
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "CURB & GUTTER AND BARRIER CURBS",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "4010",
+      "source_text_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "ACCESSIBLE RAMP SECTION",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "4160",
+      "source_text_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "DETECTABLE WARNING SURFACE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "4170",
+      "source_text_ids": [
+        5,
+        6
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "The tile contains standard details for concrete work including general notes, curb and gutter sections, and a storm drain marker detail. The text layer provided specific detail references (3110, 4010, 4160, 4170) which correspond to the grid layout of the sheet."
+}

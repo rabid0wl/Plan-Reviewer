@@ -1,0 +1,299 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_10+06",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+06.00",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.76,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.56,
+          "source_text_ids": [
+            60
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.46,
+          "source_text_ids": [
+            61
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "id": "SSMH_12+07",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+07.59",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.19,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 295.23,
+          "source_text_ids": [
+            65
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 295.23,
+          "source_text_ids": [
+            66
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "id": "SSMH_14+09",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.90,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            100
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            101
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "W_BEND_10+08",
+      "structure_type": "bend",
+      "size": "8\"",
+      "station": "10+08.02",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "source_text_ids": [
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "id": "W_BEND_9+94",
+      "structure_type": "bend",
+      "size": "8\"",
+      "station": "9+94.00",
+      "offset": "8.02' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": "W_BEND_13+92",
+      "structure_type": "bend",
+      "size": "8\"",
+      "station": "13+92.74",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg B",
+      "source_text_ids": [
+        55,
+        56
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.0033,
+      "from_station": "10+06.00",
+      "to_station": "12+07.59",
+      "from_structure_hint": "SSMH_10+06",
+      "to_structure_hint": "SSMH_12+07",
+      "notes": "INSTALL 202 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.005,
+      "from_station": "12+07.59",
+      "to_station": "14+09.19",
+      "from_structure_hint": "SSMH_12+07",
+      "to_structure_hint": "SSMH_14+09",
+      "notes": "INSTALL 202 LF OF 8\" DIA SS PIPE @ S=0.0050",
+      "source_text_ids": [
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 385.0,
+      "slope": null,
+      "from_station": "10+08.02",
+      "to_station": "13+92.74",
+      "from_structure_hint": "W_BEND_10+08",
+      "to_structure_hint": "W_BEND_13+92",
+      "notes": "INSTALL 385 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        72,
+        73
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 20.0,
+      "slope": null,
+      "from_station": "9+94.00",
+      "to_station": "10+08.02",
+      "from_structure_hint": "W_BEND_9+94",
+      "to_structure_hint": "W_BEND_10+08",
+      "notes": "INSTALL 20 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        70,
+        71
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "TYPICAL LOCAL STREET A",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "A",
+      "source_text_ids": [
+        1
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 43",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "43",
+      "reference_detail": null,
+      "source_text_ids": [
+        110
+      ]
+    }
+  ],
+  "street_names": [
+    "SUN HILLS AVE.",
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "extraction_notes": "Extracted sanitary sewer and water main improvements along Bishop Street. Typical section A shows street dimensions and pavement section. Lot numbers 1-6 and 56-65 are visible."
+}
+```

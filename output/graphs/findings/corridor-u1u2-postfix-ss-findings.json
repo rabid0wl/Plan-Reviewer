@@ -1,0 +1,286 @@
+{
+  "utility_type": "SS",
+  "graph": {
+    "nodes": 18,
+    "edges": 10,
+    "quality_summary": {
+      "total_tiles": 12,
+      "ok_tiles": 12,
+      "sanitized_tiles": 8,
+      "skipped_tiles": 0,
+      "quality_grade": "D",
+      "warnings": [
+        "8 tiles had sanitizer recovery",
+        "Extraction quality below threshold — findings may be incomplete"
+      ]
+    }
+  },
+  "counts": {
+    "total_findings": 10,
+    "by_severity": {
+      "info": 5,
+      "warning": 5
+    },
+    "by_type": {
+      "dead_end_pipe": 4,
+      "orphan_node_check_suppressed": 1,
+      "slope_mismatch": 1,
+      "unanchored_pipe": 4
+    }
+  },
+  "findings": [
+    {
+      "finding_type": "orphan_node_check_suppressed",
+      "severity": "info",
+      "description": "Suppressed 2 orphan-node warnings due to low extraction quality.",
+      "source_sheets": [],
+      "source_text_ids": [],
+      "node_ids": [],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SS:e1:p24_r0_c2 has unresolved endpoint matching.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        273,
+        274,
+        275,
+        276
+      ],
+      "node_ids": [
+        "SS:24:SSMH:1444.40:+13.30",
+        "SS:24:SSMH:1444.52:+9.27"
+      ],
+      "edge_ids": [
+        "SS:e1:p24_r0_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SS:e4:p24_r1_c2 has unresolved endpoint matching.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "node_ids": [
+        "SS:24:SSMH:1444.40:+13.30",
+        "orphan:SS:SS:e4:p24_r1_c2:to"
+      ],
+      "edge_ids": [
+        "SS:e4:p24_r1_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SS:e5:p24_r1_c2 has unresolved endpoint matching.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        93,
+        94,
+        95
+      ],
+      "node_ids": [
+        "SS:24:SSMH:1444.40:+13.30",
+        "orphan:SS:SS:e5:p24_r1_c2:to"
+      ],
+      "edge_ids": [
+        "SS:e5:p24_r1_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SS:e0:p24_r0_c1 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        534,
+        535,
+        536
+      ],
+      "node_ids": [
+        "orphan:SS:SS:e0:p24_r0_c1:from",
+        "orphan:SS:SS:e0:p24_r0_c1:to"
+      ],
+      "edge_ids": [
+        "SS:e0:p24_r0_c1"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SS:e3:p24_r1_c1 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        165,
+        166,
+        167
+      ],
+      "node_ids": [
+        "orphan:SS:SS:e3:p24_r1_c1:from",
+        "orphan:SS:SS:e3:p24_r1_c1:to"
+      ],
+      "edge_ids": [
+        "SS:e3:p24_r1_c1"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SS:e8:p25_r0_c2 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        25
+      ],
+      "source_text_ids": [
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "node_ids": [
+        "orphan:SS:SS:e8:p25_r0_c2:from",
+        "orphan:SS:SS:e8:p25_r0_c2:to"
+      ],
+      "edge_ids": [
+        "SS:e8:p25_r0_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SS:e9:p25_r1_c0 has unresolved endpoint matching.",
+      "source_sheets": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7
+      ],
+      "node_ids": [
+        "orphan:SS:SS:e9:p25_r1_c0:from",
+        "SS:25:SSMH:1590.21:+13.30"
+      ],
+      "edge_ids": [
+        "SS:e9:p25_r1_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SS:e11:p25_r1_c1 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        25
+      ],
+      "source_text_ids": [
+        11
+      ],
+      "node_ids": [
+        "orphan:SS:SS:e11:p25_r1_c1:from",
+        "orphan:SS:SS:e11:p25_r1_c1:to"
+      ],
+      "edge_ids": [
+        "SS:e11:p25_r1_c1"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SS:e2:p24_r0_c2: labeled 0.0034, calculated 0.0425.",
+      "source_sheets": [
+        24
+      ],
+      "source_text_ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        64,
+        82,
+        83,
+        84,
+        88,
+        89,
+        90,
+        91,
+        92,
+        114,
+        123,
+        124,
+        125,
+        126,
+        136,
+        137,
+        138,
+        142,
+        143,
+        144,
+        158,
+        159,
+        160,
+        164,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        287,
+        288,
+        289,
+        434,
+        435,
+        436,
+        437
+      ],
+      "node_ids": [
+        "SS:24:SSMH:1121.16:+13.30",
+        "SS:24:SSMH:1444.40:+13.30"
+      ],
+      "edge_ids": [
+        "SS:e2:p24_r0_c2"
+      ],
+      "expected_value": "0.0034",
+      "actual_value": "0.0425"
+    }
+  ]
+}

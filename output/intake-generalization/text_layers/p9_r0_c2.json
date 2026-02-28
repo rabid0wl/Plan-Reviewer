@@ -1,0 +1,30 @@
+{
+  "tile_id": "p9_r0_c2",
+  "page_number": 9,
+  "coherence_score": 0.0,
+  "total_spans": 1,
+  "multi_char_spans": 0,
+  "numeric_spans": 0,
+  "primary_font": "ArialNarrow",
+  "is_hybrid_viable": false,
+  "items": [
+    {
+      "text_id": 0,
+      "text": "R",
+      "bbox_local": [
+        -5.333032226562409,
+        205.199951171875,
+        -1.611596679687409,
+        207.403076171875
+      ],
+      "bbox_global": [
+        1636.2669677734375,
+        205.199951171875,
+        1639.9884033203125,
+        207.403076171875
+      ],
+      "font": "ArialNarrow",
+      "font_size": 3.7214999198913574
+    }
+  ]
+}

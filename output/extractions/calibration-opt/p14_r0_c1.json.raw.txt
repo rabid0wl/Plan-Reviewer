@@ -1,0 +1,302 @@
+```json
+{
+  "tile_id": "plan_view_prosperity_ave",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "13+40.73",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.44,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 300.8,
+          "source_text_ids": [
+            9
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 300.9,
+          "source_text_ids": [
+            10
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "16+82.45",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.95,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 299.77,
+          "source_text_ids": [
+            18
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 299.77,
+          "source_text_ids": [
+            19
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "13+40.73",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.52,
+      "fl_elevation": 305.02,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 301.0,
+          "source_text_ids": [
+            272
+          ]
+        }
+      ],
+      "notes": "DI",
+      "source_text_ids": [
+        270,
+        271,
+        273,
+        274
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "16+39.28",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 306.12,
+      "fl_elevation": 305.62,
+      "inverts": [],
+      "notes": "RTGB",
+      "source_text_ids": [
+        277,
+        278,
+        279
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 17.0,
+      "slope": 0.0059,
+      "from_station": "13+40.73",
+      "to_station": null,
+      "from_structure_hint": "DI",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 17 LF OF 12\" DIA SD PIPE @ S=0.0059",
+      "source_text_ids": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": "13+40.73",
+      "to_station": "16+82.45",
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": "SDMH",
+      "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+      "source_text_ids": [
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": "16+82.45",
+      "to_station": null,
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": null,
+      "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+      "source_text_ids": [
+        24,
+        25,
+        26
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.74) MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": "15.48' LT",
+      "elevation": 305.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        290,
+        291,
+        292
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.85) MATCH EXIST.",
+      "station": "14+23.48",
+      "offset": "40.34' LT",
+      "elevation": 305.85,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        293,
+        294,
+        295
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.84) MATCH EXIST.",
+      "station": "14+29.48",
+      "offset": "40.39' LT",
+      "elevation": 305.84,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        296,
+        297,
+        298
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "P (304.99) MATCH EXIST.",
+      "station": "15+14.34",
+      "offset": "53.00' LT",
+      "elevation": 304.99,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        299,
+        300,
+        301
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "P (304.93) MATCH EXIST.",
+      "station": "15+20.34",
+      "offset": "53.00' LT",
+      "elevation": 304.93,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        302,
+        303,
+        304
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.88) MATCH EXIST.",
+      "station": "17+63.93",
+      "offset": "40.44' LT",
+      "elevation": 305.88,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        305,
+        306,
+        307
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.90) MATCH EXIST.",
+      "station": "17+69.93",
+      "offset": "40.42' LT",
+      "elevation": 305.9,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        308,
+        309,
+        310
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVENUE"
+  ],
+  "lot_numbers": [
+    52,
+    51,
+    50,
+    49,
+    48,
+    47,
+    46,
+    45,
+    44,
+    43,
+    42,
+    41
+  ],
+  "extraction_notes": "Plan view showing storm drain improvements along Prosperity Avenue. Multiple match existing points for edge of pavement (EP) and pavement (P) are noted. Lot numbers 41-52 are shown along the bottom."
+}
+```

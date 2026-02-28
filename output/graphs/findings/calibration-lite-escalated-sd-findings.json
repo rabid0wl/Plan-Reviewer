@@ -1,0 +1,298 @@
+{
+  "utility_type": "SD",
+  "graph": {
+    "nodes": 21,
+    "edges": 10,
+    "quality_summary": {
+      "total_tiles": 24,
+      "ok_tiles": 24,
+      "sanitized_tiles": 5,
+      "skipped_tiles": 0,
+      "quality_grade": "B",
+      "warnings": [
+        "5 tiles had sanitizer recovery"
+      ]
+    }
+  },
+  "counts": {
+    "total_findings": 13,
+    "by_severity": {
+      "info": 4,
+      "warning": 9
+    },
+    "by_type": {
+      "dead_end_pipe": 3,
+      "orphan_node": 6,
+      "unanchored_pipe": 4
+    }
+  },
+  "findings": [
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1022.64:+79.40 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        190,
+        191,
+        192
+      ],
+      "node_ids": [
+        "SD:14:CB:1022.64:+79.40"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1030.56:+25.91 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        234,
+        235
+      ],
+      "node_ids": [
+        "SD:14:CB:1030.56:+25.91"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1031.18:-10.35 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        217,
+        218,
+        219
+      ],
+      "node_ids": [
+        "SD:14:CB:1031.18:-10.35"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1057.64:+45.00 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        198,
+        199,
+        200,
+        201
+      ],
+      "node_ids": [
+        "SD:14:CB:1057.64:+45.00"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1288.47:-15.45 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        210,
+        211,
+        212
+      ],
+      "node_ids": [
+        "SD:14:CB:1288.47:-15.45"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "orphan_node",
+      "severity": "warning",
+      "description": "Structure node SD:14:CB:1340.73:+45.00 is not connected to any pipe.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        205,
+        206,
+        207,
+        208,
+        209
+      ],
+      "node_ids": [
+        "SD:14:CB:1340.73:+45.00"
+      ],
+      "edge_ids": [],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SD:e4:p14_r0_c2 has unresolved endpoint matching.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ],
+      "node_ids": [
+        "SD:14:SDMH:1682.45:+28.00",
+        "orphan:SD:SD:e4:p14_r0_c2:to"
+      ],
+      "edge_ids": [
+        "SD:e4:p14_r0_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SD:e5:p14_r0_c2 has unresolved endpoint matching.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        120,
+        170,
+        171,
+        172
+      ],
+      "node_ids": [
+        "SD:14:SDMH:1682.45:+28.00",
+        "orphan:SD:SD:e5:p14_r0_c2:to"
+      ],
+      "edge_ids": [
+        "SD:e5:p14_r0_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SD:e0:p14_r0_c0 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e0:p14_r0_c0:from",
+        "orphan:SD:SD:e0:p14_r0_c0:to"
+      ],
+      "edge_ids": [
+        "SD:e0:p14_r0_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SD:e6:p14_r1_c0 has unresolved endpoint matching.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        16
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e6:p14_r1_c0:from",
+        "SD:14:INLET:1340.73:+45.00"
+      ],
+      "edge_ids": [
+        "SD:e6:p14_r1_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SD:e9:p34_r0_c0 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        34
+      ],
+      "source_text_ids": [
+        49,
+        50,
+        51
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e9:p34_r0_c0:from",
+        "orphan:SD:SD:e9:p34_r0_c0:to"
+      ],
+      "edge_ids": [
+        "SD:e9:p34_r0_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SD:e10:p34_r0_c2 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        34
+      ],
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e10:p34_r0_c2:from",
+        "orphan:SD:SD:e10:p34_r0_c2:to"
+      ],
+      "edge_ids": [
+        "SD:e10:p34_r0_c2"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SD:e11:p34_r1_c0 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        34
+      ],
+      "source_text_ids": [
+        11
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e11:p34_r1_c0:from",
+        "orphan:SD:SD:e11:p34_r1_c0:to"
+      ],
+      "edge_ids": [
+        "SD:e11:p34_r1_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+```json
+{
+  "tile_id": "tile_extraction",
+  "page_number": 25,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "16+57.18",
+      "offset": "16.99' RT",
+      "rim_elevation": 298.88,
+      "tc_elevation": 299.18,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 291.75,
+          "source_text_ids": [
+            32
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "24\"",
+          "pipe_type": "SD",
+          "elevation": 290.82,
+          "source_text_ids": [
+            33
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 291.75,
+          "source_text_ids": [
+            34
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "inlet",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 298.89,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.2,
+          "source_text_ids": [
+            22
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 292.1,
+          "source_text_ids": [
+            23
+          ]
+        }
+      ],
+      "notes": "DI",
+      "source_text_ids": [
+        7,
+        8
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 36.0,
+      "slope": 0.0028,
+      "from_station": null,
+      "to_station": "16+57.18",
+      "from_structure_hint": "DI",
+      "to_structure_hint": "SDMH",
+      "notes": null,
+      "source_text_ids": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 30.0,
+      "slope": 0.0067,
+      "from_station": "16+57.18",
+      "to_station": null,
+      "from_structure_hint": "SDMH",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        28
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "8\" WATER X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        29
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "1' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ SOUTH SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        5,
+        6
+      ]
+    }
+  ],
+  "street_names": [
+    "CASTLEROCK AVENUE",
+    "ECHO HILLS AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing storm drain system with manhole and inlet. Crossing water line and sanitary sewer pipe also noted."
+}
+```

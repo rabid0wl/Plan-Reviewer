@@ -1,0 +1,134 @@
+```json
+{
+  "tile_id": "p34_r0_c0",
+  "page_number": 34,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "16+30.65",
+      "offset": "6.00' LT",
+      "rim_elevation": 300.32,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.72,
+          "source_text_ids": [
+            14
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.62,
+          "source_text_ids": [
+            15
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "SSMH at 16+30.65",
+      "to_structure_hint": null,
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "SSMH at 16+30.65",
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033 (Incoming pipe from left)",
+      "source_text_ids": [
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        12,
+        13
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "S=0.0028",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        11
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The profile view shows both sanitary sewer (SS) and water (W) lines. The SSMH at station 16+30.65 has two 8-inch inverts listed. Pipe slopes and lengths are extracted from the profile callouts."
+}
+```

@@ -1,0 +1,442 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "grading",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "CB_1",
+      "structure_type": "CB",
+      "size": null,
+      "station": "10+22.64",
+      "offset": "79.40' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.33,
+      "fl_elevation": 304.83,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        190,
+        191,
+        192
+      ]
+    },
+    {
+      "id": "CB_2",
+      "structure_type": "CB",
+      "size": null,
+      "station": "10+57.64",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 306.08,
+      "fl_elevation": 305.58,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        198,
+        199,
+        200,
+        201
+      ]
+    },
+    {
+      "id": "CB_3",
+      "structure_type": "CB",
+      "size": null,
+      "station": "10+30.56",
+      "offset": "25.91' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 304.75,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        234,
+        235
+      ]
+    },
+    {
+      "id": "CB_4",
+      "structure_type": "CB",
+      "size": null,
+      "station": "10+31.18",
+      "offset": "10.35' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 305.31,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "id": "CB_5",
+      "structure_type": "CB",
+      "size": null,
+      "station": "12+88.47",
+      "offset": "15.45' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 305.74,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        210,
+        211,
+        212
+      ]
+    },
+    {
+      "id": "CB_6",
+      "structure_type": "CB",
+      "size": null,
+      "station": "13+40.73",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.52,
+      "fl_elevation": 305.02,
+      "inverts": [],
+      "notes": "INV. 12\" N 301.00",
+      "source_text_ids": [
+        205,
+        206,
+        207,
+        208,
+        209
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 17.0,
+      "slope": 0.0059,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "10+97.88",
+      "offset": "40.63' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        195,
+        196,
+        197
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "9+69.52",
+      "offset": "15.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        223,
+        224,
+        225
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "9+93.55",
+      "offset": "11.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "10+13.04",
+      "offset": "11.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        236,
+        237,
+        238
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "11+03.88",
+      "offset": "40.89' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        231,
+        232,
+        233
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": "40.19' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        239,
+        240,
+        241
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "12+88.47",
+      "offset": "40.22' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        202,
+        203,
+        204
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": "15.48' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        242,
+        243,
+        244
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "14+29.48",
+      "offset": "40.39' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        245,
+        246,
+        247
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "GRADE TO\nEXIST. @\n5:1 MAX.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        279,
+        280,
+        281,
+        288
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "1.5%",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        266
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "MIN.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        265
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "2%",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        267
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "1.5%",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        268
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 17 LF OF 12\" Ø",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "SD PIPE @ S=0.0059",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        2
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "SEE GRADING PLAN\nSHEET 5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "5",
+      "reference_detail": null,
+      "source_text_ids": [
+        289,
+        290
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "SEE SHEET 16",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "16",
+      "reference_detail": null,
+      "source_text_ids": [
+        283
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "PROPOSED R/W",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        252
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "PROPOSED GRADING EASEMENT",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        253
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "CITY STD.\nMEDIAN CURB",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        263,
+        264
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "ULTIMATE BUILDOUT",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        255
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "LOOKING EAST",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        256
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": null
+}
+```

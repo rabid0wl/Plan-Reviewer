@@ -1,0 +1,9 @@
+{
+  "meta_file_count": 20,
+  "status_counts": {
+    "ok": 20
+  },
+  "total_cost": 0.404731,
+  "total_tokens": 666188,
+  "note": "Includes manual retry success for p34_r0_c1 after transient 502 during initial batch run."
+}

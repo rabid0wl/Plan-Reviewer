@@ -1,0 +1,198 @@
+{
+  "tile_id": "p25_r0_c2",
+  "page_number": 25,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "STA 19+00",
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+00",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": 330.58,
+      "fl_elevation": 330.12,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        188,
+        124,
+        241
+      ]
+    },
+    {
+      "id": "STA 19+25",
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+25",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        240
+      ]
+    },
+    {
+      "id": "STA 19+10",
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+10",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        243
+      ]
+    },
+    {
+      "id": "STA 19+85",
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+85",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        242
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 1102.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8\" PVC C-900 WATER MAIN",
+      "source_text_ids": [
+        20,
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" SANITARY SEWER",
+      "source_text_ids": [
+        222,
+        223,
+        224,
+        225,
+        226
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" WATER MAIN",
+      "source_text_ids": [
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL +/-1,102 L.F. OF 8\" PVC C-900 WATER MAIN FROM STATION 11+00 TO STATION 22+00. INSTALL 8\" GATE VALVE EVERY 500' (MAX) O.C. PER CITY STDS. W-8 AND W-17, SHEETS CD4 & CD5. (TOTAL = APPROX. 4)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4 & CD5",
+      "reference_detail": "W-8, W-17",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 20+00 SEE SHEET U3",
+      "station": "20+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U3",
+      "reference_detail": null,
+      "source_text_ids": [
+        276,
+        277
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "CONSTRUCT PAVEMENT SECTION 4\" HMA, TYPE 'A', 1/2\" MAX. AGG. 12\" AB, CL II, 3/4\" MAX. AGG. @ 95% MIN. REL. COMP. 6\" CNS @ 95% MIN. REL. COMP. TOTAL AREA = +/-52,464 S.F.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows proposed 8\" water main installation and existing utilities. Matchline at station 20+00 connects to sheet U3. Multiple 1\" water service connections (Note 11) and water meter replacements (Notes 14, 15) are indicated."
+}

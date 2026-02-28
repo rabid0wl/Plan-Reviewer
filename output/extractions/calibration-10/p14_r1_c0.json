@@ -1,0 +1,125 @@
+{
+  "tile_id": "p14_r1_c0",
+  "page_number": 14,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "10+22.64",
+      "offset": "79.40' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.33,
+      "fl_elevation": 304.83,
+      "inverts": [],
+      "notes": "BCR",
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+30.56",
+      "offset": "25.91' RT",
+      "rim_elevation": null,
+      "tc_elevation": 306.08,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "ECR, GB",
+      "source_text_ids": [
+        10,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "DI",
+      "structure_type": "DI",
+      "size": null,
+      "station": "13+40.73",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.52,
+      "fl_elevation": 305.02,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 301.0,
+          "source_text_ids": [
+            5
+          ]
+        }
+      ],
+      "notes": null,
+      "source_text_ids": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": "13+40.73",
+      "from_structure_hint": "GB",
+      "to_structure_hint": "DI",
+      "notes": null,
+      "source_text_ids": [
+        5,
+        17
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 304.75",
+      "station": "10+30.56",
+      "offset": "25.91' RT",
+      "elevation": 304.75,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        9,
+        10
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 305.17",
+      "station": null,
+      "offset": null,
+      "elevation": 305.17,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        11
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing curb structures (BCR, ECR/GB) and a Drop Inlet (DI). Pipe slope 0.0020 is labeled along the storm drain run."
+}

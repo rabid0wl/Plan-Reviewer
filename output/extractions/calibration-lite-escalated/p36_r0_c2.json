@@ -1,0 +1,268 @@
+{
+  "tile_id": "p36_r0_c2",
+  "page_number": 36,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "W",
+    "SS"
+  ],
+  "structures": [
+    {
+      "id": "ssmh_1",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.62,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            35
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            36
+          ]
+        }
+      ],
+      "notes": null,
+      "source_text_ids": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "fire_hydrant_1",
+      "structure_type": "other",
+      "size": null,
+      "station": "12+60.32",
+      "offset": "20.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "W/ (1) 6\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "id": "ssmh_2",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+14.94",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.27,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 295.41,
+          "source_text_ids": [
+            40
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.94,
+          "source_text_ids": [
+            41
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.94,
+          "source_text_ids": [
+            42
+          ]
+        }
+      ],
+      "notes": null,
+      "source_text_ids": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "tee_1",
+      "structure_type": "other",
+      "size": null,
+      "station": "14+02.73",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "W/ (3) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        46,
+        47,
+        48,
+        49
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        33,
+        34
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 205.0,
+      "slope": 0.005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        30,
+        31,
+        32,
+        53,
+        54,
+        55
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 408 LF OF 8\" Ø WATER PIPE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        33,
+        34
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 205 LF OF 8\" DIA SS PIPE @ S=0.0152",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "station": "14+02.73",
+      "offset": "6.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 48\" SSMH",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        38,
+        39
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL FIRE HYDRANT W/ (1) 6\" DIA GATE VALVE(S)",
+      "station": "12+60.32",
+      "offset": "20.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 48\" SSMH",
+      "station": "14+14.94",
+      "offset": "6.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        44,
+        45
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "SEE SHEET 41",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "41",
+      "reference_detail": null,
+      "source_text_ids": [
+        100
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE."
+  ],
+  "lot_numbers": [
+    48,
+    49,
+    50
+  ],
+  "extraction_notes": null
+}

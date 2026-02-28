@@ -1,0 +1,277 @@
+{
+  "tile_id": "p36_r1_c1",
+  "page_number": 36,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_14+09.19",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            20
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            21
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "SSMH_10+05.68",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+05.68",
+      "offset": "6.00' RT",
+      "rim_elevation": 300.89,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.28,
+          "source_text_ids": [
+            44
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            45
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            46
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "SSMH_12+10.31",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.62,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "W_BEND_13+92.74",
+      "structure_type": "bend",
+      "size": "8\"",
+      "station": "13+92.74",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "W_BEND_GV_13+97.05",
+      "structure_type": "bend",
+      "size": "8\"",
+      "station": "13+97.05",
+      "offset": "1.84' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "source_text_ids": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "W_TEE_GV_9+94.29",
+      "structure_type": "tee",
+      "size": "8\"",
+      "station": "9+94.29",
+      "offset": "6.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.005,
+      "from_station": null,
+      "to_station": "14+09.19",
+      "from_structure_hint": null,
+      "to_structure_hint": "SSMH_14+09.19",
+      "notes": null,
+      "source_text_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 205.0,
+      "slope": 0.0152,
+      "from_station": "10+05.68",
+      "to_station": "12+10.31",
+      "from_structure_hint": "SSMH_10+05.68",
+      "to_structure_hint": "SSMH_12+10.31",
+      "notes": null,
+      "source_text_ids": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": null,
+      "from_station": "13+92.74",
+      "to_station": "13+97.05",
+      "from_structure_hint": "W_BEND_13+92.74",
+      "to_structure_hint": "W_BEND_GV_13+97.05",
+      "notes": null,
+      "source_text_ids": [
+        12,
+        13
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": "9+94.29",
+      "to_station": null,
+      "from_structure_hint": "W_TEE_GV_9+94.29",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        31,
+        32,
+        33
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        39
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        40,
+        41
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        38
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing sanitary sewer and water main installations. Stations 10+00 through 14+00 are visible."
+}

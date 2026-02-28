@@ -1,0 +1,257 @@
+{
+  "tile_id": "p36_r0_c1",
+  "page_number": 36,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "STA: 14+09.19",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            38
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            39
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "STA: 10+05.68",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+05.68",
+      "offset": "6.00' RT",
+      "rim_elevation": 300.89,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.28,
+          "source_text_ids": [
+            69
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            70
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            71
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "id": "STA: 12+10.31",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.62,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            80
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            81
+          ]
+        }
+      ],
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 202.0,
+      "slope": 0.005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "STA: 14+09.19",
+      "notes": "SS PIPE @ S=0.0050",
+      "source_text_ids": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 205.0,
+      "slope": 0.0152,
+      "from_station": "10+05.68",
+      "to_station": "12+10.31",
+      "from_structure_hint": "STA: 10+05.68",
+      "to_structure_hint": "STA: 12+10.31",
+      "notes": "SS PIPE @ S=0.0152",
+      "source_text_ids": [
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 408 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        78,
+        79
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND",
+      "station": "13+92.74",
+      "offset": "6.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND W/ (1) GATE VALVE(S) INSTALL 6 LF OF 8\" DIA WATER PIPE",
+      "station": "13+97.05",
+      "offset": "1.84' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "station": "9+94.29",
+      "offset": "6.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        65,
+        66,
+        67,
+        68
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "SUN HILLS AVE."
+  ],
+  "lot_numbers": [
+    5,
+    6,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    53,
+    54,
+    55,
+    56,
+    57,
+    68,
+    69,
+    70
+  ],
+  "extraction_notes": "Extracted SSMH structures and associated inverts. Identified water pipe installation callouts with bends and valves. Street names and lot numbers captured from plan view."
+}

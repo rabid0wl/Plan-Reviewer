@@ -1,0 +1,185 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 103,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": null,
+      "station": "59+00",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 329.13,
+          "source_text_ids": [
+            59
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 331.69,
+          "source_text_ids": [
+            60
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "W",
+          "elevation": 331.52,
+          "source_text_ids": [
+            61
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "Structure at matchline",
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        112
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "8\"",
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "EXIST. 8\" PVC OVERFLOW PIPE",
+      "source_text_ids": [
+        48,
+        49,
+        50
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "10''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        27,
+        28
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "15''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 59+00 SEE SHEET L11",
+      "station": "59+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "L11",
+      "reference_detail": null,
+      "source_text_ids": [
+        112,
+        113
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "RRFB (SOLAR)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        36
+      ]
+    }
+  ],
+  "street_names": [
+    "CALIFORNIA ST.",
+    "EL MONTE WAY"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows multiple existing utilities including gas, water, sewer, and storm drain. Matchline at station 59+00 connects to sheet L11. Invert elevations provided for a structure at the matchline."
+}
+```

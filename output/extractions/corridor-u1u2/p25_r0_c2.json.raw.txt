@@ -1,0 +1,137 @@
+{
+  "tile_id": "plan_view_tile",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 1102.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL +/-1,102 L.F. OF 8\" PVC C-900 WATER MAIN FROM STATION 11+00 TO STATION 22+00. INSTALL 8\" GATE VALVE EVERY 500' (MAX) O.C. PER CITY STDS. W-8 AND W-17",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING SANITARY SEWER MAIN",
+      "source_text_ids": [
+        222,
+        223,
+        224,
+        225,
+        226
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9, SHEET CD4. CONTRACTOR SHALL NOT INCLUDE THE 1\" TEE AND INLINE VALVE. IF THE EXISTING SERVICE IS CTS POLYETHYLENE, CONTRACTOR SHALL NOT REPLACE THE ENTIRE WATER SERVICE AND WILL NOT BE PAID FOR THE BID ITEMS ASSOCIATED WITH THE WORK. IF CTS POLYETHYLENE EXISTS, CONTRACTOR SHALL USE A DRESSER COUPLING TO CONNECT THE EXISTING SERVICE TO THE NEW WATER MAIN AND THE CITY WILL BE CREDITED BACK FOR THE WORK NOT PERFORMED.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4",
+      "reference_detail": "W-9",
+      "source_text_ids": [
+        1,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 6\" WATER SERVICE PER CITY STD. W-14. CONTRACTOR SHALL NOT INCLUDE THE 1\" TEE AND INLINE VALVE. IF THE EXISTING SERVICE IS CTS POLYETHYLENE, CONTRACTOR SHALL NOT REPLACE THE ENTIRE WATER SERVICE AND WILL NOT BE PAID FOR THE BID ITEMS ASSOCIATED WITH THE WORK. IF CTS POLYETHYLENE EXISTS, CONTRACTOR SHALL USE A DRESSER COUPLING TO CONNECT THE EXISTING SERVICE TO THE NEW WATER MAIN AND THE CITY WILL BE CREDITED BACK FOR THE WORK NOT PERFORMED.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "W-14",
+      "source_text_ids": [
+        37,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONTRACTOR SHALL CONSTRUCT A 1'x1'x4\" CONCRETE PAD AROUND METER BOX.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        39,
+        24
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONTRACTOR SHALL REMOVE AND DISPOSE EXISTING WATER METER BOX AND LID AND INSTALL NEW WATER METER BOX AND LID. REFER TO CITY STD. L-18 AND W-9.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "L-18, W-9",
+      "source_text_ids": [
+        40,
+        25,
+        26
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 20+00 SEE SHEET U3",
+      "station": "20+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U3",
+      "reference_detail": null,
+      "source_text_ids": [
+        276,
+        277
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "The plan shows a water main installation with various service connections (Notes 11, 12, 14, 15). Existing utilities include 6\" SS and 6\" W. Matchline is at station 20+00."
+}

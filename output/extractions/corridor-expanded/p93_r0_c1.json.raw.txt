@@ -1,0 +1,214 @@
+```json
+{
+  "tile_id": "tile_extraction",
+  "page_number": 22,
+  "sheet_type": "signing_striping",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": 334.33,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "15\"",
+          "pipe_type": "SD",
+          "elevation": 0.0,
+          "source_text_ids": [
+            411
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 0.0,
+          "source_text_ids": [
+            412
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "15\"",
+          "pipe_type": "SD",
+          "elevation": 0.0,
+          "source_text_ids": [
+            413
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "SDMHRIM 334.33; INV elevations marked as (???.??)",
+      "source_text_ids": [
+        410,
+        411,
+        412,
+        413
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "inlet",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": 334.25,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "15\"",
+          "pipe_type": "SD",
+          "elevation": 0.0,
+          "source_text_ids": [
+            409
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "DI 334.25; INV elevation marked as (???.??)",
+      "source_text_ids": [
+        408,
+        409
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N/S",
+          "pipe_size": "12\"",
+          "pipe_type": "SS",
+          "elevation": 0.0,
+          "source_text_ids": [
+            415
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "SSMHRIM ???.??; INV elevation marked as (???.??)",
+      "source_text_ids": [
+        414,
+        415
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 12\" Water line",
+      "source_text_ids": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 12\" Sanitary Sewer line",
+      "source_text_ids": [
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 8\" Water line",
+      "source_text_ids": [
+        107
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 9' x 19' PARKING STALLS USING 4\" WHITE TYPICAL UNLESS NOTED OTHERWISE.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        79,
+        81,
+        82
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 9' x 22' PARKING STALLS USING 4\" WHITE TYPICAL UNLESS NOTED OTHERWISE.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        80,
+        93,
+        94
+      ]
+    }
+  ],
+  "street_names": [
+    "KAMM AVENUE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows signing and striping improvements along Kamm Avenue. Existing wet utilities (W, SS, SD) are shown with placeholder invert elevations (???.??). Parking stall dimensions of 9.00' and 19.00' are noted in the parking area."
+}
+```

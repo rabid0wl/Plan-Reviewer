@@ -1,0 +1,221 @@
+{
+  "tile_id": "p34_r0_c1",
+  "page_number": 34,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "16+82.45",
+      "offset": "28.00' RT",
+      "rim_elevation": 301.07,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 288.33,
+          "source_text_ids": [
+            63
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 288.33,
+          "source_text_ids": [
+            64
+          ]
+        }
+      ],
+      "notes": "INSTA",
+      "source_text_ids": [
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "fire hydrant",
+      "size": null,
+      "station": "13+74.91",
+      "offset": "20.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "INSTALL FIRE HYDRANT W/ (1) 6\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        85,
+        86,
+        87
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 623.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 623 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 176 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        68,
+        69,
+        70
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "30\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        19,
+        20
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "24\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        39
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "EUREKA STREET SEE SHEET 40",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "40",
+      "reference_detail": null,
+      "source_text_ids": [
+        146
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONSTRUCT BLOCK WALL PER SEPARATE PERMIT",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        12,
+        13
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVENUE",
+    "EUREKA STREET"
+  ],
+  "lot_numbers": [
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    129,
+    130,
+    131,
+    132,
+    135
+  ],
+  "extraction_notes": "Extracted utility structures and pipes along Monarch Dunes Avenue. Stationing for the SSMH at Eureka Street intersection was partially obscured but rim/invert data was clear. Fire hydrant stationing and offset extracted from callout."
+}

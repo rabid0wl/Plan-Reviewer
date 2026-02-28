@@ -1,0 +1,258 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": "GB",
+      "structure_type": "GB",
+      "station": "13+85.72",
+      "offset": "18.00' RT",
+      "tc_elevation": 302.9,
+      "fl_elevation": 302.4,
+      "notes": "ECR",
+      "source_text_ids": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "BCR",
+      "structure_type": "GB",
+      "station": "13+48.36",
+      "offset": "18.00' RT",
+      "tc_elevation": 302.65,
+      "fl_elevation": 302.15,
+      "notes": "BCR",
+      "source_text_ids": [
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "ECR",
+      "structure_type": "GB",
+      "station": "10+38.00",
+      "offset": "18.00' RT",
+      "tc_elevation": 302.03,
+      "fl_elevation": 301.53,
+      "notes": "ECR",
+      "source_text_ids": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "BCR",
+      "structure_type": "GB",
+      "station": "10+18.00",
+      "offset": "38.00' RT",
+      "tc_elevation": 301.56,
+      "fl_elevation": 301.06,
+      "notes": "BCR",
+      "source_text_ids": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "id": "GB",
+      "structure_type": "GB",
+      "station": "10+55.00",
+      "offset": "18.00' RT",
+      "tc_elevation": 302.06,
+      "fl_elevation": 301.56,
+      "source_text_ids": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "id": "EC",
+      "structure_type": "GB",
+      "station": "9+82.00",
+      "offset": "55.00' RT",
+      "tc_elevation": 301.53,
+      "fl_elevation": 301.03,
+      "notes": "EC",
+      "source_text_ids": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "PRC",
+      "structure_type": "GB",
+      "station": "9+75.66",
+      "offset": "27.92' RT",
+      "tc_elevation": 301.63,
+      "fl_elevation": 301.13,
+      "notes": "PRC",
+      "source_text_ids": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "BC",
+      "structure_type": "GB",
+      "station": "10+55.00",
+      "offset": "18.00' LT",
+      "tc_elevation": 302.07,
+      "fl_elevation": 301.57,
+      "notes": "BC",
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "PRC",
+      "structure_type": "GB",
+      "station": "10+27.92",
+      "offset": "24.34' LT",
+      "tc_elevation": 301.97,
+      "fl_elevation": 301.47,
+      "notes": "PRC",
+      "source_text_ids": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "GB",
+      "structure_type": "GB",
+      "station": "13+86.02",
+      "offset": "55.02' RT",
+      "tc_elevation": 302.86,
+      "fl_elevation": 302.36,
+      "source_text_ids": [
+        40,
+        41,
+        42
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "Curb Flow",
+      "size": "N/A",
+      "slope": 0.002,
+      "source_text_ids": [
+        43
+      ]
+    },
+    {
+      "pipe_type": "Curb Flow",
+      "size": "N/A",
+      "slope": 0.002,
+      "source_text_ids": [
+        44
+      ]
+    },
+    {
+      "pipe_type": "Curb Flow",
+      "size": "N/A",
+      "slope": 0.0035,
+      "source_text_ids": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "TYPICAL LOCAL STREET A",
+      "source_text_ids": [
+        73
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 26",
+      "reference_sheet": "26",
+      "source_text_ids": [
+        111
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "3\" ASPHALT CONCRETE",
+      "source_text_ids": [
+        85
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "6\" AGGREGATE BASE",
+      "source_text_ids": [
+        86
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "12\" SUBGRADE @ 95% RELATIVE COMPACTION",
+      "source_text_ids": [
+        83,
+        84
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "T.I.: 5.0 R-VALUE: 56",
+      "source_text_ids": [
+        103,
+        104
+      ]
+    }
+  ],
+  "street_names": [
+    "SUN HILLS AVE.",
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "extraction_notes": "The tile contains a typical street section and a plan view of a street intersection. Utility types (SD, SS, W) are not explicitly labeled for pipes, but curb flowline slopes are provided."
+}

@@ -1,0 +1,71 @@
+```json
+{
+  "tile_id": "p19",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "unknown",
+      "slope": 0.0023,
+      "source_text_ids": [
+        9
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "source_text_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BCR TC 302.16",
+      "elevation": 302.16,
+      "source_text_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "ECR TC 302.36",
+      "elevation": 302.36,
+      "source_text_ids": [
+        6,
+        7
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 302.37",
+      "elevation": 302.37,
+      "source_text_ids": [
+        8
+      ]
+    }
+  ],
+  "street_names": [
+    "N. BISHOP ST.",
+    "N. PALM ROYALE ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "This is a profile view for Storm Drain (SD) plans. Specific structure IDs and pipe sizes are not explicitly labeled in this cropped section, but the profile shows the proposed top of curb (TC) and existing grade elevations. The street names are extracted from the sheet title block."
+}
+```

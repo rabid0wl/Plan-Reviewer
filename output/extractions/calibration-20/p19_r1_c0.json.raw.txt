@@ -1,0 +1,94 @@
+{
+  "tile_id": "tile_extraction_bishop_street_profile",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "structure_type": "GB",
+      "station": "9+50",
+      "offset": "0.00'",
+      "tc_elevation": 301.53,
+      "notes": "EC",
+      "source_text_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "structure_type": "GB",
+      "station": "10+25",
+      "offset": "0.00'",
+      "tc_elevation": 301.56,
+      "notes": "BCR",
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "structure_type": "GB",
+      "station": "10+45",
+      "offset": "0.00'",
+      "tc_elevation": 302.03,
+      "notes": "ECR",
+      "source_text_ids": [
+        7
+      ]
+    },
+    {
+      "structure_type": "GB",
+      "station": "13+25",
+      "offset": "0.00'",
+      "tc_elevation": 302.65,
+      "notes": "BCR",
+      "source_text_ids": [
+        8,
+        9
+      ]
+    },
+    {
+      "structure_type": "GB",
+      "station": "13+50",
+      "offset": "0.00'",
+      "notes": "EC G",
+      "source_text_ids": [
+        10,
+        11
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "UNKNOWN",
+      "slope": 0.002,
+      "source_text_ids": [
+        5
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "source_text_ids": [
+        2
+      ]
+    }
+  ],
+  "street_names": [
+    "BISHOP STREET"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "This is a profile view of Bishop Street. Stations are estimated based on the grid lines (9+00 to 13+00). Pipe size is not explicitly labeled in this view, but the slope is provided. TC elevations refer to Top of Curb at grade breaks (EC, BCR, ECR)."
+}

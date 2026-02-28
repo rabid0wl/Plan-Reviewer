@@ -1,0 +1,126 @@
+{
+  "utility_type": "SD",
+  "graph": {
+    "nodes": 7,
+    "edges": 5,
+    "quality_summary": {
+      "total_tiles": 24,
+      "ok_tiles": 24,
+      "sanitized_tiles": 7,
+      "skipped_tiles": 0,
+      "quality_grade": "B",
+      "warnings": [
+        "7 tiles had sanitizer recovery"
+      ]
+    }
+  },
+  "counts": {
+    "total_findings": 3,
+    "by_severity": {
+      "info": 1,
+      "warning": 2
+    },
+    "by_type": {
+      "dead_end_pipe": 1,
+      "slope_mismatch": 1,
+      "unanchored_pipe": 1
+    }
+  },
+  "findings": [
+    {
+      "finding_type": "dead_end_pipe",
+      "severity": "warning",
+      "description": "Pipe SD:e6:p14_r1_c0 has unresolved endpoint matching.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        5,
+        17
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e6:p14_r1_c0:from",
+        "SD:14:INLET:1340.73:+45.00"
+      ],
+      "edge_ids": [
+        "SD:e6:p14_r1_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "unanchored_pipe",
+      "severity": "info",
+      "description": "Pipe SD:e9:p34_r0_c0 has no station/hint endpoint metadata; connection could not be verified.",
+      "source_sheets": [
+        34
+      ],
+      "source_text_ids": [
+        49,
+        50,
+        51
+      ],
+      "node_ids": [
+        "orphan:SD:SD:e9:p34_r0_c0:from",
+        "orphan:SD:SD:e9:p34_r0_c0:to"
+      ],
+      "edge_ids": [
+        "SD:e9:p34_r0_c0"
+      ],
+      "expected_value": null,
+      "actual_value": null
+    },
+    {
+      "finding_type": "slope_mismatch",
+      "severity": "warning",
+      "description": "Slope mismatch on edge SD:e1:p14_r0_c1: labeled 0.0059, calculated 0.0118.",
+      "source_sheets": [
+        14
+      ],
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        203,
+        204,
+        205,
+        206,
+        207,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "node_ids": [
+        "SD:14:INLET:1340.73:+45.00",
+        "SD:14:SDMH:1340.73:+28.00"
+      ],
+      "edge_ids": [
+        "SD:e1:p14_r0_c1"
+      ],
+      "expected_value": "0.0059",
+      "actual_value": "0.0118"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "SDMH",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "20+24.17",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.59,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.65,
+          "source_text_ids": [
+            9
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.75,
+          "source_text_ids": [
+            10
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": null,
+      "to_station": "17+69.93",
+      "from_structure_hint": null,
+      "to_structure_hint": "MATCH EXIST.",
+      "notes": "TALL 342 LF OF 12\" DIA PIPE @ S=0.0030",
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": "17+69.93",
+      "to_station": "20+24.17",
+      "from_structure_hint": "MATCH EXIST.",
+      "to_structure_hint": "SDMH",
+      "notes": "S=0.0020",
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        118
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "17+69.93",
+      "offset": "18.22' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        168,
+        169,
+        170
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "19+87.07",
+      "offset": "18.67' LT",
+      "elevation": 305.97,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": "20+84.18",
+      "offset": "18.64' LT",
+      "elevation": 306.01,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        149,
+        150,
+        151
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BCR STA: 19+87.17, 45.00' RT TC 305.42 FL 304.92",
+      "station": "19+87.17",
+      "offset": "45.00' RT",
+      "elevation": 305.42,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "ECR STA: 20+17.17, 75.00' RT TC 305.07 FL 304.57",
+      "station": "20+17.17",
+      "offset": "75.00' RT",
+      "elevation": 305.07,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        131,
+        132,
+        133,
+        134
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BCR STA: 20+53.17, 75.00' RT TC 305.07 FL 304.57",
+      "station": "20+53.17",
+      "offset": "75.00' RT",
+      "elevation": 305.07,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        128,
+        129,
+        130
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "ECR STA: 20+84.17, 45.00' RT TC 305.67 FL 305.17",
+      "station": "20+84.17",
+      "offset": "45.00' RT",
+      "elevation": 305.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        135,
+        136,
+        137,
+        138,
+        139
+      ]
+    }
+  ],
+  "street_names": [
+    "EL CAMINO ST."
+  ],
+  "lot_numbers": [
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "extraction_notes": "Plan view shows a new 48\" SDMH at Sta 20+24.17. A 12\" SD pipe runs from an existing connection at Sta 17+69.93 to this new manhole. Curb return data (BCR/ECR) is provided for the intersection of El Camino St."
+}
+```

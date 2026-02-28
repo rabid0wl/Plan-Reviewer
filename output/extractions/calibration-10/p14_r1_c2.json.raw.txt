@@ -1,0 +1,149 @@
+```json
+{
+  "tile_id": "p14",
+  "page_number": 14,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "16+82.45",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.95,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "ALL TYPE I (48\")",
+      "source_text_ids": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "20+24.17",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.59,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.65,
+          "source_text_ids": [
+            31
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.75,
+          "source_text_ids": [
+            32
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\")",
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": "16+82.45",
+      "to_station": "20+24.17",
+      "from_structure_hint": "SDMH at 16+82.45",
+      "to_structure_hint": "SDMH at 20+24.17",
+      "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+      "source_text_ids": [
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "8\" WATER PIPE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        30
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "GRADE BACK TO EXIST. @ 5:1 MAX",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        28,
+        29
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "STA: 20+17.17, 75.00' RT TC 305.07 FL 304.57 ECR",
+      "station": "20+17.17",
+      "offset": "75.00' RT",
+      "elevation": 305.07,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "S=0.0020",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        25
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view shows SDMH structures and a 12\" SD pipe run. A crossing 8\" water pipe is also noted. Curb elevations (TC/FL) are provided for various points (BCR, ECR) along the alignment."
+}
+```

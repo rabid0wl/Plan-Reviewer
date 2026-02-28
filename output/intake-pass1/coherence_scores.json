@@ -1,0 +1,11 @@
+[
+  {
+    "page_number": 14,
+    "coherence_score": 0.9126106194690266,
+    "total_spans": 904,
+    "multi_char_spans": 825,
+    "numeric_spans": 504,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  }
+]

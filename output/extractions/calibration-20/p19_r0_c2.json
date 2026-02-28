@@ -1,0 +1,226 @@
+{
+  "tile_id": "p19_r0_c2",
+  "page_number": 19,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "13+90.18",
+      "offset": "38.34' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.53,
+      "fl_elevation": 302.03,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "ECR",
+      "size": null,
+      "station": "13+70.18",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.16,
+      "fl_elevation": 301.66,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+26.17",
+      "offset": "38.96' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.53,
+      "fl_elevation": 302.03,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "13+71.48",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.16,
+      "fl_elevation": 301.66,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "ECR",
+      "size": null,
+      "station": "13+91.48",
+      "offset": "37.66' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.36,
+      "fl_elevation": 301.86,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GC",
+      "size": null,
+      "station": "14+26.89",
+      "offset": "3.16' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.45,
+      "fl_elevation": 301.95,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+27.47",
+      "offset": "37.04' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.37,
+      "fl_elevation": 301.87,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        41
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        42
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SEE SHEET 24",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "24",
+      "reference_detail": null,
+      "source_text_ids": [
+        82
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "8.0'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        43
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "36.0'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        44
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "58.0'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        45
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "M ROYALE STREET"
+  ],
+  "lot_numbers": [
+    7,
+    8,
+    9,
+    10,
+    15,
+    16,
+    17,
+    18,
+    48,
+    49,
+    50
+  ],
+  "extraction_notes": "Extracted curb return (BCR/ECR) and grade break (GB) points as structures. General notes 1-9 are visible in the top left. Professional seal for Ryan J. Dudley is visible on the right."
+}

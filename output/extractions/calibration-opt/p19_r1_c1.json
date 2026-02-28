@@ -1,0 +1,40 @@
+{
+  "tile_id": "p19_r1_c1",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "FL 300.48",
+      "station": null,
+      "offset": null,
+      "elevation": 300.48,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "EXISTING G @ CENTE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        9,
+        10
+      ]
+    }
+  ],
+  "street_names": [
+    "PALM ROYAL"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing curb elevations (TC) and slopes. Stations 10+00 through 14+00 are visible on the horizontal axis."
+}

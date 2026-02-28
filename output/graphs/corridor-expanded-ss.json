@@ -1,0 +1,1937 @@
+{
+  "utility_type": "SS",
+  "quality_summary": {
+    "total_tiles": 30,
+    "ok_tiles": 30,
+    "sanitized_tiles": 23,
+    "skipped_tiles": 0,
+    "quality_grade": "D",
+    "warnings": [
+      "23 tiles had sanitizer recovery",
+      "Extraction quality below threshold — findings may be incomplete"
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "SS:24:SSMH:1121.16:+13.30",
+      "kind": "structure",
+      "id": "9",
+      "page_number": 24,
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "11+21.16",
+      "offset": "13.30' RT",
+      "station_ft": 1121.16,
+      "signed_offset_ft": 13.3,
+      "rim_elevation": 328.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.74,
+          "source_text_ids": [
+            123
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.74,
+          "source_text_ids": [
+            144
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 325.74,
+      "notes": "INSTALL 48\" SSMH",
+      "source_tile_ids": [
+        "p24_r0_c0",
+        "p24_r1_c0",
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        114,
+        123,
+        124,
+        125,
+        126,
+        136,
+        137,
+        138,
+        142,
+        143,
+        144,
+        158,
+        159,
+        160,
+        164,
+        401,
+        434,
+        435,
+        436,
+        437
+      ],
+      "sanitized": true,
+      "variants_count": 3,
+      "rim_elevation_values": [
+        328.9
+      ]
+    },
+    {
+      "node_id": "SS:24:SSMH:1121.32:+8.41",
+      "kind": "structure",
+      "id": null,
+      "page_number": 24,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "11+21.32",
+      "offset": "8.41' RT",
+      "station_ft": 1121.32,
+      "signed_offset_ft": 8.41,
+      "rim_elevation": 329.07,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "representative_invert": null,
+      "notes": "EXIST. SSMH",
+      "source_tile_ids": [
+        "p24_r1_c0",
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        139,
+        140,
+        141,
+        161,
+        162,
+        163
+      ],
+      "sanitized": true,
+      "variants_count": 2,
+      "rim_elevation_values": [
+        329.07
+      ]
+    },
+    {
+      "node_id": "SS:24:SSMH:1444.40:+13.30",
+      "kind": "structure",
+      "id": "9",
+      "page_number": 24,
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+44.40",
+      "offset": "13.30' RT",
+      "station_ft": 1444.4,
+      "signed_offset_ft": 13.3,
+      "rim_elevation": 329.28,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.59,
+          "source_text_ids": [
+            53,
+            89
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.59,
+          "source_text_ids": [
+            54,
+            90
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.57,
+          "source_text_ids": [
+            55,
+            91
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.56,
+          "source_text_ids": [
+            92
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 325.56,
+      "notes": "INSTALL 48\" SSMH",
+      "source_tile_ids": [
+        "p24_r0_c2",
+        "p24_r1_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        64,
+        82,
+        83,
+        84,
+        88,
+        89,
+        90,
+        91,
+        92,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272
+      ],
+      "sanitized": true,
+      "variants_count": 2,
+      "rim_elevation_values": [
+        329.28
+      ]
+    },
+    {
+      "node_id": "SS:24:SSMH:1444.52:+9.27",
+      "kind": "structure",
+      "id": null,
+      "page_number": 24,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "14+44.52",
+      "offset": "9.27' RT",
+      "station_ft": 1444.52,
+      "signed_offset_ft": 9.27,
+      "rim_elevation": 329.56,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "representative_invert": null,
+      "notes": "EXIST. SSMH",
+      "source_tile_ids": [
+        "p24_r1_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        85,
+        86,
+        87
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        329.56
+      ]
+    },
+    {
+      "node_id": "SS:25:SSMH:1590.21:+13.30",
+      "kind": "structure",
+      "id": "9",
+      "page_number": 25,
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "15+90.21",
+      "offset": "13.30' RT",
+      "station_ft": 1590.21,
+      "signed_offset_ft": 13.3,
+      "rim_elevation": 329.55,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            12,
+            131
+          ]
+        },
+        {
+          "direction": "NW",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            11,
+            132
+          ]
+        }
+      ],
+      "is_existing": false,
+      "representative_invert": 325.76,
+      "notes": "INSTALL 48\" SSMH",
+      "source_tile_ids": [
+        "p25_r0_c0",
+        "p25_r1_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        131,
+        132,
+        133,
+        134,
+        135,
+        346,
+        355,
+        356,
+        357,
+        358,
+        359
+      ],
+      "sanitized": true,
+      "variants_count": 2,
+      "rim_elevation_values": [
+        329.55
+      ]
+    },
+    {
+      "node_id": "SS:25:SSMH:1594.72:+8.80",
+      "kind": "structure",
+      "id": null,
+      "page_number": 25,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "15+94.72",
+      "offset": "8.80' RT",
+      "station_ft": 1594.72,
+      "signed_offset_ft": 8.8,
+      "rim_elevation": 329.86,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.86,
+          "source_text_ids": [
+            19
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.86,
+          "source_text_ids": [
+            18
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 325.78,
+          "source_text_ids": [
+            17
+          ]
+        }
+      ],
+      "is_existing": true,
+      "representative_invert": 325.78,
+      "notes": "EXIST. SSMH",
+      "source_tile_ids": [
+        "p25_r1_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        329.86
+      ]
+    },
+    {
+      "node_id": "SS:25:SSMH:e06dc37a8b",
+      "kind": "structure",
+      "id": "EXIST. SSMH",
+      "page_number": 25,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "16+00",
+      "offset": "RT",
+      "station_ft": 1600.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "representative_invert": null,
+      "notes": "CONNECT INTO EXISTING SANITARY SEWER MANHOLE",
+      "source_tile_ids": [
+        "p25_r0_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        365,
+        366
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "SS:26:SSMH:2136.01:+9.13",
+      "kind": "structure",
+      "id": "EXIST. SSMH",
+      "page_number": 26,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "21+36.01",
+      "offset": "9.13' RT",
+      "station_ft": 2136.01,
+      "signed_offset_ft": 9.13,
+      "rim_elevation": 331.53,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 327.53,
+          "source_text_ids": [
+            105
+          ]
+        }
+      ],
+      "is_existing": true,
+      "representative_invert": 327.53,
+      "notes": null,
+      "source_tile_ids": [
+        "p26_r1_c1"
+      ],
+      "source_page_numbers": [
+        26
+      ],
+      "source_text_ids": [
+        102,
+        103,
+        104,
+        105
+      ],
+      "sanitized": true,
+      "variants_count": 1,
+      "rim_elevation_values": [
+        331.53
+      ]
+    },
+    {
+      "node_id": "SS:26:CLEANOUT:e413cee7a3",
+      "kind": "structure",
+      "id": "ssco_21+50",
+      "page_number": 26,
+      "structure_type": "cleanout",
+      "size": null,
+      "station": "21+50",
+      "offset": "RT",
+      "station_ft": 2150.0,
+      "signed_offset_ft": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 331.53,
+      "inverts": [],
+      "is_existing": false,
+      "representative_invert": null,
+      "notes": "SSCO",
+      "source_tile_ids": [
+        "p26_r0_c1"
+      ],
+      "source_page_numbers": [
+        26
+      ],
+      "source_text_ids": [
+        219,
+        220
+      ],
+      "sanitized": false,
+      "variants_count": 1,
+      "rim_elevation_values": []
+    },
+    {
+      "node_id": "orphan:SS:SS:e0:p103_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e1:p103_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e1:p103_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e2:p103_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e2:p103_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e3:p103_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e3:p103_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e4:p103_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e4:p103_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e6:p103_r1_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e6:p103_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 103,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e8:p24_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e10:p24_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e10:p24_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e11:p24_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e11:p24_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e12:p24_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e13:p24_r1_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 24,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e16:p25_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e16:p25_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e17:p25_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e19:p25_r1_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e19:p25_r1_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 25,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e20:p26_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 26,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        26
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e20:p26_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 26,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        26
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e21:p93_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e21:p93_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e22:p93_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e22:p93_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e23:p93_r0_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e23:p93_r0_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e24:p93_r0_c1:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e24:p93_r0_c1:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e25:p93_r0_c2:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e25:p93_r0_c2:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e26:p93_r1_c0:from",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    },
+    {
+      "node_id": "orphan:SS:SS:e26:p93_r1_c0:to",
+      "kind": "orphan_anchor",
+      "utility_type": "SS",
+      "page_number": 93,
+      "structure_type": "ORPHAN",
+      "source_tile_ids": [],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [],
+      "sanitized": false,
+      "station_ft": null,
+      "signed_offset_ft": null,
+      "representative_invert": null
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "SS:24:SSMH:1121.32:+8.41",
+      "to_node": "SS:24:SSMH:1444.52:+9.27",
+      "edge_id": "SS:e7:p24_r0_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 323.0,
+      "slope": 0.0005,
+      "from_station": "12+00",
+      "to_station": "15+23",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r0_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        534,
+        535,
+        536
+      ],
+      "sanitized": false,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SS:24:SSMH:1121.32:+8.41",
+      "to_node": "SS:24:SSMH:1121.16:+13.30",
+      "edge_id": "SS:e9:p24_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 4.0,
+      "slope": 0.0034,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "EXIST. SSMH",
+      "to_structure_hint": null,
+      "notes": "INSTALL 4 LF OF 8\" DIA SS PIPE @ S=0.0034",
+      "matched_confidence": "low",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "low",
+      "source_tile_ids": [
+        "p24_r0_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        287,
+        288,
+        289
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SS:24:SSMH:1444.40:+13.30",
+      "to_node": "orphan:SS:SS:e8:p24_r0_c2:to",
+      "edge_id": "SS:e8:p24_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 54.0,
+      "slope": 0.0012,
+      "from_station": "14+44.40",
+      "to_station": null,
+      "from_structure_hint": "SSMH 14+44.40",
+      "to_structure_hint": null,
+      "notes": "INSTALL 54 LF OF 8\" DIA SS PIPE @ S=0.0012",
+      "matched_confidence": "none",
+      "from_match_confidence": "medium",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r0_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        273,
+        274,
+        275,
+        276
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SS:24:SSMH:1444.40:+13.30",
+      "to_node": "orphan:SS:SS:e12:p24_r1_c2:to",
+      "edge_id": "SS:e12:p24_r1_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 54.0,
+      "slope": 0.0012,
+      "from_station": "14+44.40",
+      "to_station": null,
+      "from_structure_hint": "9",
+      "to_structure_hint": null,
+      "notes": "INSTALL 54 LF OF 8\" DIA SS PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "high",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SS:24:SSMH:1444.40:+13.30",
+      "to_node": "orphan:SS:SS:e13:p24_r1_c2:to",
+      "edge_id": "SS:e13:p24_r1_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 55.0,
+      "slope": 0.0012,
+      "from_station": "14+44.40",
+      "to_station": null,
+      "from_structure_hint": "9",
+      "to_structure_hint": null,
+      "notes": "INSTALL 55 LF OF 8\" DIA SS PIPE",
+      "matched_confidence": "none",
+      "from_match_confidence": "high",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c2"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        93,
+        94,
+        95
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "SS:25:SSMH:1594.72:+8.80",
+      "to_node": "SS:25:SSMH:1590.21:+13.30",
+      "edge_id": "SS:e18:p25_r1_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": 0.0034,
+      "from_station": "15+94.72",
+      "to_station": "15+90.21",
+      "from_structure_hint": "EXIST. SSMH",
+      "to_structure_hint": "9",
+      "notes": "INSTALL 6 LF OF 8\" DIA PIPE @ S=0.0034",
+      "matched_confidence": "high",
+      "from_match_confidence": "high",
+      "to_match_confidence": "high",
+      "source_tile_ids": [
+        "p25_r1_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        26,
+        27
+      ],
+      "sanitized": true,
+      "is_reference_only": false,
+      "original_from_node": "SS:25:SSMH:1590.21:+13.30",
+      "original_to_node": "SS:25:SSMH:1594.72:+8.80",
+      "oriented_by_gravity": true
+    },
+    {
+      "from_node": "SS:26:CLEANOUT:e413cee7a3",
+      "to_node": "SS:26:SSMH:2136.01:+9.13",
+      "edge_id": "SS:e5:p103_r1_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": "56+00",
+      "to_station": "58+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r1_c1"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e0:p103_r0_c0:from",
+      "to_node": "SS:24:SSMH:1121.16:+13.30",
+      "edge_id": "SS:e0:p103_r0_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "SSMHRIM 334.00",
+      "notes": "(E) 8'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r0_c0"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        13,
+        14,
+        54,
+        55,
+        56,
+        57
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e1:p103_r0_c1:from",
+      "to_node": "orphan:SS:SS:e1:p103_r0_c1:to",
+      "edge_id": "SS:e1:p103_r0_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r0_c1"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        15,
+        62,
+        63,
+        64
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e2:p103_r0_c2:from",
+      "to_node": "orphan:SS:SS:e2:p103_r0_c2:to",
+      "edge_id": "SS:e2:p103_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r0_c2"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e3:p103_r0_c2:from",
+      "to_node": "orphan:SS:SS:e3:p103_r0_c2:to",
+      "edge_id": "SS:e3:p103_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "4''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "4'' SS lateral",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r0_c2"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e4:p103_r1_c0:from",
+      "to_node": "orphan:SS:SS:e4:p103_r1_c0:to",
+      "edge_id": "SS:e4:p103_r1_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r1_c0"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e6:p103_r1_c2:from",
+      "to_node": "orphan:SS:SS:e6:p103_r1_c2:to",
+      "edge_id": "SS:e6:p103_r1_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "10''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p103_r1_c2"
+      ],
+      "source_page_numbers": [
+        103
+      ],
+      "source_text_ids": [
+        27,
+        28
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e10:p24_r1_c1:from",
+      "to_node": "orphan:SS:SS:e10:p24_r1_c1:to",
+      "edge_id": "SS:e10:p24_r1_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 323.0,
+      "slope": 0.0005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 323 LF OF 8\" SS PIPE @ S=0.0005",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        165,
+        166,
+        167
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e11:p24_r1_c1:from",
+      "to_node": "orphan:SS:SS:e11:p24_r1_c1:to",
+      "edge_id": "SS:e11:p24_r1_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" DIA SANITARY SEWER",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p24_r1_c1"
+      ],
+      "source_page_numbers": [
+        24
+      ],
+      "source_text_ids": [
+        148
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e16:p25_r0_c2:from",
+      "to_node": "orphan:SS:SS:e16:p25_r0_c2:to",
+      "edge_id": "SS:e16:p25_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING SANITARY SEWER MAIN",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r0_c2"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        3,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e17:p25_r1_c0:from",
+      "to_node": "SS:25:SSMH:1590.21:+13.30",
+      "edge_id": "SS:e17:p25_r1_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 91.0,
+      "slope": 0.0012,
+      "from_station": null,
+      "to_station": "15+90.21",
+      "from_structure_hint": null,
+      "to_structure_hint": "9",
+      "notes": "INSTALL 91 LF OF 8\" DIA SS PIPE @ S=0.0012",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "high",
+      "source_tile_ids": [
+        "p25_r1_c0"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        5,
+        6,
+        7
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e19:p25_r1_c1:from",
+      "to_node": "orphan:SS:SS:e19:p25_r1_c1:to",
+      "edge_id": "SS:e19:p25_r1_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" DIA SANITARY SEWER",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p25_r1_c1"
+      ],
+      "source_page_numbers": [
+        25
+      ],
+      "source_text_ids": [
+        11
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e20:p26_r0_c0:from",
+      "to_node": "orphan:SS:SS:e20:p26_r0_c0:to",
+      "edge_id": "SS:e20:p26_r0_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p26_r0_c0"
+      ],
+      "source_page_numbers": [
+        26
+      ],
+      "source_text_ids": [
+        126,
+        127,
+        128
+      ],
+      "sanitized": true,
+      "is_reference_only": false
+    },
+    {
+      "from_node": "orphan:SS:SS:e21:p93_r0_c0:from",
+      "to_node": "orphan:SS:SS:e21:p93_r0_c0:to",
+      "edge_id": "SS:e21:p93_r0_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 12\" Sanitary Sewer",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r0_c0"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e22:p93_r0_c0:from",
+      "to_node": "orphan:SS:SS:e22:p93_r0_c0:to",
+      "edge_id": "SS:e22:p93_r0_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 8\" Sanitary Sewer",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r0_c0"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        95
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e23:p93_r0_c0:from",
+      "to_node": "orphan:SS:SS:e23:p93_r0_c0:to",
+      "edge_id": "SS:e23:p93_r0_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 6\" Sanitary Sewer",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r0_c0"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        92,
+        93,
+        94,
+        96
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e24:p93_r0_c1:from",
+      "to_node": "orphan:SS:SS:e24:p93_r0_c1:to",
+      "edge_id": "SS:e24:p93_r0_c1",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Existing 12\" Sanitary Sewer line",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r0_c1"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e25:p93_r0_c2:from",
+      "to_node": "orphan:SS:SS:e25:p93_r0_c2:to",
+      "edge_id": "SS:e25:p93_r0_c2",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 12'' SS",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r0_c2"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sanitized": true,
+      "is_reference_only": true
+    },
+    {
+      "from_node": "orphan:SS:SS:e26:p93_r1_c0:from",
+      "to_node": "orphan:SS:SS:e26:p93_r1_c0:to",
+      "edge_id": "SS:e26:p93_r1_c0",
+      "utility_type": "SS",
+      "pipe_type": "SS",
+      "size": "6''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING",
+      "matched_confidence": "none",
+      "from_match_confidence": "none",
+      "to_match_confidence": "none",
+      "source_tile_ids": [
+        "p93_r1_c0"
+      ],
+      "source_page_numbers": [
+        93
+      ],
+      "source_text_ids": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "sanitized": false,
+      "is_reference_only": true
+    }
+  ]
+}

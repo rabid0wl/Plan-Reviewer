@@ -1,0 +1,666 @@
+[
+  {
+    "page_number": 1,
+    "sheet_label": "OF-57",
+    "sheet_type": "cover",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 2,
+    "sheet_label": "OF-57",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 3,
+    "sheet_label": "OF-57",
+    "sheet_type": "notes",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 4,
+    "sheet_label": "OF-57",
+    "sheet_type": "notes",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 5,
+    "sheet_label": "TREE-2",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 6,
+    "sheet_label": "EP-305",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 7,
+    "sheet_label": "EP-305",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 8,
+    "sheet_label": "EP-305",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 9,
+    "sheet_label": "OF-57",
+    "sheet_type": "plan_view",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 10,
+    "sheet_label": "OF-57",
+    "sheet_type": "plan_view",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 11,
+    "sheet_label": "OF-57",
+    "sheet_type": "plan_view",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 12,
+    "sheet_label": "ET-7",
+    "sheet_type": "plan_view",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 13,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 14,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 15,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 16,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 17,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 18,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 19,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 20,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 21,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 22,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 23,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 24,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 25,
+    "sheet_label": "F-12",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 26,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 27,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 28,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 29,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 30,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 31,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 32,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 33,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 34,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 35,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 36,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 37,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 38,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 39,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 40,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 41,
+    "sheet_label": "FOF-8",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 42,
+    "sheet_label": "MH-6",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 43,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 44,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 45,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 46,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 47,
+    "sheet_label": "OF-57",
+    "sheet_type": "profile",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 48,
+    "sheet_label": "OF-57",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 49,
+    "sheet_label": "OF-57",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 50,
+    "sheet_label": "R-250",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 51,
+    "sheet_label": "OF-57",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 52,
+    "sheet_label": "OF-57",
+    "sheet_type": "signing",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 53,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 54,
+    "sheet_label": "OF-57",
+    "sheet_type": "plan_view",
+    "description": null,
+    "utility_types": [
+      "SS",
+      "W"
+    ],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 55,
+    "sheet_label": "OF-57",
+    "sheet_type": "detail",
+    "description": null,
+    "utility_types": [],
+    "needs_deep_extraction": true
+  },
+  {
+    "page_number": 56,
+    "sheet_label": "TREE-2",
+    "sheet_type": "notes",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  },
+  {
+    "page_number": 57,
+    "sheet_label": "OF-57",
+    "sheet_type": "notes",
+    "description": null,
+    "utility_types": [
+      "SD",
+      "SS"
+    ],
+    "needs_deep_extraction": false
+  }
+]

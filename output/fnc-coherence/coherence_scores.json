@@ -1,0 +1,515 @@
+[
+  {
+    "page_number": 1,
+    "coherence_score": 0.9821428571428571,
+    "total_spans": 392,
+    "multi_char_spans": 385,
+    "numeric_spans": 152,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 2,
+    "coherence_score": 0.9847715736040609,
+    "total_spans": 394,
+    "multi_char_spans": 388,
+    "numeric_spans": 156,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 3,
+    "coherence_score": 0.9050758075148319,
+    "total_spans": 1517,
+    "multi_char_spans": 1373,
+    "numeric_spans": 675,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 4,
+    "coherence_score": 0.8977695167286245,
+    "total_spans": 1076,
+    "multi_char_spans": 966,
+    "numeric_spans": 493,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 5,
+    "coherence_score": 0.9307780320366132,
+    "total_spans": 1748,
+    "multi_char_spans": 1627,
+    "numeric_spans": 1106,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 6,
+    "coherence_score": 0.9456322541233965,
+    "total_spans": 1637,
+    "multi_char_spans": 1548,
+    "numeric_spans": 1185,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 7,
+    "coherence_score": 0.9432950191570881,
+    "total_spans": 1305,
+    "multi_char_spans": 1231,
+    "numeric_spans": 914,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 8,
+    "coherence_score": 0.9634369287020109,
+    "total_spans": 1094,
+    "multi_char_spans": 1054,
+    "numeric_spans": 633,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 9,
+    "coherence_score": 0.9548387096774194,
+    "total_spans": 310,
+    "multi_char_spans": 296,
+    "numeric_spans": 199,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 10,
+    "coherence_score": 0.9160220994475138,
+    "total_spans": 905,
+    "multi_char_spans": 829,
+    "numeric_spans": 567,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 11,
+    "coherence_score": 0.9694656488549618,
+    "total_spans": 655,
+    "multi_char_spans": 635,
+    "numeric_spans": 513,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 12,
+    "coherence_score": 0.978405315614618,
+    "total_spans": 602,
+    "multi_char_spans": 589,
+    "numeric_spans": 480,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 13,
+    "coherence_score": 0.9796511627906976,
+    "total_spans": 344,
+    "multi_char_spans": 337,
+    "numeric_spans": 220,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 14,
+    "coherence_score": 0.9126106194690266,
+    "total_spans": 904,
+    "multi_char_spans": 825,
+    "numeric_spans": 504,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 15,
+    "coherence_score": 0.9833333333333333,
+    "total_spans": 360,
+    "multi_char_spans": 354,
+    "numeric_spans": 264,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 16,
+    "coherence_score": 0.946969696969697,
+    "total_spans": 396,
+    "multi_char_spans": 375,
+    "numeric_spans": 243,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 17,
+    "coherence_score": 0.9975550122249389,
+    "total_spans": 409,
+    "multi_char_spans": 408,
+    "numeric_spans": 300,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 18,
+    "coherence_score": 0.9973404255319149,
+    "total_spans": 376,
+    "multi_char_spans": 375,
+    "numeric_spans": 259,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 19,
+    "coherence_score": 0.9166666666666666,
+    "total_spans": 384,
+    "multi_char_spans": 352,
+    "numeric_spans": 261,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 20,
+    "coherence_score": 0.9538461538461539,
+    "total_spans": 325,
+    "multi_char_spans": 310,
+    "numeric_spans": 227,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 21,
+    "coherence_score": 0.948170731707317,
+    "total_spans": 328,
+    "multi_char_spans": 311,
+    "numeric_spans": 231,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 22,
+    "coherence_score": 0.9746588693957114,
+    "total_spans": 513,
+    "multi_char_spans": 500,
+    "numeric_spans": 374,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 23,
+    "coherence_score": 0.9957805907172996,
+    "total_spans": 474,
+    "multi_char_spans": 472,
+    "numeric_spans": 351,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 24,
+    "coherence_score": 0.9487750556792873,
+    "total_spans": 449,
+    "multi_char_spans": 426,
+    "numeric_spans": 316,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 25,
+    "coherence_score": 0.9935064935064936,
+    "total_spans": 462,
+    "multi_char_spans": 459,
+    "numeric_spans": 332,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 26,
+    "coherence_score": 0.9596273291925466,
+    "total_spans": 322,
+    "multi_char_spans": 309,
+    "numeric_spans": 228,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 27,
+    "coherence_score": 0.9678456591639871,
+    "total_spans": 311,
+    "multi_char_spans": 301,
+    "numeric_spans": 223,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 28,
+    "coherence_score": 0.9974025974025974,
+    "total_spans": 385,
+    "multi_char_spans": 384,
+    "numeric_spans": 289,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 29,
+    "coherence_score": 0.9854651162790697,
+    "total_spans": 344,
+    "multi_char_spans": 339,
+    "numeric_spans": 256,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 30,
+    "coherence_score": 0.9853249475890985,
+    "total_spans": 477,
+    "multi_char_spans": 470,
+    "numeric_spans": 345,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 31,
+    "coherence_score": 0.9089506172839507,
+    "total_spans": 648,
+    "multi_char_spans": 589,
+    "numeric_spans": 350,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 32,
+    "coherence_score": 0.9885386819484241,
+    "total_spans": 349,
+    "multi_char_spans": 345,
+    "numeric_spans": 248,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 33,
+    "coherence_score": 0.9602446483180428,
+    "total_spans": 327,
+    "multi_char_spans": 314,
+    "numeric_spans": 203,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 34,
+    "coherence_score": 0.990909090909091,
+    "total_spans": 330,
+    "multi_char_spans": 327,
+    "numeric_spans": 231,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 35,
+    "coherence_score": 0.9869706840390879,
+    "total_spans": 307,
+    "multi_char_spans": 303,
+    "numeric_spans": 207,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 36,
+    "coherence_score": 0.9715639810426541,
+    "total_spans": 422,
+    "multi_char_spans": 410,
+    "numeric_spans": 317,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 37,
+    "coherence_score": 0.987460815047022,
+    "total_spans": 319,
+    "multi_char_spans": 315,
+    "numeric_spans": 224,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 38,
+    "coherence_score": 0.9904153354632588,
+    "total_spans": 313,
+    "multi_char_spans": 310,
+    "numeric_spans": 230,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 39,
+    "coherence_score": 0.9809264305177112,
+    "total_spans": 367,
+    "multi_char_spans": 360,
+    "numeric_spans": 263,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 40,
+    "coherence_score": 0.9893333333333333,
+    "total_spans": 375,
+    "multi_char_spans": 371,
+    "numeric_spans": 280,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 41,
+    "coherence_score": 0.9929245283018868,
+    "total_spans": 424,
+    "multi_char_spans": 421,
+    "numeric_spans": 318,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 42,
+    "coherence_score": 0.987152034261242,
+    "total_spans": 467,
+    "multi_char_spans": 461,
+    "numeric_spans": 347,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 43,
+    "coherence_score": 0.9813084112149533,
+    "total_spans": 321,
+    "multi_char_spans": 315,
+    "numeric_spans": 234,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 44,
+    "coherence_score": 0.9876543209876543,
+    "total_spans": 324,
+    "multi_char_spans": 320,
+    "numeric_spans": 235,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 45,
+    "coherence_score": 0.9873737373737373,
+    "total_spans": 396,
+    "multi_char_spans": 391,
+    "numeric_spans": 300,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 46,
+    "coherence_score": 0.9935691318327974,
+    "total_spans": 311,
+    "multi_char_spans": 309,
+    "numeric_spans": 227,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 47,
+    "coherence_score": 0.9976689976689976,
+    "total_spans": 429,
+    "multi_char_spans": 428,
+    "numeric_spans": 325,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 48,
+    "coherence_score": 0.8605015673981191,
+    "total_spans": 638,
+    "multi_char_spans": 549,
+    "numeric_spans": 302,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 49,
+    "coherence_score": 0.8864265927977839,
+    "total_spans": 361,
+    "multi_char_spans": 320,
+    "numeric_spans": 200,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 50,
+    "coherence_score": 0.801829268292683,
+    "total_spans": 656,
+    "multi_char_spans": 526,
+    "numeric_spans": 273,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 51,
+    "coherence_score": 0.8952879581151832,
+    "total_spans": 382,
+    "multi_char_spans": 342,
+    "numeric_spans": 213,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 52,
+    "coherence_score": 0.9235668789808917,
+    "total_spans": 314,
+    "multi_char_spans": 290,
+    "numeric_spans": 154,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 53,
+    "coherence_score": 1.0,
+    "total_spans": 68,
+    "multi_char_spans": 68,
+    "numeric_spans": 43,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 54,
+    "coherence_score": 1.0,
+    "total_spans": 69,
+    "multi_char_spans": 69,
+    "numeric_spans": 35,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 55,
+    "coherence_score": 1.0,
+    "total_spans": 68,
+    "multi_char_spans": 68,
+    "numeric_spans": 34,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 56,
+    "coherence_score": 0.8805755395683453,
+    "total_spans": 695,
+    "multi_char_spans": 612,
+    "numeric_spans": 375,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  },
+  {
+    "page_number": 57,
+    "coherence_score": 0.9073569482288828,
+    "total_spans": 367,
+    "multi_char_spans": 333,
+    "numeric_spans": 234,
+    "primary_font": "ArialNarrow",
+    "is_hybrid_viable": true
+  }
+]

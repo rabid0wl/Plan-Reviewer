@@ -1,0 +1,622 @@
+{
+  "artifacts": [
+    {
+      "hashes": {
+        "extraction_sha256": "6c74f1beac46fd3dab3d2e5780a384606c3f275e6231ac10ba5403360f18e081",
+        "meta_sha256": "d93f247703120c7eeb3f499dc2965fee55f6fa51db8d21ede7db2c929f1b285b",
+        "text_layer_sha256": "e154aa24ca186865c40a169545975c430093ad5bf7a623784466c9ae09c585c0"
+      },
+      "meta_summary": {
+        "coherence_score": 0.8969072164948454,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r0_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r0_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r0_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r0_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r0_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r0_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "b996858376a140571b35cf5159030d0088f9d01c83557765fefd6edb79e45e4d",
+        "meta_sha256": "002654d6a594605489dec86a9b758739cc755e739894c0cc09e22b7288aa2a3c",
+        "text_layer_sha256": "947c8dd26a2719462203ea0f0045235a37914f3863039c630f7693a4aa7f7b0e"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9116279069767442,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r0_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r0_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r0_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r0_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r0_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r0_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "1c9a87b719c5f5d7d249f6209a42baf2aef91f6080be8c2b5a30ae97d154867c",
+        "meta_sha256": "569b19a642e7bcde069c321184e3cda43d6a4f8ab2e998def16ba3675976db76",
+        "text_layer_sha256": "9fe6f08dd606a4f8e6e5dd1531bae76cb14aa0fcb19a9d1673f163962368577a"
+      },
+      "meta_summary": {
+        "coherence_score": 0.8954545454545455,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r0_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r0_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r0_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r0_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r0_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r0_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "9e0b616fdfada20ebaae0681bf0075336388a439ccf3edb5ac58ba0bb4efb259",
+        "meta_sha256": "0b3262ce65cfe2dcf4bf2e594a1fa7fdbc0633f9fed94a89f1c0469fa6f1569e",
+        "text_layer_sha256": "4a0bc45c7216b0ae86db95c29fd6f73b0b77f10c3ad081be988f92ab1580274a"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r1_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r1_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r1_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r1_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r1_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r1_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "f305f12c5dd4e2d14a6b0c8e79e4c818316324323a0a2ddb8e0fb00dce8b9a3f",
+        "meta_sha256": "a60aa2c8070c77723159444b1b95a7a7eecfb8bbcf55bf6a88fddd494f619b35",
+        "text_layer_sha256": "56449e0ad63694eed0eed039872109a8f192b409616a9aae0675844cb6b13dbc"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r1_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r1_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r1_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r1_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r1_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r1_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "3a1ad3c71f6866590883d3ad979b2482b194209876017414b69cdfbcffbd4e43",
+        "meta_sha256": "ac09695841848330bbbda31ca63c3385fdc946fee3f81d2db82478652e9e6692",
+        "text_layer_sha256": "d05caf03dd1fe7af05d3f20eb5eded9351a76c5a0668ae646e68ce1857ce73f1"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 14,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p14_r1_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p14_r1_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p14_r1_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p14_r1_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p14_r1_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p14_r1_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "9c52f39300beecc92ed22afa8c2d71d8d177bee951f63c8528cd9b07499f3937",
+        "meta_sha256": "9907bc8db7c859442cb0001fc07ac20aeb78b046c41b80e4118a8819f4d828bb",
+        "text_layer_sha256": "735611855bb268294265ddd01626b573262a654080ebe2442cac2b9179e30144"
+      },
+      "meta_summary": {
+        "coherence_score": 0.8660714285714286,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r0_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r0_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r0_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r0_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r0_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r0_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "8153e64400f79e01c60f4367e9d883a519b2dcf853d9047e083cb11710e25e75",
+        "meta_sha256": "9953040448ef7b358f10b847a906d18757bc82017b7ef234cb3c823a9ab6fce4",
+        "text_layer_sha256": "d24e9d8913cadf8a19911eea77ca268362582145a3613c0e7d01a3ea2f9f9202"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9047619047619048,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r0_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r0_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r0_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r0_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r0_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r0_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "b9437a61e55d468468ce98f6a11a9449f42f0b11e1b5c28cd65c73fe105fe6c5",
+        "meta_sha256": "564c2f947995e0e6d2411d5dd125392dd245c2c2a179e9d9a6f5e26195563c75",
+        "text_layer_sha256": "42144a9db714cd29cac7f3697c4988a705c000922033ddfa808fdfea01715be3"
+      },
+      "meta_summary": {
+        "coherence_score": 0.963855421686747,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r0_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r0_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r0_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r0_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r0_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r0_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "770b72dac5e25b08cd13654b5e65fa8dfcddd483a7b8ef7b4ee706b4e6a40772",
+        "meta_sha256": "57bc842f7c5d7e219dd34107959050f2a31eb66942304d13967f26d4109ae743",
+        "text_layer_sha256": "5cf111d5e6eb8c216641bef8ebbf6df09ec80733132866c63073cd773c6a6a7a"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r1_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r1_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r1_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r1_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r1_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r1_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "2dbf060d4d62f81f54d9b6edb6c3989b7eefabec9fb74a40f6e6f80605f00049",
+        "meta_sha256": "ee7e209e3ab216f0290620115415f6a5b10ce57083a3e06fc9003307a3cdf101",
+        "text_layer_sha256": "4c66f1e15d36275b151dc72d9672d89ed6c4b1ca7834d423f0abd41d6b89f604"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r1_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r1_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r1_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r1_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r1_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r1_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "2264ee69650afa184c0077c06ccc17a2fada0d1656e0a4f1cf934a45aa803b3f",
+        "meta_sha256": "473888cd9ab0b6adc7df6622ab7954c63ae96192f78aecbe3eb208e4b3fb7539",
+        "text_layer_sha256": "798cbaf407416f9871a3f55cf406eae62eb87e758f90eb03b212ded812976cbf"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true
+      },
+      "page_number": 19,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p19_r1_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p19_r1_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p19_r1_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p19_r1_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p19_r1_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p19_r1_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "b3a0d23f438bc8950adba9d01cd0f5a4bb99ff33031e6b3c828e3d0b913bef83",
+        "meta_sha256": "441ae66ed111167e47da1425243ceacc723555308444531a792ee5fe45598c23",
+        "text_layer_sha256": "e43ca47f30a854d37cbebd05cd9a511db2d87ece3511931ebebce2884abf9374"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9659090909090909,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r0_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r0_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r0_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r0_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r0_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r0_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "9e4379afe870b8c905e7a4c2f1bfcff00c0735279f41209474f79980c82a69ca",
+        "meta_sha256": "b952ee4da728683c2a799bcd4025fabdaac7bd1d4c5a92ae1f2000f81dfa3f56",
+        "text_layer_sha256": "2791986c5b419443779a64f6511205b7ab3698f3ecdf4a4b905dd36f0eaf166f"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r0_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r0_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r0_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r0_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r0_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r0_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "3b0079c97721fbf15c64c43f44e469de09d1a4a015b5fd8025487b55e988f880",
+        "meta_sha256": "467e99e48f8839453bb6ed0790ffa14d002f2f4be2236909ffa4c7a7e172a7d6",
+        "text_layer_sha256": "6560dffabe40381381c80d47ba3413b43bfe8557becc4728ddd2be68b2a0ac0e"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r0_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r0_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r0_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r0_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r0_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r0_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "1994cc21152f88de2abb37861e99fa5fa8f0b69b54c40a9cc57596e431ddd502",
+        "meta_sha256": "275871842e2aed92ca32722e35778662452f1dbef649cf4db9dc9fca437a7b22",
+        "text_layer_sha256": "037177a6e1250ae264d104a5ecae913ea29f93807f3c92c3ae79197572f34c25"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r1_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r1_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r1_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r1_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r1_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r1_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "8f7f14b6da7601b716d95eb8d0fd6ea9371772135613c616633982e52b7c5bb6",
+        "meta_sha256": "ae6d40a5b5c9d4700442b817bbd23dca8df92154f71b5141635f401f648d31ac",
+        "text_layer_sha256": "d15c720733425f5f136bdd05dadaf1de0a959a23bd706ec541279262c176fed9"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r1_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r1_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r1_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r1_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r1_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r1_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "86dda849d52133b308910551460172c810a7b6e3a3f4815b67ac01fcb8b2930b",
+        "meta_sha256": "dc8b218f90bf297775bc3340216930ecff8a653fe99702f0848694612fea4a7d",
+        "text_layer_sha256": "47cc8856f25ba8e239d53c7dad1c961827545ae4af2dc417e81724adfa5b899d"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 34,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p34_r1_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p34_r1_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p34_r1_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p34_r1_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p34_r1_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p34_r1_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "ed52851fbdcf338dfd81bb245056bc4bf5108827ba931f5c713f5074cfb5f3e0",
+        "meta_sha256": "7b8e090623cd0309f6c2d728f76b60c844bd5f62c715cfeb71a11ee68ca6ec44",
+        "text_layer_sha256": "aeef566b2c61b52d6dff726f88928d14d7ea0f016db691daef9f1c3a03d672dd"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9369369369369369,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r0_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r0_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r0_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r0_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r0_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r0_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "b240acf4dceafaeb814f4972d59f1fe4b4d01d8d17e050c2fe926ecde945608e",
+        "meta_sha256": "af1373c641c0ac56d7f0346c3120d305a1db1dfe220281a8f51285f3bdc15bdb",
+        "text_layer_sha256": "91b72168325b1856b4938e9895d1b3c1e24b4dd87993db2607ec46bb141d27ff"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9864864864864865,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r0_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r0_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r0_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r0_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r0_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r0_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "a22af0b2f68ef810a7fcaebe280d1d9d933520aa0625bb159a43846440ec4714",
+        "meta_sha256": "1fb24ce6ead2d30a8f2a269e8d41cf203ee3a45e2330f23b2913425a2eebf18a",
+        "text_layer_sha256": "332cfc253c487a021d0c29f2965771999dfb0da796e1205351817ec398a4405f"
+      },
+      "meta_summary": {
+        "coherence_score": 0.9504950495049505,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r0_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r0_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r0_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r0_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r0_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r0_c2"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "8c9e8054247f48a317a595c13227600bd93a76cec8691d58af547013ce09dec8",
+        "meta_sha256": "ade41272003216921e5d5ddc8797ae8d64b6c0b3baa4e6aeae70c6f2a0d4ca82",
+        "text_layer_sha256": "aa9938727d4fa3cfc3a88e61577ba454e19cd27b4ae02cdec2fb81a505a8f49f"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r1_c0.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r1_c0.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r1_c0.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r1_c0.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r1_c0.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r1_c0"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "2e4f964f3eb44fcb6b7d186c905cf80eda344dcf8b0c87ee77acd12c584941e7",
+        "meta_sha256": "e6d75775e66947d804391fdc10873d35c33718ba783f98fffa5428f5f2416328",
+        "text_layer_sha256": "7ffe459b71efaec7decf6ae81ec5440494202532fcca44c42621de318284bad5"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r1_c1.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r1_c1.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r1_c1.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r1_c1.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r1_c1.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r1_c1"
+    },
+    {
+      "hashes": {
+        "extraction_sha256": "3416fa556ce2a40d98ceebba8dfac8d250e0ee760b62d5aa6ba56f6722e4e4c7",
+        "meta_sha256": "ec28a6893c078a189afd930137429270da6a711414d415d07d317b401b2cbadd",
+        "text_layer_sha256": "c867030364e5b1bb22b0b70b48d656457c0b818c959a2ac4c2de33dee7023871"
+      },
+      "meta_summary": {
+        "coherence_score": 1.0,
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false
+      },
+      "page_number": 36,
+      "paths": {
+        "extraction_path": "output\\extractions\\calibration-clean\\p36_r1_c2.json",
+        "meta_path": "output\\extractions\\calibration-clean\\p36_r1_c2.json.meta.json",
+        "raw_path": "output\\extractions\\calibration-clean\\p36_r1_c2.json.raw.txt",
+        "text_layer_path": "output\\intake-pass2\\text_layers\\p36_r1_c2.json",
+        "tile_path": "output\\intake-pass2\\tiles\\p36_r1_c2.png"
+      },
+      "status": "ok",
+      "tile_id": "p36_r1_c2"
+    }
+  ],
+  "contract_version": "preanalysis.v1",
+  "counts": {
+    "dry_run": 0,
+    "missing_text_layers": 0,
+    "ok": 24,
+    "paired_tiles": 24,
+    "runtime_error": 0,
+    "skipped_low_coherence": 0,
+    "total_candidates": 24,
+    "validation_error": 0
+  },
+  "created_at": "2026-02-22T18:07:28.378703+00:00",
+  "paths": {
+    "out_dir": "output\\extractions\\calibration-clean",
+    "text_layers_dir": "output\\intake-pass2\\text_layers",
+    "tiles_dir": "output\\intake-pass2\\tiles"
+  },
+  "run_id": "1c1665bd-9063-41a0-b538-ceb267963d4a",
+  "settings": {
+    "allow_low_coherence": false,
+    "escalation_coherence_threshold": 0.7,
+    "escalation_enabled": true,
+    "escalation_model": null,
+    "max_concurrency": 1,
+    "model": "google/gemini-3-flash-preview"
+  }
+}

@@ -1,0 +1,1580 @@
+{
+  "started_at": "2026-02-23T01:12:47.305586+00:00",
+  "completed_at": "2026-02-23T01:17:36.972246+00:00",
+  "tiles_dir": "output\\intake-pass1\\tiles",
+  "text_layers_dir": "output\\intake-pass1\\text_layers",
+  "out_dir": "output\\extractions\\calibration-clean-regression",
+  "tile_globs": [
+    "*.png"
+  ],
+  "max_tiles": null,
+  "model": "google/gemini-3-flash-preview",
+  "escalation_model": "google/gemini-3-flash-preview",
+  "escalation_coherence_threshold": 0.7,
+  "escalation_enabled": false,
+  "dry_run": false,
+  "no_cache": true,
+  "allow_low_coherence": false,
+  "counts": {
+    "total_candidates": 24,
+    "paired_tiles": 24,
+    "missing_text_layers": 0,
+    "ok": 24,
+    "dry_run": 0,
+    "skipped_low_coherence": 0,
+    "validation_error": 0,
+    "runtime_error": 0
+  },
+  "results": [
+    {
+      "tile_stem": "p14_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c0",
+        "coherence_score": 0.8908450704225352,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 18411,
+        "text_items_count": 284,
+        "structures_count": 3,
+        "pipes_count": 1,
+        "callouts_count": 12,
+        "usage": {
+          "prompt_tokens": 11813,
+          "completion_tokens": 2285,
+          "total_tokens": 14098,
+          "cost": 0.0127615,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0127615,
+            "upstream_inference_prompt_cost": 0.0059065,
+            "upstream_inference_completions_cost": 0.006855
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "35287b4273187dbc",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p14_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c1",
+        "coherence_score": 0.9107981220657277,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 25533,
+        "text_items_count": 426,
+        "structures_count": 4,
+        "pipes_count": 3,
+        "callouts_count": 7,
+        "usage": {
+          "prompt_tokens": 16504,
+          "completion_tokens": 2825,
+          "total_tokens": 19329,
+          "cost": 0.016727,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.016727,
+            "upstream_inference_prompt_cost": 0.008252,
+            "upstream_inference_completions_cost": 0.008475
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "a1e0107606116bdf",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p14_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c2",
+        "coherence_score": 0.8990825688073395,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 16024,
+        "text_items_count": 218,
+        "structures_count": 1,
+        "pipes_count": 2,
+        "callouts_count": 7,
+        "usage": {
+          "prompt_tokens": 9831,
+          "completion_tokens": 1847,
+          "total_tokens": 11678,
+          "cost": 0.0104565,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0104565,
+            "upstream_inference_prompt_cost": 0.0049155,
+            "upstream_inference_completions_cost": 0.005541
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "9929727118cb2f73",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c0",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 6948,
+        "text_items_count": 33,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 3783,
+          "completion_tokens": 1031,
+          "total_tokens": 4814,
+          "cost": 0.0049845,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0049845,
+            "upstream_inference_prompt_cost": 0.0018915,
+            "upstream_inference_completions_cost": 0.003093
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 1,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "3126182a1b4d2a2c",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c1",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 7407,
+        "text_items_count": 41,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 4065,
+          "completion_tokens": 1311,
+          "total_tokens": 5376,
+          "cost": 0.0059655,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0059655,
+            "upstream_inference_prompt_cost": 0.0020325,
+            "upstream_inference_completions_cost": 0.003933
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 1,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "6016f6915e51d26b",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p14_r1_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 9329,
+        "text_items_count": 80,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 5339,
+          "completion_tokens": 1123,
+          "total_tokens": 6462,
+          "cost": 0.0060385,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0060385,
+            "upstream_inference_prompt_cost": 0.0026695,
+            "upstream_inference_completions_cost": 0.003369
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "a3fe5141c29bc7d9",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r0_c0",
+        "coherence_score": 0.8660714285714286,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 10565,
+        "text_items_count": 112,
+        "structures_count": 9,
+        "pipes_count": 0,
+        "callouts_count": 4,
+        "usage": {
+          "prompt_tokens": 6308,
+          "completion_tokens": 2078,
+          "total_tokens": 8386,
+          "cost": 0.009388,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.009388,
+            "upstream_inference_prompt_cost": 0.003154,
+            "upstream_inference_completions_cost": 0.006234
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 1,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "714d9322a6c57109",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r0_c1",
+        "coherence_score": 0.9041916167664671,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 13791,
+        "text_items_count": 167,
+        "structures_count": 18,
+        "pipes_count": 0,
+        "callouts_count": 6,
+        "usage": {
+          "prompt_tokens": 8298,
+          "completion_tokens": 3565,
+          "total_tokens": 11863,
+          "cost": 0.014844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.014844,
+            "upstream_inference_prompt_cost": 0.004149,
+            "upstream_inference_completions_cost": 0.010695
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "650da10240661cf4",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r0_c2",
+        "coherence_score": 0.963855421686747,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 9892,
+        "text_items_count": 83,
+        "structures_count": 7,
+        "pipes_count": 0,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 5542,
+          "completion_tokens": 1509,
+          "total_tokens": 7051,
+          "cost": 0.007298,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.007298,
+            "upstream_inference_prompt_cost": 0.002771,
+            "upstream_inference_completions_cost": 0.004527
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "8e73bc502c0b9a59",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r1_c0",
+        "coherence_score": 0.9642857142857143,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 6732,
+        "text_items_count": 28,
+        "structures_count": 0,
+        "pipes_count": 0,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 3599,
+          "completion_tokens": 920,
+          "total_tokens": 4519,
+          "cost": 0.0045595,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0045595,
+            "upstream_inference_prompt_cost": 0.0017995,
+            "upstream_inference_completions_cost": 0.00276
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 4,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "57301f8209df21c8",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r1_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r1_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r1_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r1_c1",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 6282,
+        "text_items_count": 20,
+        "structures_count": 0,
+        "pipes_count": 0,
+        "callouts_count": 4,
+        "usage": {
+          "prompt_tokens": 3324,
+          "completion_tokens": 1287,
+          "total_tokens": 4611,
+          "cost": 0.005523,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.005523,
+            "upstream_inference_prompt_cost": 0.001662,
+            "upstream_inference_completions_cost": 0.003861
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 6,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "7f9f252b7b1ce052",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p19_r1_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p19_r1_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p19_r1_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p19_r1_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p19_r1_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 8089,
+        "text_items_count": 54,
+        "structures_count": 0,
+        "pipes_count": 0,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 4463,
+          "completion_tokens": 863,
+          "total_tokens": 5326,
+          "cost": 0.0048205,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0048205,
+            "upstream_inference_prompt_cost": 0.0022315,
+            "upstream_inference_completions_cost": 0.002589
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 3,
+          "inverts": 0,
+          "pipes": 1,
+          "callouts": 0
+        },
+        "cache_key": "44462b2d6eb4182f",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r0_c0",
+        "coherence_score": 0.9659090909090909,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 9526,
+        "text_items_count": 88,
+        "structures_count": 2,
+        "pipes_count": 4,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 5425,
+          "completion_tokens": 1277,
+          "total_tokens": 6702,
+          "cost": 0.0065435,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0065435,
+            "upstream_inference_prompt_cost": 0.0027125,
+            "upstream_inference_completions_cost": 0.003831
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "275abb3c3459fde0",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r0_c1",
+        "coherence_score": 0.9863945578231292,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 12689,
+        "text_items_count": 147,
+        "structures_count": 1,
+        "pipes_count": 3,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 7304,
+          "completion_tokens": 1306,
+          "total_tokens": 8610,
+          "cost": 0.00757,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00757,
+            "upstream_inference_prompt_cost": 0.003652,
+            "upstream_inference_completions_cost": 0.003918
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": true,
+        "dropped_invalid_counts": {
+          "structures": 1,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "b7fe30200f22ac9b",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r0_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 9719,
+        "text_items_count": 76,
+        "structures_count": 2,
+        "pipes_count": 2,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 5249,
+          "completion_tokens": 1129,
+          "total_tokens": 6378,
+          "cost": 0.0060115,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0060115,
+            "upstream_inference_prompt_cost": 0.0026245,
+            "upstream_inference_completions_cost": 0.003387
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "d7bced60cc2a48a3",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r1_c0",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 6869,
+        "text_items_count": 30,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 3680,
+          "completion_tokens": 860,
+          "total_tokens": 4540,
+          "cost": 0.00442,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00442,
+            "upstream_inference_prompt_cost": 0.00184,
+            "upstream_inference_completions_cost": 0.00258
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "c4eea781c0821264",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r1_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r1_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r1_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r1_c1",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 7376,
+        "text_items_count": 40,
+        "structures_count": 3,
+        "pipes_count": 2,
+        "callouts_count": 4,
+        "usage": {
+          "prompt_tokens": 4002,
+          "completion_tokens": 1495,
+          "total_tokens": 5497,
+          "cost": 0.006486,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.006486,
+            "upstream_inference_prompt_cost": 0.002001,
+            "upstream_inference_completions_cost": 0.004485
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "73bff50a46f453f0",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p34_r1_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p34_r1_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p34_r1_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p34_r1_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p34_r1_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 8532,
+        "text_items_count": 63,
+        "structures_count": 1,
+        "pipes_count": 3,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 4762,
+          "completion_tokens": 1141,
+          "total_tokens": 5903,
+          "cost": 0.005804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.005804,
+            "upstream_inference_prompt_cost": 0.002381,
+            "upstream_inference_completions_cost": 0.003423
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "ae1723607d0a0ad1",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c0",
+        "coherence_score": 0.9279279279279279,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 10704,
+        "text_items_count": 111,
+        "structures_count": 6,
+        "pipes_count": 4,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 6265,
+          "completion_tokens": 2498,
+          "total_tokens": 8763,
+          "cost": 0.0106265,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0106265,
+            "upstream_inference_prompt_cost": 0.0031325,
+            "upstream_inference_completions_cost": 0.007494
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "5549ac01ae7c4cab",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c1",
+        "coherence_score": 0.9727891156462585,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 12832,
+        "text_items_count": 147,
+        "structures_count": 5,
+        "pipes_count": 3,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 7418,
+          "completion_tokens": 2058,
+          "total_tokens": 9476,
+          "cost": 0.009883,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.009883,
+            "upstream_inference_prompt_cost": 0.003709,
+            "upstream_inference_completions_cost": 0.006174
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "ad19529da4c043a9",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c2",
+        "coherence_score": 0.95,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 10868,
+        "text_items_count": 100,
+        "structures_count": 4,
+        "pipes_count": 2,
+        "callouts_count": 1,
+        "usage": {
+          "prompt_tokens": 6052,
+          "completion_tokens": 1592,
+          "total_tokens": 7644,
+          "cost": 0.007802,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.007802,
+            "upstream_inference_prompt_cost": 0.003026,
+            "upstream_inference_completions_cost": 0.004776
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "80cd709b268bdbf0",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r1_c0",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 8100,
+        "text_items_count": 52,
+        "structures_count": 4,
+        "pipes_count": 4,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 4486,
+          "completion_tokens": 2041,
+          "total_tokens": 6527,
+          "cost": 0.008366,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.008366,
+            "upstream_inference_prompt_cost": 0.002243,
+            "upstream_inference_completions_cost": 0.006123
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "d9226eec4a53db72",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r1_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r1_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r1_c1.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c1.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r1_c1",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 8065,
+        "text_items_count": 52,
+        "structures_count": 6,
+        "pipes_count": 4,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 4468,
+          "completion_tokens": 2338,
+          "total_tokens": 6806,
+          "cost": 0.009248,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.009248,
+            "upstream_inference_prompt_cost": 0.002234,
+            "upstream_inference_completions_cost": 0.007014
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "346ed33d60d88b34",
+        "cache_hit": false
+      }
+    },
+    {
+      "tile_stem": "p36_r1_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r1_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r1_c2.json",
+      "out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c2.json",
+      "meta_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-clean-regression\\p36_r1_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r1_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "attempted_models": [
+          "google/gemini-3-flash-preview"
+        ],
+        "escalated": false,
+        "escalation_reason": null,
+        "escalation_model": "google/gemini-3-flash-preview",
+        "escalation_enabled": false,
+        "escalation_coherence_threshold": 0.7,
+        "prompt_chars": 9261,
+        "text_items_count": 75,
+        "structures_count": 4,
+        "pipes_count": 3,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 5260,
+          "completion_tokens": 1836,
+          "total_tokens": 7096,
+          "cost": 0.008138,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.008138,
+            "upstream_inference_prompt_cost": 0.00263,
+            "upstream_inference_completions_cost": 0.005508
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ],
+        "sanitized": false,
+        "dropped_invalid_counts": {
+          "structures": 0,
+          "inverts": 0,
+          "pipes": 0,
+          "callouts": 0
+        },
+        "cache_key": "8375ab4777766b28",
+        "cache_hit": false
+      }
+    }
+  ]
+}

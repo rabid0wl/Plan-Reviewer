@@ -1,0 +1,208 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SDMH",
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "57+00",
+      "offset": null,
+      "rim_elevation": 335.64,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "FIELD VERIFY",
+      "source_text_ids": [
+        71,
+        72,
+        102
+      ]
+    },
+    {
+      "id": "DI_1",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "58+00",
+      "offset": null,
+      "rim_elevation": 334.86,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "FIELD VERIFY",
+      "source_text_ids": [
+        73,
+        74,
+        103
+      ]
+    },
+    {
+      "id": "DI_2",
+      "structure_type": "inlet",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": 334.92,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "FIELD VERIFY",
+      "source_text_ids": [
+        75,
+        76,
+        104
+      ]
+    },
+    {
+      "id": "WV_1",
+      "structure_type": "gate_valve",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": null,
+      "source_text_ids": [
+        79,
+        81
+      ]
+    },
+    {
+      "id": "WM_1",
+      "structure_type": "meter",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": null,
+      "source_text_ids": [
+        80
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "15''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "SDMH",
+      "notes": "(E) 15'' SD",
+      "source_text_ids": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": "56+00",
+      "to_station": "58+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "source_text_ids": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": "56+00",
+      "to_station": "58+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' W",
+      "source_text_ids": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "8''",
+      "material": "PVC",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXIST. 8\" PVC OVERFLOW PIPE",
+      "source_text_ids": [
+        33,
+        34,
+        99,
+        100,
+        101
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "FIELD VERIFY",
+      "station": "57+00",
+      "offset": null,
+      "elevation": 335.64,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        102
+      ]
+    }
+  ],
+  "street_names": [
+    "EL MONTE WAY",
+    "PERRY AVE.",
+    "TULARE ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Multiple existing utilities identified including gas, water, sewer, and storm drain. Stations 56+00 through 58+00 are visible in the center of the plan view."
+}

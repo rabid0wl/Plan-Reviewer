@@ -1,0 +1,96 @@
+{
+  "tile_id": "p4_r0_c0",
+  "page_number": 4,
+  "sheet_type": "grading",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "12''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "10''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "2",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        127
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "3",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        126
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "22",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        128
+      ]
+    }
+  ],
+  "street_names": [
+    "MORRISON ST"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The tile primarily shows grading information (OG and RD elevations) along Morrison St. Utility lines for 12'' Water and 10'' Sanitary Sewer are shown but no specific structures (manholes/inlets) with stationing are labeled in this view. The 21'' IRR line is also present."
+}

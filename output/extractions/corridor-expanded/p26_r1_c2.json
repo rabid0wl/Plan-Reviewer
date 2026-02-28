@@ -1,0 +1,66 @@
+{
+  "tile_id": "p26_r1_c2",
+  "page_number": 26,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "(E) E-OH",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        9
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "BSW 333.00",
+      "station": null,
+      "offset": null,
+      "elevation": 333.0,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "BSW 333.25",
+      "station": null,
+      "offset": null,
+      "elevation": 333.25,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "FNC 333.20",
+      "station": null,
+      "offset": null,
+      "elevation": 333.2,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        5,
+        6
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "This tile shows a profile view grid for College Ave. between stations 23+00 and 24+00. The vertical axis shows elevations from 322 to 336. Several existing surface/utility callouts are visible in the upper left corner, likely representing existing overhead electric and ground shots (BSW, FNC)."
+}

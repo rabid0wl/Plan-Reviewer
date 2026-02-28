@@ -1,0 +1,271 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "W",
+    "SS"
+  ],
+  "structures": [
+    {
+      "id": "ssmh_1",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.9,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            38
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 296.23,
+          "source_text_ids": [
+            39
+          ]
+        }
+      ],
+      "source_text_ids": [
+        41,
+        42,
+        40
+      ]
+    },
+    {
+      "id": "ssmh_2",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+05.68",
+      "offset": "6.00' RT",
+      "rim_elevation": 300.89,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.28,
+          "source_text_ids": [
+            69
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            70
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 291.18,
+          "source_text_ids": [
+            71
+          ]
+        }
+      ],
+      "source_text_ids": [
+        73,
+        74,
+        72
+      ]
+    },
+    {
+      "id": "ssmh_3",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+10.31",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.62,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            80
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 294.38,
+          "source_text_ids": [
+            81
+          ]
+        }
+      ],
+      "source_text_ids": [
+        83,
+        84,
+        82
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "ssmh_1",
+      "to_structure_hint": null,
+      "source_text_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "source_text_ids": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "ssmh_2",
+      "to_structure_hint": "ssmh_3",
+      "source_text_ids": [
+        43,
+        44,
+        45,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "source_text_ids": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "length_lf": 205.0,
+      "slope": 0.0152,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "ssmh_2",
+      "to_structure_hint": "ssmh_3",
+      "source_text_ids": [
+        27,
+        28,
+        29,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "length_lf": 408.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "source_text_ids": [
+        78,
+        79
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "station": "13+97.05",
+      "offset": "1.84' LT",
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 6 LF OF 8\" DIA WATER PIPE",
+      "station": "13+97.05",
+      "offset": "1.84' LT",
+      "source_text_ids": [
+        25,
+        26
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND",
+      "station": "13+92.74",
+      "offset": "6.00' LT",
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" TEE W/ (3) 8\" DIA GATEVALVE(S)",
+      "station": "9+94.29",
+      "offset": "6.00' LT",
+      "source_text_ids": [
+        65,
+        66,
+        67,
+        68
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "SUN HILLS AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The pipe from SSMH_2 to SSMH_3 is represented by two separate pipe entries due to the way the data is structured. One entry covers the SS pipe, and the other covers the W pipe. The '27' text is associated with the SS pipe, and '75' is associated with the W pipe. The '28' and '76' text are associated with the SS and W pipes respectively. The '29' and '77' text are associated with the SS and W pipes respectively. The '80', '81', '82', '83', '84' text are associated with the SSMH_3 structure. The '38', '39', '40', '41', '42' text are associated with the SSMH_1 structure. The '69', '70', '71', '72', '73', '74' text are associated with the SSMH_2 structure. The '78', '79' text are associated with the W pipe. The '25', '26' text are associated with the W pipe. The '20', '21' text are associated with the SSMH_1 structure. The '22', '23', '24' text are associated with the SSMH_1 structure. The '65', '66', '67', '68' text are associated with the SSMH_2 structure."
+}
+```

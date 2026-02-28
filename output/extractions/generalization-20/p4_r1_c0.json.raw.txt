@@ -1,0 +1,128 @@
+{
+  "tile_id": "tile_local",
+  "page_number": 0,
+  "sheet_type": "grading",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "10''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        337,
+        338,
+        339,
+        340,
+        341,
+        367,
+        368
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "12''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        342,
+        343,
+        344,
+        345,
+        364,
+        365,
+        366
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        346,
+        347
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "18''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        348
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "PROTECT IN PLACE EXIST. UTILITIES IN MORRISON UNLESS OTHERWISE NOTED; TYP.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        377,
+        378,
+        379
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "22",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": "22",
+      "source_text_ids": [
+        386
+      ]
+    }
+  ],
+  "street_names": [
+    "CASTLEROCK AVE."
+  ],
+  "lot_numbers": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "extraction_notes": "The tile shows a grading plan with numerous spot elevations (OG for Original Ground, RD for Road, EP for Edge of Pavement, FNC for Fence). Utility lines for Sanitary Sewer (SS), Water (W), and Irrigation (IRR) are shown running parallel to the property lines of lots 28-35 in KCOK Phase 5&9."
+}

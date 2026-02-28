@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "tile_id": "p14_r0_c2",
+  "coherence_score": 0.8990825688073395,
+  "is_hybrid_viable": true,
+  "model": "google/gemini-3-flash-preview",
+  "prompt_chars": 84898,
+  "text_items_count": 218,
+  "structures_count": 1,
+  "pipes_count": 2,
+  "callouts_count": 13,
+  "usage": {
+    "prompt_tokens": 57562,
+    "completion_tokens": 2235,
+    "total_tokens": 59797,
+    "cost": 0.035486,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.035486,
+      "upstream_inference_prompt_cost": 0.028781,
+      "upstream_inference_completions_cost": 0.006705
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  },
+  "corrected_fields": []
+}

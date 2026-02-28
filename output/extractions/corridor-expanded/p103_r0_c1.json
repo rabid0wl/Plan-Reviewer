@@ -1,0 +1,88 @@
+{
+  "tile_id": "p103_r0_c1",
+  "page_number": 103,
+  "sheet_type": "signing_striping",
+  "utility_types_present": [
+    "W",
+    "SS",
+    "GAS"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "10''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 10'' W",
+      "source_text_ids": [
+        9,
+        10
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' W",
+      "source_text_ids": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "source_text_ids": [
+        15,
+        62,
+        63,
+        64
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "EXISTING WET UTILITIES NOT SHOWN FOR CLARITY. SEE SHEETS U1-U3 FOR LOCATIONS.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U1-U3",
+      "reference_detail": null,
+      "source_text_ids": [
+        144,
+        145,
+        146
+      ]
+    }
+  ],
+  "street_names": [
+    "PERRY AVE.",
+    "TULARE ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows signing and striping layout with existing utility background. Stationing 51+00 to 53+00 is visible along the main corridor."
+}

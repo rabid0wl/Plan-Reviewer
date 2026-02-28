@@ -1,0 +1,495 @@
+{
+  "started_at": "2026-02-21T22:07:23.951951+00:00",
+  "completed_at": "2026-02-21T22:09:48.181031+00:00",
+  "tiles_dir": "output\\intake-pass1\\tiles",
+  "text_layers_dir": "output\\intake-pass1\\text_layers",
+  "out_dir": "output\\extractions\\calibration-10",
+  "tile_glob": "*.png",
+  "max_tiles": 10,
+  "model": "google/gemini-3-flash-preview",
+  "dry_run": false,
+  "allow_low_coherence": false,
+  "counts": {
+    "total_candidates": 10,
+    "paired_tiles": 10,
+    "missing_text_layers": 0,
+    "ok": 10,
+    "dry_run": 0,
+    "skipped_low_coherence": 0,
+    "validation_error": 0,
+    "runtime_error": 0
+  },
+  "results": [
+    {
+      "tile_stem": "p14_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c0",
+        "coherence_score": 0.8908450704225352,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 104999,
+        "text_items_count": 284,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 12,
+        "usage": {
+          "prompt_tokens": 72686,
+          "completion_tokens": 2051,
+          "total_tokens": 74737,
+          "cost": 0.042496,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.042496,
+            "upstream_inference_prompt_cost": 0.036343,
+            "upstream_inference_completions_cost": 0.006153
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p14_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c1",
+        "coherence_score": 0.9107981220657277,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 151496,
+        "text_items_count": 426,
+        "structures_count": 4,
+        "pipes_count": 3,
+        "callouts_count": 18,
+        "usage": {
+          "prompt_tokens": 106939,
+          "completion_tokens": 3691,
+          "total_tokens": 110630,
+          "cost": 0.0645425,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0645425,
+            "upstream_inference_prompt_cost": 0.0534695,
+            "upstream_inference_completions_cost": 0.011073
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p14_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r0_c2",
+        "coherence_score": 0.8990825688073395,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 84898,
+        "text_items_count": 218,
+        "structures_count": 1,
+        "pipes_count": 2,
+        "callouts_count": 13,
+        "usage": {
+          "prompt_tokens": 57561,
+          "completion_tokens": 2415,
+          "total_tokens": 59976,
+          "cost": 0.0360255,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0360255,
+            "upstream_inference_prompt_cost": 0.0287805,
+            "upstream_inference_completions_cost": 0.007245
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": []
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c0",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 24301,
+        "text_items_count": 33,
+        "structures_count": 3,
+        "pipes_count": 1,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 12839,
+          "completion_tokens": 922,
+          "total_tokens": 13761,
+          "cost": 0.0091855,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0091855,
+            "upstream_inference_prompt_cost": 0.0064195,
+            "upstream_inference_completions_cost": 0.002766
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c1.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r1_c1.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r1_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r1_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c1",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 27046,
+        "text_items_count": 41,
+        "structures_count": 3,
+        "pipes_count": 1,
+        "callouts_count": 3,
+        "usage": {
+          "prompt_tokens": 14820,
+          "completion_tokens": 1201,
+          "total_tokens": 16021,
+          "cost": 0.011013,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.011013,
+            "upstream_inference_prompt_cost": 0.00741,
+            "upstream_inference_completions_cost": 0.003603
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p14_r1_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p14_r1_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p14_r1_c2.json",
+      "out_path": "output\\extractions\\calibration-10\\p14_r1_c2.json",
+      "meta_path": "output\\extractions\\calibration-10\\p14_r1_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p14_r1_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p14_r1_c2",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 39611,
+        "text_items_count": 80,
+        "structures_count": 2,
+        "pipes_count": 1,
+        "callouts_count": 4,
+        "usage": {
+          "prompt_tokens": 24072,
+          "completion_tokens": 1240,
+          "total_tokens": 25312,
+          "cost": 0.015756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.015756,
+            "upstream_inference_prompt_cost": 0.012036,
+            "upstream_inference_completions_cost": 0.00372
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c0.json",
+      "out_path": "output\\extractions\\calibration-10\\p36_r0_c0.json",
+      "meta_path": "output\\extractions\\calibration-10\\p36_r0_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p36_r0_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c0",
+        "coherence_score": 0.9279279279279279,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 49744,
+        "text_items_count": 111,
+        "structures_count": 3,
+        "pipes_count": 4,
+        "callouts_count": 4,
+        "usage": {
+          "prompt_tokens": 31527,
+          "completion_tokens": 1774,
+          "total_tokens": 33301,
+          "cost": 0.0210855,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0210855,
+            "upstream_inference_prompt_cost": 0.0157635,
+            "upstream_inference_completions_cost": 0.005322
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c1",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c1.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c1.json",
+      "out_path": "output\\extractions\\calibration-10\\p36_r0_c1.json",
+      "meta_path": "output\\extractions\\calibration-10\\p36_r0_c1.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p36_r0_c1.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c1",
+        "coherence_score": 0.9727891156462585,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 61988,
+        "text_items_count": 147,
+        "structures_count": 2,
+        "pipes_count": 3,
+        "callouts_count": 5,
+        "usage": {
+          "prompt_tokens": 40314,
+          "completion_tokens": 1547,
+          "total_tokens": 41861,
+          "cost": 0.024798,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.024798,
+            "upstream_inference_prompt_cost": 0.020157,
+            "upstream_inference_completions_cost": 0.004641
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p36_r0_c2",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r0_c2.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r0_c2.json",
+      "out_path": "output\\extractions\\calibration-10\\p36_r0_c2.json",
+      "meta_path": "output\\extractions\\calibration-10\\p36_r0_c2.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p36_r0_c2.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r0_c2",
+        "coherence_score": 0.95,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 46947,
+        "text_items_count": 100,
+        "structures_count": 4,
+        "pipes_count": 2,
+        "callouts_count": 2,
+        "usage": {
+          "prompt_tokens": 29125,
+          "completion_tokens": 1289,
+          "total_tokens": 30414,
+          "cost": 0.0184295,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0184295,
+            "upstream_inference_prompt_cost": 0.0145625,
+            "upstream_inference_completions_cost": 0.003867
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "page_number",
+          "tile_id"
+        ]
+      }
+    },
+    {
+      "tile_stem": "p36_r1_c0",
+      "tile_path": "output\\intake-pass1\\tiles\\p36_r1_c0.png",
+      "text_layer_path": "output\\intake-pass1\\text_layers\\p36_r1_c0.json",
+      "out_path": "output\\extractions\\calibration-10\\p36_r1_c0.json",
+      "meta_path": "output\\extractions\\calibration-10\\p36_r1_c0.json.meta.json",
+      "raw_out_path": "output\\extractions\\calibration-10\\p36_r1_c0.json.raw.txt",
+      "status": "ok",
+      "exit_code": 0,
+      "meta": {
+        "status": "ok",
+        "tile_id": "p36_r1_c0",
+        "coherence_score": 1.0,
+        "is_hybrid_viable": true,
+        "model": "google/gemini-3-flash-preview",
+        "prompt_chars": 30596,
+        "text_items_count": 52,
+        "structures_count": 2,
+        "pipes_count": 4,
+        "callouts_count": 6,
+        "usage": {
+          "prompt_tokens": 17367,
+          "completion_tokens": 1442,
+          "total_tokens": 18809,
+          "cost": 0.0130095,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0130095,
+            "upstream_inference_prompt_cost": 0.0086835,
+            "upstream_inference_completions_cost": 0.004326
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "corrected_fields": [
+          "tile_id"
+        ]
+      }
+    }
+  ]
+}

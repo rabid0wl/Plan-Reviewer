@@ -1,0 +1,117 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "structure_0",
+      "structure_type": "other",
+      "size": null,
+      "station": "9+94.00",
+      "offset": "6.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "REMOVE EXIST. 12\"x12\"x8\" TEE & INSTALL 12\"x12\"x8\"x8\" CROSS W/ (1) 8\" Ø GATE VALVE(S)",
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 623.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        11
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 623 LF OF 8\" Ø WATER PIPE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "12\" SD X-ING",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        12
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        13
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The text '21'' IRR' and '10'' SS' appear to be labels for other utilities not fully visible or relevant to this tile's primary focus. The file path at the bottom left is also noted."
+}
+```

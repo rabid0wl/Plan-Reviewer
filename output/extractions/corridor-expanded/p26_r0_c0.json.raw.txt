@@ -1,0 +1,156 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "11",
+      "structure_type": "tee",
+      "size": "8\"x6\"",
+      "station": "20+00",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 331.14,
+      "fl_elevation": 330.7,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\"x6\" TEE",
+      "source_text_ids": [
+        150,
+        105,
+        106,
+        54,
+        55,
+        147
+      ]
+    },
+    {
+      "id": "11",
+      "structure_type": "tee",
+      "size": "8\"x6\"",
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 331.37,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\"x6\" TEE",
+      "source_text_ids": [
+        151,
+        101,
+        102,
+        147
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 74.0,
+      "slope": null,
+      "from_station": "20+00",
+      "to_station": null,
+      "from_structure_hint": "11",
+      "to_structure_hint": "11",
+      "notes": "INSTALL 74 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        143,
+        144,
+        145,
+        146
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 10.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "11",
+      "to_structure_hint": null,
+      "notes": "INSTALL 10 LF OF 6\" DIA WATER PIPE",
+      "source_text_ids": [
+        148,
+        149
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" SS",
+      "source_text_ids": [
+        126,
+        127,
+        128
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 20+00",
+      "station": "20+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U2",
+      "reference_detail": null,
+      "source_text_ids": [
+        206,
+        207
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 331.16 FL 330.64 LIP 330.74",
+      "station": null,
+      "offset": null,
+      "elevation": 331.16,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        109,
+        110,
+        58,
+        59,
+        74,
+        75
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 331.19 FL 330.73 LIP 330.73",
+      "station": null,
+      "offset": null,
+      "elevation": 331.19,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        107,
+        108,
+        56,
+        57,
+        72,
+        73
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Multiple water meters (WM) and service connections (1'' W) are shown along the curb line but lack specific stationing. Existing utilities (E) include overhead electric (E-OH), water (W), and sanitary sewer (SS)."
+}

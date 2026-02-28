@@ -1,0 +1,190 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 93,
+  "sheet_type": "plan_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 335.31,
+      "fl_elevation": 334.18,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "LIP 334.31, P 334.95, BSW 335.18",
+      "source_text_ids": [82, 83, 19, 20, 29, 30, 65, 66, 1, 2]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 334.66,
+      "fl_elevation": 334.18,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "LIP 334.31, BSW 334.57",
+      "source_text_ids": [84, 85, 19, 20, 29, 30, 3, 4]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 334.46,
+      "fl_elevation": 334.0,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "LIP 334.09, BSW 334.36",
+      "source_text_ids": [86, 87, 21, 22, 31, 32, 5, 6]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 335.29,
+      "fl_elevation": 334.89,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "LIP 334.87",
+      "source_text_ids": [88, 89, 23, 24, 33, 34]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 335.18,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "P 334.72",
+      "source_text_ids": [90, 91, 67, 68]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 335.38,
+      "fl_elevation": 334.97,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "LIP 335.03",
+      "source_text_ids": [94, 95, 27, 28, 37, 38]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.06",
+      "station": null,
+      "offset": null,
+      "elevation": 335.06,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [40, 41]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 333.78",
+      "station": null,
+      "offset": null,
+      "elevation": 333.78,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [42, 43]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 331.91",
+      "station": null,
+      "offset": null,
+      "elevation": 331.91,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [44, 45]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 332.96",
+      "station": null,
+      "offset": null,
+      "elevation": 332.96,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [46, 47]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 334.25",
+      "station": null,
+      "offset": null,
+      "elevation": 334.25,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [48, 49]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.24",
+      "station": null,
+      "offset": null,
+      "elevation": 335.24,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [50, 51]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "OG 335.22",
+      "station": null,
+      "offset": null,
+      "elevation": 335.22,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [52, 53]
+    },
+    {
+      "callout_type": "other",
+      "text": "WALL 335.67",
+      "station": null,
+      "offset": null,
+      "elevation": 335.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [102, 103]
+    },
+    {
+      "callout_type": "other",
+      "text": "FNC 335.68",
+      "station": null,
+      "offset": null,
+      "elevation": 335.68,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [17, 18]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains grading information for a parking lot project in Dinuba. Numerous spot elevations (TC, FL, LIP, OG, P, BSW) are present. No utility pipes are explicitly labeled in this view."
+}
+```

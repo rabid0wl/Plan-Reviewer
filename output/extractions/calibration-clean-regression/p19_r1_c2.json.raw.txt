@@ -1,0 +1,113 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "BCR",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.16,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BCR (Begin Curb Return)",
+      "source_text_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "ECR",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.36,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "ECR (End Curb Return)",
+      "source_text_ids": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.37,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": null,
+      "source_text_ids": [
+        8
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": null,
+      "material": null,
+      "length_lf": null,
+      "slope": 0.0023,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "Slope indicated on profile line",
+      "source_text_ids": [
+        9
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        2,
+        3
+      ]
+    }
+  ],
+  "street_names": [
+    "N. BISHOP ST.",
+    "N. PALM ROYALE ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "This is a profile view tile showing the proposed top of curb (TC) and existing grade for Palm Royale Street. The sheet title indicates it covers both N. Bishop St. and N. Palm Royale St. SD Plan & Profile."
+}
+```

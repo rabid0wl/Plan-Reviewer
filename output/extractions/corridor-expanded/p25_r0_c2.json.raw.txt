@@ -1,0 +1,165 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+00",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.58,
+      "fl_elevation": 330.12,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        188,
+        124,
+        240,
+        241
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+00",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.56,
+      "fl_elevation": 330.11,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        5,
+        6,
+        198,
+        134,
+        242,
+        243
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        25,
+        26,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 1102.0,
+      "slope": null,
+      "from_station": "11+00",
+      "to_station": "22+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "PVC C-900 WATER MAIN",
+      "source_text_ids": [
+        20,
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING SANITARY SEWER MAIN",
+      "source_text_ids": [
+        3,
+        222,
+        223,
+        224,
+        225,
+        226
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 20+00 SEE SHEET U3",
+      "station": "20+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U3",
+      "reference_detail": null,
+      "source_text_ids": [
+        276,
+        277
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONTRACTOR SHALL INSTALL 45 DEGREE BEND",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        41,
+        42
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "CONSTRUCT PAVEMENT SECTION 4\" HMA, TYPE 'A', 1/2\" MAX. AGG. 12\" AB, CL II, 3/4\" MAX. AGG. @ 95% MIN. REL. COMP. 6\" CNS @ 95% MIN. REL. COMP.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows proposed 8\" water main and existing 6\" sanitary sewer. Multiple water service connections (1\") are called out at station 19+00. Matchline at station 20+00 refers to sheet U3."
+}

@@ -1,0 +1,285 @@
+{
+  "tile_id": "p25_r0_c1",
+  "page_number": 25,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "16+65",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 329.59,
+      "fl_elevation": 329.13,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        38,
+        69,
+        444,
+        293,
+        538
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": "8\"",
+      "station": "16+85",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" WATER VALVE PER CITY STD. W-8",
+      "source_text_ids": [
+        91,
+        48,
+        546
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "17+35",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 329.73,
+      "fl_elevation": 329.25,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        38,
+        69,
+        436,
+        285,
+        539
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "17+95",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 329.89,
+      "fl_elevation": 329.47,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        38,
+        69,
+        434,
+        283,
+        540
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "18+65",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.22,
+      "fl_elevation": 329.77,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        38,
+        69,
+        428,
+        277,
+        541
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "service_connection",
+      "size": "1\"",
+      "station": "19+45",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.35,
+      "fl_elevation": 329.89,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "source_text_ids": [
+        38,
+        69,
+        425,
+        273,
+        542
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": "16+65",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": 329.95,
+      "fl_elevation": 329.53,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        103,
+        89,
+        458,
+        309,
+        551
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": "17+35",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": 330.12,
+      "fl_elevation": 329.6,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        103,
+        89,
+        456,
+        307,
+        550
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": "17+95",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": 330.16,
+      "fl_elevation": 329.65,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        103,
+        89,
+        454,
+        305,
+        549
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": "18+65",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": 330.34,
+      "fl_elevation": 329.89,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        103,
+        89,
+        450,
+        299,
+        548
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": "19+45",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": 330.56,
+      "fl_elevation": 330.11,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL NEW WATER METER BOX AND LID",
+      "source_text_ids": [
+        103,
+        89,
+        448,
+        297,
+        547
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC C-900",
+      "length_lf": 314.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": "19+14",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 314 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        531,
+        532,
+        533,
+        534,
+        535,
+        536
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL +/-1,102 L.F. OF 8\" PVC C-900 WATER MAIN FROM STATION 11+00 TO STATION 22+00.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4 & CD5",
+      "reference_detail": "W-8 AND W-17",
+      "source_text_ids": [
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "SECTION LINE/PROPOSED CROWN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        512
+      ]
+    }
+  ],
+  "street_names": [
+    "PRINCETON AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted multiple water service connections (Keynote 11) and meter box installations (Keynote 15) along Princeton Ave. Stationing is estimated based on the 17+00, 18+00, and 19+00 markers."
+}

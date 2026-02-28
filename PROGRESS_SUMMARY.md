@@ -3,6 +3,24 @@
 ## 2026-02-27
 
 ### Summary
+- Unignored the top-level `output/` folder so generated artifacts can be versioned and pushed to `main`.
+
+### Milestones
+- Updated `.gitignore`:
+  - removed `output/`.
+- Prepared `output/` for commit:
+  - `923` files totaling `138,528,447` bytes.
+- Confirmed no files in `output/` exceed 95 MB, so additional LFS tracking was not required.
+
+### Validation
+- `git check-ignore -v output` (before edit) -> ignore match in `.gitignore`.
+- `Get-ChildItem output -Recurse -File | Measure-Object -Property Length -Sum` -> `Files=923 SizeBytes=138528447`.
+- `Get-ChildItem output -Recurse -File | Where-Object { $_.Length -ge 95MB }` -> no results.
+- `python scripts/check_progress_docs.py` -> `PASS`.
+
+## 2026-02-27
+
+### Summary
 - Unignored the top-level `References/` folder so it can be versioned and pushed to `main`.
 - Added Git LFS tracking for the oversized reference PDF to keep the push compatible with GitHub limits.
 

@@ -1,0 +1,55 @@
+{
+  "status": "ok",
+  "tile_id": "p36_r0_c0",
+  "coherence_score": 0.9279279279279279,
+  "is_hybrid_viable": true,
+  "model": "google/gemini-3-flash-preview",
+  "attempted_models": [
+    "google/gemini-3-flash-preview"
+  ],
+  "escalated": false,
+  "escalation_reason": null,
+  "escalation_model": "google/gemini-3-flash-preview",
+  "escalation_enabled": false,
+  "escalation_coherence_threshold": 0.7,
+  "prompt_chars": 10704,
+  "text_items_count": 111,
+  "structures_count": 6,
+  "pipes_count": 4,
+  "callouts_count": 2,
+  "usage": {
+    "prompt_tokens": 6265,
+    "completion_tokens": 2498,
+    "total_tokens": 8763,
+    "cost": 0.0106265,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0106265,
+      "upstream_inference_prompt_cost": 0.0031325,
+      "upstream_inference_completions_cost": 0.007494
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  },
+  "corrected_fields": [
+    "page_number",
+    "tile_id"
+  ],
+  "sanitized": false,
+  "dropped_invalid_counts": {
+    "structures": 0,
+    "inverts": 0,
+    "pipes": 0,
+    "callouts": 0
+  },
+  "cache_key": "5549ac01ae7c4cab",
+  "cache_hit": false
+}

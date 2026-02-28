@@ -1,0 +1,178 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "grading",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": "GB_1",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 336.62,
+      "fl_elevation": 336.13,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "Curb point",
+      "source_text_ids": [160, 161, 82, 83]
+    },
+    {
+      "id": "GB_2",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 336.6,
+      "fl_elevation": 336.14,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "Curb point",
+      "source_text_ids": [162, 163, 84, 85]
+    },
+    {
+      "id": "GB_3",
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 336.59,
+      "fl_elevation": 336.15,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "Curb point",
+      "source_text_ids": [164, 165, 86, 87]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "1 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [248, 249]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "2 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [252, 253]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "2 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [250, 251]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "7 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [254, 255]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "7 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [256, 257]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [258]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [260]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "6",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [259]
+    },
+    {
+      "callout_type": "other",
+      "text": "9.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [262]
+    },
+    {
+      "callout_type": "other",
+      "text": "19.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [261]
+    },
+    {
+      "callout_type": "other",
+      "text": "22.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [263]
+    },
+    {
+      "callout_type": "other",
+      "text": "22.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [265]
+    }
+  ],
+  "street_names": [
+    "KC VISTA PARK"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The plan shows a parking lot layout with grading elevations (TC, FL, LIP, P). Utility lines for existing underground electric (E-UG) and irrigation (IRR) are noted but no specific pipe data is provided. Structure IDs are assigned for clarity as they are curb grading points."
+}

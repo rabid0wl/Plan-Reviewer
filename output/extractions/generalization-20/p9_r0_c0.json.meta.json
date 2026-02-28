@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "tile_id": "p9_r0_c0",
+  "coherence_score": 0.9696969696969697,
+  "is_hybrid_viable": true,
+  "model": "google/gemini-3-flash-preview",
+  "prompt_chars": 6697,
+  "text_items_count": 66,
+  "structures_count": 0,
+  "pipes_count": 2,
+  "callouts_count": 12,
+  "usage": {
+    "prompt_tokens": 4289,
+    "completion_tokens": 1534,
+    "total_tokens": 5823,
+    "cost": 0.0067465,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0067465,
+      "upstream_inference_prompt_cost": 0.0021445,
+      "upstream_inference_completions_cost": 0.004602
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  },
+  "corrected_fields": [
+    "tile_id"
+  ],
+  "sanitized": false,
+  "dropped_invalid_counts": {
+    "structures": 0,
+    "inverts": 0,
+    "pipes": 0,
+    "callouts": 0
+  },
+  "cache_key": "24541540cd33ef02",
+  "cache_hit": false
+}

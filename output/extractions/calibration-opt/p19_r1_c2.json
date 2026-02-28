@@ -1,0 +1,44 @@
+{
+  "tile_id": "p19_r1_c2",
+  "page_number": 19,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        2,
+        3
+      ]
+    }
+  ],
+  "street_names": [
+    "PALM ROYALE STREET",
+    "N. BISHOP ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view of Palm Royale Street showing proposed top of curb (TC) elevations and existing centerline grade. Utility type SD identified from sheet title."
+}

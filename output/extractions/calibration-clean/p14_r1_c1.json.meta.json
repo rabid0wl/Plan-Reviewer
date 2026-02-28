@@ -1,0 +1,47 @@
+{
+  "status": "ok",
+  "tile_id": "p14_r1_c1",
+  "coherence_score": 1.0,
+  "is_hybrid_viable": true,
+  "model": "google/gemini-3-flash-preview",
+  "prompt_chars": 5848,
+  "text_items_count": 43,
+  "structures_count": 2,
+  "pipes_count": 1,
+  "callouts_count": 2,
+  "usage": {
+    "prompt_tokens": 3687,
+    "completion_tokens": 1281,
+    "total_tokens": 4968,
+    "cost": 0.0056865,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0056865,
+      "upstream_inference_prompt_cost": 0.0018435,
+      "upstream_inference_completions_cost": 0.003843
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  },
+  "corrected_fields": [
+    "page_number",
+    "tile_id"
+  ],
+  "sanitized": true,
+  "dropped_invalid_counts": {
+    "structures": 1,
+    "inverts": 0,
+    "pipes": 0,
+    "callouts": 0
+  },
+  "cache_key": "4db827f2ef5c7e9f",
+  "cache_hit": false
+}

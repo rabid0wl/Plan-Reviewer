@@ -1,0 +1,164 @@
+{
+  "tile_id": "p93_r1_c1",
+  "page_number": 93,
+  "sheet_type": "grading",
+  "utility_types_present": [],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "1 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        248,
+        249
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "2 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        252,
+        253
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "2 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        250,
+        251
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "7 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        254,
+        255
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "7 (TYP.)",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        256,
+        257
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        258
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "5",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        260
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "6",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        259
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "9.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        262
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "19.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        261
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "22.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        263
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "22.00'",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        265
+      ]
+    }
+  ],
+  "street_names": [
+    "KC VISTA PARK"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "The plan shows a parking lot layout with grading elevations (TC, FL, LIP, P). Utility lines for existing underground electric (E-UG) and irrigation (IRR) are noted but no specific pipe data is provided. Structure IDs are assigned for clarity as they are curb grading points."
+}

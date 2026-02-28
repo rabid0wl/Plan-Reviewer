@@ -1,0 +1,97 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "structure_type": "GB",
+      "station": "13+50",
+      "offset": "0.00'",
+      "tc_elevation": 302.9,
+      "notes": "ECR, GB",
+      "source_text_ids": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "BCR TC 302.65",
+      "station": "13+25",
+      "elevation": 302.65,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 302.86BC",
+      "station": "14+40",
+      "elevation": 302.86,
+      "source_text_ids": [
+        5
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 301.01",
+      "station": "9+60",
+      "elevation": 301.01,
+      "source_text_ids": [
+        11
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 300.98BCR",
+      "station": "10+40",
+      "elevation": 300.98,
+      "source_text_ids": [
+        12
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 301.39ECR",
+      "station": "10+60",
+      "elevation": 301.39,
+      "source_text_ids": [
+        13
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "source_text_ids": [
+        14
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "FL 300.48",
+      "elevation": 300.48,
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED SI EXISTING G @ CENTE",
+      "source_text_ids": [
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This is a profile view showing curb elevations (TC) and flowline (FL) along a roadway. Stations are indicated at the bottom. GB refers to a Grade Break structure/point."
+}

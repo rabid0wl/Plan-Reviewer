@@ -1,0 +1,242 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 5,
+  "sheet_type": "grading",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "GB",
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+57.64",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 306.08,
+      "fl_elevation": 305.58,
+      "inverts": [],
+      "notes": "ECR",
+      "source_text_ids": [
+        196,
+        197,
+        198,
+        199
+      ]
+    },
+    {
+      "id": "DI",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "13+40.73",
+      "offset": "45.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 305.52,
+      "fl_elevation": 305.02,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 301.0,
+          "source_text_ids": [
+            205
+          ]
+        }
+      ],
+      "notes": "DI",
+      "source_text_ids": [
+        203,
+        204,
+        205,
+        206,
+        207
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 17.0,
+      "slope": 0.0059,
+      "from_station": null,
+      "to_station": "13+40.73",
+      "from_structure_hint": null,
+      "to_structure_hint": "DI",
+      "notes": "INSTALL 17 LF OF 12\" DIA SD PIPE @ S=0.0059",
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.71) MATCH EXIST.",
+      "station": "10+97.88",
+      "offset": "40.63' LT",
+      "elevation": 305.71,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        193,
+        194,
+        195
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.67) MATCH EXIST.",
+      "station": "11+03.88",
+      "offset": "40.89' LT",
+      "elevation": 305.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        229,
+        230,
+        231
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.92) MATCH EXIST.",
+      "station": "12+88.47",
+      "offset": "40.22' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        200,
+        201,
+        202
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.92) MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": "40.19' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        237,
+        238,
+        239
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.31) MATCH EXIST.",
+      "station": "10+31.18",
+      "offset": "10.35' LT",
+      "elevation": 305.31,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        215,
+        216,
+        217
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.74) MATCH EXIST.",
+      "station": "12+88.47",
+      "offset": "15.45' LT",
+      "elevation": 305.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        208,
+        209,
+        210
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.74) MATCH EXIST.",
+      "station": "12+94.47",
+      "offset": null,
+      "elevation": 305.74,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        240,
+        241,
+        242
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 305.17",
+      "station": "9+87.65",
+      "offset": "78.80' RT",
+      "elevation": 305.17,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        191,
+        192
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 304.83",
+      "station": "9+88.65",
+      "offset": "20.34' RT",
+      "elevation": 304.83,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        226,
+        227
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 304.75",
+      "station": "10+30.56",
+      "offset": "25.91' RT",
+      "elevation": 304.75,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        232,
+        233
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 305.33 FL 304.83",
+      "station": "10+22.64",
+      "offset": "79.40' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        188,
+        189,
+        190
+      ]
+    }
+  ],
+  "street_names": [
+    "PROSPERITY AVE",
+    "MORRISON ST."
+  ],
+  "lot_numbers": [
+    51,
+    52,
+    53,
+    54
+  ],
+  "extraction_notes": "Extracted storm drain inlet (DI) and grade break (GB) structures. Identified 12\" SD pipe installation callout. Captured multiple match existing and edge of pavement callouts along Prosperity Ave and Morrison St."
+}
+```

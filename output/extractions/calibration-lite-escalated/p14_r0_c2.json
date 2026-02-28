@@ -1,0 +1,346 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": "STA: 20+24.17, 28.00' RT",
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "20+24.17",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.59,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.65,
+          "source_text_ids": [
+            9
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.75,
+          "source_text_ids": [
+            10
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I",
+      "source_text_ids": [
+        12,
+        13,
+        14,
+        11
+      ]
+    },
+    {
+      "id": "STA: 19+87.07, 18.67' LT",
+      "structure_type": "other",
+      "size": null,
+      "station": "19+87.07",
+      "offset": "18.67' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": "P (305.97) MATCH EXIST.",
+      "source_text_ids": [
+        157,
+        158,
+        159
+      ]
+    },
+    {
+      "id": "STA: 19+87.20, 0.68' LT",
+      "structure_type": "other",
+      "size": null,
+      "station": "19+87.20",
+      "offset": "0.68' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        142,
+        143
+      ]
+    },
+    {
+      "id": "STA: 20+84.18, 18.64' LT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+84.18",
+      "offset": "18.64' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        153
+      ]
+    },
+    {
+      "id": "STA: 20+84.18, 15.37' LT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+84.18",
+      "offset": "15.37' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        150
+      ]
+    },
+    {
+      "id": "STA: 20+76.08, 15.34' LT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+76.08",
+      "offset": "15.34' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        163
+      ]
+    },
+    {
+      "id": "STA: 20+15.23, 27.35' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+15.23",
+      "offset": "27.35' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        160,
+        161
+      ]
+    },
+    {
+      "id": "STA: 20+17.17, 75.00' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+17.17",
+      "offset": "75.00' RT",
+      "rim_elevation": 305.07,
+      "tc_elevation": 305.07,
+      "fl_elevation": 304.57,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "id": "STA: 20+84.17, 45.00' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+84.17",
+      "offset": "45.00' RT",
+      "rim_elevation": 305.67,
+      "tc_elevation": 305.67,
+      "fl_elevation": 305.17,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "id": "STA: 20+53.17, 7.66' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+53.17",
+      "offset": "7.66' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        144,
+        145,
+        166
+      ]
+    },
+    {
+      "id": "STA: 20+53.17, 75.00' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "20+53.17",
+      "offset": "75.00' RT",
+      "rim_elevation": 305.07,
+      "tc_elevation": 305.07,
+      "fl_elevation": 304.57,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        130,
+        131,
+        132
+      ]
+    },
+    {
+      "id": "STA: 19+87.17, 45.00' RT",
+      "structure_type": "other",
+      "size": null,
+      "station": "19+87.17",
+      "offset": "45.00' RT",
+      "rim_elevation": 305.42,
+      "tc_elevation": 305.42,
+      "fl_elevation": 304.92,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        126,
+        127,
+        128,
+        129
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.003,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "STA: 17+63.93, 18.19' LT",
+      "to_structure_hint": null,
+      "notes": "342 LF",
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "STA: 17+69.93, 18.22' LT",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        120,
+        170,
+        171,
+        172
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        171
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        158
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "MATCH EXIST.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        152
+      ]
+    },
+    {
+      "callout_type": "detail_reference",
+      "text": "SEE SHEET 22",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "22",
+      "reference_detail": null,
+      "source_text_ids": [
+        210
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "TRENCH PAVEMENT PER CITY STD. 6020",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        219
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "SAWCUT TO A NEAT, CLEAN GRADE ON EDGE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        213
+      ]
+    }
+  ],
+  "street_names": [
+    "EL CAMINO ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": null
+}

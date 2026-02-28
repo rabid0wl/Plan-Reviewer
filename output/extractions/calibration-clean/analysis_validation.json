@@ -1,0 +1,21 @@
+{
+  "compat_mode": "legacy",
+  "contract_version": "preanalysis.v1",
+  "critical_errors": [],
+  "migrated_manifest_path": "C:\\Users\\dylan\\Documents\\AI\\Projects\\Plan Reviewer\\output\\extractions\\calibration-clean\\analysis_package.migrated.json",
+  "package_manifest_path": null,
+  "quality": {
+    "bad_ratio": 0.20833333333333334,
+    "fail_threshold": 0.3,
+    "paired_tiles": 24,
+    "sanitized_tiles": 5,
+    "skipped_low_coherence": 0,
+    "warn_threshold": 0.15
+  },
+  "result": "warn",
+  "run_id": "0a4d708f-0c59-4ba0-bcc4-a5e3d8637a40",
+  "validated_at": "2026-02-25T05:58:49.840070+00:00",
+  "warnings": [
+    "quality gate exceeded warn threshold: bad_ratio=0.208 > 0.150"
+  ]
+}

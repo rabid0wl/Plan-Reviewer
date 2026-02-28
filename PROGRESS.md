@@ -1682,3 +1682,29 @@ Validation:
 - `Get-ChildItem References -Recurse -File | Where-Object { $_.Length -ge 95MB }` -> found `226.97 MB` PDF.
 - `git lfs track "References/Dinuba Project/240085_CORRIDOR_REV 3_PLAN SET.pdf"` -> tracking rule added.
 - `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-27 - Unignored output folder and prepared artifacts for push to main
+
+What changed:
+
+- Removed `output/` from `.gitignore` so generated artifacts can be tracked and pushed.
+- Prepared the entire top-level `output/` folder (923 files) for commit.
+
+Why:
+
+- User requested the same unignore-and-push workflow previously done for `References/`, now for `output/`.
+
+Failures encountered:
+
+- None.
+
+Fix applied:
+
+- N/A.
+
+Validation:
+
+- `git check-ignore -v output` (before change) -> `.gitignore:3:output/ output`.
+- `Get-ChildItem output -Recurse -File | Measure-Object -Property Length -Sum` -> `Files=923 SizeBytes=138528447`.
+- `Get-ChildItem output -Recurse -File | Where-Object { $_.Length -ge 95MB }` -> no results.
+- `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.

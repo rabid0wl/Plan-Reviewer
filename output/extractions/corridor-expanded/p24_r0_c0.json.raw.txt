@@ -1,0 +1,385 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "1",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "10+83.34",
+      "offset": "19.95' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.88,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.48,
+          "source_text_ids": [
+            425
+          ]
+        },
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.14,
+          "source_text_ids": [
+            426
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        427,
+        428,
+        429,
+        425,
+        426,
+        390
+      ]
+    },
+    {
+      "id": "4",
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "10+84.59",
+      "offset": "5.54' LT",
+      "rim_elevation": 329.3,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "36\"",
+          "pipe_type": "SD",
+          "elevation": 320.25,
+          "source_text_ids": [
+            393
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.45,
+          "source_text_ids": [
+            391
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "EXIST. SDMH",
+      "source_text_ids": [
+        394,
+        395,
+        392,
+        393,
+        391,
+        386
+      ]
+    },
+    {
+      "id": "9",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "11+21.16",
+      "offset": "13.30' RT",
+      "rim_elevation": 328.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.74,
+          "source_text_ids": [
+            434
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        436,
+        437,
+        435,
+        434,
+        401
+      ]
+    },
+    {
+      "id": "7",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.51",
+      "offset": "20.13' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.69,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.3,
+          "source_text_ids": [
+            396
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.2,
+          "source_text_ids": [
+            397
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "EXIST. DI",
+      "source_text_ids": [
+        398,
+        399,
+        400,
+        396,
+        397,
+        438
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.29",
+      "offset": "58.62' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.95,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.34,
+          "source_text_ids": [
+            374
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        375,
+        376,
+        377,
+        374
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": null,
+      "station": "10+85.94",
+      "offset": "53.08' LT",
+      "rim_elevation": 328.78,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.4,
+          "source_text_ids": [
+            417
+          ]
+        },
+        {
+          "direction": "E/W",
+          "pipe_size": "36\"",
+          "pipe_type": "SD",
+          "elevation": 320.4,
+          "source_text_ids": [
+            418
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL SDMH",
+      "source_text_ids": [
+        420,
+        421,
+        419,
+        417,
+        418
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+42.73",
+      "offset": "51.48' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.38,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 320.46,
+          "source_text_ids": [
+            413
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        414,
+        415,
+        416,
+        413
+      ]
+    },
+    {
+      "id": "11",
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_text_ids": [
+        439,
+        440,
+        441,
+        402
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 57.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL SDMH (STA 10+85.94)",
+      "to_structure_hint": "INSTALL DI (STA 11+42.73)",
+      "notes": "INSTALL 57 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "source_text_ids": [
+        422,
+        423,
+        424
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 26.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL DI (STA 10+83.34)",
+      "to_structure_hint": "EXIST. SDMH (STA 10+84.59)",
+      "notes": "INSTALL 26 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "source_text_ids": [
+        381,
+        382,
+        383
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 51.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "EXIST. SDMH (STA 10+84.59)",
+      "to_structure_hint": "INSTALL 48\" SSMH (STA 11+21.16)",
+      "notes": "INSTALL 51 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "source_text_ids": [
+        430,
+        431,
+        432,
+        433
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "18\"",
+      "material": null,
+      "length_lf": 38.0,
+      "slope": 0.0011,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "INSTALL 48\" SSMH (STA 11+21.16)",
+      "to_structure_hint": "INSTALL DI (STA 11+34.29)",
+      "notes": "INSTALL 38 LF OF 18\" DIA SD PIPE @ S=0.0011",
+      "source_text_ids": [
+        378,
+        379,
+        380
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "CONNECT INTO EXISTING STORM DRAIN MANHOLE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        409,
+        410
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONNECT INTO EXISTING STORM DRAIN DRAINAGE INLET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        406,
+        407,
+        408
+      ]
+    }
+  ],
+  "street_names": [
+    "KAMM AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted multiple proposed storm drain structures and pipes connecting them. Identified existing SDMH and DI structures being connected to. Water valve installation noted per City Standard W-8."
+}
+```

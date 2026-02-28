@@ -1,0 +1,167 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 0,
+  "sheet_type": "profile_view",
+  "utility_types_present": [],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "12+85",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.65,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BCR",
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+35",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.9,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "ECR, GB",
+      "source_text_ids": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+25",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 302.86,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BC",
+      "source_text_ids": [
+        5
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "9+65",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.01,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": null,
+      "source_text_ids": [
+        11
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+60",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 300.98,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "BCR",
+      "source_text_ids": [
+        12
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+85",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 301.39,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "ECR",
+      "source_text_ids": [
+        13
+      ]
+    }
+  ],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "FL 300.48",
+      "station": null,
+      "offset": null,
+      "elevation": 300.48,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0023",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        14
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED SI",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        7,
+        8
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING G @ CENTER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        9,
+        10
+      ]
+    }
+  ],
+  "street_names": [
+    "PALM ROYAL"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view showing curb elevations (TC) and grade breaks (GB). Stations are estimated based on grid lines 13+00, 14+00, 10+00, 11+00, 12+00."
+}
+```

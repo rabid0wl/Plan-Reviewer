@@ -1,0 +1,255 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "9",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "15+90.21",
+      "offset": "13.30' RT",
+      "rim_elevation": 329.55,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            355
+          ]
+        },
+        {
+          "direction": "NW",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 325.76,
+          "source_text_ids": [
+            356
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        346,
+        355,
+        356,
+        357,
+        358,
+        359
+      ]
+    },
+    {
+      "id": "13",
+      "structure_type": "tee",
+      "size": "8\"X8\"X6\"",
+      "station": "16+00",
+      "offset": "0' CL",
+      "rim_elevation": 329.86,
+      "tc_elevation": 329.34,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.86,
+          "source_text_ids": [
+            300
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.777,
+          "source_text_ids": [
+            301
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "6\"",
+          "pipe_type": "W",
+          "elevation": 325.86,
+          "source_text_ids": [
+            302
+          ]
+        },
+        {
+          "direction": "SE",
+          "pipe_size": "8\"",
+          "pipe_type": "W",
+          "elevation": 325.74,
+          "source_text_ids": [
+            367
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 8\"X8\"X6\" TEE",
+      "source_text_ids": [
+        350,
+        233,
+        234,
+        245,
+        300,
+        301,
+        302,
+        367,
+        371,
+        372
+      ]
+    },
+    {
+      "id": "gate_valve",
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "16+00",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 6\" WATER VALVE PER CITY STD. W-8, SHEET CD4.",
+      "source_text_ids": [
+        368,
+        369,
+        370
+      ]
+    },
+    {
+      "id": "EXIST. SSMH",
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "16+00",
+      "offset": "RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "CONNECT INTO EXISTING SANITARY SEWER MANHOLE",
+      "source_text_ids": [
+        365,
+        366
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 186.0,
+      "slope": null,
+      "from_station": "15+00",
+      "to_station": "16+86",
+      "from_structure_hint": "MATCHLINE",
+      "to_structure_hint": "TEE",
+      "notes": "INSTALL 186 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 96.0,
+      "slope": 0.0012,
+      "from_station": "15+00",
+      "to_station": "15+96",
+      "from_structure_hint": "MATCHLINE",
+      "to_structure_hint": "SSMH 9",
+      "notes": "INSTALL 96 LF OF 8\" DIA SS PIPE @ S=0.0012",
+      "source_text_ids": [
+        341,
+        342,
+        343,
+        344,
+        345
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": 0.0034,
+      "from_station": "15+90.21",
+      "to_station": "15+96.21",
+      "from_structure_hint": "SSMH 9",
+      "to_structure_hint": "EXIST. SSMH",
+      "notes": "INSTALL 6 LF OF 8\" DIA SS PIPE @ S=0.0034",
+      "source_text_ids": [
+        347,
+        348,
+        349
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": "16+00",
+      "to_station": null,
+      "from_structure_hint": "TEE",
+      "to_structure_hint": "FIRE HYDRANT",
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "source_text_ids": [
+        351,
+        352
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 15+00",
+      "station": "15+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "U1",
+      "reference_detail": null,
+      "source_text_ids": [
+        378,
+        379
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "SECTION LINE/PROPOSED CROWN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        311
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE LN."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Structure 13 is a proposed tee fitting at station 16+00. Structure 9 is a proposed 48 inch SSMH. A 6 inch water valve is proposed to be installed south of the tee. The SS system connects into an existing manhole at station 16+00."
+}

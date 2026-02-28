@@ -1,0 +1,224 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "signing_striping",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMHRIM 334.00",
+      "structure_type": "SSMH",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": 334.0,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": null,
+          "source_text_ids": [
+            60
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 328.99,
+          "source_text_ids": [
+            61
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 328.95,
+          "source_text_ids": [
+            62
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "INV 8\" N (???.??)",
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "WV",
+      "source_text_ids": [
+        28
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "WM",
+      "source_text_ids": [
+        19
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "WM",
+      "source_text_ids": [
+        35
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "meter",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "WM",
+      "source_text_ids": [
+        30
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": "SSMHRIM 334.00",
+      "notes": "(E) 8'' SS",
+      "source_text_ids": [
+        13,
+        14,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "10\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 10'' W",
+      "source_text_ids": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 12'' W",
+      "source_text_ids": [
+        3,
+        4
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "TREE 24\"",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        34
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "SIGN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        58
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "SHRUB",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        33
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows existing utilities including 8\" SS, 10\" W, 12\" W, and 4\" GAS. A sanitary sewer manhole (SSMH) is labeled with rim and invert elevations. Note 16 indicates existing wet utilities are not shown for clarity on this specific sheet type."
+}
+```

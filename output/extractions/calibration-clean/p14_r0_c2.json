@@ -1,0 +1,273 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "SDMH",
+      "size": "48\"",
+      "station": "20+24.17",
+      "offset": "28.00' RT",
+      "rim_elevation": 305.59,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.65,
+          "source_text_ids": [
+            9
+          ]
+        },
+        {
+          "direction": "W",
+          "pipe_size": "12\"",
+          "pipe_type": "SD",
+          "elevation": 298.75,
+          "source_text_ids": [
+            10
+          ]
+        }
+      ],
+      "notes": "INSTALL TYPE I (48\") SDMH",
+      "source_text_ids": [
+        12,
+        13,
+        14,
+        11,
+        9,
+        10
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": 342.0,
+      "slope": 0.003,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 342 LF OF 12\" DIA SD PIPE @ S=0.0030",
+      "source_text_ids": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "S=0.0020",
+      "source_text_ids": [
+        120,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "P (305.97) MATCH EXIST.",
+      "station": "19+87.07",
+      "offset": "18.67' LT",
+      "elevation": 305.97,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        159,
+        157,
+        158
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "P (306.01) MATCH EXIST.",
+      "station": "20+84.18",
+      "offset": "18.64' LT",
+      "elevation": 306.01,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        153,
+        151,
+        152
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "EP (305.92) MATCH EXIST.",
+      "station": "17+69.93",
+      "offset": "18.22' LT",
+      "elevation": 305.92,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        172,
+        170,
+        171
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EP 305.61",
+      "station": "19+87.20",
+      "offset": "0.68' LT",
+      "elevation": 305.61,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        143,
+        142,
+        173
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BCR TC 305.42 FL 304.92",
+      "station": "19+87.17",
+      "offset": "45.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        128,
+        129,
+        126,
+        127
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EC EP 305.29",
+      "station": "20+15.23",
+      "offset": "27.35' RT",
+      "elevation": 305.29,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        161,
+        165,
+        160
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "ECR TC 305.07 FL 304.57",
+      "station": "20+17.17",
+      "offset": "75.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        135,
+        136,
+        133,
+        134
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BC EP 305.67",
+      "station": "20+53.17",
+      "offset": "7.66' RT",
+      "elevation": 305.67,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        145,
+        166,
+        144
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "BCR TC 305.07 FL 304.57",
+      "station": "20+53.17",
+      "offset": "75.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        132,
+        130,
+        131
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EC EP 305.90",
+      "station": "20+76.08",
+      "offset": "15.34' LT",
+      "elevation": 305.9,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        163,
+        167,
+        162
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EP 305.91",
+      "station": "20+84.18",
+      "offset": "15.37' LT",
+      "elevation": 305.91,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        150,
+        149
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "ECR TC 305.67 FL 305.17",
+      "station": "20+84.17",
+      "offset": "45.00' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        139,
+        140,
+        141,
+        137,
+        138
+      ]
+    }
+  ],
+  "street_names": [
+    "EL CAMINO ST."
+  ],
+  "lot_numbers": [
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "extraction_notes": "Extracted storm drain manhole and associated pipe network. Included various grading callouts for curb and pavement elevations along El Camino St."
+}

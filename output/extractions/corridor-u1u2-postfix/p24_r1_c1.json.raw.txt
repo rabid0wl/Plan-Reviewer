@@ -1,0 +1,337 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "1",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.29",
+      "offset": "58.62' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.95,
+      "inverts": [
+        {
+          "direction": "W",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.34,
+          "source_text_ids": [
+            120
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL DI",
+      "source_text_ids": [
+        120,
+        121,
+        122,
+        123,
+        124
+      ]
+    },
+    {
+      "id": "7",
+      "structure_type": "inlet",
+      "size": null,
+      "station": "11+34.51",
+      "offset": "20.13' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 328.69,
+      "inverts": [
+        {
+          "direction": "E",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.30,
+          "source_text_ids": [
+            125
+          ]
+        },
+        {
+          "direction": "S",
+          "pipe_size": "18\"",
+          "pipe_type": "SD",
+          "elevation": 325.20,
+          "source_text_ids": [
+            126
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": "EXIST. DI",
+      "source_text_ids": [
+        125,
+        126,
+        127,
+        128,
+        129,
+        139
+      ]
+    },
+    {
+      "id": "9",
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "11+21.16",
+      "offset": "13.30' RT",
+      "rim_elevation": 328.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL SSMH",
+      "source_text_ids": [
+        158,
+        159,
+        160,
+        164
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "11+21.32",
+      "offset": "8.41' RT",
+      "rim_elevation": 329.07,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": true,
+      "notes": "EXIST. SSMH",
+      "source_text_ids": [
+        161,
+        162,
+        163
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "bend",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        173
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "bend",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        171
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "tee",
+      "size": "8\"x6\"",
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\"x6\" TEE",
+      "source_text_ids": [
+        172
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": "8\"",
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" GATE VALVE",
+      "source_text_ids": [
+        174,
+        175
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "CR 329.03",
+      "source_text_ids": [
+        176,
+        177
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": null,
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "CR 329.28",
+      "source_text_ids": [
+        178,
+        179
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 323.0,
+      "slope": 0.0005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 323 LF OF 8\" DIA SS PIPE @ S=0.0005",
+      "source_text_ids": [
+        165,
+        166,
+        167
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "PROPOSED 8\" WATER MAIN PER UTILITY PLANS, SEE SHEET U1",
+      "source_text_ids": [
+        146,
+        147
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "FL (328.45) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 328.45,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        152,
+        153
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (328.61) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 328.61,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        154,
+        155
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (328.68) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 328.68,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        156,
+        157
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED GRADE @ SECTION LINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        150
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        142
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING CROWN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        149
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view for College Ave from Sta 10+00 to 15+00. Includes proposed water main, sanitary sewer, and storm drain improvements. Crown elevations (CR) for grade breaks (GB) recorded in structure notes as per instructions."
+}
+```

@@ -1,0 +1,211 @@
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "W",
+    "SS"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": "8\"",
+      "station": "16+82.45",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" GATE VALVE",
+      "source_text_ids": [
+        7
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "18+15.00",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "CR 330.30",
+      "source_text_ids": [
+        24,
+        25
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": "16+82.45",
+      "to_station": null,
+      "from_structure_hint": "gate_valve",
+      "to_structure_hint": null,
+      "notes": "PROPOSED 8\" WATER MAIN PER UTILITY PLANS, SHEET U1",
+      "source_text_ids": [
+        9,
+        10
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" WATER MAIN",
+      "is_existing": true,
+      "source_text_ids": [
+        8
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "EXISTING 6\" DIA SANITARY SEWER",
+      "is_existing": true,
+      "source_text_ids": [
+        11
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.50) MATCH EXISTING",
+      "station": null,
+      "offset": "EXISTING EAST FLOWLINE",
+      "elevation": 329.5,
+      "source_text_ids": [
+        3,
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.40) MATCH EXISTING",
+      "station": null,
+      "offset": "EXISTING WEST FLOWLINE",
+      "elevation": 329.4,
+      "source_text_ids": [
+        0,
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.43) MATCH EXISTING PROPOSED WEST FLOWLINE",
+      "station": null,
+      "offset": null,
+      "elevation": 329.43,
+      "source_text_ids": [
+        4,
+        16,
+        17
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.62) MATCH EXISTING PROPOSED WEST FLOWLINE",
+      "station": null,
+      "offset": null,
+      "elevation": 329.62,
+      "source_text_ids": [
+        5,
+        18,
+        19
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "FL (329.81) MATCH EXISTING",
+      "station": null,
+      "offset": null,
+      "elevation": 329.81,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED GRADE @ SECTION LINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "source_text_ids": [
+        13
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "source_text_ids": [
+        2
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING CROWN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "source_text_ids": [
+        12
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "3.50' MIN.",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "source_text_ids": [
+        6
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0026",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "source_text_ids": [
+        26
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view for College Ave from Sta 15+00 to 20+00. Shows proposed 8\" water main installation with gate valve at approx Sta 16+82. Existing 6\" water and 6\" sanitary sewer lines are shown in profile. Flowline elevations for existing and proposed gutters are called out with 'MATCH EXISTING' notes."
+}

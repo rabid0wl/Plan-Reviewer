@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Review Report</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --error-bg: #fee2e2;
+      --warning-bg: #fef3c7;
+      --info-bg: #dbeafe;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Tahoma", "Geneva", sans-serif;
+      line-height: 1.4;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 20px auto 28px auto;
+      padding: 0 12px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .title-block h1 { margin: 0 0 8px 0; font-size: 1.7rem; }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .risk-banner {
+      background: #fff5cc;
+      color: #7a4e00;
+      border: 1px solid #f5d98f;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .badge-error { background: var(--error-bg); }
+    .badge-warning { background: var(--warning-bg); }
+    .badge-info { background: var(--info-bg); }
+    h2 { margin: 0 0 10px 0; font-size: 1.15rem; }
+    h3 { margin: 16px 0 8px 0; font-size: 1.0rem; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+    .data-table th,
+    .data-table td {
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      padding: 6px 8px;
+    }
+    .data-table thead th {
+      background: #eef2f7;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .data-table tbody tr:nth-child(even) { background: #fafafa; }
+    .findings-table .sev-error td { background: var(--error-bg); }
+    .findings-table .sev-warning td { background: var(--warning-bg); }
+    .findings-table .sev-info td { background: var(--info-bg); }
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0 0 12px 0;
+    }
+    .warning-panel {
+      border-color: #f5d98f;
+      background: #fffbeb;
+    }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .page { max-width: none; margin: 0; padding: 0; }
+      .panel { border-radius: 0; }
+      .data-table thead th { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    
+    <section class="panel title-block">
+      <h1>Plan Review Report</h1>
+      <div class="meta-grid">
+        <div><strong>Generated:</strong> 2026-02-22T18:07:28.378703+00:00</div>
+        <div><strong>Pages analyzed:</strong> 14, 19, 34, 36</div>
+        <div><strong>Extraction model:</strong> google/gemini-3-flash-preview</div>
+        <div><strong>Total extraction cost:</strong> $0.19</div>
+      </div>
+    </section>
+
+    
+
+    <section class="panel">
+      <h2>Findings Summary</h2>
+      <div class="badge-row"><span class="badge badge-error">0 errors</span><span class="badge badge-warning">8 warnings</span><span class="badge badge-info">7 info</span></div>
+      <table class="data-table findings-table"><thead><tr><th>Severity</th><th>Utility</th><th>Type</th><th>Description</th><th>Sheet(s)</th></tr></thead><tbody><tr class="sev-warning"><td>WARNING</td><td>SD</td><td>dead_end_pipe</td><td>Pipe SD:e6:p14_r1_c0 has unresolved endpoint matching.</td><td>14</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e3:p34_r1_c1 has unresolved endpoint matching.</td><td>34</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>dead_end_pipe</td><td>Pipe SS:e4:p34_r1_c2 has unresolved endpoint matching.</td><td>34</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>elevation_mismatch</td><td>Rim elevation mismatch at node SS:36:SSMH:1005.68:+6.00: min=300.89, max=301.76.</td><td>36</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>elevation_mismatch</td><td>Rim elevation mismatch at node SS:36:SSMH:1210.31:+6.00: min=301.62, max=302.19.</td><td>36</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>slope_mismatch</td><td>Slope mismatch on edge SS:e13:p36_r1_c1: labeled 0.0050, calculated 0.0092.</td><td>36</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>slope_mismatch</td><td>Slope mismatch on edge SS:e14:p36_r1_c1: labeled 0.0152, calculated 0.0156.</td><td>36</td></tr><tr class="sev-warning"><td>WARNING</td><td>SS</td><td>slope_mismatch</td><td>Slope mismatch on edge SS:e15:p36_r1_c2: labeled 0.0050, calculated 0.0027.</td><td>36</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>unanchored_pipe</td><td>Pipe SD:e4:p14_r0_c2 has no station/hint endpoint metadata; connection could not be verified.</td><td>14</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>unanchored_pipe</td><td>Pipe SD:e5:p14_r0_c2 has no station/hint endpoint metadata; connection could not be verified.</td><td>14</td></tr><tr class="sev-info"><td>INFO</td><td>SD</td><td>unanchored_pipe</td><td>Pipe SD:e9:p34_r0_c0 has no station/hint endpoint metadata; connection could not be verified.</td><td>34</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e0:p34_r0_c0 has no station/hint endpoint metadata; connection could not be verified.</td><td>34</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e1:p34_r0_c1 has no station/hint endpoint metadata; connection could not be verified.</td><td>34</td></tr><tr class="sev-info"><td>INFO</td><td>SS</td><td>unanchored_pipe</td><td>Pipe SS:e2:p34_r0_c2 has no station/hint endpoint metadata; connection could not be verified.</td><td>34</td></tr><tr class="sev-info"><td>INFO</td><td>W</td><td>connectivity_unverifiable</td><td>Connectivity checks are limited: graph has pipe edges but no resolved structure nodes.</td><td>-</td></tr></tbody></table>
+    </section>
+
+    <section class="panel">
+      <h2>Structure Schedule</h2>
+      <h3>Storm Drain (SD) - 4 structures</h3><table class="data-table"><thead><tr><th>Station</th><th>Offset</th><th>Type</th><th>Size</th><th>RIM</th><th>Inverts</th><th>Notes</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>13+40.73</td><td>28.00&#x27; RT</td><td>SDMH</td><td>48&quot;</td><td>305.44</td><td>E:300.80, S:300.90</td><td>INSTALL TYPE I (48&quot;) SDMH, DI</td><td>14</td><td>pg 14, 2 tile(s)</td></tr><tr><td>13+40.73</td><td>45.00&#x27; RT</td><td>inlet</td><td>-</td><td>-</td><td>N:301.00, E:300.80, S:300.90</td><td>DI</td><td>14</td><td>pg 14, 3 tile(s)</td></tr><tr><td>16+82.45</td><td>28.00&#x27; RT</td><td>SDMH</td><td>48&quot;</td><td>305.95</td><td>E:299.77, W:299.77</td><td>INSTALL TYPE I (48&quot;) SDMH</td><td>14</td><td>pg 14, 3 tile(s)</td></tr><tr><td>20+24.17</td><td>28.00&#x27; RT</td><td>SDMH</td><td>48&quot;</td><td>305.59</td><td>S:298.65, W:298.75</td><td>INSTALL TYPE I (48&quot;) SDMH</td><td>14</td><td>pg 14, 2 tile(s)</td></tr></tbody></table><h3>Sanitary Sewer (SS) - 5 structures</h3><table class="data-table"><thead><tr><th>Station</th><th>Offset</th><th>Type</th><th>Size</th><th>RIM</th><th>Inverts</th><th>Notes</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>10+05.68</td><td>6.00&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>300.89</td><td>N:291.28, E:291.18, W:291.18</td><td>INSTALL 48&quot; SSMH</td><td>36</td><td>pg 36, 4 tile(s)</td></tr><tr><td>12+10.31</td><td>6.00&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>301.62</td><td>N:294.38, S:294.38</td><td>INSTALL 48&quot; SSMH</td><td>36</td><td>pg 36, 6 tile(s)</td></tr><tr><td>14+09.19</td><td>6.00&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>302.90</td><td>S:296.23, E:296.23</td><td>INSTALL 48&quot; SSMH</td><td>36</td><td>pg 36, 4 tile(s)</td></tr><tr><td>14+14.94</td><td>6.00&#x27; RT</td><td>SSMH</td><td>48&quot;</td><td>302.27</td><td>S:295.41, E:294.94, W:294.94</td><td>INSTALL 48&quot; SSMH</td><td>36</td><td>pg 36, 2 tile(s)</td></tr><tr><td>16+30.65</td><td>6.00&#x27; LT</td><td>SSMH</td><td>48&quot;</td><td>300.32</td><td>N:289.72, E:289.62</td><td>INSTALL 48&quot; SSMH</td><td>34</td><td>pg 34, 4 tile(s)</td></tr></tbody></table><h3>Water (W) - 0 structures</h3><p class="empty">No rows.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Pipe Schedule</h2>
+      <h3>Storm Drain (SD) - 4 pipes</h3><table class="data-table"><thead><tr><th>From</th><th>To</th><th>Size</th><th>Length (LF)</th><th>Slope</th><th>Material</th><th>Notes</th><th>Confidence</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>SDMH 13+40.73</td><td>SDMH 16+82.45</td><td>12&quot;</td><td>342.00</td><td>0.0030</td><td>-</td><td>INSTALL 342 LF OF 12&quot; DIA SD PIPE @ S=0.0030</td><td>medium</td><td>14</td><td>pg 14, 2 tile(s)</td></tr><tr><td>INLET 13+40.73</td><td>SDMH 13+40.73</td><td>12&quot;</td><td>17.00</td><td>0.0059</td><td>-</td><td>INSTALL 17 LF OF 12&quot; DIA SD PIPE @ S=0.0059</td><td>medium</td><td>14</td><td>pg 14, 2 tile(s)</td></tr><tr><td>SDMH 16+82.45</td><td>SDMH 20+24.17</td><td>12&quot;</td><td>342.00</td><td>0.0030</td><td>-</td><td>INSTALL 342 LF OF 12&quot; DIA SD PIPE @ S=0.0030</td><td>medium</td><td>14</td><td>pg 14, 1 tile(s)</td></tr><tr><td>ORPHAN</td><td>INLET 13+40.73</td><td>12&quot;</td><td>-</td><td>0.0020</td><td>-</td><td>-</td><td>none</td><td>14</td><td>pg 14, 1 tile(s)</td></tr></tbody></table><h3>Sanitary Sewer (SS) - 5 pipes</h3><table class="data-table"><thead><tr><th>From</th><th>To</th><th>Size</th><th>Length (LF)</th><th>Slope</th><th>Material</th><th>Notes</th><th>Confidence</th><th>Source Sheets</th><th>Provenance</th></tr></thead><tbody><tr><td>SSMH 12+10.31</td><td>SSMH 10+05.68</td><td>8&quot;</td><td>205.00</td><td>0.0152</td><td>-</td><td>INSTALL 205 LF OF 8&quot; DIA SS PIPE @ S=0.0152</td><td>medium; gravity-oriented</td><td>36</td><td>pg 36, 1 tile(s)</td></tr><tr><td>SSMH 14+09.19</td><td>SSMH 12+10.31</td><td>8&quot;</td><td>202.00</td><td>0.0050</td><td>-</td><td>INSTALL 202 LF OF 8&quot; DIA SS PIPE @ S=0.0050</td><td>low; gravity-oriented</td><td>36</td><td>pg 36, 1 tile(s)</td></tr><tr><td>SSMH 14+14.94</td><td>SSMH 12+10.31</td><td>8&quot;</td><td>205.00</td><td>0.0050</td><td>-</td><td>-</td><td>medium; gravity-oriented</td><td>36</td><td>pg 36, 1 tile(s)</td></tr><tr><td>SSMH 16+30.65</td><td>ORPHAN</td><td>8&quot;</td><td>165.00</td><td>0.0033</td><td>-</td><td>INSTALL 165 LF OF 8&quot; DIA SS PIPE @ S=0.0033</td><td>none</td><td>34</td><td>pg 34, 1 tile(s)</td></tr><tr><td>ORPHAN</td><td>SSMH 16+30.65</td><td>8&quot;</td><td>165.00</td><td>0.0033</td><td>-</td><td>INSTALL 165 LF OF 8&quot; SS PIPE @ S=0.0033</td><td>none</td><td>34</td><td>pg 34, 1 tile(s)</td></tr></tbody></table><h3>Water (W) - 0 pipes</h3><p class="empty">No rows.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Extraction Quality</h2>
+      <p>
+        <strong>Grade B</strong><br>
+        24 tiles processed, 24 ok, 5 sanitized, 0 skipped
+      </p>
+      <ul><li>5 tiles had sanitizer recovery</li><li>Package validation: quality gate exceeded warn threshold: bad_ratio=0.208 &gt; 0.150</li><li>Package validation: Package validated in legacy compatibility mode (migrated from batch_summary.json).</li></ul>
+      <table class="data-table"><thead><tr><th>Tile</th><th>Coherence</th><th>Structures</th><th>Pipes</th><th>Callouts</th><th>Cost</th><th>Sanitized</th></tr></thead><tbody><tr><td>p14_r0_c0</td><td>0.897</td><td>2</td><td>1</td><td>10</td><td>$0.0124</td><td>no</td></tr><tr><td>p14_r0_c1</td><td>0.912</td><td>4</td><td>3</td><td>4</td><td>$0.0150</td><td>no</td></tr><tr><td>p14_r0_c2</td><td>0.895</td><td>1</td><td>2</td><td>12</td><td>$0.0116</td><td>no</td></tr><tr><td>p14_r1_c0</td><td>1.000</td><td>2</td><td>1</td><td>2</td><td>$0.0051</td><td>yes (structures=1)</td></tr><tr><td>p14_r1_c1</td><td>1.000</td><td>2</td><td>1</td><td>2</td><td>$0.0057</td><td>yes (structures=1)</td></tr><tr><td>p14_r1_c2</td><td>1.000</td><td>2</td><td>1</td><td>3</td><td>$0.0056</td><td>no</td></tr><tr><td>p19_r0_c0</td><td>0.866</td><td>10</td><td>0</td><td>2</td><td>$0.0083</td><td>no</td></tr><tr><td>p19_r0_c1</td><td>0.905</td><td>18</td><td>0</td><td>6</td><td>$0.0142</td><td>no</td></tr><tr><td>p19_r0_c2</td><td>0.964</td><td>7</td><td>0</td><td>3</td><td>$0.0070</td><td>no</td></tr><tr><td>p19_r1_c0</td><td>1.000</td><td>0</td><td>0</td><td>2</td><td>$0.0046</td><td>yes (structures=5, pipes=1)</td></tr><tr><td>p19_r1_c1</td><td>1.000</td><td>0</td><td>0</td><td>3</td><td>$0.0048</td><td>yes (structures=6)</td></tr><tr><td>p19_r1_c2</td><td>1.000</td><td>0</td><td>0</td><td>2</td><td>$0.0044</td><td>yes (structures=3, pipes=1)</td></tr><tr><td>p34_r0_c0</td><td>0.966</td><td>1</td><td>5</td><td>2</td><td>$0.0062</td><td>no</td></tr><tr><td>p34_r0_c1</td><td>1.000</td><td>3</td><td>3</td><td>2</td><td>$0.0080</td><td>no</td></tr><tr><td>p34_r0_c2</td><td>1.000</td><td>2</td><td>2</td><td>2</td><td>$0.0057</td><td>no</td></tr><tr><td>p34_r1_c0</td><td>1.000</td><td>1</td><td>1</td><td>2</td><td>$0.0038</td><td>no</td></tr><tr><td>p34_r1_c1</td><td>1.000</td><td>3</td><td>2</td><td>5</td><td>$0.0063</td><td>no</td></tr><tr><td>p34_r1_c2</td><td>1.000</td><td>1</td><td>2</td><td>1</td><td>$0.0047</td><td>no</td></tr><tr><td>p36_r0_c0</td><td>0.937</td><td>3</td><td>5</td><td>5</td><td>$0.0107</td><td>no</td></tr><tr><td>p36_r0_c1</td><td>0.986</td><td>3</td><td>3</td><td>3</td><td>$0.0098</td><td>no</td></tr><tr><td>p36_r0_c2</td><td>0.950</td><td>4</td><td>3</td><td>1</td><td>$0.0079</td><td>no</td></tr><tr><td>p36_r1_c0</td><td>1.000</td><td>3</td><td>4</td><td>6</td><td>$0.0085</td><td>no</td></tr><tr><td>p36_r1_c1</td><td>1.000</td><td>3</td><td>4</td><td>5</td><td>$0.0088</td><td>no</td></tr><tr><td>p36_r1_c2</td><td>1.000</td><td>3</td><td>2</td><td>2</td><td>$0.0067</td><td>no</td></tr></tbody></table>
+    </section>
+  </div>
+</body>
+</html>

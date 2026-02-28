@@ -1,0 +1,182 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "1\"",
+      "station": "16+82",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 329.95,
+      "fl_elevation": 329.53,
+      "inverts": [],
+      "notes": "Water service connection",
+      "source_text_ids": [
+        458,
+        309,
+        516
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "1\"",
+      "station": "17+35",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.12,
+      "fl_elevation": 329.6,
+      "inverts": [],
+      "notes": "Water service connection",
+      "source_text_ids": [
+        456,
+        307,
+        517
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "1\"",
+      "station": "17+85",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.16,
+      "fl_elevation": 329.65,
+      "inverts": [],
+      "notes": "Water service connection",
+      "source_text_ids": [
+        454,
+        305,
+        518
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "1\"",
+      "station": "18+35",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.09,
+      "fl_elevation": 329.62,
+      "inverts": [],
+      "notes": "Water service connection",
+      "source_text_ids": [
+        452,
+        303,
+        519
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "other",
+      "size": "1\"",
+      "station": "18+85",
+      "offset": null,
+      "rim_elevation": null,
+      "tc_elevation": 330.34,
+      "fl_elevation": 329.89,
+      "inverts": [],
+      "notes": "Water service connection",
+      "source_text_ids": [
+        450,
+        299,
+        520
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": "PVC",
+      "length_lf": 314.0,
+      "slope": null,
+      "from_station": "16+86",
+      "to_station": "20+00",
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 314 LF OF 8\" DIA WATER PIPE",
+      "source_text_ids": [
+        531,
+        532,
+        533,
+        534,
+        535,
+        536
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": 8.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "INSTALL 8 LF OF 6\" DIA WATER PIPE",
+      "source_text_ids": [
+        537
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 1\" WATER SERVICE PER CITY STD. W-9",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD3",
+      "reference_detail": "W-9",
+      "source_text_ids": [
+        38,
+        69
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 8\" WATER VALVE PER CITY STD. W-8",
+      "station": "17+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "CD4",
+      "reference_detail": "W-8",
+      "source_text_ids": [
+        91,
+        48
+      ]
+    },
+    {
+      "callout_type": "match_existing",
+      "text": "CONNECT INTO EXISTING SANITARY SEWER MANHOLE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        555,
+        556
+      ]
+    }
+  ],
+  "street_names": [
+    "PRINCETON AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Extracted water main and service connections along Princeton Ave. Keynotes 11 and 15 are repeated for multiple service locations. Stationing increases from left to right."
+}
+```

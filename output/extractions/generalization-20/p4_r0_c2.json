@@ -1,0 +1,53 @@
+{
+  "tile_id": "p4_r0_c2",
+  "page_number": 4,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [],
+  "pipes": [],
+  "callouts": [
+    {
+      "callout_type": "other",
+      "text": "REMOVE EXIST. FARM ROAD. SALVAGE & REUSE IF FEASIBLE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        55,
+        61,
+        62
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "TREE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        51
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "TREE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        52
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "This tile contains a portion of a Demolition Plan. It includes a legend, demolition key notes, and general notes. Several topographic survey points (OG and RD) are present with elevations. A callout with key note 3 indicates the removal of an existing farm road. No specific utility structures or pipes with sizes/materials are labeled in this view, although note 6 mentions existing SD lines."
+}

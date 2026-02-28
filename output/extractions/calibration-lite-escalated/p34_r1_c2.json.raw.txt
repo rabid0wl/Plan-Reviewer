@@ -1,0 +1,123 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 1,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_1",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "16+30.65",
+      "offset": "6.00' LT",
+      "rim_elevation": 300.32,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "SSMH_1",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 176.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        12,
+        13
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "S=0.0028",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        11
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INV. 8\" N 289.72",
+      "station": null,
+      "offset": null,
+      "elevation": 289.72,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        14
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INV. 8\" E 289.62",
+      "station": null,
+      "offset": null,
+      "elevation": 289.62,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        15
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": null
+}
+```

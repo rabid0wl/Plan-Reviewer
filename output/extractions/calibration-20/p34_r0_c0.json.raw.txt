@@ -1,0 +1,135 @@
+```json
+{
+  "tile_id": "p14_r0_c2",
+  "page_number": 14,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "structure_type": "junction",
+      "station": "9+94.00",
+      "offset": "6.00' RT",
+      "notes": "REMOVE EXIST. 12\"x12\"x8\" TEE & INSTALL 12\"x12\"x8\"x8\" CROSS W/ (1) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "inverts": []
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "source_text_ids": [
+        79,
+        80,
+        56,
+        55,
+        54,
+        53,
+        52
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "12\"",
+      "source_text_ids": [
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "10\"",
+      "source_text_ids": [
+        81,
+        78,
+        77,
+        76
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "12\"",
+      "source_text_ids": [
+        73,
+        72,
+        71
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "source_text_ids": [
+        48
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "detail_reference",
+      "text": "MONARCH DUNES AVE ENTRANCE LOOKING EAST STA: 10+54.00 - 11+74.00",
+      "source_text_ids": [
+        1,
+        45,
+        46
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "3\" ASPHALT CONCRETE, 6\" AGGREGATE BASE, 12\" SUBGRADE @ 95% RELATIVE COMPACTION",
+      "source_text_ids": [
+        12,
+        13,
+        10,
+        11
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "T.I.: 5.0 R-VALUE: 56",
+      "source_text_ids": [
+        43,
+        44
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "MORRISON STREET SEE SHEET 33",
+      "reference_sheet": "33",
+      "source_text_ids": [
+        87
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "CONSTRUCT BLOCK WALL PER SEPARATE PERMIT",
+      "source_text_ids": [
+        32,
+        33,
+        38,
+        39
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVE",
+    "MORRISON STREET"
+  ],
+  "lot_numbers": [
+    64,
+    65,
+    136
+  ],
+  "extraction_notes": "The tile contains a typical street section detail for Monarch Dunes Ave Entrance and a plan view of the intersection at Morrison Street. Utility lines for Water (W), Sanitary Sewer (SS), and Storm Drain (SD) are identified with their respective sizes from the text layer."
+}
+```

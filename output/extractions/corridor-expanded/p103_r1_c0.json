@@ -1,0 +1,116 @@
+{
+  "tile_id": "p103_r1_c0",
+  "page_number": 103,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "source_text_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' W",
+      "source_text_ids": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "4''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 4'' W",
+      "source_text_ids": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 6'' W",
+      "source_text_ids": [
+        7
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 54+00",
+      "station": "54+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        73
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "SEE ABOVE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        72
+      ]
+    }
+  ],
+  "street_names": [
+    "WHITNEY AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Tile shows an intersection with various existing utilities including water (W), sanitary sewer (SS), gas, and underground electric/telecom (E & T-UG). Matchline station 54+00 is clearly labeled."
+}

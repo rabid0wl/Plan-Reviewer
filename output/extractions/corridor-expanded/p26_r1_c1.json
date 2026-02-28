@@ -1,0 +1,197 @@
+{
+  "tile_id": "p26_r1_c1",
+  "page_number": 26,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "EXIST. SSMH",
+      "structure_type": "SSMH",
+      "size": null,
+      "station": "21+36.01",
+      "offset": "9.13' RT",
+      "rim_elevation": 331.53,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "S",
+          "pipe_size": "6\"",
+          "pipe_type": "SS",
+          "elevation": 327.53,
+          "source_text_ids": [
+            105
+          ]
+        }
+      ],
+      "is_existing": true,
+      "notes": null,
+      "source_text_ids": [
+        102,
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "tee",
+      "size": "8\"x6\"",
+      "station": "20+80",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1 - 8\"x6\" TEE",
+      "source_text_ids": [
+        93,
+        94
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": "6\"",
+      "station": "20+80",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 1 - 6\" GATE VALVE",
+      "source_text_ids": [
+        93,
+        95
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "gate_valve",
+      "size": "8\"",
+      "station": "21+95",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" GATE VALVE",
+      "source_text_ids": [
+        96
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "bend",
+      "size": null,
+      "station": "22+05",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 45deg BEND",
+      "source_text_ids": [
+        106
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "reducer",
+      "size": "8\"x6\"",
+      "station": "22+15",
+      "offset": "0' CL",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\"x6\" REDUCER. TIE INTO EXISTING.",
+      "source_text_ids": [
+        107,
+        108
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": "20+80",
+      "to_station": "22+15",
+      "from_structure_hint": "8\"x6\" TEE",
+      "to_structure_hint": "8\"x6\" REDUCER",
+      "notes": "PROPOSED 8\" WATER MAIN PER UTILITY PLANS, SHEET U1",
+      "source_text_ids": [
+        98,
+        99
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "CR (332.47) MATCH EXIST.",
+      "station": "22+40",
+      "offset": null,
+      "elevation": 332.47,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        111,
+        112
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        92
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED GRADE @ SECTION LINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        101
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING CROWN",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        100
+      ]
+    }
+  ],
+  "street_names": [
+    "COLLEGE AVE."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view shows proposed 8\" water main installation with various fittings (tee, gate valves, bend, reducer) connecting to existing 6\" water main. Sanitary sewer manhole (SSMH) at 21+36.01 is existing. Grade breaks (GB) are noted with crown elevations (CR)."
+}

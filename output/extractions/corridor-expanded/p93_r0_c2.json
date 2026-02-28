@@ -1,0 +1,131 @@
+{
+  "tile_id": "p93_r0_c2",
+  "page_number": 93,
+  "sheet_type": "signing_striping",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 12'' SS",
+      "source_text_ids": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "12\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 12'' W",
+      "source_text_ids": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "6\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 6'' W",
+      "source_text_ids": [
+        29,
+        30
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "grading_note",
+      "text": "CR 334.90",
+      "station": null,
+      "offset": null,
+      "elevation": 334.9,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        68,
+        69
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "CR 335.10",
+      "station": null,
+      "offset": null,
+      "elevation": 335.1,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        70,
+        71
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 334.48 FL 334.01 LIP 334.19 BSW 334.42",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        165,
+        90,
+        107,
+        47
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "TC 334.55 FL 334.07 LIP 334.20 BSW 334.69",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        167,
+        92,
+        109,
+        49
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Sheet is a signing and striping plan view with a legend. Utility lines (SS, W, Gas, AT&T) are shown as existing (E). Numerous spot elevations (TC, FL, LIP, BSW, CR, OG) are provided throughout the plan area."
+}

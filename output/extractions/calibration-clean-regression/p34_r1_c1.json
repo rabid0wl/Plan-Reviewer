@@ -1,0 +1,184 @@
+{
+  "tile_id": "p34_r1_c1",
+  "page_number": 34,
+  "sheet_type": "profile_view",
+  "utility_types_present": [
+    "SD",
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_16+30.65",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "16+30.65",
+      "offset": "6.00' LT",
+      "rim_elevation": 300.32,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [
+        {
+          "direction": "N",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.72,
+          "source_text_ids": [
+            28
+          ]
+        },
+        {
+          "direction": "E",
+          "pipe_size": "8\"",
+          "pipe_type": "SS",
+          "elevation": 289.62,
+          "source_text_ids": [
+            29
+          ]
+        }
+      ],
+      "is_existing": false,
+      "notes": "INSTALL 48\" SSMH",
+      "source_text_ids": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": "TEE_16+18.65",
+      "structure_type": "tee",
+      "size": "8\"",
+      "station": "16+18.65",
+      "offset": "6.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL 8\" TEE W/ (3) 8\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "FH_13+74.91",
+      "structure_type": "fire_hydrant",
+      "size": null,
+      "station": "13+74.91",
+      "offset": "20.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "is_existing": false,
+      "notes": "INSTALL FIRE HYDRANT W/ (1) 6\" DIA GATE VALVE(S)",
+      "source_text_ids": [
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 165.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": "16+30.65",
+      "from_structure_hint": null,
+      "to_structure_hint": "SSMH_16+30.65",
+      "notes": "INSTALL 165 LF OF 8\" DIA SS PIPE @ S=0.0033",
+      "source_text_ids": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "8\" DIA WATER PIPE",
+      "source_text_ids": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "24\" SD X-ING 1.0' MIN. CLEAR",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ SOUTH SIDE STREET S=0.0052",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "street_names": [
+    "MONARCH DUNES AVENUE"
+  ],
+  "lot_numbers": [],
+  "extraction_notes": "Profile view shows water main (dashed) and sanitary sewer (solid) with a storm drain crossing (SD X-ING). Stationing runs from 12+00 to 17+00."
+}

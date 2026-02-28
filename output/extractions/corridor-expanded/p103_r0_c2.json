@@ -1,0 +1,115 @@
+{
+  "tile_id": "p103_r0_c2",
+  "page_number": 103,
+  "sheet_type": "signing_striping",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [],
+  "pipes": [
+    {
+      "pipe_type": "SS",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' SS",
+      "source_text_ids": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "(E) 8'' W",
+      "source_text_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "4''",
+      "material": null,
+      "length_lf": null,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": "4'' SS lateral",
+      "source_text_ids": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "match_existing",
+      "text": "MATCHLINE STA: 54+00 SEE BELOW",
+      "station": "54+00",
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        114,
+        115
+      ]
+    },
+    {
+      "callout_type": "other",
+      "text": "DI 334.02 FIELD VERIFY",
+      "station": null,
+      "offset": null,
+      "elevation": 334.02,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        40,
+        41,
+        48
+      ]
+    },
+    {
+      "callout_type": "edge_of_pavement",
+      "text": "EP 334.35",
+      "station": null,
+      "offset": null,
+      "elevation": 334.35,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        20,
+        21
+      ]
+    }
+  ],
+  "street_names": [],
+  "lot_numbers": [],
+  "extraction_notes": "Plan view shows various existing utilities including gas, water, sewer, and underground electric/telecom. Legend indicates signing and striping sheet type."
+}

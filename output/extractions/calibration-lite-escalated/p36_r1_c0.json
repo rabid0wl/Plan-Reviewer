@@ -1,0 +1,245 @@
+{
+  "tile_id": "p36_r1_c0",
+  "page_number": 36,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SS",
+    "W"
+  ],
+  "structures": [
+    {
+      "id": "SSMH_1",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "10+06.00",
+      "offset": "6.00' RT",
+      "rim_elevation": 301.76,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "id": "SSMH_2",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "12+07.59",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.19,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": "SSMH_3",
+      "structure_type": "SSMH",
+      "size": "48\"",
+      "station": "14+09.19",
+      "offset": "6.00' RT",
+      "rim_elevation": 302.9,
+      "tc_elevation": null,
+      "fl_elevation": null,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        32,
+        33,
+        34
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 20.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "SSMH_1",
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        27,
+        28
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.0033,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "SSMH_1",
+      "to_structure_hint": "SSMH_2",
+      "notes": null,
+      "source_text_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "pipe_type": "SS",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 202.0,
+      "slope": 0.005,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": "SSMH_2",
+      "to_structure_hint": "SSMH_3",
+      "notes": null,
+      "source_text_ids": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 385.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "pipe_type": "W",
+      "size": "8\"",
+      "material": null,
+      "length_lf": 6.0,
+      "slope": null,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        31
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND W/ (1) GATE VALVE(S)",
+      "station": "10+08.02",
+      "offset": "6.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND",
+      "station": "9+94.00",
+      "offset": "8.02' RT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        29,
+        30
+      ]
+    },
+    {
+      "callout_type": "installation_note",
+      "text": "INSTALL 45deg BEND",
+      "station": "13+92.74",
+      "offset": "6.00' LT",
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "PROPOSED TC @ EAST SIDE OF STREET",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        22,
+        23
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "EXISTING GRADE @ CENTERLINE",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "callout_type": "cover_depth",
+      "text": "4.0' MIN. COVER",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        25,
+        26
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "S=0.0020",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        24
+      ]
+    }
+  ],
+  "street_names": [
+    "BISHOP STREET",
+    "N. PALM ROYALE ST."
+  ],
+  "lot_numbers": [],
+  "extraction_notes": null
+}

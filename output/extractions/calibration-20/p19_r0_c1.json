@@ -1,0 +1,458 @@
+{
+  "tile_id": "p19_r0_c1",
+  "page_number": 19,
+  "sheet_type": "plan_view",
+  "utility_types_present": [
+    "SD"
+  ],
+  "structures": [
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "13+48.36",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.65,
+      "fl_elevation": 302.15,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        10,
+        9,
+        7,
+        8
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "ECR, GB",
+      "size": null,
+      "station": "13+85.72",
+      "offset": "37.66' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.9,
+      "fl_elevation": 302.4,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        5,
+        6,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "13+86.02",
+      "offset": "55.02' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.86,
+      "fl_elevation": 302.36,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        27,
+        25,
+        26
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "EC",
+      "size": null,
+      "station": "13+48.36",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.66,
+      "fl_elevation": 302.16,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        13,
+        11,
+        12
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "PRC",
+      "size": null,
+      "station": "13+75.33",
+      "offset": "24.28' LT",
+      "rim_elevation": null,
+      "tc_elevation": 302.88,
+      "fl_elevation": 302.38,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        16,
+        14,
+        15
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "14+09.97",
+      "offset": "24.21' LT",
+      "rim_elevation": null,
+      "tc_elevation": 303.17,
+      "fl_elevation": 302.67,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        32,
+        33,
+        30,
+        31
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "PRC",
+      "size": null,
+      "station": "14+27.84",
+      "offset": "27.34' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.96,
+      "fl_elevation": 302.46,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        19,
+        20,
+        17,
+        18
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "BC",
+      "size": null,
+      "station": "14+22.02",
+      "offset": "54.41' RT",
+      "rim_elevation": null,
+      "tc_elevation": 302.86,
+      "fl_elevation": 302.36,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        23,
+        24,
+        21,
+        22
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "9+83.27",
+      "offset": "38.73' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.2,
+      "fl_elevation": 300.7,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        81,
+        79,
+        80
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GC",
+      "size": null,
+      "station": "9+83.07",
+      "offset": "27.90' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.18,
+      "fl_elevation": 300.68,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        90,
+        91,
+        88,
+        89
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "9+79.62",
+      "offset": "33.04' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.01,
+      "fl_elevation": 300.51,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        69,
+        67,
+        68
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+18.79",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 300.64,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        110,
+        109
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+16.93",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": null,
+      "fl_elevation": 300.53,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        108,
+        107
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "ECR",
+      "size": null,
+      "station": "10+19.26",
+      "offset": "38.26' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.2,
+      "fl_elevation": 300.7,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        84,
+        82,
+        83
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "10+39.26",
+      "offset": "18.00' LT",
+      "rim_elevation": null,
+      "tc_elevation": 301.4,
+      "fl_elevation": 300.9,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        87,
+        85,
+        86
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "GB",
+      "size": null,
+      "station": "10+39.26",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.4,
+      "fl_elevation": 300.9,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        78,
+        76,
+        77
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "ECR",
+      "size": null,
+      "station": "10+35.40",
+      "offset": "18.00' RT",
+      "rim_elevation": null,
+      "tc_elevation": 301.39,
+      "fl_elevation": 300.89,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        75,
+        73,
+        74
+      ]
+    },
+    {
+      "id": null,
+      "structure_type": "BCR",
+      "size": null,
+      "station": "10+15.48",
+      "offset": "36.23' RT",
+      "rim_elevation": null,
+      "tc_elevation": 300.98,
+      "fl_elevation": 300.48,
+      "inverts": [],
+      "notes": null,
+      "source_text_ids": [
+        72,
+        70,
+        71
+      ]
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_type": "SD",
+      "size": "unknown",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        28
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "unknown",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.002,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        29
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "unknown",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.0081,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "pipe_type": "SD",
+      "size": "unknown",
+      "material": null,
+      "length_lf": null,
+      "slope": 0.0035,
+      "from_station": null,
+      "to_station": null,
+      "from_structure_hint": null,
+      "to_structure_hint": null,
+      "notes": null,
+      "source_text_ids": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "callout_type": "cross_reference",
+      "text": "HARBOUR TOWN AVE. SEE SHEET 24",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "24",
+      "reference_detail": null,
+      "source_text_ids": [
+        160,
+        161
+      ]
+    },
+    {
+      "callout_type": "cross_reference",
+      "text": "SUN HILLS AVE. SEE SHEET 26",
+      "station": null,
+      "offset": null,
+      "elevation": null,
+      "reference_sheet": "26",
+      "reference_detail": null,
+      "source_text_ids": [
+        162
+      ]
+    },
+    {
+      "callout_type": "grading_note",
+      "text": "FL 301.06",
+      "station": null,
+      "offset": null,
+      "elevation": 301.06,
+      "reference_sheet": null,
+      "reference_detail": null,
+      "source_text_ids": [
+        66
+      ]
+    }
+  ],
+  "street_names": [
+    "HARBOUR TOWN AVE.",
+    "SUN HILLS AVE."
+  ],
+  "lot_numbers": [
+    5,
+    6,
+    53,
+    54,
+    55,
+    56,
+    57,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    68,
+    69,
+    70
+  ],
+  "extraction_notes": "Extracted curb and gutter structures (BCR, ECR, GB, PRC) with associated stationing and elevations. Slopes for gutter flowlines were identified. Street names and lot numbers were captured from the plan view."
+}
