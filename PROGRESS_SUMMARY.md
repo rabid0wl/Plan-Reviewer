@@ -1,5 +1,75 @@
 # Plan Reviewer - Progress Summary
 
+## 2026-02-27
+
+### Summary
+- Unignored the top-level `References/` folder so it can be versioned and pushed to `main`.
+- Added Git LFS tracking for the oversized reference PDF to keep the push compatible with GitHub limits.
+
+### Milestones
+- Updated `.gitignore`:
+  - removed `References/`.
+- Added `.gitattributes` LFS rule for:
+  - `References/Dinuba Project/240085_CORRIDOR_REV 3_PLAN SET.pdf` (226.97 MB).
+- Prepared `References/` for commit and push.
+
+### Validation
+- `git check-ignore -v References` (before edit) -> ignore match in `.gitignore`.
+- Large-file scan identified one PDF over 95 MB and mapped it to LFS tracking.
+- `git lfs track "References/Dinuba Project/240085_CORRIDOR_REV 3_PLAN SET.pdf"` -> rule created.
+- `python scripts/check_progress_docs.py` -> `PASS`.
+
+## 2026-02-25
+
+### Summary
+- Fixed Mermaid syntax compatibility issue in app architecture diagrams that caused Cursor preview parse errors.
+
+### Milestones
+- Updated node label syntax in:
+  - `docs/diagrams/app-architecture.mmd`
+  - `docs/diagrams/app-architecture.md`
+  - `docs/diagrams/ARCHITECTURE_FLOWS.md`
+- Changed `H[graph.checks.run_all_checks()]` to `H["graph.checks.run_all_checks()"]`.
+
+### Validation
+- `npx -y @mermaid-js/mermaid-cli -i docs/diagrams/app-architecture.mmd -o docs/diagrams/.app-architecture.validate.svg` -> parse success.
+- `npx -y @mermaid-js/mermaid-cli -i docs/diagrams/extraction-decision-flow.mmd -o docs/diagrams/.extraction-decision-flow.validate.svg` -> parse success.
+- `python scripts/check_progress_docs.py` -> `PASS`.
+
+## 2026-02-25
+
+### Summary
+- Added markdown preview wrappers so each Mermaid diagram can be opened directly with Cursor markdown preview.
+
+### Milestones
+- Added:
+  - `docs/diagrams/app-architecture.md`
+  - `docs/diagrams/extraction-decision-flow.md`
+- Each wrapper references its `.mmd` source and embeds the full Mermaid chart in a fenced block.
+
+### Validation
+- File check: `Get-ChildItem docs/diagrams -Name` -> wrapper files present.
+- Progress gate: `python scripts/check_progress_docs.py` -> `PASS`.
+
+## 2026-02-25
+
+### Summary
+- Added editor-viewable architecture diagrams for the full pipeline and the detailed extraction decision logic.
+- Added a companion markdown guide with plain-language analogies that map directly to the implemented modules.
+
+### Milestones
+- Added:
+  - `docs/diagrams/app-architecture.mmd`
+  - `docs/diagrams/extraction-decision-flow.mmd`
+  - `docs/diagrams/ARCHITECTURE_FLOWS.md`
+- Captured both:
+  - end-to-end phase/data handoffs,
+  - tile-level extraction control flow (coherence, cache, escalation, validation, sanitizer recovery).
+
+### Validation
+- File creation check: `Get-ChildItem docs/diagrams -Name` -> all diagram files present.
+- Progress gate: `python scripts/check_progress_docs.py` -> `PASS`.
+
 ## 2026-02-25
 
 ### Summary

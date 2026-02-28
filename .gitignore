@@ -1,7 +1,6 @@
 .env
 logs/
 output/
-References/
 test-extractions/
 __pycache__/
 *.pyc

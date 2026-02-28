@@ -1565,3 +1565,120 @@ Validation:
 
 - `Get-Date` converted to Pacific timezone reports: `2026-02-25 19:27:59 -08:00`.
 - `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-25 - Added architecture flowchart artifacts for human-level system understanding
+
+What changed:
+
+- Added `docs/diagrams/app-architecture.mmd` with the end-to-end runtime flow from intake through report generation.
+- Added `docs/diagrams/extraction-decision-flow.mmd` with the tile-level decision tree (coherence gate, cache behavior, escalation, sanitization, schema validation).
+- Added `docs/diagrams/ARCHITECTURE_FLOWS.md` that embeds both Mermaid diagrams plus accurate plain-language analogies for non-coder review.
+
+Why:
+
+- User requested a deeper, human-readable explanation of the current app architecture and specifically asked for files viewable directly in the editor.
+- A zoomed decision flow was needed because `run_hybrid.py` behavior is the most complex and easiest to misunderstand.
+
+Failures encountered:
+
+- None.
+
+Fix applied:
+
+- N/A.
+
+Validation:
+
+- `Get-ChildItem docs/diagrams -Name` -> confirmed all three diagram files exist.
+- `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-25 - Added one-click markdown preview wrappers for Mermaid diagrams
+
+What changed:
+
+- Added `docs/diagrams/app-architecture.md` as a markdown wrapper for `docs/diagrams/app-architecture.mmd`.
+- Added `docs/diagrams/extraction-decision-flow.md` as a markdown wrapper for `docs/diagrams/extraction-decision-flow.mmd`.
+- Both wrappers embed the Mermaid source inside fenced `mermaid` blocks for Cursor markdown preview.
+
+Why:
+
+- User reported the preview button was hard to find and asked for a simpler way to view diagrams in Cursor.
+- `.md` wrappers make preview keyboard-first (`Ctrl+Shift+V` / `Ctrl+K`, then `V`) without relying on `.mmd` file association behavior.
+
+Failures encountered:
+
+- None.
+
+Fix applied:
+
+- N/A.
+
+Validation:
+
+- `Get-ChildItem docs/diagrams -Name` -> wrappers present:
+  - `app-architecture.md`
+  - `extraction-decision-flow.md`
+- `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-25 - Fixed Mermaid syntax error in app architecture diagram labels
+
+What changed:
+
+- Updated Mermaid node label syntax in:
+  - `docs/diagrams/app-architecture.mmd`
+  - `docs/diagrams/app-architecture.md`
+  - `docs/diagrams/ARCHITECTURE_FLOWS.md`
+- Replaced:
+  - `H[graph.checks.run_all_checks()]`
+- With quoted label form:
+  - `H["graph.checks.run_all_checks()"]`
+
+Why:
+
+- User reported Mermaid parse failure when previewing `app-architecture.md` in Cursor.
+- Root cause was parser tokenization conflict on unquoted `()` in that node label under the current Mermaid parser variant.
+
+Failures encountered:
+
+- Mermaid CLI reproduction showed parse failure at that node:
+  - `Parse error on line 48 ... Expecting ... got 'PS'`
+- Cleanup command for temporary validation SVG files was blocked by local command policy.
+
+Fix applied:
+
+- Quoted the problematic label text in all architecture-diagram copies to ensure parser compatibility.
+
+Validation:
+
+- `npx -y @mermaid-js/mermaid-cli -i docs/diagrams/app-architecture.mmd -o docs/diagrams/.app-architecture.validate.svg` -> diagram parsed successfully.
+- `npx -y @mermaid-js/mermaid-cli -i docs/diagrams/extraction-decision-flow.mmd -o docs/diagrams/.extraction-decision-flow.validate.svg` -> diagram parsed successfully.
+- `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
+
+### 2026-02-27 - Unignored References folder and prepared large reference PDF for GitHub push
+
+What changed:
+
+- Removed `References/` from `.gitignore` so the folder is tracked by Git.
+- Added `.gitattributes` with Git LFS tracking for:
+  - `References/Dinuba Project/240085_CORRIDOR_REV 3_PLAN SET.pdf`
+- Prepared `References/` for commit/push to `main` with large-file compatibility.
+
+Why:
+
+- User requested that the reference folder be unignored and pushed to `main`.
+- One reference PDF is 226.97 MB, which exceeds GitHub's 100 MB non-LFS file limit.
+
+Failures encountered:
+
+- A first `Get-Content .gitattributes` check returned path-not-found immediately after `git lfs track` during parallel command execution.
+
+Fix applied:
+
+- Re-ran the file check after `git lfs track` completed and confirmed `.gitattributes` was created with the expected LFS rule.
+
+Validation:
+
+- `git check-ignore -v References` (before change) -> `.gitignore:4:References/ References`.
+- `Get-ChildItem References -Recurse -File | Where-Object { $_.Length -ge 95MB }` -> found `226.97 MB` PDF.
+- `git lfs track "References/Dinuba Project/240085_CORRIDOR_REV 3_PLAN SET.pdf"` -> tracking rule added.
+- `python scripts/check_progress_docs.py` -> **PASS: progress docs updated**.
