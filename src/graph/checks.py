@@ -9,7 +9,7 @@ import networkx as nx
 
 from .. import config as _config
 from ..extraction.schemas import TileExtraction
-from ..utils.parsing import parse_station
+from ..utils.parsing import parse_station, unique_ints as _unique_ints
 
 _QUALITY_DEGRADATION_THRESHOLD = _config.QUALITY_DEGRADATION_THRESHOLD
 _STATION_DELTA_THRESHOLD_FT = _config.STATION_DELTA_THRESHOLD_FT
@@ -80,10 +80,6 @@ def _edge_id(u: str, v: str, data: dict[str, Any]) -> str:
     """Return stable edge identifier from payload or a u->v fallback."""
     return str(data.get("edge_id") or f"{u}->{v}")
 
-
-def _unique_ints(values: list[int]) -> list[int]:
-    """Return sorted unique integers from a list-like input."""
-    return sorted({int(v) for v in values})
 
 
 def _normalize_pipe_size(value: str | None) -> str:

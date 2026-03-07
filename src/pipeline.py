@@ -211,7 +211,7 @@ def run_phase_extraction(
 ) -> int:
     """Run hybrid batch extraction.  Returns exit code from run_batch (0 or 2)."""
     from .extraction.run_hybrid_batch import run_batch
-    from .extraction.run_hybrid import PROVIDER_OPENROUTER, PROVIDER_ANTHROPIC
+    from .extraction.config_models import EscalationConfig, ExtractionConfig, PROVIDER_ANTHROPIC
 
     tiles_dir = intake_dir / "tiles"
     text_layers_dir = intake_dir / "text_layers"
@@ -238,28 +238,33 @@ def run_phase_extraction(
         dry_run,
     )
 
+    ext_config = ExtractionConfig(
+        model=model,
+        api_key=api_key,
+        provider=provider,
+        referer="https://github.com/4creeks/plan-reviewer",
+        title="Plan Reviewer",
+        temperature=0.0,
+        max_tokens=4096,
+        timeout_sec=120,
+        use_json_schema=False,
+    )
+
     exit_code = run_batch(
         tiles_dir=tiles_dir,
         text_layers_dir=text_layers_dir,
         out_dir=extractions_dir,
         tile_globs=["*.png"],
         max_tiles=None,
-        model=model,
-        api_key=api_key,
-        referer="https://github.com/4creeks/plan-reviewer",
-        title="Plan Reviewer",
-        temperature=0.0,
-        max_tokens=4096,
-        timeout_sec=120,
+        config=ext_config,
+        escalation=EscalationConfig(),
         allow_low_coherence=False,
         dry_run=dry_run,
         no_cache=False,
-        use_json_schema=False,
         prompt_dir=None,
         fail_fast=False,
         summary_out=summary_out,
         max_concurrency=workers,
-        provider=provider,
         manifest_path=manifest_path if manifest_path.exists() else None,
     )
 

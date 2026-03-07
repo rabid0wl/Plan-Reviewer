@@ -8,27 +8,12 @@ import logging
 from pathlib import Path
 from typing import Any
 
+from ..utils.io_json import load_json_dir
 from ..utils.parsing import parse_station
 
 logger = logging.getLogger(__name__)
 
-
-def _load_extractions(extractions_dir: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for path in sorted(extractions_dir.glob("*.json")):
-        name = path.name
-        if name in {"batch_summary.json", "batch_summary_final.json", "calibration_score.json"}:
-            continue
-        if name.endswith(".meta.json"):
-            continue
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        if not isinstance(payload, dict):
-            continue
-        rows.append(payload)
-    return rows
+_CALIBRATION_SKIP = {"batch_summary.json", "batch_summary_final.json", "calibration_score.json"}
 
 
 def _float_close(a: float | None, b: float, tol: float) -> bool:
@@ -292,7 +277,7 @@ def _check_p36(extractions: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def score_calibration(extractions_dir: Path) -> dict[str, Any]:
-    extractions = _load_extractions(extractions_dir)
+    extractions = load_json_dir(extractions_dir, skip_names=_CALIBRATION_SKIP)
     pages: dict[int, int] = {}
     for ext in extractions:
         p = int(ext.get("page_number", -1))

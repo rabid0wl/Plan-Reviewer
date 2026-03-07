@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from src.extraction.run_hybrid_batch import run_batch
+from src.extraction.config_models import EscalationConfig, ExtractionConfig
 
 
 def _write_json(path: Path, payload: dict) -> None:
@@ -82,23 +83,14 @@ class RunHybridBatchContractTests(unittest.TestCase):
                     out_dir=out_dir,
                     tile_globs=["*.png"],
                     max_tiles=None,
-                    model="google/gemini-3-flash-preview",
-                    api_key="dummy",
-                    referer="https://planreviewer.local",
-                    title="test",
-                    temperature=0.0,
-                    max_tokens=512,
-                    timeout_sec=30,
+                    config=ExtractionConfig(model="google/gemini-3-flash-preview", api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=512, timeout_sec=30, use_json_schema=True),
+                    escalation=EscalationConfig(enabled=True, model="google/gemini-3-flash-preview", coherence_threshold=0.7),
                     allow_low_coherence=False,
                     dry_run=False,
                     no_cache=True,
-                    use_json_schema=True,
                     prompt_dir=None,
                     fail_fast=False,
                     summary_out=summary_path,
-                    escalation_model="google/gemini-3-flash-preview",
-                    escalation_coherence_threshold=0.7,
-                    escalation_enabled=True,
                     max_concurrency=1,
                 )
 

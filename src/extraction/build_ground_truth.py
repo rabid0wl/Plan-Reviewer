@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import os
 from datetime import UTC, datetime
@@ -13,19 +12,11 @@ from typing import Any
 from dotenv import load_dotenv
 
 from ..intake.tiler import tile_pdf
+from ..utils.io_json import load_json_dir
 from ..utils.parsing import parse_station
 from .run_hybrid_batch import DEFAULT_MODEL, run_batch
 
 logger = logging.getLogger(__name__)
-
-
-def _load_extractions(folder: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for p in sorted(folder.glob("*.json")):
-        if p.name.endswith(".meta.json") or p.name == "batch_summary.json":
-            continue
-        rows.append(json.loads(p.read_text(encoding="utf-8")))
-    return rows
 
 
 def _station_sort_key(value: str | None) -> float:
@@ -130,7 +121,7 @@ def main() -> None:
     if code != 0:
         raise SystemExit(f"Batch extraction completed with non-zero status: {code}")
 
-    rows = _load_extractions(out_dir)
+    rows = load_json_dir(out_dir, skip_names={"batch_summary.json"})
     print(f"# Source page: {args.page} | extracted tiles: {len(rows)} | output: {out_dir}")
     _print_structures(rows, args.structure_type)
     if args.pipe_type:

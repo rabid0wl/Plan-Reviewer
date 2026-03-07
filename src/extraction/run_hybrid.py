@@ -17,6 +17,13 @@ import requests
 from dotenv import load_dotenv
 from pydantic import ValidationError
 
+from ..utils.io_json import read_json
+from .config_models import (
+    EscalationConfig,
+    ExtractionConfig,
+    PROVIDER_ANTHROPIC,
+    PROVIDER_OPENROUTER,
+)
 from .package_contract import page_number_from_tile_id
 from .prompts import build_hybrid_prompt, build_hybrid_prompt_split
 from .schemas import TileExtraction, _WATER_STRUCTURE_TYPES, _normalize_structure_type
@@ -34,22 +41,14 @@ except ImportError:  # pragma: no cover
 logger = logging.getLogger(__name__)
 
 DEFAULT_OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "google/gemini-2.5-flash-lite"
-DEFAULT_ESCALATION_MODEL = "google/gemini-3.1-flash-lite-preview"
+from ..config import DEFAULT_EXTRACTION_MODEL as DEFAULT_MODEL
+from ..config import DEFAULT_ESCALATION_MODEL
 from ..config import ESCALATION_COHERENCE_THRESHOLD as DEFAULT_ESCALATION_COHERENCE_THRESHOLD
 CACHE_SCHEMA_VERSION = "hybrid-cache-v2"
-PROVIDER_OPENROUTER = "openrouter"
-PROVIDER_ANTHROPIC = "anthropic"
-# Accepts both grid tiles (pN_rX_cY) and adaptive tiles (pN_aM).
-_TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_(?:r\d+_c\d+|a\d+)$", re.IGNORECASE)
 _STRUCTURED_NONE = "none"
 _STRUCTURED_JSON_OBJECT = "json_object"
 _STRUCTURED_JSON_SCHEMA = "json_schema"
 
-
-def _load_json(path: Path) -> dict[str, Any]:
-    with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
 
 
 def _image_bytes_to_data_url(image_bytes: bytes) -> str:
@@ -660,30 +659,33 @@ def run_hybrid_extraction(
     output_path: Path,
     raw_output_path: Path,
     meta_output_path: Path,
-    model: str,
-    api_key: str,
-    referer: str,
-    title: str,
-    temperature: float,
-    max_tokens: int,
-    timeout_sec: int,
+    config: ExtractionConfig,
+    escalation: EscalationConfig,
     allow_low_coherence: bool,
     dry_run: bool,
     no_cache: bool,
     prompt_output_path: Path | None,
-    escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
-    escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
-    escalation_enabled: bool = True,
-    use_structured_output: bool = True,
-    use_json_schema: bool = True,
     attempted_models: list[str] | None = None,
     escalation_reason: str | None = None,
-    provider: str = PROVIDER_OPENROUTER,
-    use_instructor: bool = True,
     _escalated: bool = False,
 ) -> int:
     """Execute one hybrid extraction call and persist outputs."""
-    text_layer = _load_json(text_layer_path)
+    # Unpack config for convenient local access (keeps the rest of the body unchanged).
+    model = config.model
+    api_key = config.api_key
+    provider = config.provider
+    referer = config.referer
+    title = config.title
+    temperature = config.temperature
+    max_tokens = config.max_tokens
+    timeout_sec = config.timeout_sec
+    use_structured_output = config.use_structured_output
+    use_json_schema = config.use_json_schema
+    use_instructor = config.use_instructor
+    escalation_model = escalation.model
+    escalation_coherence_threshold = escalation.coherence_threshold
+    escalation_enabled = escalation.enabled
+    text_layer = read_json(text_layer_path)
     coherence_score = float(text_layer.get("coherence_score", 0.0))
     is_hybrid_viable = bool(text_layer.get("is_hybrid_viable", True))
     tile_id = str(text_layer.get("tile_id", "unknown"))
@@ -729,32 +731,21 @@ def run_hybrid_extraction(
             escalation_target,
             reason,
         )
+        from dataclasses import replace as _dc_replace
         return run_hybrid_extraction(
             tile_path=tile_path,
             text_layer_path=text_layer_path,
             output_path=output_path,
             raw_output_path=raw_output_path,
             meta_output_path=meta_output_path,
-            model=escalation_target,
-            api_key=api_key,
-            referer=referer,
-            title=title,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            timeout_sec=timeout_sec,
+            config=_dc_replace(config, model=escalation_target),
+            escalation=escalation,
             allow_low_coherence=allow_low_coherence or force_allow_low_coherence,
             dry_run=dry_run,
             no_cache=no_cache,
             prompt_output_path=prompt_output_path,
-            escalation_model=escalation_model,
-            escalation_coherence_threshold=escalation_coherence_threshold,
-            escalation_enabled=escalation_enabled,
-            use_structured_output=use_structured_output,
-            use_json_schema=use_json_schema,
             attempted_models=attempt_chain,
             escalation_reason=reason,
-            provider=provider,
-            use_instructor=use_instructor,
             _escalated=True,
         )
 
@@ -814,7 +805,7 @@ def run_hybrid_extraction(
         and meta_output_path.exists()
     ):
         try:
-            existing_meta = _load_json(meta_output_path)
+            existing_meta = read_json(meta_output_path)
         except Exception:
             existing_meta = {}
         if (
@@ -1265,29 +1256,35 @@ def main() -> None:
             "Set it in environment or .env before running."
         )
 
+    _config = ExtractionConfig(
+        model=args.model,
+        api_key=api_key,
+        provider=args.provider,
+        referer=args.referer,
+        title=args.title,
+        temperature=args.temperature,
+        max_tokens=args.max_tokens,
+        timeout_sec=args.timeout_sec,
+        use_json_schema=args.use_json_schema,
+        use_instructor=not args.no_instructor,
+    )
+    _escalation = EscalationConfig(
+        enabled=args.escalation,
+        model=args.escalation_model,
+        coherence_threshold=args.escalation_coherence_threshold,
+    )
     exit_code = run_hybrid_extraction(
         tile_path=args.tile,
         text_layer_path=args.text_layer,
         output_path=out_path,
         raw_output_path=raw_out,
         meta_output_path=meta_out,
-        model=args.model,
-        api_key=api_key,
-        referer=args.referer,
-        title=args.title,
-        temperature=args.temperature,
-        max_tokens=args.max_tokens,
-        timeout_sec=args.timeout_sec,
+        config=_config,
+        escalation=_escalation,
         allow_low_coherence=args.allow_low_coherence,
         dry_run=args.dry_run,
         no_cache=args.no_cache,
         prompt_output_path=args.prompt_out,
-        escalation_model=args.escalation_model,
-        escalation_coherence_threshold=args.escalation_coherence_threshold,
-        escalation_enabled=args.escalation,
-        use_json_schema=args.use_json_schema,
-        provider=args.provider,
-        use_instructor=not args.no_instructor,
     )
     raise SystemExit(exit_code)
 

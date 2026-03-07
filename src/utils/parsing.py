@@ -1,8 +1,9 @@
-"""Parsing helpers for civil station and offset formats."""
+"""Parsing helpers for civil station and offset formats, plus numeric utilities."""
 
 from __future__ import annotations
 
 import re
+from typing import Any
 
 STATION_PATTERN = re.compile(
     r"(?i)(?:STA\s*[:.]?\s*)?(\d{1,4})\s*\+\s*(\d{1,2}(?:\.\d+)?)"
@@ -61,3 +62,30 @@ def parse_signed_offset(offset_str: str) -> float | None:
         return None
     distance, direction = parsed
     return distance if direction == "RT" else -distance
+
+
+def to_float(value: Any) -> float | None:
+    """Safely coerce *value* to float.
+
+    Returns ``None`` for booleans, ``None`` inputs, empty strings, and any
+    value that cannot be converted.  Booleans are excluded explicitly because
+    ``float(True) == 1.0`` is misleading in engineering data contexts.
+    """
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        stripped = value.strip()
+        if not stripped:
+            return None
+        try:
+            return float(stripped)
+        except ValueError:
+            return None
+    return None
+
+
+def unique_ints(values: list[int]) -> list[int]:
+    """Return a sorted deduplicated list of integers from *values*."""
+    return sorted({int(v) for v in values})

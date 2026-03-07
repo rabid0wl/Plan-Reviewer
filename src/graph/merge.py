@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..extraction.schemas import Structure, TileExtraction
-from ..utils.parsing import parse_signed_offset, parse_station
+from ..utils.parsing import parse_signed_offset, parse_station, unique_ints as _unique_ints
 
 _NON_ALNUM = re.compile(r"[^A-Z0-9]+")
 
@@ -115,9 +115,6 @@ def _structure_rank(structure: Structure) -> tuple[int, int, int]:
     notes_len = len((structure.notes or "").strip())
     return (len(structure.inverts), notes_len, len(structure.source_text_ids))
 
-
-def _unique_ints(values: list[int]) -> list[int]:
-    return sorted({int(v) for v in values})
 
 
 def _unique_floats(values: list[float]) -> list[float]:

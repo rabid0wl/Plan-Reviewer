@@ -2,6 +2,25 @@
 
 ## 2026-03-07
 
+### Summary (session 2)
+- SOLID/DRY architecture audit: addressed top 2 priorities (Priority 1 and Priority 2).
+- Priority 2: Consolidated all duplicated utilities — `_to_float`, `_unique_ints`, `_load_json`/`read_json`, `_load_extractions`/`load_json_dir`, `TILE_ID_PATTERN` — into canonical locations in `src/utils/`.
+- Priority 1: Extracted `ExtractionConfig` and `EscalationConfig` frozen dataclasses, reducing `run_hybrid_extraction()` from 24+ params to `config + escalation + 6 behavioral params`, and `run_batch()` from 29 to 17 params.
+
+### Milestones
+- New file: `src/extraction/config_models.py` — `ExtractionConfig`, `EscalationConfig`, provider constants
+- `src/utils/io_json.py` — added `read_json()`, `load_json_dir(skip_names=...)`
+- `src/utils/parsing.py` — added `to_float()`, `unique_ints()`
+- 7 files had local duplicate helpers removed; all import from canonical `utils/` instead
+- `run_hybrid_extraction()`, `run_batch()`, `pipeline.run_phase_extraction()` all use new dataclass signatures
+- `tests/test_run_hybrid_escalation.py` and `tests/test_run_hybrid_batch_contract.py` updated
+
+### Validation
+- `python -m pytest tests/ -q` → **91/91 passed** (1.27s).
+- No behavioral changes — pure refactoring.
+
+## 2026-03-07 (session 1)
+
 ### Summary
 - Post-Phase D refactoring: addressed 6 of 8 audit findings (3 high, 3 medium priority).
 - Centralized coherence thresholds from 3 files into `src/config.py`.

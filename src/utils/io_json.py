@@ -1,4 +1,4 @@
-"""Deterministic JSON helpers and atomic file writes."""
+"""Deterministic JSON helpers, atomic file writes, and directory loaders."""
 
 from __future__ import annotations
 
@@ -31,6 +31,37 @@ def sha256_file(path: Path) -> str:
                 break
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    """Read and parse a JSON file, returning a dict."""
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_json_dir(
+    directory: Path,
+    *,
+    skip_names: set[str] | None = None,
+) -> list[dict[str, Any]]:
+    """Load all top-level JSON dicts from a directory.
+
+    Files whose names appear in *skip_names* or whose names end with
+    ``.meta.json`` are silently excluded.  Parse errors are also silently
+    skipped so that corrupt or partial files don't abort a batch.
+    """
+    _skip = skip_names or set()
+    rows: list[dict[str, Any]] = []
+    for path in sorted(directory.glob("*.json")):
+        if path.name in _skip or path.name.endswith(".meta.json"):
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(payload, dict):
+            rows.append(payload)
+    return rows
 
 
 def write_json_atomic(

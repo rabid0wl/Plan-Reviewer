@@ -98,6 +98,58 @@ Comprehensive code audit identified 8 issues across the codebase after completin
 
 ---
 
+## 2026-03-07 — SOLID/DRY Architecture Audit: Priority 1 & 2
+
+### Context
+Full codebase audit against SOLID/DRY principles identified 30 findings (8 HIGH, 15 MEDIUM, 7 LOW). Addressed the two highest-ROI priorities: (1) consolidate all duplicated utilities and (2) extract ExtractionConfig/EscalationConfig dataclasses to eliminate 24–29-parameter function signatures.
+
+### Priority 2: Consolidated Duplicated Utilities
+
+**New canonical implementations:**
+- `src/utils/io_json.py` — Added `read_json()` (single file) and `load_json_dir()` (directory, with `skip_names` param).
+- `src/utils/parsing.py` — Added `to_float()` (bool-safe coercion) and `unique_ints()` (sorted deduplicated ints).
+
+**Removed local duplicates:**
+- `src/extraction/package_contract.py` — Removed local `_to_float()`, imports `to_float as _to_float` from `parsing`.
+- `src/report/html_report.py` — Removed local `_to_float()`, local `TILE_ID_PATTERN`, and `import re`. Imports canonical versions.
+- `src/graph/checks.py` — Removed local `_unique_ints()`, imports from `parsing`.
+- `src/graph/merge.py` — Removed local `_unique_ints()`, imports from `parsing`.
+- `src/extraction/score_calibration.py` — Removed `_load_extractions()`, uses `load_json_dir()` with `skip_names`.
+- `src/extraction/build_ground_truth.py` — Removed `_load_extractions()` and `import json`, uses `load_json_dir()`.
+- `src/extraction/run_hybrid.py` — Removed `_load_json()`, removed dead `_TILE_ID_PAGE_RE`; uses `read_json`.
+
+### Priority 1: ExtractionConfig + EscalationConfig Dataclasses
+
+**New file:**
+- `src/extraction/config_models.py` — `PROVIDER_OPENROUTER`, `PROVIDER_ANTHROPIC`, `ExtractionConfig` (frozen dataclass, 11 fields), `EscalationConfig` (frozen dataclass, 3 fields). Constants import model defaults from `src/config.py`.
+
+**`src/config.py`** — Added `DEFAULT_EXTRACTION_MODEL` and `DEFAULT_ESCALATION_MODEL` string constants.
+
+**`src/extraction/run_hybrid.py`:**
+- `run_hybrid_extraction()` signature: 24+ individual kwargs → `config: ExtractionConfig`, `escalation: EscalationConfig` + 6 behavioural params.
+- Unpack-at-top pattern: local variables assigned from `config.*`/`escalation.*` so 478-line body is unchanged.
+- Recursive escalation: uses `dataclasses.replace(config, model=escalation_target)`.
+- `main()` constructs `ExtractionConfig`/`EscalationConfig` from parsed CLI args.
+
+**`src/extraction/run_hybrid_batch.py`:**
+- `run_batch()` signature: 29 kwargs → `config: ExtractionConfig`, `escalation: EscalationConfig` + 7 behavioural params (17 total).
+- `_process_one` passes `config` and `escalation` to `run_hybrid_extraction`.
+- `main()` constructs `ExtractionConfig`/`EscalationConfig` from parsed CLI args.
+
+**`src/pipeline.py`:**
+- `run_phase_extraction()` constructs `ExtractionConfig` and `EscalationConfig`, calls updated `run_batch()`.
+- Import updated from `run_hybrid.PROVIDER_*` to `config_models.PROVIDER_*`.
+
+**Tests updated:**
+- `tests/test_run_hybrid_escalation.py` — All 6 `run_hybrid_extraction()` calls updated to `config=ExtractionConfig(...)`, `escalation=EscalationConfig(...)`.
+- `tests/test_run_hybrid_batch_contract.py` — `run_batch()` call updated to use `config=ExtractionConfig(...)`, `escalation=EscalationConfig(...)`.
+
+### Validation
+- `python -m pytest tests/ -q` → **91/91 passed** (1.27s).
+- No behavioral changes — pure refactoring.
+
+---
+
 ## 2026-03-05 — Comprehensive Review & Phase A/B/C/D Implementation
 
 ### Context

@@ -13,6 +13,7 @@ from src.extraction.run_hybrid import (
     DEFAULT_ESCALATION_MODEL,
     run_hybrid_extraction,
 )
+from src.extraction.config_models import EscalationConfig, ExtractionConfig
 
 TEST_PRIMARY_MODEL = "google/gemini-2.5-flash-lite"
 
@@ -106,19 +107,12 @@ class HybridEscalationTests(unittest.TestCase):
                 output_path=out_path,
                 raw_output_path=raw_out_path,
                 meta_output_path=meta_out_path,
-                model=TEST_PRIMARY_MODEL,
-                api_key="dummy",
-                referer="https://planreviewer.local",
-                title="test",
-                temperature=0.0,
-                max_tokens=1024,
-                timeout_sec=30,
+                config=ExtractionConfig(model=TEST_PRIMARY_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                escalation=EscalationConfig(enabled=True, model=DEFAULT_ESCALATION_MODEL),
                 allow_low_coherence=False,
                 dry_run=True,
                 no_cache=True,
                 prompt_output_path=None,
-                escalation_model=DEFAULT_ESCALATION_MODEL,
-                escalation_enabled=True,
             )
 
             self.assertEqual(exit_code, 0)
@@ -204,19 +198,12 @@ class HybridEscalationTests(unittest.TestCase):
                     output_path=out_path,
                     raw_output_path=raw_out_path,
                     meta_output_path=meta_out_path,
-                    model=TEST_PRIMARY_MODEL,
-                    api_key="dummy",
-                    referer="https://planreviewer.local",
-                    title="test",
-                    temperature=0.0,
-                    max_tokens=1024,
-                    timeout_sec=30,
+                    config=ExtractionConfig(model=TEST_PRIMARY_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                    escalation=EscalationConfig(enabled=True, model=DEFAULT_ESCALATION_MODEL),
                     allow_low_coherence=False,
                     dry_run=False,
                     no_cache=True,
                     prompt_output_path=None,
-                    escalation_model=DEFAULT_ESCALATION_MODEL,
-                    escalation_enabled=True,
                 )
 
             self.assertEqual(exit_code, 0)
@@ -286,19 +273,12 @@ class HybridEscalationTests(unittest.TestCase):
                     output_path=out_path,
                     raw_output_path=raw_out_path,
                     meta_output_path=meta_out_path,
-                    model=DEFAULT_ESCALATION_MODEL,
-                    api_key="dummy",
-                    referer="https://planreviewer.local",
-                    title="test",
-                    temperature=0.0,
-                    max_tokens=1024,
-                    timeout_sec=30,
+                    config=ExtractionConfig(model=DEFAULT_ESCALATION_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                    escalation=EscalationConfig(enabled=False, model=DEFAULT_ESCALATION_MODEL),
                     allow_low_coherence=False,
                     dry_run=False,
                     no_cache=True,
                     prompt_output_path=None,
-                    escalation_model=DEFAULT_ESCALATION_MODEL,
-                    escalation_enabled=False,
                 )
 
             self.assertEqual(exit_code, 0)
@@ -350,19 +330,12 @@ class HybridEscalationTests(unittest.TestCase):
                     output_path=out_path,
                     raw_output_path=raw_out_path,
                     meta_output_path=meta_out_path,
-                    model=DEFAULT_ESCALATION_MODEL,
-                    api_key="dummy",
-                    referer="https://planreviewer.local",
-                    title="test",
-                    temperature=0.0,
-                    max_tokens=1024,
-                    timeout_sec=30,
+                    config=ExtractionConfig(model=DEFAULT_ESCALATION_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                    escalation=EscalationConfig(enabled=False, model=DEFAULT_ESCALATION_MODEL),
                     allow_low_coherence=False,
                     dry_run=False,
                     no_cache=True,
                     prompt_output_path=None,
-                    escalation_model=DEFAULT_ESCALATION_MODEL,
-                    escalation_enabled=False,
                 )
 
             self.assertEqual(exit_code, 0)
@@ -418,19 +391,12 @@ class HybridEscalationTests(unittest.TestCase):
                         output_path=out_path,
                         raw_output_path=raw_out_path,
                         meta_output_path=meta_out_path,
-                        model=DEFAULT_ESCALATION_MODEL,
-                        api_key="dummy",
-                        referer="https://planreviewer.local",
-                        title="test",
-                        temperature=0.0,
-                        max_tokens=1024,
-                        timeout_sec=30,
+                        config=ExtractionConfig(model=DEFAULT_ESCALATION_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                        escalation=EscalationConfig(enabled=False, model=DEFAULT_ESCALATION_MODEL),
                         allow_low_coherence=False,
                         dry_run=False,
                         no_cache=True,
                         prompt_output_path=None,
-                        escalation_model=DEFAULT_ESCALATION_MODEL,
-                        escalation_enabled=False,
                     )
 
             self.assertEqual(exit_code, 0)
@@ -481,19 +447,12 @@ class HybridEscalationTests(unittest.TestCase):
                         output_path=out_path,
                         raw_output_path=raw_out_path,
                         meta_output_path=meta_out_path,
-                        model=DEFAULT_ESCALATION_MODEL,
-                        api_key="dummy",
-                        referer="https://planreviewer.local",
-                        title="test",
-                        temperature=0.0,
-                        max_tokens=1024,
-                        timeout_sec=30,
+                        config=ExtractionConfig(model=DEFAULT_ESCALATION_MODEL, api_key="dummy", referer="https://planreviewer.local", title="test", temperature=0.0, max_tokens=1024, timeout_sec=30),
+                        escalation=EscalationConfig(enabled=False, model=DEFAULT_ESCALATION_MODEL),
                         allow_low_coherence=False,
                         dry_run=False,
                         no_cache=True,
                         prompt_output_path=None,
-                        escalation_model=DEFAULT_ESCALATION_MODEL,
-                        escalation_enabled=False,
                     )
 
             self.assertEqual(exit_code, 0)

@@ -12,6 +12,7 @@ from typing import Any, Mapping
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from ..utils.io_json import sha256_file
+from ..utils.parsing import to_float as _to_float
 
 CONTRACT_VERSION = "preanalysis.v1"
 # Accepts both grid tiles (pN_rX_cY) and adaptive tiles (pN_aM).
@@ -73,14 +74,6 @@ def _to_int(value: Any, *, default: int = 0) -> int:
     except (TypeError, ValueError):
         return default
 
-
-def _to_float(value: Any) -> float | None:
-    try:
-        if value is None:
-            return None
-        return float(value)
-    except (TypeError, ValueError):
-        return None
 
 
 class ContractBaseModel(BaseModel):

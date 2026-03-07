@@ -21,18 +21,24 @@ from pydantic import ValidationError
 from ..utils.io_json import write_json_atomic
 from .package_contract import CONTRACT_VERSION, build_analysis_package_from_summary, page_number_from_tile_id
 from .prompts import build_hybrid_prompt_split
-from .run_hybrid import (
-    DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
-    DEFAULT_ESCALATION_MODEL,
-    DEFAULT_MODEL,
+from .config_models import (
+    EscalationConfig,
+    ExtractionConfig,
     PROVIDER_ANTHROPIC,
     PROVIDER_OPENROUTER,
+)
+from .run_hybrid import (
     _coerce_int,
     _extract_json_candidate,
     _pre_correct_tile_metadata,
     _sanitize_extraction_payload,
     _STRUCTURED_NONE,
+    DEFAULT_MODEL,
     run_hybrid_extraction,
+)
+from ..config import (
+    DEFAULT_ESCALATION_MODEL,
+    ESCALATION_COHERENCE_THRESHOLD as DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
 )
 from .schemas import TileExtraction
 
@@ -103,30 +109,34 @@ def run_batch(
     out_dir: Path,
     tile_globs: list[str],
     max_tiles: int | None,
-    model: str,
-    api_key: str,
-    referer: str,
-    title: str,
-    temperature: float,
-    max_tokens: int,
-    timeout_sec: int,
+    config: ExtractionConfig,
+    escalation: EscalationConfig,
     allow_low_coherence: bool,
     dry_run: bool,
     no_cache: bool,
-    use_json_schema: bool,
     prompt_dir: Path | None,
     fail_fast: bool,
     summary_out: Path,
-    escalation_model: str | None = DEFAULT_ESCALATION_MODEL,
-    escalation_coherence_threshold: float = DEFAULT_ESCALATION_COHERENCE_THRESHOLD,
-    escalation_enabled: bool = True,
     max_concurrency: int = 1,
-    provider: str = PROVIDER_OPENROUTER,
     manifest_path: Path | None = None,
     model_fast: str | None = None,
     model_standard: str | None = None,
     model_premium: str | None = None,
 ) -> int:
+    # Unpack config for local access.
+    model = config.model
+    api_key = config.api_key
+    provider = config.provider
+    referer = config.referer
+    title = config.title
+    temperature = config.temperature
+    max_tokens = config.max_tokens
+    timeout_sec = config.timeout_sec
+    use_json_schema = config.use_json_schema
+    escalation_model = escalation.model
+    escalation_coherence_threshold = escalation.coherence_threshold
+    escalation_enabled = escalation.enabled
+
     # Build page -> model_tier lookup when a manifest is provided.
     page_to_model_tier: dict[int, str] = {}
     if manifest_path is not None:
@@ -218,28 +228,19 @@ def run_batch(
         }
 
         try:
+            from dataclasses import replace as _dc_replace
             exit_code = run_hybrid_extraction(
                 tile_path=tile_path,
                 text_layer_path=text_layer_path,
                 output_path=out_path,
                 raw_output_path=raw_out_path,
                 meta_output_path=meta_out_path,
-                model=tile_model,
-                api_key=api_key,
-                referer=referer,
-                title=title,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                timeout_sec=timeout_sec,
+                config=_dc_replace(config, model=tile_model),
+                escalation=escalation,
                 allow_low_coherence=allow_low_coherence,
                 dry_run=dry_run,
                 no_cache=no_cache,
-                use_json_schema=use_json_schema,
                 prompt_output_path=prompt_out_path,
-                escalation_model=escalation_model,
-                escalation_coherence_threshold=escalation_coherence_threshold,
-                escalation_enabled=escalation_enabled,
-                provider=provider,
             )
 
             meta_payload: dict[str, Any] = {}
@@ -1463,31 +1464,37 @@ def main() -> None:
             poll_interval=args.batch_poll_interval,
         )
     else:
+        _ext_config = ExtractionConfig(
+            model=args.model,
+            api_key=api_key,
+            provider=args.provider,
+            referer=args.referer,
+            title=args.title,
+            temperature=args.temperature,
+            max_tokens=args.max_tokens,
+            timeout_sec=args.timeout_sec,
+            use_json_schema=args.use_json_schema,
+        )
+        _esc_config = EscalationConfig(
+            enabled=args.escalation,
+            model=args.escalation_model,
+            coherence_threshold=args.escalation_coherence_threshold,
+        )
         exit_code = run_batch(
             tiles_dir=args.tiles_dir,
             text_layers_dir=args.text_layers_dir,
             out_dir=args.out_dir,
             tile_globs=tile_globs,
             max_tiles=args.max_tiles,
-            model=args.model,
-            api_key=api_key,
-            referer=args.referer,
-            title=args.title,
-            temperature=args.temperature,
-            max_tokens=args.max_tokens,
-            timeout_sec=args.timeout_sec,
+            config=_ext_config,
+            escalation=_esc_config,
             allow_low_coherence=args.allow_low_coherence,
             dry_run=args.dry_run,
             no_cache=args.no_cache,
-            use_json_schema=args.use_json_schema,
             prompt_dir=args.prompt_dir,
             fail_fast=args.fail_fast,
             summary_out=summary_out,
-            escalation_model=args.escalation_model,
-            escalation_coherence_threshold=args.escalation_coherence_threshold,
-            escalation_enabled=args.escalation,
             max_concurrency=args.max_concurrency,
-            provider=args.provider,
             manifest_path=args.manifest,
             model_fast=args.model_fast,
             model_standard=args.model_standard,

@@ -8,6 +8,10 @@ assembly, and deterministic checks. They can be overridden in the future by
 reading from environment variables or a project-level config file.
 """
 
+# Default extraction models.
+DEFAULT_EXTRACTION_MODEL: str = "google/gemini-2.5-flash-lite"
+DEFAULT_ESCALATION_MODEL: str = "google/gemini-3.1-flash-lite-preview"
+
 # Text-layer coherence floor for hybrid extraction viability.
 COHERENCE_THRESHOLD: float = 0.40
 

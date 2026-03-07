@@ -5,13 +5,13 @@ from __future__ import annotations
 import argparse
 import html
 import json
-import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from ..utils.parsing import parse_station
+from ..extraction.package_contract import TILE_ID_PATTERN
+from ..utils.parsing import parse_station, to_float as _to_float
 
 UTILITIES = ("SD", "SS", "W")
 UTILITY_LABELS = {
@@ -20,7 +20,6 @@ UTILITY_LABELS = {
     "W": "Water",
 }
 SEVERITY_ORDER = {"error": 0, "warning": 1, "info": 2}
-TILE_ID_PATTERN = re.compile(r"p(?P<page>\d+)_(?:r\d+_c\d+|a\d+)", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -33,21 +32,6 @@ class ReportArtifacts:
 def _escape(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
-
-def _to_float(value: Any) -> float | None:
-    if isinstance(value, bool):
-        return None
-    if isinstance(value, (int, float)):
-        return float(value)
-    if isinstance(value, str):
-        stripped = value.strip()
-        if not stripped:
-            return None
-        try:
-            return float(stripped)
-        except ValueError:
-            return None
-    return None
 
 
 def _to_int_list(values: Any) -> list[int]:
