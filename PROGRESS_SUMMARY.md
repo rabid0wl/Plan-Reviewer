@@ -20,6 +20,7 @@
 ### Validation
 - `python -m pytest tests/ -q` → **91/91 passed** (55 existing + 36 new, 1.32s).
 - No behavioral changes — pure refactoring.
+- README.md updated to reflect current pipeline state, models, and features.
 
 ## 2026-03-05
 

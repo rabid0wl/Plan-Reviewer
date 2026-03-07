@@ -84,6 +84,14 @@ Comprehensive code audit identified 8 issues across the codebase after completin
 **Pipeline smoke tests:**
 - New `tests/test_pipeline.py` — 36 tests covering phase detection, utility detection, graph round-trip, run ID format, and directory layout.
 
+**README.md updated:**
+- Added `python -m src.pipeline` as primary entry point with `--resume` docs.
+- Updated model references to `google/gemini-2.5-flash-lite`.
+- Added Key Design Decisions section (tiling rationale, model routing, dual confidence, centralized config).
+- Fixed Repository Notes (References/ and output/ are tracked, not gitignored).
+- Updated test command to `python -m pytest tests/ -q` (91 tests).
+- Individual CLI commands moved under "Advanced" subsection.
+
 ### Validation
 - `python -m pytest tests/ -q` → **91/91 passed** (55 existing + 36 new, 1.32s).
 - No behavioral changes — pure refactoring.
