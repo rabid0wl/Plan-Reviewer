@@ -1,5 +1,51 @@
 # Plan Reviewer - Progress Summary
 
+## 2026-03-07
+
+### Summary
+- Post-Phase D refactoring: addressed 6 of 8 audit findings (3 high, 3 medium priority).
+- Centralized coherence thresholds from 3 files into `src/config.py`.
+- Wired up dead `TilingStrategy` enum into `tile_pdf()` signature.
+- Deduplicated page number extraction to canonical `package_contract.page_number_from_tile_id()`.
+- Extracted helpers from `_compute_content_regions()` and `run_batch()` to reduce function size.
+- Added 36 pipeline smoke tests covering phase detection, utility detection, graph round-trip.
+
+### Milestones
+- New file: `tests/test_pipeline.py` — 36 tests for `src/pipeline.py` internals
+- Config source of truth: `src/config.py` now holds `COHERENCE_THRESHOLD`, `ESCALATION_COHERENCE_THRESHOLD`, `MODEL_TIER_COHERENCE_OVERRIDE`
+- `tile_pdf()` uses `strategy: TilingStrategy` enum instead of `adaptive: bool`
+- `_build_occupancy_grid()` and `_flood_fill_regions()` extracted from adaptive tiling
+- `_build_batch_summary()` extracted from `run_batch()`
+
+### Validation
+- `python -m pytest tests/ -q` → **91/91 passed** (55 existing + 36 new, 1.32s).
+- No behavioral changes — pure refactoring.
+
+## 2026-03-05
+
+### Summary
+- Completed comprehensive codebase review with CrossBeam reference analysis and cutting-edge research.
+- Implemented all 4 improvement phases (A through D) from the review plan.
+- Phase A: prompt caching, dual confidence dimensions, coherence propagation into graph.
+- Phase B: Anthropic Batch API support, Instructor structured output, model routing by sheet complexity.
+- Phase C: single-command pipeline runner with 7-phase orchestration, `--resume` for crash recovery, title block crop.
+- Phase D: content-aware adaptive tiling via PyMuPDF `get_drawings()` + flood-fill connected-component clustering.
+- Default model set to `google/gemini-2.5-flash-lite`; escalation model set to `google/gemini-3.1-flash-lite-preview`.
+
+### Milestones
+- New file: `src/pipeline.py` — end-to-end pipeline: `python -m src.pipeline --pdf plans.pdf --output-dir ./runs`
+- New capabilities: prompt caching (Anthropic), batch API (50% discount), Instructor validation, model routing
+- New: `TitleBlockCrop` in tiler — dedicated bottom-right crop for fast sheet classification
+- New: dual confidence on findings (extraction_confidence + check_confidence) with color-coded report columns
+- New: coherence propagation — `min_source_coherence` on graph nodes, `source_coherence` on edges
+- New: adaptive tiling (`--adaptive`) — content-aware region detection, fewer wasted tiles, better crop boundaries
+- New: `TilingStrategy` enum, tile ID format `pN_aM` for adaptive tiles (all downstream regex patterns updated)
+- Dependencies added: `anthropic>=0.40.0`, `instructor>=1.7.0`
+
+### Validation
+- `python -m pytest tests/ -q` → **55/55 passed** (1.26s).
+- No regressions across all four implementation phases.
+
 ## 2026-02-27
 
 ### Summary

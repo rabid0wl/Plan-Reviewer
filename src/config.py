@@ -8,8 +8,14 @@ assembly, and deterministic checks. They can be overridden in the future by
 reading from environment variables or a project-level config file.
 """
 
-# Text-layer coherence threshold for hybrid extraction viability.
+# Text-layer coherence floor for hybrid extraction viability.
 COHERENCE_THRESHOLD: float = 0.40
+
+# Coherence threshold below which extraction escalates to a stronger model.
+ESCALATION_COHERENCE_THRESHOLD: float = 0.70
+
+# Coherence threshold below which model tier is bumped to "premium".
+MODEL_TIER_COHERENCE_OVERRIDE: float = 0.50
 
 # Crown/invert heuristics for gravity systems.
 CROWN_SPREAD_BUFFER_FT: float = 0.5

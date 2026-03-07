@@ -3,11 +3,17 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
+from enum import Enum
 from pathlib import Path
 from typing import Any
 
 
 BBox = tuple[float, float, float, float]
+
+
+class TilingStrategy(str, Enum):
+    GRID = "grid"
+    ADAPTIVE = "adaptive"
 
 
 @dataclass
@@ -75,6 +81,22 @@ class TextLayer:
 
 
 @dataclass
+class TitleBlockCrop:
+    """Metadata for a single title block image crop."""
+
+    page_number: int
+    image_path: Path
+    image_width_px: int
+    image_height_px: int
+    clip_rect: BBox
+
+    def to_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["image_path"] = str(self.image_path)
+        return data
+
+
+@dataclass
 class SheetInfo:
     """Manifest metadata for a sheet/page."""
 
@@ -84,7 +106,13 @@ class SheetInfo:
     description: str | None
     utility_types: list[str]
     needs_deep_extraction: bool
+    model_tier: str = "standard"  # "fast", "standard", or "premium"
+    title_block_image_path: Path | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        data = asdict(self)
+        data["title_block_image_path"] = (
+            str(self.title_block_image_path) if self.title_block_image_path is not None else None
+        )
+        return data
 

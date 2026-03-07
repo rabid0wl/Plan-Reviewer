@@ -23,8 +23,8 @@ from .merge import MergedStructure, merge_structures
 
 logger = logging.getLogger(__name__)
 
-_TILE_JSON_RE = re.compile(r"^p\d+_r\d+_c\d+\.json$")
-_TILE_META_RE = re.compile(r"^p\d+_r\d+_c\d+\.json\.meta\.json$")
+_TILE_JSON_RE = re.compile(r"^p\d+_(?:r\d+_c\d+|a\d+)\.json$")
+_TILE_META_RE = re.compile(r"^p\d+_(?:r\d+_c\d+|a\d+)\.json\.meta\.json$")
 
 _CONFIDENCE_ORDER = {"none": 0, "low": 1, "medium": 2, "high": 3}
 _REFERENCE_SHEET_TYPES: frozenset[str] = frozenset({"signing_striping"})
@@ -571,10 +571,25 @@ def _orient_gravity_edges(graph: nx.DiGraph, invert_tolerance: float = 0.01) -> 
         graph.add_edge(v, u, **data)
 
 
+def _min_source_coherence(
+    source_tile_ids: list[str],
+    tile_meta_by_id: dict[str, dict[str, Any]],
+) -> float:
+    """Return the minimum coherence_score across all source tiles; defaults to 1.0 if missing."""
+    scores: list[float] = []
+    for tile_id in source_tile_ids:
+        meta = tile_meta_by_id.get(tile_id, {})
+        score = meta.get("coherence_score")
+        if isinstance(score, (int, float)):
+            scores.append(float(score))
+    return min(scores) if scores else 1.0
+
+
 def _add_structure_nodes(
     graph: nx.DiGraph,
     *,
     merged_nodes: list[MergedStructure],
+    tile_meta_by_id: dict[str, dict[str, Any]] | None = None,
 ) -> tuple[dict[int, list[tuple[str, dict[str, Any]]]], list[tuple[str, dict[str, Any]]]]:
     """
     Populate structure nodes from merged structures and pre-compute candidate lookups.
@@ -585,8 +600,10 @@ def _add_structure_nodes(
     """
     node_candidates_by_page: dict[int, list[tuple[str, dict[str, Any]]]] = {}
     all_candidates: list[tuple[str, dict[str, Any]]] = []
+    _tile_meta = tile_meta_by_id or {}
 
     for item in merged_nodes:
+        min_coherence = _min_source_coherence(item.source_tile_ids, _tile_meta)
         graph.add_node(
             item.node_id,
             kind="structure",
@@ -611,6 +628,7 @@ def _add_structure_nodes(
             sanitized=item.sanitized,
             variants_count=item.variants_count,
             rim_elevation_values=item.rim_elevation_values,
+            min_source_coherence=min_coherence,
         )
 
         data = dict(graph.nodes[item.node_id])
@@ -718,6 +736,9 @@ def _add_pipe_edges(
                 )
                 to_conf = "none"
 
+            tile_coherence_score = float(
+                tile_meta.get("coherence_score") if isinstance(tile_meta.get("coherence_score"), (int, float)) else 1.0
+            )
             graph.add_edge(
                 from_node,
                 to_node,
@@ -741,6 +762,7 @@ def _add_pipe_edges(
                 source_text_ids=sorted({int(v) for v in pipe.source_text_ids}),
                 sanitized=tile_sanitized,
                 is_reference_only=is_reference_tile,
+                source_coherence=tile_coherence_score,
             )
 
 
@@ -770,6 +792,7 @@ def build_utility_graph(
     node_candidates_by_page, all_candidates = _add_structure_nodes(
         graph,
         merged_nodes=merged_nodes,
+        tile_meta_by_id=tile_meta_by_id or {},
     )
 
     _add_pipe_edges(

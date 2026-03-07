@@ -20,7 +20,7 @@ UTILITY_LABELS = {
     "W": "Water",
 }
 SEVERITY_ORDER = {"error": 0, "warning": 1, "info": 2}
-TILE_ID_PATTERN = re.compile(r"p(?P<page>\d+)_r\d+_c\d+", re.IGNORECASE)
+TILE_ID_PATTERN = re.compile(r"p(?P<page>\d+)_(?:r\d+_c\d+|a\d+)", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -251,12 +251,16 @@ def _collect_findings(artifacts: ReportArtifacts) -> list[dict[str, Any]]:
             if not isinstance(finding, dict):
                 continue
             severity = str(finding.get("severity") or "info").lower()
+            extraction_confidence = str(finding.get("extraction_confidence") or "high").lower()
+            check_confidence = str(finding.get("check_confidence") or "high").lower()
             row = {
                 "severity": severity,
                 "utility": utility_label,
                 "finding_type": str(finding.get("finding_type") or "-"),
                 "description": str(finding.get("description") or "-"),
                 "source_sheets": _to_int_list(finding.get("source_sheets")),
+                "extraction_confidence": extraction_confidence,
+                "check_confidence": check_confidence,
             }
             rows.append(row)
 
@@ -269,6 +273,12 @@ def _collect_findings(artifacts: ReportArtifacts) -> list[dict[str, Any]]:
         )
     )
     return rows
+
+
+def _confidence_class(level: str) -> str:
+    """Map a confidence level to a CSS class name."""
+    mapping = {"high": "conf-high", "medium": "conf-medium", "low": "conf-low"}
+    return mapping.get(level.lower(), "conf-high")
 
 
 def _count_by_severity(findings: list[dict[str, Any]]) -> dict[str, int]:
@@ -444,6 +454,8 @@ def _render_findings_table(findings_rows: list[dict[str, Any]]) -> str:
             "<th>Type</th>",
             "<th>Description</th>",
             "<th>Sheet(s)</th>",
+            "<th>Extraction Conf.</th>",
+            "<th>Check Conf.</th>",
         ]
     )
     body_parts: list[str] = []
@@ -451,6 +463,11 @@ def _render_findings_table(findings_rows: list[dict[str, Any]]) -> str:
         severity = str(row.get("severity") or "info").lower()
         severity_label = severity.upper()
         sheets = _format_pages(list(row.get("source_sheets") or []))
+        extraction_conf = str(row.get("extraction_confidence") or "high").lower()
+        check_conf = str(row.get("check_confidence") or "high").lower()
+        extraction_conf_class = _confidence_class(extraction_conf)
+        check_conf_class = _confidence_class(check_conf)
+        verify_marker = " [VERIFY]" if extraction_conf == "low" else ""
         body_parts.append(
             "".join(
                 [
@@ -458,8 +475,10 @@ def _render_findings_table(findings_rows: list[dict[str, Any]]) -> str:
                     f"<td>{_escape(severity_label)}</td>",
                     f"<td>{_escape(row.get('utility', '-'))}</td>",
                     f"<td>{_escape(row.get('finding_type', '-'))}</td>",
-                    f"<td>{_escape(row.get('description', '-'))}</td>",
+                    f"<td>{_escape(row.get('description', '-'))}{_escape(verify_marker)}</td>",
                     f"<td>{_escape(sheets)}</td>",
+                    f'<td class="{_escape(extraction_conf_class)}">{_escape(extraction_conf.upper())}</td>',
+                    f'<td class="{_escape(check_conf_class)}">{_escape(check_conf.upper())}</td>',
                     "</tr>",
                 ]
             )
@@ -779,6 +798,9 @@ def render_html_report(
     .findings-table .sev-error td {{ background: var(--error-bg); }}
     .findings-table .sev-warning td {{ background: var(--warning-bg); }}
     .findings-table .sev-info td {{ background: var(--info-bg); }}
+    .conf-high {{ color: #166534; font-weight: 600; }}
+    .conf-medium {{ color: #92400e; font-weight: 600; }}
+    .conf-low {{ color: #991b1b; font-weight: 600; }}
     .empty {{
       color: var(--muted);
       font-style: italic;

@@ -17,17 +17,31 @@ import requests
 from dotenv import load_dotenv
 from pydantic import ValidationError
 
-from .prompts import build_hybrid_prompt
+from .package_contract import page_number_from_tile_id
+from .prompts import build_hybrid_prompt, build_hybrid_prompt_split
 from .schemas import TileExtraction, _WATER_STRUCTURE_TYPES, _normalize_structure_type
+
+try:
+    import anthropic as _anthropic_module
+except ImportError:  # pragma: no cover
+    _anthropic_module = None  # type: ignore[assignment]
+
+try:
+    import instructor as _instructor_module
+except ImportError:  # pragma: no cover
+    _instructor_module = None  # type: ignore[assignment]
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "google/gemini-3-flash-preview"
-DEFAULT_ESCALATION_MODEL = "google/gemini-3-flash-preview"
-DEFAULT_ESCALATION_COHERENCE_THRESHOLD = 0.70
+DEFAULT_MODEL = "google/gemini-2.5-flash-lite"
+DEFAULT_ESCALATION_MODEL = "google/gemini-3.1-flash-lite-preview"
+from ..config import ESCALATION_COHERENCE_THRESHOLD as DEFAULT_ESCALATION_COHERENCE_THRESHOLD
 CACHE_SCHEMA_VERSION = "hybrid-cache-v2"
-_TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_r\d+_c\d+$", re.IGNORECASE)
+PROVIDER_OPENROUTER = "openrouter"
+PROVIDER_ANTHROPIC = "anthropic"
+# Accepts both grid tiles (pN_rX_cY) and adaptive tiles (pN_aM).
+_TILE_ID_PAGE_RE = re.compile(r"^p(?P<page>\d+)_(?:r\d+_c\d+|a\d+)$", re.IGNORECASE)
 _STRUCTURED_NONE = "none"
 _STRUCTURED_JSON_OBJECT = "json_object"
 _STRUCTURED_JSON_SCHEMA = "json_schema"
@@ -141,16 +155,6 @@ def _coerce_int(value: Any) -> int | None:
         return None
 
 
-def _page_number_from_tile_id(tile_id: Any) -> int | None:
-    """Extract page number from tile ids shaped like pNN_rX_cY."""
-    if not isinstance(tile_id, str):
-        return None
-    match = _TILE_ID_PAGE_RE.match(tile_id.strip())
-    if not match:
-        return None
-    return _coerce_int(match.group("page"))
-
-
 def _pre_correct_tile_metadata(payload: dict[str, Any], text_layer: dict[str, Any]) -> None:
     """Patch null/missing tile metadata from authoritative text-layer values."""
     authoritative_tile_id = str(text_layer.get("tile_id", "")).strip()
@@ -159,9 +163,9 @@ def _pre_correct_tile_metadata(payload: dict[str, Any], text_layer: dict[str, An
 
     authoritative_page_number = _coerce_int(text_layer.get("page_number"))
     if authoritative_page_number is None:
-        authoritative_page_number = _page_number_from_tile_id(authoritative_tile_id)
+        authoritative_page_number = page_number_from_tile_id(authoritative_tile_id)
     if authoritative_page_number is None:
-        authoritative_page_number = _page_number_from_tile_id(payload.get("tile_id"))
+        authoritative_page_number = page_number_from_tile_id(str(payload.get("tile_id", "")))
 
     raw_page_number = payload.get("page_number")
     if (
@@ -417,6 +421,238 @@ def call_openrouter_vision(
     return _flatten_message_content(content), response_json
 
 
+def call_anthropic_vision(
+    *,
+    api_key: str,
+    model: str,
+    system_prompt: str,
+    user_prompt: str,
+    image_data_url: str,
+    temperature: float,
+    max_tokens: int,
+    timeout_sec: int,
+) -> tuple[str, dict[str, Any]]:
+    """Call the Anthropic API directly with prompt caching on the system message.
+
+    The system_prompt is sent with ``cache_control: {"type": "ephemeral"}`` so that
+    the Claude API can cache it across tile calls that share the same schema and
+    instructions, reducing both latency and cost.
+
+    Args:
+        api_key: Anthropic API key.
+        model: Anthropic model identifier (e.g. ``claude-opus-4-6``).
+        system_prompt: Cacheable system-level instructions and schema definition.
+        user_prompt: Per-tile text layer data and extraction instruction.
+        image_data_url: Base64-encoded data URL of the tile PNG image.
+        temperature: Sampling temperature for the model.
+        max_tokens: Maximum tokens in the response.
+        timeout_sec: Request timeout in seconds.
+
+    Returns:
+        A 2-tuple of ``(raw_text, response_dict)`` matching the signature of
+        ``call_openrouter_vision()``.
+
+    Raises:
+        ImportError: If the ``anthropic`` package is not installed.
+        anthropic.APIError: On non-retryable API errors.
+    """
+    if _anthropic_module is None:
+        raise ImportError(
+            "The 'anthropic' package is required when using provider='anthropic'. "
+            "Install it with: pip install 'anthropic>=0.40.0'"
+        )
+
+    # Parse media type and base64 payload from the data URL produced by
+    # _image_bytes_to_data_url().  Format is "data:<media_type>;base64,<data>".
+    if "," in image_data_url:
+        header, b64_data = image_data_url.split(",", 1)
+        media_type = header.split(";")[0].replace("data:", "") if ";" in header else "image/png"
+    else:
+        b64_data = image_data_url
+        media_type = "image/png"
+
+    client = _anthropic_module.Anthropic(api_key=api_key)
+
+    message = client.messages.create(
+        model=model,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        timeout=timeout_sec,
+        system=[
+            {
+                "type": "text",
+                "text": system_prompt,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ],
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": media_type,
+                            "data": b64_data,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": user_prompt,
+                    },
+                ],
+            }
+        ],
+    )
+
+    # Flatten all text content blocks into a single string.
+    raw_text_parts: list[str] = []
+    for block in message.content:
+        if hasattr(block, "text"):
+            raw_text_parts.append(block.text)
+    raw_text = "\n".join(raw_text_parts).strip()
+
+    # Build a response dict compatible with the existing meta/usage reporting path.
+    response_dict: dict[str, Any] = {
+        "id": message.id,
+        "model": message.model,
+        "stop_reason": message.stop_reason,
+        "usage": {
+            "prompt_tokens": message.usage.input_tokens,
+            "completion_tokens": message.usage.output_tokens,
+            "total_tokens": message.usage.input_tokens + message.usage.output_tokens,
+        },
+        "_response_format_type": _STRUCTURED_NONE,
+        "_provider": PROVIDER_ANTHROPIC,
+    }
+
+    # Capture cache usage fields when present (Anthropic SDK exposes them on usage).
+    usage_obj = message.usage
+    if hasattr(usage_obj, "cache_creation_input_tokens"):
+        response_dict["usage"]["cache_creation_input_tokens"] = (
+            usage_obj.cache_creation_input_tokens
+        )
+    if hasattr(usage_obj, "cache_read_input_tokens"):
+        response_dict["usage"]["cache_read_input_tokens"] = (
+            usage_obj.cache_read_input_tokens
+        )
+
+    return raw_text, response_dict
+
+
+def call_anthropic_vision_structured(
+    *,
+    api_key: str,
+    model: str,
+    system_prompt: str,
+    user_prompt: str,
+    image_data_url: str,
+    temperature: float,
+    max_tokens: int,
+    timeout_sec: int,
+) -> tuple[TileExtraction, dict[str, Any]]:
+    """Call the Anthropic API via instructor for automatic Pydantic validation.
+
+    Uses instructor to patch the Anthropic client so that the response is
+    automatically parsed and validated against ``TileExtraction``.  Up to 2
+    automatic retries are performed by instructor on validation failure before
+    raising an exception.
+
+    The system_prompt is sent with ``cache_control: {"type": "ephemeral"}``
+    matching the behaviour of ``call_anthropic_vision()``.
+
+    Args:
+        api_key: Anthropic API key.
+        model: Anthropic model identifier (e.g. ``claude-opus-4-6``).
+        system_prompt: Cacheable system-level instructions and schema definition.
+        user_prompt: Per-tile text layer data and extraction instruction.
+        image_data_url: Base64-encoded data URL of the tile PNG image.
+        temperature: Sampling temperature for the model.
+        max_tokens: Maximum tokens in the response.
+        timeout_sec: Request timeout in seconds.
+
+    Returns:
+        A 2-tuple of ``(extraction, response_dict)`` where ``extraction`` is a
+        validated ``TileExtraction`` instance and ``response_dict`` carries
+        usage metadata compatible with the rest of the pipeline.
+
+    Raises:
+        ImportError: If either ``anthropic`` or ``instructor`` is not installed.
+        instructor.exceptions.InstructorRetryException: If validation still
+            fails after the configured number of retries.
+        anthropic.APIError: On non-retryable API errors.
+    """
+    if _anthropic_module is None:
+        raise ImportError(
+            "The 'anthropic' package is required when using provider='anthropic'. "
+            "Install it with: pip install 'anthropic>=0.40.0'"
+        )
+    if _instructor_module is None:
+        raise ImportError(
+            "The 'instructor' package is required for structured output. "
+            "Install it with: pip install 'instructor>=1.7.0'"
+        )
+
+    # Parse media type and base64 payload from the data URL.
+    if "," in image_data_url:
+        header, b64_data = image_data_url.split(",", 1)
+        media_type = header.split(";")[0].replace("data:", "") if ";" in header else "image/png"
+    else:
+        b64_data = image_data_url
+        media_type = "image/png"
+
+    client = _anthropic_module.Anthropic(api_key=api_key)
+    instructor_client = _instructor_module.from_anthropic(client)
+
+    extraction: TileExtraction = instructor_client.messages.create(
+        model=model,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        timeout=timeout_sec,
+        max_retries=2,
+        response_model=TileExtraction,
+        system=[
+            {
+                "type": "text",
+                "text": system_prompt,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ],
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": media_type,
+                            "data": b64_data,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": user_prompt,
+                    },
+                ],
+            }
+        ],
+    )
+
+    # instructor returns the validated model directly; usage is not surfaced the
+    # same way as the raw SDK response.  Build a minimal compatible response dict.
+    response_dict: dict[str, Any] = {
+        "model": model,
+        "usage": {},
+        "_response_format_type": _STRUCTURED_NONE,
+        "_provider": PROVIDER_ANTHROPIC,
+        "_via_instructor": True,
+    }
+
+    return extraction, response_dict
+
+
 def run_hybrid_extraction(
     *,
     tile_path: Path,
@@ -442,6 +678,8 @@ def run_hybrid_extraction(
     use_json_schema: bool = True,
     attempted_models: list[str] | None = None,
     escalation_reason: str | None = None,
+    provider: str = PROVIDER_OPENROUTER,
+    use_instructor: bool = True,
     _escalated: bool = False,
 ) -> int:
     """Execute one hybrid extraction call and persist outputs."""
@@ -515,6 +753,8 @@ def run_hybrid_extraction(
             use_json_schema=use_json_schema,
             attempted_models=attempt_chain,
             escalation_reason=reason,
+            provider=provider,
+            use_instructor=use_instructor,
             _escalated=True,
         )
 
@@ -539,7 +779,17 @@ def run_hybrid_extraction(
             json.dump(meta_payload, f, indent=2, ensure_ascii=False)
         return 0
 
-    prompt = build_hybrid_prompt(text_layer)
+    # Build prompts.  For the Anthropic provider we keep the split form so the
+    # system message can be sent with cache_control.  For OpenRouter we use the
+    # legacy combined prompt string.
+    if provider == PROVIDER_ANTHROPIC:
+        system_prompt, user_prompt = build_hybrid_prompt_split(text_layer)
+        prompt = system_prompt + "\n\n" + user_prompt  # combined string for cache-key / dry-run
+    else:
+        prompt = build_hybrid_prompt(text_layer)
+        system_prompt = ""
+        user_prompt = ""
+
     if prompt_output_path:
         prompt_output_path.parent.mkdir(parents=True, exist_ok=True)
         prompt_output_path.write_text(prompt, encoding="utf-8")
@@ -599,20 +849,132 @@ def run_hybrid_extraction(
         return 0
 
     image_data_url = _image_bytes_to_data_url(image_bytes)
+
+    # --- instructor-backed Anthropic path ---
+    _use_instructor_path = (
+        provider == PROVIDER_ANTHROPIC
+        and use_instructor
+        and _instructor_module is not None
+    )
+    if _use_instructor_path:
+        try:
+            extraction, response_json = call_anthropic_vision_structured(
+                api_key=api_key,
+                model=model,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                image_data_url=image_data_url,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                timeout_sec=timeout_sec,
+            )
+        except Exception as _instructor_exc:
+            # Instructor failed (e.g. exhausted retries).  Log and fall through to
+            # the manual parsing path below.
+            logger.warning(
+                "instructor path failed for tile %s (%s); falling back to manual parsing.",
+                tile_id,
+                _instructor_exc.__class__.__name__,
+            )
+            _use_instructor_path = False
+
+        if _use_instructor_path:
+            # instructor returned a validated TileExtraction; write raw JSON and meta.
+            raw_output_path.parent.mkdir(parents=True, exist_ok=True)
+            raw_output_path.write_text(extraction.model_dump_json(), encoding="utf-8")
+
+            # Post-validate tile metadata correctness (same logic as manual path).
+            expected_tile_id = str(text_layer.get("tile_id", extraction.tile_id))
+            expected_page_number = _coerce_int(text_layer.get("page_number"))
+            if expected_page_number is None:
+                expected_page_number = page_number_from_tile_id(expected_tile_id)
+            if expected_page_number is None:
+                expected_page_number = extraction.page_number
+            corrected_fields: dict[str, Any] = {}
+            if extraction.tile_id != expected_tile_id:
+                corrected_fields["tile_id"] = expected_tile_id
+            if extraction.page_number != expected_page_number:
+                corrected_fields["page_number"] = expected_page_number
+            if corrected_fields:
+                logger.warning(
+                    "Model returned mismatched tile metadata; corrected fields: %s",
+                    ", ".join(sorted(corrected_fields.keys())),
+                )
+                extraction = extraction.model_copy(update=corrected_fields)
+
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with output_path.open("w", encoding="utf-8") as f:
+                json.dump(extraction.model_dump(), f, indent=2, ensure_ascii=False)
+
+            usage = response_json.get("usage", {})
+            meta_output_path.parent.mkdir(parents=True, exist_ok=True)
+            with meta_output_path.open("w", encoding="utf-8") as f:
+                json.dump(
+                    {
+                        "status": "ok",
+                        **_meta_common(),
+                        "prompt_chars": len(prompt),
+                        "text_items_count": len(text_layer.get("items", [])),
+                        "structures_count": len(extraction.structures),
+                        "pipes_count": len(extraction.pipes),
+                        "callouts_count": len(extraction.callouts),
+                        "usage": usage,
+                        "response_format_type": response_json.get(
+                            "_response_format_type", _STRUCTURED_NONE
+                        ),
+                        "corrected_fields": sorted(corrected_fields.keys()),
+                        "sanitized": False,
+                        "dropped_invalid_counts": {
+                            "structures": 0,
+                            "inverts": 0,
+                            "pipes": 0,
+                            "callouts": 0,
+                        },
+                        "cache_key": cache_key,
+                        "cache_hit": False,
+                        "via_instructor": True,
+                    },
+                    f,
+                    indent=2,
+                    ensure_ascii=False,
+                )
+
+            logger.info(
+                "Extraction complete for %s (instructor): structures=%s pipes=%s callouts=%s",
+                extraction.tile_id,
+                len(extraction.structures),
+                len(extraction.pipes),
+                len(extraction.callouts),
+            )
+            return 0
+
+    # --- manual parsing path (OpenRouter, or Anthropic without instructor) ---
     try:
-        raw_text, response_json = call_openrouter_vision(
-            api_key=api_key,
-            model=model,
-            prompt=prompt,
-            image_data_url=image_data_url,
-            referer=referer,
-            title=title,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            timeout_sec=timeout_sec,
-            use_structured_output=use_structured_output,
-            use_json_schema=use_json_schema,
-        )
+        if provider == PROVIDER_ANTHROPIC:
+            raw_text, response_json = call_anthropic_vision(
+                api_key=api_key,
+                model=model,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                image_data_url=image_data_url,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                timeout_sec=timeout_sec,
+            )
+        else:
+            raw_text, response_json = call_openrouter_vision(
+                api_key=api_key,
+                model=model,
+                prompt=prompt,
+                image_data_url=image_data_url,
+                referer=referer,
+                title=title,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                timeout_sec=timeout_sec,
+                use_structured_output=use_structured_output,
+                use_json_schema=use_json_schema,
+            )
     except Exception:
         escalated_exit_code = _run_escalation("api_call_error")
         if escalated_exit_code is not None:
@@ -715,7 +1077,7 @@ def run_hybrid_extraction(
     expected_tile_id = str(text_layer.get("tile_id", extraction.tile_id))
     expected_page_number = _coerce_int(text_layer.get("page_number"))
     if expected_page_number is None:
-        expected_page_number = _page_number_from_tile_id(expected_tile_id)
+        expected_page_number = page_number_from_tile_id(expected_tile_id)
     if expected_page_number is None:
         expected_page_number = extraction.page_number
     corrected_fields: dict[str, Any] = {}
@@ -814,10 +1176,25 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Enable/disable automatic model escalation.",
     )
     parser.add_argument(
+        "--provider",
+        type=str,
+        choices=[PROVIDER_OPENROUTER, PROVIDER_ANTHROPIC],
+        default=PROVIDER_OPENROUTER,
+        help=(
+            "API provider to use for vision extraction. "
+            "'openrouter' uses the OpenRouter HTTP API (default, backward compatible). "
+            "'anthropic' calls the Anthropic SDK directly with prompt caching on the system message."
+        ),
+    )
+    parser.add_argument(
         "--api-key-env",
         type=str,
-        default="OPENROUTER_API_KEY",
-        help="Environment variable name holding the OpenRouter API key.",
+        default=None,
+        help=(
+            "Environment variable name holding the API key. "
+            "Defaults to ANTHROPIC_API_KEY when --provider=anthropic, "
+            "OPENROUTER_API_KEY otherwise."
+        ),
     )
     parser.add_argument("--temperature", type=float, default=0.0, help="Model temperature.")
     parser.add_argument("--max-tokens", type=int, default=4096, help="Model max tokens.")
@@ -845,6 +1222,15 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Use response_format=json_schema with strict mode before json_object fallback.",
     )
     parser.add_argument(
+        "--no-instructor",
+        action="store_true",
+        default=False,
+        help=(
+            "Disable instructor-backed structured output for the Anthropic provider "
+            "and fall back to manual JSON parsing. Has no effect when --provider=openrouter."
+        ),
+    )
+    parser.add_argument(
         "--referer",
         type=str,
         default="https://planreviewer.local",
@@ -869,10 +1255,13 @@ def main() -> None:
     raw_out = args.raw_out or out_path.with_suffix(out_path.suffix + ".raw.txt")
     meta_out = args.meta_out or out_path.with_suffix(out_path.suffix + ".meta.json")
 
-    api_key = os.getenv(args.api_key_env, "")
+    api_key_env = args.api_key_env or (
+        "ANTHROPIC_API_KEY" if args.provider == PROVIDER_ANTHROPIC else "OPENROUTER_API_KEY"
+    )
+    api_key = os.getenv(api_key_env, "")
     if not args.dry_run and not api_key:
         raise SystemExit(
-            f"Missing API key in env var '{args.api_key_env}'. "
+            f"Missing API key in env var '{api_key_env}'. "
             "Set it in environment or .env before running."
         )
 
@@ -897,6 +1286,8 @@ def main() -> None:
         escalation_coherence_threshold=args.escalation_coherence_threshold,
         escalation_enabled=args.escalation,
         use_json_schema=args.use_json_schema,
+        provider=args.provider,
+        use_instructor=not args.no_instructor,
     )
     raise SystemExit(exit_code)
 

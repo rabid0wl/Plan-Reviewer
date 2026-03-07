@@ -15,6 +15,14 @@ Quick-reference for every architectural choice. Newest first.
 
 | # | Date | Decision | Reasoning | Status |
 |---|------|----------|-----------|--------|
+| D23 | 2026-03-07 | Post-Phase D refactoring: config centralization, enum wiring, dedup, function breakup, pipeline tests | Codebase audit found scattered thresholds (3 files), dead TilingStrategy enum, duplicate page-number extraction, and zero pipeline tests. Consolidated thresholds to config.py, wired enum into tile_pdf(), deduplicated to package_contract.py, extracted helpers from large functions, added 36 pipeline tests. | Adopted |
+| D22 | 2026-03-05 | Single-command pipeline runner with resume | Running 5+ CLI commands to process a plan set is error-prone and tedious. `src/pipeline.py` orchestrates all 7 phases end-to-end with `--resume` support for crash recovery. | Adopted |
+| D21 | 2026-03-05 | Title block crop for faster manifest building | Dedicated bottom-right corner crop (25% height x 35% width at 200 DPI) is cheaper and faster than processing full tiles for sheet classification. Stored as optional `title_block_image_path` on `SheetInfo`. | Adopted |
+| D20 | 2026-03-05 | Model routing by sheet complexity | Not all sheets need the same model. Fast (cover/notes/demo), standard (plan/profile), premium (detail/low-coherence). `_classify_model_tier()` in manifest, model routing in batch runner. | Adopted |
+| D19 | 2026-03-05 | Instructor library for structured output validation | Replaces ~150 lines of manual JSON parsing/sanitization/retry with Pydantic-validated LLM calls. `call_anthropic_vision_structured()` in `run_hybrid.py`. Falls back to manual parsing on failure. | Adopted |
+| D18 | 2026-03-05 | Dual confidence dimensions on findings | Single severity is insufficient. `extraction_confidence` (from coherence scores + sanitization) and `check_confidence` (from check type: deterministic vs heuristic) give reviewers actionable trust signals. | Adopted |
+| D17 | 2026-03-05 | Coherence propagation into graph nodes/edges | Coherence score from text layer was only used as a gate. Now propagated as `min_source_coherence` on nodes and `source_coherence` on edges for downstream confidence weighting. | Adopted |
+| D16 | 2026-03-05 | Prompt caching via system/user message split | Every tile sends the same ~2K-token schema prefix. Split into cacheable system message + per-tile user message. With `cache_control: ephemeral`, tiles 2-N read from cache at 0.1x cost (Anthropic provider). | Adopted |
 | D15 | 2026-02-25 | Enforce dual progress updates (`PROGRESS.md` + `PROGRESS_SUMMARY.md`) via policy + skill + gates | Progress docs were drifting across sessions. Added model-agnostic enforcement: root `AGENTS.md`, shared `progress-log` skill wrappers, pre-commit gate (`scripts/check_progress_docs.py` + `.githooks/pre-commit`), and CI workflow check. | Adopted |
 | D14 | 2026-02-22 | Pre-validate null tile metadata before Pydantic schema check | Model occasionally returns `page_number: null`. This fails Pydantic before post-validation corrector can run, losing the tile permanently. Fix: `_pre_correct_tile_metadata()` injects correct values from text_layer before first `model_validate()`. Also added `_page_number_from_tile_id()` as a second fallback when text_layer is also missing the field. | Validated |
 | D13 | 2026-02-22 | Tag signing_striping pipe edges as `is_reference_only`; suppress connectivity findings | SSM sheets show existing utilities for reference only — no station/slope/length. Pipes survive sanitization but generate false unanchored/dead_end findings and cross-corridor false matches. Tag edges at assembly, skip in `check_connectivity()`. Added page-level fallback via `_reference_only_pages()` for tiles misclassified as plan_view on an SSM page. | Validated |
@@ -44,6 +52,92 @@ Tracked here until resolved, then moved to Decisions Log.
 | ~~Q3~~ | ~~2026-02-21~~ | ~~Best data structure for cross-reference inventory?~~ | **RESOLVED → D7.** Graph: nodes=structures, edges=pipes. |
 | ~~Q4~~ | ~~2026-02-21~~ | ~~Profile extraction: how to handle SS/W label confusion?~~ | **RESOLVED → D6.** Text layer provides exact labels; vision no longer sole source. |
 | ~~Q5~~ | ~~2026-02-21~~ | ~~Can we skip ~30% of sheets (cover, gen notes, signing/striping) in extraction?~~ | **RESOLVED → D13.** Signing/striping sheets: still extract (structures correctly dropped by sanitizer, pipes kept), but tag edges `is_reference_only=True` and suppress connectivity findings. Net effect: SSM sheets cost ~$0.05/page but produce zero false findings. Cover/gen-notes sheets are already low-cost (few text items). Skip optimization is low-priority. |
+
+---
+
+## 2026-03-07 — Post-Phase D Refactoring
+
+### Context
+Comprehensive code audit identified 8 issues across the codebase after completing all 4 improvement phases. Addressed 6 items (3 high, 3 medium priority). 2 low-priority naming/style issues deferred.
+
+### Changes
+
+**Config centralization:**
+- `src/config.py` — Added `ESCALATION_COHERENCE_THRESHOLD` (0.70) and `MODEL_TIER_COHERENCE_OVERRIDE` (0.50) as named constants.
+- `src/extraction/run_hybrid.py` — Replaced inline `0.70` with import from config (aliased to preserve local name).
+- `src/intake/manifest.py` — Replaced inline `0.50` with import from config (aliased to preserve local name).
+
+**TilingStrategy enum wired up:**
+- `src/intake/tiler.py` — `tile_pdf()` parameter changed from `adaptive: bool = False` to `strategy: TilingStrategy = TilingStrategy.GRID`. CLI `--adaptive` flag converts to enum at call site.
+
+**Page number extraction deduplicated:**
+- Removed `_page_number_from_tile_id()` from `run_hybrid.py` and `_page_num_from_tile_stem()` from `run_hybrid_batch.py`.
+- Both now import `page_number_from_tile_id()` from `package_contract.py` (canonical source).
+
+**Error handling audit:**
+- All four target files (`run_hybrid.py`, `run_hybrid_batch.py`, `tiler.py`, `pipeline.py`) already use `logging` exclusively — no stray `print()` calls found.
+
+**Large function breakup:**
+- `src/intake/tiler.py` — Extracted `_build_occupancy_grid()` and `_flood_fill_regions()` from `_compute_content_regions()`.
+- `src/extraction/run_hybrid_batch.py` — Extracted `_build_batch_summary()` from `run_batch()`.
+
+**Pipeline smoke tests:**
+- New `tests/test_pipeline.py` — 36 tests covering phase detection, utility detection, graph round-trip, run ID format, and directory layout.
+
+### Validation
+- `python -m pytest tests/ -q` → **91/91 passed** (55 existing + 36 new, 1.32s).
+- No behavioral changes — pure refactoring.
+
+---
+
+## 2026-03-05 — Comprehensive Review & Phase A/B/C/D Implementation
+
+### Context
+Full codebase review, CrossBeam reference analysis, and cutting-edge research (vision models, batch APIs, prompt caching, structured output libraries). Identified 4 implementation phases; completed all 4 (A, B, C, D) in this session.
+
+### Phase A: Prompt Caching + Confidence Propagation
+**Files modified:**
+- `src/extraction/prompts.py` — Split monolithic prompt into `HYBRID_SYSTEM_PROMPT` (cacheable system message) + `build_hybrid_prompt_split()` returning `(system_prompt, user_prompt)` tuple. Backward-compatible `build_hybrid_prompt()` delegates to split version.
+- `src/extraction/run_hybrid.py` — Added `call_anthropic_vision()` with `cache_control: {"type": "ephemeral"}` on system message. Added `PROVIDER_ANTHROPIC` / `PROVIDER_OPENROUTER` constants, `--provider` CLI arg.
+- `src/graph/assembly.py` — `_add_structure_nodes()` now attaches `min_source_coherence` from tile meta. `_add_pipe_edges()` attaches `source_coherence`.
+- `src/graph/checks.py` — Added `extraction_confidence` and `check_confidence` fields to `Finding` dataclass. New helpers: `_extraction_conf_from_coherence()`, `_node_extraction_conf()`, `_edge_extraction_conf()`. Thresholds: high ≥ 0.70, medium ≥ 0.40.
+- `src/report/html_report.py` — Two new columns: "Extraction Conf." and "Check Conf." with color-coded CSS classes and `[VERIFY]` markers for low confidence.
+
+### Phase B: Batch API + Instructor + Model Routing
+**Files modified:**
+- `src/extraction/run_hybrid.py` — Added `call_anthropic_vision_structured()` using `instructor.from_anthropic()`. Guarded imports for `anthropic` and `instructor`. New `--no-instructor` flag.
+- `src/extraction/run_hybrid_batch.py` — Added `run_batch_api()` for Claude Batch API (collect → submit → poll → process). Model routing via `_build_page_to_model_tier()` from manifest. New CLI args: `--batch-api`, `--manifest`, `--model-fast/standard/premium`.
+- `src/intake/models.py` — Added `model_tier: str = "standard"` to `SheetInfo`.
+- `src/intake/manifest.py` — Added `_classify_model_tier()`: fast (cover/notes/demo), standard (plan/profile), premium (detail or coherence < 0.50).
+- `requirements.txt` — Added `anthropic>=0.40.0`, `instructor>=1.7.0`.
+
+### Phase C: Pipeline Runner + Title Block Crop
+**Files created:**
+- `src/pipeline.py` (892 lines) — Single-command orchestrator for all 7 phases. CLI: `--pdf`, `--output-dir`, `--utilities` (auto-detect), `--model`, `--provider`, `--dpi`, `--dry-run`, `--workers`, `--prefix`, `--resume`. Creates timestamped `run_YYYYMMDD_HHMMSS/` directories with `intake/`, `extractions/`, `graphs/`, `report/` subdirectories. Writes `run_metadata.json`. Phase detection for `--resume`: checks sentinel files (tiles_index.json, manifest.json, analysis_package.json, etc.) and skips completed phases.
+
+**Files modified:**
+- `src/intake/tiler.py` — Added `extract_title_block_crop()` (single page) and `extract_title_block_crops()` (batch). Crops bottom-right 25%×35% at 200 DPI. Returns `TitleBlockCrop` dataclass.
+- `src/intake/models.py` — Added `TitleBlockCrop` dataclass. Added `title_block_image_path: Path | None = None` to `SheetInfo`.
+- `src/intake/manifest.py` — Updated `build_manifest()` to accept optional `title_block_crops` list, stores crop path in each `SheetInfo`.
+
+### Phase D: Content-Aware Adaptive Tiling
+**Files modified:**
+- `src/intake/tiler.py` — Added `_compute_content_regions()`: uses `page.get_drawings()` + `page.get_text("dict")` to build a 24x16 boolean occupancy grid, runs stack-based flood-fill connected-component labeling, converts components to padded page-coordinate regions. Falls back to fixed grid if <2 or >8 regions found. Added `tile_page_adaptive()`: renders content regions as tiles with IDs `p{N}_a{M}`, falls back to `tile_page()` when adaptive returns None. Updated `tile_pdf()` with `adaptive: bool = False` parameter and `--adaptive` CLI flag.
+- `src/intake/models.py` — Added `TilingStrategy` enum (`GRID`, `ADAPTIVE`).
+- `src/graph/assembly.py` — Updated `_TILE_JSON_RE` and `_TILE_META_RE` regex patterns to accept both grid (`pN_rX_cY`) and adaptive (`pN_aM`) tile ID formats.
+- `src/report/html_report.py` — Updated `TILE_ID_PATTERN` regex to accept adaptive tile IDs.
+- `src/extraction/package_contract.py` — Updated `TILE_ID_PATTERN` for adaptive tile IDs.
+- `src/extraction/run_hybrid.py` — Updated `_TILE_ID_PAGE_RE` for adaptive tile IDs.
+
+### Model Configuration
+- Default model set to `google/gemini-2.5-flash-lite` (cheap, fast baseline).
+- Escalation model set to `google/gemini-3.1-flash-lite-preview` (used when coherence is low).
+- Anthropic models available as opt-in via `--provider anthropic` (requires API key).
+- Batch API and prompt caching features require Anthropic provider.
+
+### Validation
+- `python -m pytest tests/ -q` → **55/55 passed** (1.26s) after all four phases.
+- No regressions in any existing tests.
 
 ---
 

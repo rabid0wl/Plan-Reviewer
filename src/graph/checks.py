@@ -16,6 +16,10 @@ _STATION_DELTA_THRESHOLD_FT = _config.STATION_DELTA_THRESHOLD_FT
 _CROWN_CONTAMINATION_RATIO_THRESHOLD = _config.CROWN_CONTAMINATION_RATIO_THRESHOLD
 
 
+_EXTRACTION_CONF_HIGH_THRESHOLD: float = 0.70
+_EXTRACTION_CONF_MEDIUM_THRESHOLD: float = 0.40
+
+
 @dataclass(frozen=True)
 class Finding:
     """A single graph consistency finding."""
@@ -29,9 +33,47 @@ class Finding:
     edge_ids: list[str]
     expected_value: str | None = None
     actual_value: str | None = None
+    extraction_confidence: str = "high"
+    check_confidence: str = "high"
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+def _extraction_conf_from_coherence(coherence: float, *, has_sanitized: bool) -> str:
+    """Map a coherence score (and sanitization flag) to an extraction confidence label."""
+    if coherence >= _EXTRACTION_CONF_HIGH_THRESHOLD and not has_sanitized:
+        return "high"
+    if coherence >= _EXTRACTION_CONF_MEDIUM_THRESHOLD or has_sanitized:
+        return "medium"
+    return "low"
+
+
+def _node_extraction_conf(graph: nx.DiGraph, node_ids: list[str]) -> str:
+    """Compute extraction_confidence from the graph attributes of the given node IDs."""
+    min_coherence = 1.0
+    any_sanitized = False
+    for node_id in node_ids:
+        if not graph.has_node(node_id):
+            continue
+        node_data = graph.nodes[node_id]
+        coherence = node_data.get("min_source_coherence")
+        if isinstance(coherence, (int, float)):
+            min_coherence = min(min_coherence, float(coherence))
+        if bool(node_data.get("sanitized", False)):
+            any_sanitized = True
+    return _extraction_conf_from_coherence(min_coherence, has_sanitized=any_sanitized)
+
+
+def _edge_extraction_conf(graph: nx.DiGraph, u: str, v: str) -> str:
+    """Compute extraction_confidence from the edge's source_coherence attribute."""
+    if not graph.has_edge(u, v):
+        return "high"
+    edge_data = graph[u][v]
+    coherence = edge_data.get("source_coherence")
+    coherence_val = float(coherence) if isinstance(coherence, (int, float)) else 1.0
+    has_sanitized = bool(edge_data.get("sanitized", False))
+    return _extraction_conf_from_coherence(coherence_val, has_sanitized=has_sanitized)
 
 
 def _edge_id(u: str, v: str, data: dict[str, Any]) -> str:
@@ -144,6 +186,16 @@ def check_slope_consistency(graph: nx.DiGraph, tolerance: float = 0.0002) -> lis
         edge_flagged = bool(data.get("crown_contamination_candidate", False))
         from_crowns = graph.nodes[u].get("crown_suspects", [])
         to_crowns = graph.nodes[v].get("crown_suspects", [])
+        edge_extraction_conf = _edge_extraction_conf(graph, u, v)
+        node_extraction_conf = _node_extraction_conf(graph, [u, v])
+        # Use the worse of edge vs node confidence for the overall finding.
+        _conf_order = {"high": 2, "medium": 1, "low": 0}
+        combined_extraction_conf = (
+            edge_extraction_conf
+            if _conf_order.get(edge_extraction_conf, 2) <= _conf_order.get(node_extraction_conf, 2)
+            else node_extraction_conf
+        )
+
         if slope_ratio > _CROWN_CONTAMINATION_RATIO_THRESHOLD and (
             edge_flagged
             or (isinstance(from_crowns, list) and len(from_crowns) > 0)
@@ -164,6 +216,8 @@ def check_slope_consistency(graph: nx.DiGraph, tolerance: float = 0.0002) -> lis
                     edge_ids=[_edge_id(u, v, data)],
                     expected_value=f"{float(labeled_slope):.4f}",
                     actual_value=f"{calculated:.4f}",
+                    extraction_confidence=combined_extraction_conf,
+                    check_confidence="medium",
                 )
             )
             continue
@@ -182,6 +236,8 @@ def check_slope_consistency(graph: nx.DiGraph, tolerance: float = 0.0002) -> lis
                 edge_ids=[_edge_id(u, v, data)],
                 expected_value=f"{float(labeled_slope):.4f}",
                 actual_value=f"{calculated:.4f}",
+                extraction_confidence=combined_extraction_conf,
+                check_confidence="high",
             )
         )
     return findings
@@ -232,6 +288,8 @@ def check_pipe_size_consistency(
                 edge_ids=[],
                 expected_value=None,
                 actual_value=", ".join(sorted(sizes)),
+                extraction_confidence="high",
+                check_confidence="high",
             )
         )
     return findings
@@ -266,6 +324,8 @@ def check_elevation_consistency(
                 edge_ids=[],
                 expected_value=f"{min(rims):.2f}-{max(rims):.2f}",
                 actual_value=f"{rims}",
+                extraction_confidence=_node_extraction_conf(graph, [node_id]),
+                check_confidence="high",
             )
         )
     return findings
@@ -299,6 +359,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
                 source_text_ids=[],
                 node_ids=[],
                 edge_ids=[],
+                extraction_confidence="high",
+                check_confidence="medium",
             )
         )
         return findings
@@ -319,6 +381,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
                 source_text_ids=_unique_ints(list(data.get("source_text_ids", []))),
                 node_ids=[node_id],
                 edge_ids=[],
+                extraction_confidence=_node_extraction_conf(graph, [node_id]),
+                check_confidence="medium",
             )
         )
 
@@ -334,6 +398,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
                 source_text_ids=[],
                 node_ids=[],
                 edge_ids=[],
+                extraction_confidence="high",
+                check_confidence="medium",
             )
         )
 
@@ -351,6 +417,7 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
             data.get(field)
             for field in ("from_station", "to_station", "from_structure_hint", "to_structure_hint")
         )
+        pipe_extraction_conf = _edge_extraction_conf(graph, u, v)
         if not has_anchor_data:
             findings.append(
                 Finding(
@@ -364,6 +431,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
                     source_text_ids=_unique_ints(list(data.get("source_text_ids", []))),
                     node_ids=[u, v],
                     edge_ids=[_edge_id(u, v, data)],
+                    extraction_confidence=pipe_extraction_conf,
+                    check_confidence="low",
                 )
             )
             continue
@@ -376,6 +445,8 @@ def check_connectivity(graph: nx.DiGraph) -> list[Finding]:
                 source_text_ids=_unique_ints(list(data.get("source_text_ids", []))),
                 node_ids=[u, v],
                 edge_ids=[_edge_id(u, v, data)],
+                extraction_confidence=pipe_extraction_conf,
+                check_confidence="low",
             )
         )
     return findings
@@ -416,6 +487,8 @@ def check_flow_direction(graph: nx.DiGraph, invert_tolerance: float = 0.01) -> l
                 edge_ids=[_edge_id(u, v, data)],
                 expected_value=f"downstream <= {float(upstream):.2f}",
                 actual_value=f"{float(downstream):.2f}",
+                extraction_confidence=_node_extraction_conf(graph, [u, v]),
+                check_confidence="high",
             )
         )
     return findings

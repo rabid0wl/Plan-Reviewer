@@ -58,7 +58,9 @@ COMPACT_SCHEMA = """{
   "extraction_notes":"string|null"
 }"""
 
-HYBRID_EXTRACTION_PROMPT = """You are a civil engineering plan extraction agent. You will receive:
+# System-level instructions: schema definitions and extraction rules.
+# This portion is identical for every tile and is suitable for prompt caching.
+HYBRID_SYSTEM_PROMPT = """You are a civil engineering plan extraction agent. You will receive:
 1. An IMAGE of a tile (cropped section) from a civil improvement plan sheet
 2. A TEXT LAYER JSON containing all text strings found in this tile with exact positions
 
@@ -126,9 +128,12 @@ to a structure, that is NOT an invert.
 
 ## OUTPUT FORMAT
 Return valid JSON matching this exact schema:
-{schema}
+""" + COMPACT_SCHEMA + """
 
-## TEXT LAYER DATA
+Return ONLY the JSON output, no other text."""
+
+# Template for the per-tile user message. Uses str.format() with {text_layer_json}.
+_HYBRID_USER_PROMPT_TEMPLATE = """## TEXT LAYER DATA
 Each item has:
 - "id" = text_id used in source_text_ids
 - "t" = text content
@@ -141,10 +146,24 @@ Now examine the image and extract all structures, pipes, and callouts visible in
 Return ONLY the JSON output, no other text.
 """
 
+# Legacy combined prompt template kept for backward compatibility with OpenRouter path.
+# Concatenates the system instructions and user-message template.
+HYBRID_EXTRACTION_PROMPT = HYBRID_SYSTEM_PROMPT + "\n\n" + _HYBRID_USER_PROMPT_TEMPLATE
 
-def build_hybrid_prompt(text_layer: dict[str, Any]) -> str:
+
+def build_hybrid_prompt_split(text_layer: dict[str, Any]) -> tuple[str, str]:
     """
-    Build the complete extraction prompt with schema and tile text items.
+    Build the extraction prompt as a (system_prompt, user_prompt) tuple.
+
+    The system_prompt contains all schema definitions, extraction rules, and output
+    format instructions — content that is identical across every tile and is eligible
+    for Claude API prompt caching.
+
+    The user_prompt contains only the tile-specific text layer JSON data plus the
+    final extraction instruction, which varies per tile.
+
+    Returns:
+        A 2-tuple of (system_prompt, user_prompt).
     """
     raw_items = text_layer.get("items", [])
     slim_items = [
@@ -157,7 +176,20 @@ def build_hybrid_prompt(text_layer: dict[str, Any]) -> str:
         if "text_id" in item and "text" in item and "bbox_local" in item
     ]
 
-    return HYBRID_EXTRACTION_PROMPT.format(
-        schema=COMPACT_SCHEMA,
+    user_prompt = _HYBRID_USER_PROMPT_TEMPLATE.format(
         text_layer_json=json.dumps(slim_items, separators=(",", ":"), ensure_ascii=False),
     )
+    return HYBRID_SYSTEM_PROMPT, user_prompt
+
+
+def build_hybrid_prompt(text_layer: dict[str, Any]) -> str:
+    """
+    Build the complete extraction prompt with schema and tile text items.
+
+    This is the legacy combined prompt used by the OpenRouter path. Internally it
+    delegates to build_hybrid_prompt_split() and concatenates the two parts so that
+    the text layer content is injected once and the overall string is identical to
+    the previous implementation.
+    """
+    system_prompt, user_prompt = build_hybrid_prompt_split(text_layer)
+    return system_prompt + "\n\n" + user_prompt

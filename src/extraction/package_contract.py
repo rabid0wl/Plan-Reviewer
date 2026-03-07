@@ -14,7 +14,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from ..utils.io_json import sha256_file
 
 CONTRACT_VERSION = "preanalysis.v1"
-TILE_ID_PATTERN = re.compile(r"^p(?P<page>\d+)_r\d+_c\d+$", re.IGNORECASE)
+# Accepts both grid tiles (pN_rX_cY) and adaptive tiles (pN_aM).
+TILE_ID_PATTERN = re.compile(r"^p(?P<page>\d+)_(?:r\d+_c\d+|a\d+)$", re.IGNORECASE)
 
 
 class ArtifactStatus(str, Enum):

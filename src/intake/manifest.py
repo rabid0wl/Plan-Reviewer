@@ -10,7 +10,7 @@ from pathlib import Path
 
 import fitz
 
-from .models import SheetInfo
+from .models import SheetInfo, TitleBlockCrop
 
 logger = logging.getLogger(__name__)
 
@@ -60,6 +60,33 @@ def _extract_sheet_label(text: str) -> str | None:
     if not match:
         return None
     return f"{match.group(1)}-{match.group(2)}"
+
+
+_FAST_SHEET_TYPES: frozenset[str] = frozenset(
+    {"cover", "notes", "demolition", "erosion", "other", "signing_striping"}
+)
+_PREMIUM_SHEET_TYPES: frozenset[str] = frozenset({"detail"})
+from ..config import MODEL_TIER_COHERENCE_OVERRIDE as _MODEL_TIER_COHERENCE_OVERRIDE
+
+
+def _classify_model_tier(sheet_type: str, coherence_score: float) -> str:
+    """Return the model tier appropriate for this sheet.
+
+    Fast:    cover/notes/demolition/erosion/other/signing_striping — low annotation density.
+    Standard: plan_view/profile/grading — moderate complexity.
+    Premium:  detail — dense overlapping annotations.
+
+    Override: any sheet with coherence_score < 0.50 is bumped to "premium"
+              regardless of sheet_type, because low coherence indicates the
+              text layer is unreliable and vision must work harder.
+    """
+    if coherence_score < _MODEL_TIER_COHERENCE_OVERRIDE:
+        return "premium"
+    if sheet_type in _FAST_SHEET_TYPES:
+        return "fast"
+    if sheet_type in _PREMIUM_SHEET_TYPES:
+        return "premium"
+    return "standard"
 
 
 def _classify_sheet_type(*texts: str) -> str:
@@ -130,8 +157,25 @@ def _parse_cover_sheet_index(index_text: str) -> dict[str, str]:
     return parsed
 
 
-def build_manifest(pdf_path: Path) -> list[SheetInfo]:
-    """Build sheet manifest from cover sheet index + page title blocks."""
+def build_manifest(
+    pdf_path: Path,
+    title_block_crops: list[TitleBlockCrop] | None = None,
+) -> list[SheetInfo]:
+    """Build sheet manifest from cover sheet index + page title blocks.
+
+    Args:
+        pdf_path: Path to the PDF file.
+        title_block_crops: Optional pre-rendered title block crops (from
+            :func:`~intake.tiler.extract_title_block_crops`).  When provided,
+            the image path is stored on each :class:`SheetInfo` for future
+            vision-based classification.  The existing text-based classification
+            logic is unchanged.
+    """
+    # Index crops by page number for O(1) lookup.
+    crop_by_page: dict[int, TitleBlockCrop] = (
+        {c.page_number: c for c in title_block_crops} if title_block_crops else {}
+    )
+
     manifest: list[SheetInfo] = []
     with fitz.open(pdf_path) as doc:
         cover_index_text = ""
@@ -149,6 +193,9 @@ def build_manifest(pdf_path: Path) -> list[SheetInfo]:
             sheet_type = _classify_sheet_type(title_block_text, full_text, description or "")
             utility_types = _extract_utility_types(title_block_text, full_text, description or "")
 
+            model_tier = _classify_model_tier(sheet_type, coherence_score=1.0)
+
+            crop = crop_by_page.get(page_number)
             manifest.append(
                 SheetInfo(
                     page_number=page_number,
@@ -157,6 +204,8 @@ def build_manifest(pdf_path: Path) -> list[SheetInfo]:
                     description=description,
                     utility_types=utility_types,
                     needs_deep_extraction=sheet_type in EXTRACT_SHEET_TYPES,
+                    model_tier=model_tier,
+                    title_block_image_path=crop.image_path if crop is not None else None,
                 )
             )
 
